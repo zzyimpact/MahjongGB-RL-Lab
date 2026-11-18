@@ -1,0 +1,224 @@
+{
+  "per_eval": {
+    "bc_vs_random": {
+      "n": 100,
+      "mean": 0.0481,
+      "std": 0.274,
+      "se": 0.0274,
+      "ci95_low": -0.0056,
+      "ci95_high": 0.1018,
+      "wins": 4,
+      "draws": 95,
+      "losses": 1,
+      "seat_distribution": {
+        "(0,)": 25,
+        "(1,)": 25,
+        "(2,)": 25,
+        "(3,)": 25
+      },
+      "seed_range": [
+        100000,
+        100099
+      ],
+      "opponent": "random",
+      "policy": "model",
+      "untrained": false
+    },
+    "bc_vs_teacher": {
+      "n": 100,
+      "mean": -0.2584,
+      "std": 0.3811,
+      "se": 0.0381,
+      "ci95_low": -0.3331,
+      "ci95_high": -0.1837,
+      "wins": 3,
+      "draws": 25,
+      "losses": 72,
+      "seat_distribution": {
+        "(0,)": 25,
+        "(1,)": 25,
+        "(2,)": 25,
+        "(3,)": 25
+      },
+      "seed_range": [
+        100000,
+        100099
+      ],
+      "opponent": "teacher",
+      "policy": "model",
+      "untrained": false
+    },
+    "random_vs_random": {
+      "n": 100,
+      "mean": -0.0109,
+      "std": 0.1094,
+      "se": 0.0109,
+      "ci95_low": -0.0324,
+      "ci95_high": 0.0105,
+      "wins": 0,
+      "draws": 99,
+      "losses": 1,
+      "seat_distribution": {
+        "(0,)": 25,
+        "(1,)": 25,
+        "(2,)": 25,
+        "(3,)": 25
+      },
+      "seed_range": [
+        100000,
+        100099
+      ],
+      "opponent": "random",
+      "policy": "random",
+      "untrained": false
+    },
+    "rl_vs_random": {
+      "n": 100,
+      "mean": 0.1856,
+      "std": 0.4828,
+      "se": 0.0483,
+      "ci95_low": 0.091,
+      "ci95_high": 0.2803,
+      "wins": 16,
+      "draws": 82,
+      "losses": 2,
+      "seat_distribution": {
+        "(0,)": 25,
+        "(1,)": 25,
+        "(2,)": 25,
+        "(3,)": 25
+      },
+      "seed_range": [
+        100000,
+        100099
+      ],
+      "opponent": "random",
+      "policy": "model",
+      "untrained": false
+    },
+    "rl_vs_teacher": {
+      "n": 100,
+      "mean": -0.2056,
+      "std": 0.5286,
+      "se": 0.0529,
+      "ci95_low": -0.3092,
+      "ci95_high": -0.102,
+      "wins": 9,
+      "draws": 18,
+      "losses": 73,
+      "seat_distribution": {
+        "(0,)": 25,
+        "(1,)": 25,
+        "(2,)": 25,
+        "(3,)": 25
+      },
+      "seed_range": [
+        100000,
+        100099
+      ],
+      "opponent": "teacher",
+      "policy": "model",
+      "untrained": false
+    },
+    "teacher_vs_random": {
+      "n": 100,
+      "mean": 0.4766,
+      "std": 0.6804,
+      "se": 0.068,
+      "ci95_low": 0.3432,
+      "ci95_high": 0.6099,
+      "wins": 37,
+      "draws": 63,
+      "losses": 0,
+      "seat_distribution": {
+        "(0,)": 25,
+        "(1,)": 25,
+        "(2,)": 25,
+        "(3,)": 25
+      },
+      "seed_range": [
+        100000,
+        100099
+      ],
+      "opponent": "random",
+      "policy": "teacher",
+      "untrained": false
+    },
+    "untrained_vs_random": {
+      "n": 100,
+      "mean": -0.015,
+      "std": 0.1088,
+      "se": 0.0109,
+      "ci95_low": -0.0363,
+      "ci95_high": 0.0063,
+      "wins": 0,
+      "draws": 98,
+      "losses": 2,
+      "seat_distribution": {
+        "(0,)": 25,
+        "(1,)": 25,
+        "(2,)": 25,
+        "(3,)": 25
+      },
+      "seed_range": [
+        100000,
+        100099
+      ],
+      "opponent": "random",
+      "policy": "model",
+      "untrained": true
+    }
+  },
+  "paired": {
+    "rl_minus_bc_vs_random": {
+      "n": 100,
+      "mean": 0.1375,
+      "std": 0.5504,
+      "se": 0.055,
+      "ci95_low": 0.0296,
+      "ci95_high": 0.2454,
+      "rl_better_walls": 16,
+      "bc_better_walls": 6,
+      "tied_walls": 78,
+      "same_seats": true,
+      "note": "identical seeds => identical walls and seats; opponent actions diverge interactively after the first differing decision (not a frozen-opponent duplicate)"
+    },
+    "rl_minus_bc_vs_teacher": {
+      "n": 100,
+      "mean": 0.0528,
+      "std": 0.6112,
+      "se": 0.0611,
+      "ci95_low": -0.067,
+      "ci95_high": 0.1726,
+      "rl_better_walls": 29,
+      "bc_better_walls": 34,
+      "tied_walls": 37,
+      "same_seats": true,
+      "note": "identical seeds => identical walls and seats; opponent actions diverge interactively after the first differing decision (not a frozen-opponent duplicate)"
+    },
+    "bc_minus_untrained_vs_random": {
+      "n": 100,
+      "mean": 0.0631,
+      "std": 0.2923,
+      "se": 0.0292,
+      "ci95_low": 0.0058,
+      "ci95_high": 0.1204
+    }
+  },
+  "checks": {
+    "bc_vs_random_reward_granularity_ok": true,
+    "bc_vs_random_zero_sum_ok": true,
+    "bc_vs_teacher_reward_granularity_ok": true,
+    "bc_vs_teacher_zero_sum_ok": true,
+    "random_vs_random_reward_granularity_ok": true,
+    "random_vs_random_zero_sum_ok": true,
+    "rl_vs_random_reward_granularity_ok": true,
+    "rl_vs_random_zero_sum_ok": true,
+    "rl_vs_teacher_reward_granularity_ok": true,
+    "rl_vs_teacher_zero_sum_ok": true,
+    "teacher_vs_random_reward_granularity_ok": true,
+    "teacher_vs_random_zero_sum_ok": true,
+    "untrained_vs_random_reward_granularity_ok": true,
+    "untrained_vs_random_zero_sum_ok": true
+  }
+}

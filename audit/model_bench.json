@@ -1,0 +1,246 @@
+{
+  "params": {
+    "total": 55468,
+    "trainable": 55468,
+    "fp32_theoretical_bytes": 221872,
+    "by_module": {
+      "conv": 3200,
+      "hidden": 36928,
+      "actor": 15275,
+      "critic": 65
+    }
+  },
+  "layers": [
+    {
+      "layer": "conv.0",
+      "type": "Conv2d",
+      "detail": "Conv2d(6, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))",
+      "params": 880,
+      "io_shapes": {
+        "in": [
+          [
+            1,
+            6,
+            4,
+            9
+          ]
+        ],
+        "out": [
+          1,
+          16,
+          4,
+          9
+        ]
+      }
+    },
+    {
+      "layer": "conv.1",
+      "type": "ReLU",
+      "detail": "ReLU()",
+      "params": 0,
+      "io_shapes": {
+        "in": [
+          [
+            1,
+            16,
+            4,
+            9
+          ]
+        ],
+        "out": [
+          1,
+          16,
+          4,
+          9
+        ]
+      }
+    },
+    {
+      "layer": "conv.2",
+      "type": "Conv2d",
+      "detail": "Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))",
+      "params": 2320,
+      "io_shapes": {
+        "in": [
+          [
+            1,
+            16,
+            4,
+            9
+          ]
+        ],
+        "out": [
+          1,
+          16,
+          4,
+          9
+        ]
+      }
+    },
+    {
+      "layer": "conv.3",
+      "type": "ReLU",
+      "detail": "ReLU()",
+      "params": 0,
+      "io_shapes": {
+        "in": [
+          [
+            1,
+            16,
+            4,
+            9
+          ]
+        ],
+        "out": [
+          1,
+          16,
+          4,
+          9
+        ]
+      }
+    },
+    {
+      "layer": "hidden.0",
+      "type": "Linear",
+      "detail": "Linear(in_features=576, out_features=64, bias=True)",
+      "params": 36928,
+      "io_shapes": {
+        "in": [
+          [
+            1,
+            576
+          ]
+        ],
+        "out": [
+          1,
+          64
+        ]
+      }
+    },
+    {
+      "layer": "hidden.1",
+      "type": "ReLU",
+      "detail": "ReLU()",
+      "params": 0,
+      "io_shapes": {
+        "in": [
+          [
+            1,
+            64
+          ]
+        ],
+        "out": [
+          1,
+          64
+        ]
+      }
+    },
+    {
+      "layer": "actor",
+      "type": "Linear",
+      "detail": "Linear(in_features=64, out_features=235, bias=True)",
+      "params": 15275,
+      "io_shapes": {
+        "in": [
+          [
+            1,
+            64
+          ]
+        ],
+        "out": [
+          1,
+          235
+        ]
+      }
+    },
+    {
+      "layer": "critic",
+      "type": "Linear",
+      "detail": "Linear(in_features=64, out_features=1, bias=True)",
+      "params": 65,
+      "io_shapes": {
+        "in": [
+          [
+            1,
+            64
+          ]
+        ],
+        "out": [
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "load_ms": 1.82,
+  "forward_bench": [
+    {
+      "batch": 1,
+      "device": "cpu",
+      "median_ms": 0.0406,
+      "p90_ms": 0.0417,
+      "states_per_sec": 24627.9
+    },
+    {
+      "batch": 64,
+      "device": "cpu",
+      "median_ms": 0.4349,
+      "p90_ms": 0.4653,
+      "states_per_sec": 147175.9
+    },
+    {
+      "batch": 256,
+      "device": "cpu",
+      "median_ms": 1.8296,
+      "p90_ms": 1.9403,
+      "states_per_sec": 139917.8
+    },
+    {
+      "batch": 1024,
+      "device": "cpu",
+      "median_ms": 6.8612,
+      "p90_ms": 7.2457,
+      "states_per_sec": 149245.8
+    },
+    {
+      "batch": 1,
+      "device": "mps",
+      "median_ms": 0.4738,
+      "p90_ms": 2.0971,
+      "states_per_sec": 2110.8
+    },
+    {
+      "batch": 64,
+      "device": "mps",
+      "median_ms": 0.4045,
+      "p90_ms": 1.2585,
+      "states_per_sec": 158220.0
+    },
+    {
+      "batch": 256,
+      "device": "mps",
+      "median_ms": 0.4268,
+      "p90_ms": 1.4663,
+      "states_per_sec": 599795.1
+    },
+    {
+      "batch": 1024,
+      "device": "mps",
+      "median_ms": 0.5189,
+      "p90_ms": 1.4948,
+      "states_per_sec": 1973418.6
+    }
+  ],
+  "decision_pipeline_cpu_ms": {
+    "median": 0.0396,
+    "includes": "features.encode + torch.from_numpy + forward + masked argmax"
+  },
+  "env_vs_forward": {
+    "joint_steps": 167,
+    "env_median_ms": 0.0322,
+    "forward_median_ms": 0.103,
+    "note": "env = event replay + fan-calculator legality checks + encode for all acting seats; forward = model decisions for the same seats"
+  },
+  "peak_rss_mb": 237.3,
+  "rss_note": "ru_maxrss is process-lifetime peak (macOS bytes); includes imports and benchmarks, not inference-only"
+}

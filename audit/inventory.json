@@ -1,0 +1,732 @@
+{
+  "python": "3.10.21",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "torch": "2.3.1",
+  "numpy": "1.26.4",
+  "mps_available": true,
+  "tensordict": "0.1.0",
+  "PyMahjongGB": "unknown (no __version__)",
+  "checkpoints": {
+    "runs/bc_b1024_cpu/checkpoint.pt": {
+      "path": "runs/bc_b1024_cpu/checkpoint.pt",
+      "size_bytes": 239970,
+      "sha256": "f33a667e4aa960eae74c20f00010e6040aee629fd2b4fcc82ce98ee4736dd1f0",
+      "keys": [
+        "bc",
+        "config",
+        "counters",
+        "episode_cursor",
+        "iteration",
+        "numpy_rng",
+        "optimizer",
+        "policy",
+        "python_rng",
+        "torch_rng"
+      ],
+      "loadable": true,
+      "policy_tensors": 10,
+      "policy_dtypes": [
+        "torch.float32"
+      ],
+      "policy_numel": 55468,
+      "policy_keys": [
+        "module.actor.bias",
+        "module.actor.weight",
+        "module.conv.0.bias",
+        "module.conv.0.weight",
+        "module.conv.2.bias",
+        "module.conv.2.weight",
+        "module.critic.bias",
+        "module.critic.weight",
+        "module.hidden.0.bias",
+        "module.hidden.0.weight"
+      ],
+      "config": {
+        "seed": 2026,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        }
+      },
+      "counters": {
+        "env_steps": 0,
+        "agent_steps": 0,
+        "gradient_updates": 0,
+        "completed_episodes": 0
+      },
+      "iteration": 0,
+      "bc_meta": {
+        "sources": [
+          "data/bc_teacher_test",
+          "data/bc_ijcai_test"
+        ],
+        "train_samples": 39736,
+        "val_samples": 4408,
+        "epochs": 2,
+        "val_loss": 0.5475757308101481,
+        "val_accuracy": 0.7781306715063521
+      }
+    },
+    "runs/bc_b1024_mps/checkpoint.pt": {
+      "path": "runs/bc_b1024_mps/checkpoint.pt",
+      "size_bytes": 239970,
+      "sha256": "8989ccdaa3036b384ea8ec075636e597705066442888401130ae8abcec3444ea",
+      "keys": [
+        "bc",
+        "config",
+        "counters",
+        "episode_cursor",
+        "iteration",
+        "numpy_rng",
+        "optimizer",
+        "policy",
+        "python_rng",
+        "torch_rng"
+      ],
+      "loadable": true,
+      "policy_tensors": 10,
+      "policy_dtypes": [
+        "torch.float32"
+      ],
+      "policy_numel": 55468,
+      "policy_keys": [
+        "module.actor.bias",
+        "module.actor.weight",
+        "module.conv.0.bias",
+        "module.conv.0.weight",
+        "module.conv.2.bias",
+        "module.conv.2.weight",
+        "module.critic.bias",
+        "module.critic.weight",
+        "module.hidden.0.bias",
+        "module.hidden.0.weight"
+      ],
+      "config": {
+        "seed": 2026,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        }
+      },
+      "counters": {
+        "env_steps": 0,
+        "agent_steps": 0,
+        "gradient_updates": 0,
+        "completed_episodes": 0
+      },
+      "iteration": 0,
+      "bc_meta": {
+        "sources": [
+          "data/bc_teacher_test",
+          "data/bc_ijcai_test"
+        ],
+        "train_samples": 39736,
+        "val_samples": 4408,
+        "epochs": 2,
+        "val_loss": 0.547575716963697,
+        "val_accuracy": 0.7781306715063521
+      }
+    },
+    "runs/bc_smoke/checkpoint.pt": {
+      "path": "runs/bc_smoke/checkpoint.pt",
+      "size_bytes": 239970,
+      "sha256": "1fcdcb9831912c32b5e4f469e6243ae16c5cd2314700c901967968228e5fc98b",
+      "keys": [
+        "bc",
+        "config",
+        "counters",
+        "episode_cursor",
+        "iteration",
+        "numpy_rng",
+        "optimizer",
+        "policy",
+        "python_rng",
+        "torch_rng"
+      ],
+      "loadable": true,
+      "policy_tensors": 10,
+      "policy_dtypes": [
+        "torch.float32"
+      ],
+      "policy_numel": 55468,
+      "policy_keys": [
+        "module.actor.bias",
+        "module.actor.weight",
+        "module.conv.0.bias",
+        "module.conv.0.weight",
+        "module.conv.2.bias",
+        "module.conv.2.weight",
+        "module.critic.bias",
+        "module.critic.weight",
+        "module.hidden.0.bias",
+        "module.hidden.0.weight"
+      ],
+      "config": {
+        "seed": 2026,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        }
+      },
+      "counters": {
+        "env_steps": 0,
+        "agent_steps": 0,
+        "gradient_updates": 0,
+        "completed_episodes": 0
+      },
+      "iteration": 0,
+      "bc_meta": {
+        "sources": [
+          "data/bc_teacher_test",
+          "data/bc_ijcai_test"
+        ],
+        "train_samples": 39736,
+        "val_samples": 4408,
+        "epochs": 3,
+        "val_loss": 0.5283178720630016,
+        "val_accuracy": 0.7976406533575318
+      }
+    },
+    "runs/bc_smoke_mps/checkpoint.pt": {
+      "path": "runs/bc_smoke_mps/checkpoint.pt",
+      "size_bytes": 239970,
+      "sha256": "a7bd1e9891af02c8cccd696d979d07ba826a471851eeed2658c690127da56123",
+      "keys": [
+        "bc",
+        "config",
+        "counters",
+        "episode_cursor",
+        "iteration",
+        "numpy_rng",
+        "optimizer",
+        "policy",
+        "python_rng",
+        "torch_rng"
+      ],
+      "loadable": true,
+      "policy_tensors": 10,
+      "policy_dtypes": [
+        "torch.float32"
+      ],
+      "policy_numel": 55468,
+      "policy_keys": [
+        "module.actor.bias",
+        "module.actor.weight",
+        "module.conv.0.bias",
+        "module.conv.0.weight",
+        "module.conv.2.bias",
+        "module.conv.2.weight",
+        "module.critic.bias",
+        "module.critic.weight",
+        "module.hidden.0.bias",
+        "module.hidden.0.weight"
+      ],
+      "config": {
+        "seed": 2026,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        }
+      },
+      "counters": {
+        "env_steps": 0,
+        "agent_steps": 0,
+        "gradient_updates": 0,
+        "completed_episodes": 0
+      },
+      "iteration": 0,
+      "bc_meta": {
+        "sources": [
+          "data/bc_teacher_test",
+          "data/bc_ijcai_test"
+        ],
+        "train_samples": 39736,
+        "val_samples": 4408,
+        "epochs": 3,
+        "val_loss": 0.5283178720630016,
+        "val_accuracy": 0.7976406533575318
+      }
+    },
+    "runs/bc_v1/checkpoint.pt": {
+      "path": "runs/bc_v1/checkpoint.pt",
+      "size_bytes": 239970,
+      "sha256": "9408b540e144ca2be7d9056d1137f6942f2acf8b588924d9d99e613631827942",
+      "keys": [
+        "bc",
+        "config",
+        "counters",
+        "episode_cursor",
+        "iteration",
+        "numpy_rng",
+        "optimizer",
+        "policy",
+        "python_rng",
+        "torch_rng"
+      ],
+      "loadable": true,
+      "policy_tensors": 10,
+      "policy_dtypes": [
+        "torch.float32"
+      ],
+      "policy_numel": 55468,
+      "policy_keys": [
+        "module.actor.bias",
+        "module.actor.weight",
+        "module.conv.0.bias",
+        "module.conv.0.weight",
+        "module.conv.2.bias",
+        "module.conv.2.weight",
+        "module.critic.bias",
+        "module.critic.weight",
+        "module.hidden.0.bias",
+        "module.hidden.0.weight"
+      ],
+      "config": {
+        "seed": 2026,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        }
+      },
+      "counters": {
+        "env_steps": 0,
+        "agent_steps": 0,
+        "gradient_updates": 0,
+        "completed_episodes": 0
+      },
+      "iteration": 0,
+      "bc_meta": {
+        "sources": [
+          "data/bc_ijcai_v1",
+          "data/bc_teacher_v1"
+        ],
+        "train_samples": 732211,
+        "val_samples": 82746,
+        "epochs": 8,
+        "val_loss": 0.5331007104331091,
+        "val_accuracy": 0.80708433036038
+      }
+    },
+    "runs/mahjong_smoke/checkpoint.pt": {
+      "path": "runs/mahjong_smoke/checkpoint.pt",
+      "size_bytes": 691362,
+      "sha256": "a9db8503825f3d774fa4ec49f3cc06c531ea866848567db7a65b604d6c2df8e7",
+      "keys": [
+        "config",
+        "counters",
+        "episode_cursor",
+        "iteration",
+        "numpy_rng",
+        "optimizer",
+        "policy",
+        "python_rng",
+        "torch_rng"
+      ],
+      "loadable": true,
+      "policy_tensors": 10,
+      "policy_dtypes": [
+        "torch.float32"
+      ],
+      "policy_numel": 55468,
+      "policy_keys": [
+        "module.actor.bias",
+        "module.actor.weight",
+        "module.conv.0.bias",
+        "module.conv.0.weight",
+        "module.conv.2.bias",
+        "module.conv.2.weight",
+        "module.critic.bias",
+        "module.critic.weight",
+        "module.hidden.0.bias",
+        "module.hidden.0.weight"
+      ],
+      "config": {
+        "seed": 2026,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 2,
+        "episodes_per_actor": 1,
+        "iterations": 3,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        }
+      },
+      "counters": {
+        "env_steps": 1086,
+        "agent_steps": 2172,
+        "gradient_updates": 27,
+        "completed_episodes": 6
+      },
+      "iteration": 3
+    },
+    "runs/ppo_bench8/checkpoint.pt": {
+      "path": "runs/ppo_bench8/checkpoint.pt",
+      "size_bytes": 691362,
+      "sha256": "65aaf65b3d9d9d0ea66298f7e6c99f30a68bad0ae692184fe3c4906d328dbe47",
+      "keys": [
+        "config",
+        "counters",
+        "episode_cursor",
+        "iteration",
+        "numpy_rng",
+        "optimizer",
+        "policy",
+        "python_rng",
+        "torch_rng"
+      ],
+      "loadable": true,
+      "policy_tensors": 10,
+      "policy_dtypes": [
+        "torch.float32"
+      ],
+      "policy_numel": 55468,
+      "policy_keys": [
+        "module.actor.bias",
+        "module.actor.weight",
+        "module.conv.0.bias",
+        "module.conv.0.weight",
+        "module.conv.2.bias",
+        "module.conv.2.weight",
+        "module.critic.bias",
+        "module.critic.weight",
+        "module.hidden.0.bias",
+        "module.hidden.0.weight"
+      ],
+      "config": {
+        "seed": 2026,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 8,
+        "episodes_per_actor": 1,
+        "iterations": 20,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        }
+      },
+      "counters": {
+        "env_steps": 27841,
+        "agent_steps": 55667,
+        "gradient_updates": 681,
+        "completed_episodes": 160
+      },
+      "iteration": 20
+    },
+    "runs/rl_from_bc_smoke/checkpoint.pt": {
+      "path": "runs/rl_from_bc_smoke/checkpoint.pt",
+      "size_bytes": 691298,
+      "sha256": "4d214f84958dc8721ffa1e362d49739a715184e45b7fd1e668b1ab8a9727ccb2",
+      "keys": [
+        "config",
+        "counters",
+        "episode_cursor",
+        "iteration",
+        "numpy_rng",
+        "optimizer",
+        "policy",
+        "python_rng",
+        "torch_rng"
+      ],
+      "loadable": true,
+      "policy_tensors": 10,
+      "policy_dtypes": [
+        "torch.float32"
+      ],
+      "policy_numel": 55468,
+      "policy_keys": [
+        "module.actor.bias",
+        "module.actor.weight",
+        "module.conv.0.bias",
+        "module.conv.0.weight",
+        "module.conv.2.bias",
+        "module.conv.2.weight",
+        "module.critic.bias",
+        "module.critic.weight",
+        "module.hidden.0.bias",
+        "module.hidden.0.weight"
+      ],
+      "config": {
+        "seed": 2026,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 2,
+        "episodes_per_actor": 1,
+        "iterations": 3,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        }
+      },
+      "counters": {
+        "env_steps": 1060,
+        "agent_steps": 2120,
+        "gradient_updates": 27,
+        "completed_episodes": 6
+      },
+      "iteration": 3
+    },
+    "runs/rl_v1/checkpoint.pt": {
+      "path": "runs/rl_v1/checkpoint.pt",
+      "size_bytes": 691298,
+      "sha256": "efcb5d4c99ef4c1bb7a445384458a679e52708c1ecb2b73fb882c455d7b3e936",
+      "keys": [
+        "config",
+        "counters",
+        "episode_cursor",
+        "iteration",
+        "numpy_rng",
+        "optimizer",
+        "policy",
+        "python_rng",
+        "torch_rng"
+      ],
+      "loadable": true,
+      "policy_tensors": 10,
+      "policy_dtypes": [
+        "torch.float32"
+      ],
+      "policy_numel": 55468,
+      "policy_keys": [
+        "module.actor.bias",
+        "module.actor.weight",
+        "module.conv.0.bias",
+        "module.conv.0.weight",
+        "module.conv.2.bias",
+        "module.conv.2.weight",
+        "module.critic.bias",
+        "module.critic.weight",
+        "module.hidden.0.bias",
+        "module.hidden.0.weight"
+      ],
+      "config": {
+        "seed": 2026,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 8,
+        "episodes_per_actor": 1,
+        "iterations": 300,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        }
+      },
+      "counters": {
+        "env_steps": 423189,
+        "agent_steps": 846109,
+        "gradient_updates": 10401,
+        "completed_episodes": 2400
+      },
+      "iteration": 300
+    }
+  },
+  "export_identity": {
+    "export_sha256": "c9f4e1fdf246ae0badaa19ebb28bee29b68042802341951a3523358977120892",
+    "export_keys": [
+      "actor.bias",
+      "actor.weight",
+      "conv.0.bias",
+      "conv.0.weight",
+      "conv.2.bias",
+      "conv.2.weight",
+      "critic.bias",
+      "critic.weight",
+      "hidden.0.bias",
+      "hidden.0.weight"
+    ],
+    "export_numel": 55468,
+    "matches_rl_v1_exactly": true,
+    "matches_bc_v1_exactly": false,
+    "rl_vs_bc_actor_changed": true,
+    "rl_vs_bc_critic_changed": true,
+    "rl_vs_bc_conv_changed": true
+  },
+  "bc_critic_vs_fresh_init": {
+    "critic_weight_equal_to_seed0_init": true,
+    "actor_weight_equal_to_seed0_init": false,
+    "critic_weight_equal_to_seed2026_init": false
+  },
+  "bc_checkpoint_optimizer": {
+    "param_groups": 1,
+    "lr": 0.0003,
+    "state_entries": 0
+  },
+  "rl_checkpoint_optimizer": {
+    "param_groups": 1,
+    "lr": 0.0003,
+    "state_entries": 10
+  },
+  "evaluations": {
+    "bc_vs_random.json": {
+      "episodes": 100,
+      "size_bytes": 22022
+    },
+    "bc_vs_teacher.json": {
+      "episodes": 100,
+      "size_bytes": 22965
+    },
+    "random_vs_random.json": {
+      "episodes": 100,
+      "size_bytes": 21955
+    },
+    "rl_vs_random.json": {
+      "episodes": 100,
+      "size_bytes": 22162
+    },
+    "rl_vs_teacher.json": {
+      "episodes": 100,
+      "size_bytes": 23080
+    },
+    "teacher_vs_random.json": {
+      "episodes": 100,
+      "size_bytes": 22475
+    },
+    "untrained_vs_random.json": {
+      "episodes": 100,
+      "size_bytes": 21970
+    }
+  },
+  "datasets": {
+    "data/bc_ijcai_test": {
+      "shards": 4,
+      "samples_recounted": 18369,
+      "meta_claims": {
+        "games_kept": 100,
+        "games_dropped": 0,
+        "samples": 18369,
+        "source": "hf-mirror.com/datasets/Dannibal/ijcai-mahjong-corpora-2026 final2_all.jsonl.gz",
+        "license": "MIT",
+        "split_rule": "game_id % 10 == 0 -> val, else train"
+      }
+    },
+    "data/bc_ijcai_v1": {
+      "shards": 15,
+      "samples_recounted": 563257,
+      "meta_claims": {
+        "games_kept": 3000,
+        "games_dropped": 0,
+        "samples": 563257,
+        "source": "hf-mirror.com/datasets/Dannibal/ijcai-mahjong-corpora-2026 final2_all.jsonl.gz",
+        "license": "MIT",
+        "split_rule": "game_id % 10 == 0 -> val, else train"
+      }
+    },
+    "data/bc_teacher_test": {
+      "shards": 4,
+      "samples_recounted": 25775,
+      "meta_claims": {
+        "games": 100,
+        "samples": 25775,
+        "source": "heuristic teacher self-play (mahjong.teacher.HeuristicTeacher)",
+        "split_rule": "game_id % 10 == 0 -> val, else train"
+      }
+    },
+    "data/bc_teacher_v1": {
+      "shards": 20,
+      "samples_recounted": 251700,
+      "meta_claims": {
+        "games": 1000,
+        "samples": 251700,
+        "source": "heuristic teacher self-play (mahjong.teacher.HeuristicTeacher)",
+        "split_rule": "game_id % 10 == 0 -> val, else train"
+      }
+    }
+  }
+}

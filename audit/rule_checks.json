@@ -1,0 +1,62 @@
+[
+  {
+    "check": "fan_pengpenghu_case",
+    "pass": true,
+    "detail": "total=26 [(16, '三暗刻'), (6, '碰碰和'), (2, '箭刻'), (1, '幺九刻'), (1, '独听・单钓')]"
+  },
+  {
+    "check": "fan_seven_pairs",
+    "pass": true,
+    "detail": "total=31 [(24, '七对'), (6, '五门齐'), (1, '自摸')]"
+  },
+  {
+    "check": "fan_kong_bloom_flag",
+    "pass": true,
+    "detail": "total=25 [(8, '花龙'), (8, '杠上开花'), (4, '不求人'), (2, '箭刻'), (2, '暗杠'), (1, '独听・单钓')]"
+  },
+  {
+    "check": "fan_wall_last_selfdraw",
+    "pass": true,
+    "detail": "total=16 [(8, '妙手回春'), (4, '不求人'), (1, '喜相逢'), (1, '连六'), (1, '独听・单钓')]"
+  },
+  {
+    "check": "fan_wall_last_ron",
+    "pass": true,
+    "detail": "total=14 [(8, '海底捞月'), (2, '门前清'), (1, '喜相逢'), (1, '连六'), (1, '独听・单钓')]"
+  },
+  {
+    "check": "gate_low_fan_ron_no_hu",
+    "pass": true,
+    "detail": "valid=[0]"
+  },
+  {
+    "check": "gate_low_fan_value",
+    "pass": true,
+    "detail": "total=6 [(2, '门前清'), (1, '喜相逢'), (1, '连六'), (1, '独听・单钓')]"
+  },
+  {
+    "check": "gate_rob_kong_hu_offered",
+    "pass": true,
+    "detail": "valid=[1, 0]"
+  },
+  {
+    "check": "gate_rob_kong_fan",
+    "pass": true,
+    "detail": "total=13 [(8, '抢杠和'), (2, '门前清'), (1, '喜相逢'), (1, '连六')]"
+  },
+  {
+    "check": "judge_invalid_hu_penalty",
+    "pass": true,
+    "detail": "reward=[-30, 10, 10, 10] invalid={'player': 0, 'cause': \"Error('Not Enough Fans')\"}"
+  },
+  {
+    "check": "judge_fourth_tile_selfdraw",
+    "pass": true,
+    "detail": "True"
+  },
+  {
+    "check": "exhaustive_draw_zero_reward",
+    "pass": true,
+    "detail": "seed=0"
+  }
+]

@@ -1,0 +1,78 @@
+{
+  "fresh_games": 200,
+  "fresh_srands": 10,
+  "overlap_with_train_srands": [
+    3000,
+    3001,
+    3002,
+    3003,
+    3004,
+    3005,
+    3006,
+    3007,
+    3008,
+    3009,
+    3010,
+    3011,
+    3012,
+    3013,
+    3014,
+    3015,
+    3016,
+    3017,
+    3018,
+    3019,
+    3020,
+    3021,
+    3023,
+    3028
+  ],
+  "games_used": 176,
+  "samples": 37456,
+  "bc_on_fresh_walls": {
+    "accuracy": 0.8127,
+    "nonpass_acc": 0.3455,
+    "nonpass_n": 10378,
+    "single_legal_frac": 0.6887,
+    "by_cat": {
+      "pass": {
+        "n": 27078,
+        "acc": 0.9918
+      },
+      "hu": {
+        "n": 165,
+        "acc": 1.0
+      },
+      "play": {
+        "n": 9337,
+        "acc": 0.3278
+      },
+      "chi": {
+        "n": 458,
+        "acc": 0.155
+      },
+      "peng": {
+        "n": 383,
+        "acc": 0.6736
+      },
+      "gang": {
+        "n": 2,
+        "acc": 1.0
+      },
+      "angang": {
+        "n": 15,
+        "acc": 0.8667
+      },
+      "bugang": {
+        "n": 18,
+        "acc": 0.8889
+      }
+    }
+  },
+  "rl_on_fresh_walls": {
+    "accuracy": 0.7593,
+    "nonpass_acc": 0.2551,
+    "play_acc": 0.1816,
+    "note": "agreement with IJCAI agents' actions, NOT win rate; RL optimizes reward not imitation"
+  }
+}

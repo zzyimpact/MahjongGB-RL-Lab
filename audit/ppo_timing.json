@@ -1,0 +1,50 @@
+{
+  "iterations": [
+    {
+      "iteration": 0,
+      "collect_s": 1.2754,
+      "gae_s": 0.037,
+      "update_s": 0.2872,
+      "total_s": 1.5996,
+      "agent_steps": 2816,
+      "episodes": 8,
+      "gradient_updates": 33.0,
+      "child_cpu_s": 0.0
+    },
+    {
+      "iteration": 1,
+      "collect_s": 0.1784,
+      "gae_s": 0.0387,
+      "update_s": 0.2772,
+      "total_s": 0.4943,
+      "agent_steps": 2825,
+      "episodes": 8,
+      "gradient_updates": 36.0,
+      "child_cpu_s": 0.0
+    },
+    {
+      "iteration": 2,
+      "collect_s": 0.1892,
+      "gae_s": 0.0311,
+      "update_s": 0.2526,
+      "total_s": 0.4728,
+      "agent_steps": 2787,
+      "episodes": 8,
+      "gradient_updates": 33.0,
+      "child_cpu_s": 0.0
+    },
+    {
+      "iteration": 3,
+      "collect_s": 0.1826,
+      "gae_s": 0.0309,
+      "update_s": 0.2452,
+      "total_s": 0.4587,
+      "agent_steps": 2756,
+      "episodes": 8,
+      "gradient_updates": 33.0,
+      "child_cpu_s": 0.0
+    }
+  ],
+  "note": "iteration 0 includes actor startup; child_cpu_s = actor processes user+sys CPU during the iteration (8 actors, 15 cores)",
+  "steady_collect_frac": 0.386
+}
