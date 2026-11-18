@@ -1,5 +1,6 @@
 import copy
 import numpy as np
+import pytest
 import torch
 from mahjong.ppo_anchor import masked_reference_kl,BCReferenceLoss
 from mahjong.policy import make_policy,make_collector
@@ -22,9 +23,10 @@ def test_kl_direction_mask_gradient_and_stability():
     torch.testing.assert_close(identical,torch.zeros(2))
 
 
-def test_enhanced_bc_restores_for_real_ppo_value_update(tmp_path):
+@pytest.mark.parametrize("architecture", ["tiny_cnn", "small_resnet"])
+def test_enhanced_bc_restores_for_real_ppo_value_update(tmp_path, architecture):
     torch.set_num_threads(1);torch.manual_seed(8)
-    cfg=dict(feature_set='enhanced',feature_version='v2',architecture='tiny_cnn',hidden=64)
+    cfg=dict(feature_set='enhanced',feature_version='v2',architecture=architecture,hidden=64)
     original=make_policy(config=cfg);torch.save(original.state_dict(),tmp_path/'bc.pt')
     policy=make_policy(config=cfg);policy.load_state_dict(torch.load(tmp_path/'bc.pt'),strict=True)
     collector=make_collector(0,config=cfg)
