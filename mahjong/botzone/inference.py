@@ -5,14 +5,14 @@ import os
 import pkgutil
 import numpy as np
 import torch
-from ..model import Model
+from ..model import Model, make_model
 
 
 def load():
     game = __package__.split(".")[0]
     config = json.loads(pkgutil.get_data(game, "bot_config.json").decode("utf-8"))
     torch.set_num_threads(1)
-    model = Model(config["hidden"])
+    model = make_model(config)
     path = os.environ.get("BOT_MODEL_PATH", config["weight_path"])
     model.load_state_dict(torch.load(path, map_location="cpu"), strict=True)
     model.eval()

@@ -93,6 +93,9 @@ class MahjongProtocolTest(unittest.TestCase):
                     )
                     self.assertEqual(bots[p].view.packs, observers[p].packs)
                     self.assertEqual(bots[p].view.tileWall, observers[p].tileWall)
+                    if p in core.obs:
+                        np.testing.assert_array_equal(encode(observers[p], "enhanced")["obs"],
+                                                      encode(bots[p].view, "enhanced")["obs"])
                     for key, value in encode(observers[p]).items():
                         # Nonactive observers may retain different obsolete legal sets;
                         # only active decision masks are meaningful.

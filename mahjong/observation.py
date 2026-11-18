@@ -69,6 +69,7 @@ class SeatView:
     """
 
     def request2obs(self, request):
+        self.last_event = request
         t = request.split()
         if t[0] == "Wind":
             self.prevalentWind = int(t[1])
@@ -81,6 +82,7 @@ class SeatView:
             return self._obs()
         if t[0] == "Draw":
             # Available: Hu, Play, AnGang, BuGang
+            self.last_draw_kong = self.isAboutKong
             self.tileWall[0] -= 1
             self.wallLast = self.tileWall[1] == 0
             tile = t[1]

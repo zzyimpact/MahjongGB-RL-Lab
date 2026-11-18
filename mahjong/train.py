@@ -16,6 +16,7 @@ from rlframework.algorithm.ppo import PPOLearner, PPOConfig
 from rlframework.processing.gae import GAEProcessor
 from rlframework.workflow.on_policy import MultiPolicyOnPolicyWorkflow, OnPolicyStack
 from .policy import make_policy, make_collector
+from .model import model_spec
 
 
 def main():
@@ -43,7 +44,7 @@ def main():
     torch.manual_seed(cfg["seed"])
     random.seed(cfg["seed"])
     np.random.seed(cfg["seed"])
-    policy = make_policy(cfg["hidden"])
+    policy = make_policy(cfg["hidden"], config=cfg)
     ppo = PPOConfig(**cfg["ppo"])
     learner = PPOLearner(policy, ppo, device=cfg["device"])
     start_iteration = 0
@@ -57,7 +58,7 @@ def main():
     if args.resume:
         state = torch.load(args.resume, map_location="cpu")
         if (
-            state["config"]["hidden"] != cfg["hidden"]
+            model_spec(state["config"]) != model_spec(cfg)
             or state["config"]["capacity"] != cfg["capacity"]
         ):
             raise ValueError("Checkpoint feature/model configuration mismatch")
@@ -73,6 +74,7 @@ def main():
     factory = partial(
         make_collector,
         hidden=cfg["hidden"],
+        config=cfg,
         capacity=cfg["capacity"],
         gamma=ppo.gamma,
         gae_lambda=ppo.gae_lambda,

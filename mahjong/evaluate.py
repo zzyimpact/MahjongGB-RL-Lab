@@ -39,11 +39,11 @@ def main():
     else:
         cfg = json.loads((Path(__file__).parent / "configs/default.json").read_text())
     torch.manual_seed(cfg["seed"])
-    policy = make_policy(cfg["hidden"])
+    policy = make_policy(cfg["hidden"], config=cfg)
     if args.policy == "model" and not args.untrained:
         policy.load_state_dict(state["policy"])
     policy.eval()
-    env = Environment(cfg["capacity"])
+    env = Environment(cfg["capacity"], cfg.get("feature_set", "basic"))
     controller = HeuristicTeacher() if args.policy == "teacher" else None
     opponent = HeuristicTeacher() if args.opponent == "teacher" else None
     records = []

@@ -74,8 +74,8 @@ def expand_response(response):
 
 
 class RecordingSession(Session):
-    def __init__(self):
-        super().__init__(self._choose)
+    def __init__(self, feature_set="basic"):
+        super().__init__(self._choose, feature_set=feature_set)
         self.pending = []
         self.samples = []
         self.decisions = 0
@@ -133,11 +133,11 @@ def seat_pairs(logs, seat):
         yield last_request, None
 
 
-def replay_game(game):
+def replay_game(game, feature_set="basic"):
     if game.get("status") != "finished":
         raise ValueError("unfinished game")
     logs = game["logs"]
-    sessions = [RecordingSession() for _ in range(4)]
+    sessions = [RecordingSession(feature_set) for _ in range(4)]
     for seat in range(4):
         for request, response in seat_pairs(logs, str(seat)):
             if request is None:
@@ -154,96 +154,12 @@ def replay_game(game):
     return samples
 
 
-def _worker(args):
-    path, start, count, shard_id = args
-    obs_list, mask_list, act_list, gid_list, seat_list = [], [], [], [], []
-    kept = dropped = 0
-    errors = {}
-    with gzip.open(path, "rt") as f:
-        for gid, line in enumerate(itertools.islice(f, start, start + count)):
-            try:
-                samples = replay_game(json.loads(line))
-            except Exception as e:
-                dropped += 1
-                key = str(e)[:80]
-                errors[key] = errors.get(key, 0) + 1
-                continue
-            kept += 1
-            for obs, mask, action, seat in samples:
-                obs_list.append(obs)
-                mask_list.append(mask)
-                act_list.append(action)
-                gid_list.append(start + gid)
-                seat_list.append(seat)
-    arrays = {
-        "obs": np.stack(obs_list).astype(np.float32) if obs_list else np.zeros((0, 6, 4, 9), np.float32),
-        "mask": np.stack(mask_list).astype(np.bool_) if mask_list else np.zeros((0, 235), np.bool_),
-        "action": np.array(act_list, dtype=np.int16),
-        "game_id": np.array(gid_list, dtype=np.int32),
-        "seat": np.array(seat_list, dtype=np.int8),
-    }
-    return shard_id, arrays, {"kept": kept, "dropped": dropped, "errors": errors}
-
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--input", type=Path, required=True)
-    parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--limit", type=int, help="only process the first N games")
-    parser.add_argument("--workers", type=int, default=4)
-    parser.add_argument("--shard-games", type=int, default=200)
-    args = parser.parse_args()
-    if args.output.exists():
-        parser.error("output already exists")
-    with gzip.open(args.input, "rt") as f:
-        total = sum(1 for _ in f)
-    if args.limit:
-        total = min(total, args.limit)
-    args.output.mkdir(parents=True)
-    jobs = []
-    start = 0
-    shard_id = 0
-    while start < total:
-        count = min(args.shard_games, total - start)
-        jobs.append((str(args.input), start, count, shard_id))
-        start += count
-        shard_id += 1
-    begin = time.monotonic()
-    kept = dropped = samples_total = 0
-    all_errors = {}
-    with ProcessPoolExecutor(max_workers=args.workers) as pool:
-        for shard_id, arrays, stats in pool.map(_worker, jobs):
-            np.savez_compressed(args.output / ("shard_%04d.npz" % shard_id), **arrays)
-            kept += stats["kept"]
-            dropped += stats["dropped"]
-            samples_total += len(arrays["action"])
-            for key, n in stats["errors"].items():
-                all_errors[key] = all_errors.get(key, 0) + n
-            print(
-                json.dumps(
-                    {
-                        "shard": shard_id,
-                        "kept": stats["kept"],
-                        "dropped": stats["dropped"],
-                        "samples": int(len(arrays["action"])),
-                        "elapsed": round(time.monotonic() - begin, 1),
-                    }
-                ),
-                flush=True,
-            )
-    meta = {
-        "source": "hf-mirror.com/datasets/Dannibal/ijcai-mahjong-corpora-2026 final2_all.jsonl.gz",
-        "license": "MIT",
-        "games_kept": kept,
-        "games_dropped": dropped,
-        "drop_reasons": all_errors,
-        "samples": samples_total,
-        "split_rule": "game_id % 10 == 0 -> val, else train",
-        "seconds": time.monotonic() - begin,
-    }
-    (args.output / "meta.json").write_text(json.dumps(meta, indent=2))
-    print(json.dumps({k: v for k, v in meta.items() if k != "drop_reasons"}))
+    # The former game_id % 10 cache generator is intentionally retired.
+    from .data_v2 import main as prepare
+    prepare()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

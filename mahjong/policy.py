@@ -7,22 +7,22 @@ from rlframework.collectors.sparse import SparseDecisionCollector
 from rlframework.collectors.routing import StaticPolicyRouter
 from rlframework.collector import PolicyRef
 from rlframework.collectors.rewards import SharedTensorRewardResolver
-from .model import Model
+from .model import Model, make_model
 from .env import Environment
 
 
-def make_policy(hidden=64):
-    return NamedCategoricalPolicy(Model(hidden), input_keys=("obs",))
+def make_policy(hidden=64, config=None):
+    return NamedCategoricalPolicy(make_model(config or {"hidden": hidden}), input_keys=("obs",))
 
 
 def make_collector(
-    worker_id, hidden=64, capacity=128, gamma=0.99, gae_lambda=0.95, seed=0
+    worker_id, hidden=64, capacity=128, gamma=0.99, gae_lambda=0.95, seed=0, config=None
 ):
     torch.manual_seed(seed + worker_id)
-    policy = make_policy(hidden)
+    policy = make_policy(hidden, config)
     router = StaticPolicyRouter({str(i): PolicyRef("shared", policy) for i in range(4)})
     return SparseDecisionCollector(
-        Environment(capacity),
+        Environment(capacity, (config or {}).get("feature_set", "basic")),
         router,
         SharedTensorRewardResolver("rewards", {str(i): i for i in range(4)}),
         gamma=gamma,

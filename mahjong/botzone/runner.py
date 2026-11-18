@@ -8,7 +8,7 @@ from .session import Session
 
 def main():
     choose, config = load()
-    session = Session(choose)
+    session = Session(choose, feature_set=config.get("feature_set", "basic"))
     first = True
     for line in sys.stdin:
         if not line.strip():

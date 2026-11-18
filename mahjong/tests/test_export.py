@@ -214,10 +214,10 @@ def _model_response(request, bot_dir, env):
         session = _SESSION
     except NameError:
         import torch
-        from mahjong.model import Model
+        from mahjong.model import Model, make_model
 
         config = json.loads((bot_dir / "mahjong" / "bot_config.json").read_text())
-        model = Model(config["hidden"])
+        model = make_model(config)
         model.load_state_dict(torch.load(env["BOT_MODEL_PATH"], map_location="cpu"))
         model.eval()
 
@@ -229,7 +229,7 @@ def _model_response(request, bot_dir, env):
                 return int(logits.masked_fill(~mask, -1e9).argmax(dim=-1).item())
 
         _CHOOSE = choose
-        session = Session(choose)
+        session = Session(choose, feature_set=config.get("feature_set", "basic"))
         _SESSION = session
     return session.handle(request)
 

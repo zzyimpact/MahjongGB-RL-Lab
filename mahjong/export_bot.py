@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 import zipfile
 import torch
-from .model import Model
+from .model import Model, make_model
 
 
 def main():
@@ -16,7 +16,7 @@ def main():
     args = parser.parse_args()
     state = torch.load(args.checkpoint, map_location="cpu")
     cfg = state["config"]
-    model = Model(cfg["hidden"])
+    model = make_model(cfg)
     weights = {
         k[len("module.") :]: v.cpu()
         for k, v in state["policy"].items()
@@ -43,6 +43,9 @@ def main():
         "bc_data.py",
         "replay.py",
         "teacher.py",
+        "data_v2.py",
+        "arena.py",
+        "round3.py",
     }
     with zipfile.ZipFile(
         args.output / (game + "_bot.zip"), "w", zipfile.ZIP_DEFLATED
@@ -55,6 +58,10 @@ def main():
             json.dumps(
                 {
                     "hidden": cfg["hidden"],
+                    "feature_set": cfg.get("feature_set", "basic"),
+                    "feature_version": cfg.get("feature_version", "v1"),
+                    "architecture": cfg.get("architecture", "tiny_cnn"),
+                    "resnet_hidden": cfg.get("resnet_hidden", 256),
                     "capacity": cfg["capacity"],
                     "weight_path": "data/" + weight_name,
                 }

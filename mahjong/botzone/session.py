@@ -10,7 +10,8 @@ from ..features import encode
 
 
 class Session:
-    def __init__(self, choose, capacity=None):
+    def __init__(self, choose, capacity=None, feature_set="basic"):
+        self.feature_set = feature_set
         self.choose = choose
         self.view = None
         self.drawn = False
@@ -65,13 +66,13 @@ class Session:
         if forced is not None:
             response = forced
         elif obs is not None and obs.valid:
-            command = obs.action2response(self.choose(encode(obs))).split()
+            command = obs.action2response(self.choose(encode(obs, self.feature_set))).split()
             response = " ".join([command[0].upper()] + command[1:])
             if command[0] in ("Peng", "Chi"):
                 temporary = copy.deepcopy(self.view)
                 temporary.request2obs("Player %d " % self.seat + " ".join(command))
                 discard = temporary.action2response(
-                    self.choose(encode(temporary))
+                    self.choose(encode(temporary, self.feature_set))
                 ).split()
                 if discard[0] != "Play":
                     raise ValueError("CHI/PENG follow-up must discard")

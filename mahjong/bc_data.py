@@ -2,10 +2,11 @@
 
 Every sample is encoded with mahjong.features.encode on the same SeatView
 stream used by training and deployment, so labels cannot leak hidden state.
-Games are the split unit: sample game_id determines train/val membership.
+Actual wall fingerprints are split reproducibly into train/val/test.
 """
 
 import argparse
+import hashlib
 import json
 import time
 from concurrent.futures import ProcessPoolExecutor
@@ -59,6 +60,7 @@ def play_game(seed, teacher=None):
                 % (seed, core.invalid_info)
             )
     result = {
+        "wall_id": hashlib.sha256(core.originalTileWall.encode()).hexdigest(),
         "seed": seed,
         "rewards": list(core.reward or [0, 0, 0, 0]),
         "steps": steps,
@@ -97,6 +99,7 @@ def main():
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--shard-games", type=int, default=25)
     parser.add_argument("--seed", type=int, default=0, help="first game seed")
+    parser.add_argument("--split-seed", type=int, default=20261119)
     args = parser.parse_args()
     if args.games < 1 or args.workers < 1 or args.shard_games < 1:
         parser.error("games, workers and shard-games must be positive")
@@ -138,12 +141,31 @@ def main():
         "samples": total_samples,
         "seed_start": args.seed,
         "shard_games": args.shard_games,
-        "split_rule": "game_id % 10 == 0 -> val, else train",
+        "split_rule": "actual wall hash, deterministic 80/10/10 groups",
         "games_with_winner": wins,
         "mean_steps": float(np.mean([r["steps"] for r in all_results])),
         "seconds": time.monotonic() - start,
         "results": all_results,
     }
+    from .data_v2 import split_groups
+    assignment = split_groups([r['wall_id'] for r in all_results], args.split_seed)
+    games = [dict(game_id=r['seed'],wall_id=r['wall_id'],split=assignment[r['wall_id']]) for r in all_results]
+    split_for = {g['game_id']:g['split'] for g in games}
+    shards = sorted(args.output.glob('shard_*.npz'))
+    summary = {}
+    for split in ('train','val','test'):
+        pieces = {k:[] for k in ('obs','mask','action','game_id')}
+        for path in shards:
+            with np.load(path) as d:
+                sel=np.array([split_for[int(g)]==split for g in d['game_id']])
+                for k in pieces: pieces[k].append(d[k][sel])
+        arrays={k:np.concatenate(v) for k,v in pieces.items()}
+        for k,v in arrays.items():np.save(args.output/(split+'_'+k+'.npy'),v)
+        summary[split]=dict(samples=len(arrays['action']),games=len(set(arrays['game_id'].tolist())),
+                            walls=sum(s==split for s in assignment.values()))
+    manifest=dict(schema=2,complete=True,feature_set='basic',feature_version='v1',source='teacher',
+                  split_seed=args.split_seed,groups=assignment,games=games,summary=summary)
+    (args.output/'manifest.json').write_text(json.dumps(manifest,indent=2))
     (args.output / "meta.json").write_text(json.dumps(meta, indent=2))
     print(
         json.dumps(

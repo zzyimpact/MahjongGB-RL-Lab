@@ -10,7 +10,8 @@ from .features import encode
 
 
 class Environment(MultiEnv):
-    def __init__(self, capacity=None):
+    def __init__(self, capacity=None, feature_set="basic"):
+        self.feature_set = feature_set
         self.core = GameCore()
 
     def reset(self, config=None):
@@ -31,7 +32,7 @@ class Environment(MultiEnv):
         result = {}
         active = range(4) if self.core.done else self.core.obs
         for i in active:
-            arrays = encode(self.views[i])
+            arrays = encode(self.views[i], self.feature_set)
             result[str(i)] = AgentStep(
                 TensorDict({k: torch.from_numpy(v) for k, v in arrays.items()}, []),
                 terminated=self.core.done,
