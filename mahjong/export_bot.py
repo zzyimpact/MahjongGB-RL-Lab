@@ -33,7 +33,17 @@ def main():
         pickle_protocol=2,
     )
     source = Path(__file__).parent
-    excluded = {"env.py", "train.py", "policy.py", "evaluate.py", "export_bot.py"}
+    excluded = {
+        "env.py",
+        "train.py",
+        "policy.py",
+        "evaluate.py",
+        "export_bot.py",
+        "train_bc.py",
+        "bc_data.py",
+        "replay.py",
+        "teacher.py",
+    }
     with zipfile.ZipFile(
         args.output / (game + "_bot.zip"), "w", zipfile.ZIP_DEFLATED
     ) as z:
