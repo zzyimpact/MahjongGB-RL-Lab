@@ -1,0 +1,22 @@
+{
+  "split_seed": 20261119,
+  "training_seed": 20261119,
+  "epochs": 3,
+  "batch_size": 1024,
+  "learning_rate": 0.001,
+  "device": "mps",
+  "sources": ["IJCAI final2_all.jsonl.gz only; no teacher mixture"],
+  "experiments": {
+    "A": {"feature_set": "basic", "architecture": "tiny_cnn"},
+    "B": {"feature_set": "enhanced", "architecture": "tiny_cnn"},
+    "C": {"feature_set": "basic", "architecture": "small_resnet"},
+    "D": {"feature_set": "enhanced", "architecture": "small_resnet"}
+  },
+  "checkpoint_selection": "minimum wall-disjoint validation mean masked CE",
+  "model_selection": "highest mean reward versus frozen teacher on development arena; tie break lower parameter count",
+  "development_arena": {"seed": 8000000, "walls": 100},
+  "final_arena": {"seed": 9000000, "walls": 300},
+  "bootstrap_seed": 20261119,
+  "bootstrap_replicates": 5000,
+  "opponents": ["random", "teacher", "frozen runs/rl_v1/checkpoint.pt"]
+}
