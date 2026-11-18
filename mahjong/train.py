@@ -5,6 +5,10 @@ import json
 import os
 import random
 import time
+import shutil
+import hashlib
+import subprocess
+import sys
 from functools import partial
 from pathlib import Path
 import numpy as np
@@ -29,7 +33,19 @@ def main():
     parser.add_argument("--actors", type=int)
     parser.add_argument("--seconds", type=float)
     parser.add_argument("--resume", type=Path)
+    parser.add_argument("--bc-reference", type=Path)
+    parser.add_argument("--bc-kl", type=float, default=0.0)
+    parser.add_argument("--eval-every", type=int, default=0)
+    parser.add_argument("--eval-walls", type=int, default=50)
+    parser.add_argument("--eval-seed", type=int, default=8100000)
+    parser.add_argument("--split-manifest", type=Path)
     args = parser.parse_args()
+    if args.bc_kl < 0 or args.eval_every < 0:
+        parser.error("KL and eval period must be nonnegative")
+    if args.bc_kl and not args.bc_reference:
+        parser.error("KL requires a frozen BC reference")
+    if args.eval_every and (not args.resume or not args.split_manifest):
+        parser.error("periodic evaluation requires resume and split manifest")
     cfg = json.loads(args.config.read_text())
     for key in ("iterations", "actors"):
         if getattr(args, key) is not None:
@@ -70,6 +86,32 @@ def main():
         torch.set_rng_state(state["torch_rng"])
         random.setstate(state["python_rng"])
         np.random.set_state(state["numpy_rng"])
+    if args.bc_reference:
+        from .ppo_anchor import BCReferenceLoss
+        learner.auxiliary_loss = BCReferenceLoss(policy, args.bc_reference, cfg, cfg['device'], args.bc_kl)
+    provenance = dict(resume=str(args.resume), bc_reference=str(args.bc_reference), bc_kl=args.bc_kl,
+                      eval_every=args.eval_every, eval_walls=args.eval_walls, eval_seed=args.eval_seed,
+                      resume_sha256=hashlib.sha256(args.resume.read_bytes()).hexdigest() if args.resume else None)
+    (args.output/'experiment.json').write_text(json.dumps(provenance,indent=2))
+    best_eval = float('-inf')
+    best_ppo_eval = float('-inf')
+    eval_history = []
+
+    def evaluate_checkpoint(path, iteration):
+        directory=args.output/('eval_%04d'%iteration)
+        subprocess.run([sys.executable,'-m','mahjong.arena','--candidate','candidate='+str(path),
+                        '--opponent','teacher','--walls',str(args.eval_walls),'--seed',str(args.eval_seed),
+                        '--workers',str(cfg['actors']),'--manifest',str(args.split_manifest),
+                        '--output',str(directory),'--purpose','development'],check=True,stdout=subprocess.DEVNULL)
+        result=json.loads((directory/'results.json').read_text())
+        reward=result['summary']['candidate vs teacher']['reward']
+        eval_history.append(dict(iteration=iteration,reward=reward,checkpoint_sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
+        (args.output/'eval_history.json').write_text(json.dumps(eval_history,indent=2))
+        return reward['mean']
+
+    if args.eval_every:
+        best_eval=evaluate_checkpoint(args.resume,0)
+        shutil.copy2(args.resume,args.output/'eval_best.pt')
     router = StaticPolicyRouter({str(i): PolicyRef("shared", policy) for i in range(4)})
     factory = partial(
         make_collector,
@@ -157,6 +199,16 @@ def main():
                 temporary = args.output / "checkpoint.tmp"
                 torch.save(state, temporary)
                 temporary.replace(args.output / "checkpoint.pt")
+                if args.eval_every and (iteration % args.eval_every == 0 or iteration == start_iteration + cfg['iterations']):
+                    checkpoint=args.output/'checkpoint.pt'
+                    score=evaluate_checkpoint(checkpoint,iteration)
+                    shutil.copy2(checkpoint,args.output/('iteration_%04d.pt'%iteration))
+                    if score > best_ppo_eval:
+                        best_ppo_eval=score
+                        shutil.copy2(checkpoint,args.output/'ppo_best.pt')
+                    if score > best_eval:
+                        best_eval=score
+                        shutil.copy2(checkpoint,args.output/'eval_best.pt')
                 if args.seconds and time.monotonic() - start >= args.seconds:
                     break
     (args.output / "summary.json").write_text(

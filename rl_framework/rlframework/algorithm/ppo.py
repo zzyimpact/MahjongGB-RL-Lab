@@ -136,7 +136,9 @@ class PPOLearner:
         policy: ActorCriticPolicy,
         config: PPOConfig = PPOConfig(),
         device: Union[str, torch.device] = "cpu",
+        auxiliary_loss=None,
     ) -> None:
+        self.auxiliary_loss = auxiliary_loss
         self.policy = policy.to(device)
         self.config = config
         self.device = torch.device(device)
@@ -197,6 +199,11 @@ class PPOLearner:
                     items.get("obs"), items.get("action"), **kwargs
                 )
                 loss, metrics = ppo_objective(evaluation, items, valid, self.config)
+                if self.auxiliary_loss is not None:
+                    extra_loss, extra_metrics = self.auxiliary_loss(items, valid)
+                    loss = loss + extra_loss
+                    metrics.update(extra_metrics)
+                    metrics["loss"] = loss
                 self.optimizer.zero_grad()
                 loss.backward()
                 grad_norm = torch.nn.utils.clip_grad_norm_(

@@ -46,6 +46,9 @@ def main():
         "data_v2.py",
         "arena.py",
         "round3.py",
+        "round3_results.py",
+        "data_audit.py",
+        "ppo_anchor.py",
     }
     with zipfile.ZipFile(
         args.output / (game + "_bot.zip"), "w", zipfile.ZIP_DEFLATED
