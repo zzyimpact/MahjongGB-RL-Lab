@@ -1,0 +1,36 @@
+{
+  "summary": {
+    "env_steps": 51460,
+    "agent_steps": 102868,
+    "gradient_updates": 1263,
+    "completed_episodes": 320,
+    "iteration": 40,
+    "seconds": 162.45545945805497
+  },
+  "non_draw_fraction": 0.4625,
+  "mean_terminal_reward": 0.0,
+  "mean_metrics": {
+    "shared/ppo/loss": 0.006510972140966525,
+    "shared/ppo/policy_loss": -0.01125559053502265,
+    "shared/ppo/value_loss": 0.0368334584844671,
+    "shared/ppo/entropy": 0.3361898297596459,
+    "shared/ppo/approx_kl": 0.011657469699778527,
+    "shared/ppo/clip_fraction": 0.08522671850060379,
+    "shared/ppo/ratio": 1.0011461399305712,
+    "shared/ppo/bc_reference_kl": 0.13558658520951833,
+    "shared/ppo/grad_norm": 0.6103235186817679,
+    "shared/ppo/updates": 31.575
+  },
+  "last_metrics": {
+    "shared/ppo/loss": 0.00028400330730815176,
+    "shared/ppo/policy_loss": -0.00997483853411368,
+    "shared/ppo/value_loss": 0.020232445515936705,
+    "shared/ppo/entropy": 0.318032815159285,
+    "shared/ppo/approx_kl": 0.012107316629523824,
+    "shared/ppo/clip_fraction": 0.09452736342590133,
+    "shared/ppo/ratio": 1.003750999853301,
+    "shared/ppo/bc_reference_kl": 0.16614732752935607,
+    "shared/ppo/grad_norm": 0.3920677947549,
+    "shared/ppo/updates": 33.0
+  }
+}

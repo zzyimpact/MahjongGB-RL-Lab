@@ -1,0 +1,8 @@
+{
+  "rule": "Supplemental seed repeat; minimum validation CE, no new hyperparameter tuning",
+  "frozen_checkpoint_sha256": {
+    "C_seed2": "3cfe2d2409d522168e69d82980a08dcc68945d23b358286719ac0811007e6ba1",
+    "D_seed2": "6affb8813f3c609f5c3882db6727dd1c984ace8d22eddb13d8e26765568f88b7"
+  },
+  "test_accessed": false
+}

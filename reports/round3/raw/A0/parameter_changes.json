@@ -1,0 +1,12 @@
+{
+  "conv.0.weight": 0.0,
+  "conv.0.bias": 0.0,
+  "conv.2.weight": 0.0,
+  "conv.2.bias": 0.0,
+  "hidden.0.weight": 0.0,
+  "hidden.0.bias": 0.0,
+  "actor.weight": 3.9097228050231934,
+  "actor.bias": 2.3433403968811035,
+  "critic.weight": 0.0,
+  "critic.bias": 0.0
+}

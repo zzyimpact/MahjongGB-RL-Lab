@@ -1,0 +1,10 @@
+[
+  {
+    "device": "cpu",
+    "seconds_60_steps": 1.2690397500991821
+  },
+  {
+    "device": "mps",
+    "seconds_60_steps": 0.9261785421986133
+  }
+]

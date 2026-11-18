@@ -1,0 +1,83 @@
+{
+  "purpose": "development",
+  "seed_start": 7000000,
+  "walls": 4,
+  "seats": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "identities": {
+    "A": {
+      "path": "runs/codex_v2/A/checkpoint.pt",
+      "sha256": "82dc885561038a630e00dcccab4bc43905452e74d17fc04376691d1095f51ae8",
+      "bytes": 690466,
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "basic",
+        "feature_version": "v1",
+        "architecture": "tiny_cnn"
+      }
+    },
+    "old_rl": {
+      "path": "runs/rl_v1/checkpoint.pt",
+      "sha256": "efcb5d4c99ef4c1bb7a445384458a679e52708c1ecb2b73fb882c455d7b3e936",
+      "bytes": 691298,
+      "config": {
+        "seed": 2026,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 8,
+        "episodes_per_actor": 1,
+        "iterations": 300,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        }
+      }
+    }
+  },
+  "opponents": [
+    "random",
+    "teacher",
+    "old_rl"
+  ],
+  "candidates": [
+    "A"
+  ],
+  "bootstrap_seed": 20261119,
+  "bootstrap_replicates": 5000,
+  "bc_manifest_sha256": "2dd381d148712d5670ba1d0ccddd1fccf3848f5a252194037ef9ec2d85f78f11",
+  "wall_ids": [
+    "0be012f64f9e101676996333c9fd791d2a1dd2031154d256d2cde802ef9b6a77",
+    "700111f3f4cb05f39afd544a1b91070843b7e5efd2452e180dfbb4a0e4329297",
+    "e73ae1392adcd35cd6605542b682efd4f07afb16559e477ed022a778ac5cd9ba",
+    "fe6ece81cedf191db9bb5fb7848ccfdb8d8421d69171e194547471db9e322287"
+  ]
+}

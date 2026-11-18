@@ -2,6 +2,17 @@
 
 这套示例使用给定的RL框架训练国标麻将、双升和掼蛋。学生可任选一个游戏，修改特征、网络、算法和超参数。默认训练是多进程同步PPO：一个 learner、多个 CPU actor；四个玩家使用同一份模型参数的策略，收集各自轨迹用于训练。双升、掼蛋只学习出牌，开局阶段的决策使用手写规则。
 
+## 国标麻将第三轮实验（2026-11-19）
+
+已修复 BC 只训练 Actor 和按局切分泄漏，完成全量 12,288 局/512 牌墙的四模型消融、独立复式评估、受控 PPO 与本地部署验证。正式候选为开发集预选的 BC C；增强模型 D 是备选。短 PPO 出现退化，保留 BC。尚未验证课程官方 Baseline 或真实 Botzone 上传。
+
+- [完整报告与 Q1–Q10](reports/round3/ROUND3_REPORT.md)
+- [A/B/C/D 消融、置信区间及第二 seed](reports/round3/ABLATION_RESULTS.md)
+- [复现命令、数据来源和测试限制](reports/round3/REPRODUCIBILITY.md)
+- [可直接加载的权重和部署包](artifacts/round3/README.md)
+
+新实验入口为 `python -m mahjong.round3 --help`。历史 V1 checkpoint 仍可读取；旧按 game_id 切分的缓存必须用 `mahjong.data_v2` 重建。
+
 ## 交付目录与环境
 
 解压示例代码包后，在包含 `rl_framework/`、`mahjong/`、`tractor/`、`guandan/` 的根目录运行下文命令。三个游戏各自独立，代码不互相依赖。

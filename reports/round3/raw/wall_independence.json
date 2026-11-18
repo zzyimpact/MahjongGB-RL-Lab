@@ -1,0 +1,43 @@
+{
+  "counts": {
+    "arena_smoke": 4,
+    "arena_dev": 100,
+    "arena_final": 300,
+    "arena_ppo_final": 300,
+    "arena_seed2": 300,
+    "bc_all": 512,
+    "ppo_train": 320,
+    "ppo_development": 50
+  },
+  "pairwise_overlaps": {
+    "arena_dev vs arena_smoke": 0,
+    "arena_final vs arena_smoke": 0,
+    "arena_final vs arena_dev": 0,
+    "arena_ppo_final vs arena_smoke": 0,
+    "arena_ppo_final vs arena_dev": 0,
+    "arena_ppo_final vs arena_final": 0,
+    "arena_seed2 vs arena_smoke": 0,
+    "arena_seed2 vs arena_dev": 0,
+    "arena_seed2 vs arena_final": 0,
+    "arena_seed2 vs arena_ppo_final": 0,
+    "bc_all vs arena_smoke": 0,
+    "bc_all vs arena_dev": 0,
+    "bc_all vs arena_final": 0,
+    "bc_all vs arena_ppo_final": 0,
+    "bc_all vs arena_seed2": 0,
+    "ppo_train vs arena_smoke": 0,
+    "ppo_train vs arena_dev": 0,
+    "ppo_train vs arena_final": 0,
+    "ppo_train vs arena_ppo_final": 0,
+    "ppo_train vs arena_seed2": 0,
+    "ppo_train vs bc_all": 0,
+    "ppo_development vs arena_smoke": 0,
+    "ppo_development vs arena_dev": 0,
+    "ppo_development vs arena_final": 0,
+    "ppo_development vs arena_ppo_final": 0,
+    "ppo_development vs arena_seed2": 0,
+    "ppo_development vs bc_all": 0,
+    "ppo_development vs ppo_train": 0
+  },
+  "ppo_training_seed_start": 42000000
+}

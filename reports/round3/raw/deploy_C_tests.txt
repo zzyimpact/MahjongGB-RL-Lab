@@ -1,0 +1,4 @@
+{"cold_replay_turns": 174, "cold_replay_latency_ms": 585.09}
+.{"requests": 515, "first_request_ms": 643.69, "steady_mean_latency_ms": 0.8, "steady_max_latency_ms": 48.44}
+..
+3 passed in 3.50s

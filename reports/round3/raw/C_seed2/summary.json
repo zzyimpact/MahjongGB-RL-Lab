@@ -1,0 +1,7 @@
+{
+  "seconds": 309.40501770796254,
+  "best_val_loss": 0.38250185821066746,
+  "gradient_updates": 5319,
+  "parameters": 950316,
+  "checkpoint_bytes": 11454401
+}

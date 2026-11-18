@@ -1,0 +1,38 @@
+{
+  "identity": {
+    "path": "runs/codex_v2/B/checkpoint.pt",
+    "sha256": "6f1865e191ba6834bc15f9deeea32976ba626685a5cfc73c505ca82f0b518572",
+    "bytes": 738914,
+    "config": {
+      "seed": 20261119,
+      "hidden": 64,
+      "capacity": 128,
+      "actors": 4,
+      "episodes_per_actor": 1,
+      "iterations": 2000,
+      "device": "cpu",
+      "actor_timeout": 300,
+      "ppo": {
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.0003,
+        "epochs": 3,
+        "minibatch_size": 256,
+        "clip_epsilon": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01
+      },
+      "feature_set": "enhanced",
+      "feature_version": "v2",
+      "architecture": "tiny_cnn"
+    }
+  },
+  "parameters": 59500,
+  "encoding_mean_ms": 0.08993870788253844,
+  "cpu_forward_mean_ms": 0.09224715176969767,
+  "cpu_forward_p95_ms": 0.10092525044456123,
+  "cpu_forward_max_ms": 0.2709580585360527,
+  "process_peak_rss_bytes": 181911552,
+  "repetitions": 1000,
+  "threads": 1
+}

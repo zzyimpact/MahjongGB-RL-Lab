@@ -1,0 +1,19 @@
+{
+  "python": "3.10.21",
+  "torch": "2.3.1",
+  "pytorch_mps": true,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "mahjonggb": "1.4.0",
+  "hardware": [
+    "Apple M5 Pro",
+    "15",
+    "25769803776"
+  ],
+  "historical_sha256": {
+    "runs/bc_v1/checkpoint.pt": "9408b540e144ca2be7d9056d1137f6942f2acf8b588924d9d99e613631827942",
+    "runs/rl_v1/checkpoint.pt": "efcb5d4c99ef4c1bb7a445384458a679e52708c1ecb2b73fb882c455d7b3e936",
+    "submissions/mahjong_v1/mahjong_model.pt": "c9f4e1fdf246ae0badaa19ebb28bee29b68042802341951a3523358977120892"
+  },
+  "start_commit": "a4aaa23",
+  "remote_base": "1227e4a8ad9144976f4537176a793f01db06d747"
+}

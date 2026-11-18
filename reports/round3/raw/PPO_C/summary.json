@@ -1,0 +1,8 @@
+{
+  "env_steps": 51460,
+  "agent_steps": 102868,
+  "gradient_updates": 1263,
+  "completed_episodes": 320,
+  "iteration": 40,
+  "seconds": 162.45545945805497
+}

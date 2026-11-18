@@ -1,0 +1,176 @@
+{
+  "versioned": [
+    {
+      "path": "artifacts/round3/A/checkpoint.pt",
+      "bytes": 690466,
+      "sha256": "82dc885561038a630e00dcccab4bc43905452e74d17fc04376691d1095f51ae8"
+    },
+    {
+      "path": "artifacts/round3/A/config.json",
+      "bytes": 466,
+      "sha256": "dd6e3a65eed8c2896ea596b876a7cdda9019da1225adb2e2035c53630caa1c74"
+    },
+    {
+      "path": "artifacts/round3/A0/checkpoint.pt",
+      "bytes": 364514,
+      "sha256": "ccde9d0c4227749c194482af57b5965463f7cd08ee8821162299e0ebc385651b"
+    },
+    {
+      "path": "artifacts/round3/A0/config.json",
+      "bytes": 466,
+      "sha256": "dd6e3a65eed8c2896ea596b876a7cdda9019da1225adb2e2035c53630caa1c74"
+    },
+    {
+      "path": "artifacts/round3/B/checkpoint.pt",
+      "bytes": 738914,
+      "sha256": "6f1865e191ba6834bc15f9deeea32976ba626685a5cfc73c505ca82f0b518572"
+    },
+    {
+      "path": "artifacts/round3/B/config.json",
+      "bytes": 469,
+      "sha256": "a311762d7c7e5858d8355af4a393f03e07e4065476d304c22a47ec426f32f2c2"
+    },
+    {
+      "path": "artifacts/round3/C/checkpoint.pt",
+      "bytes": 11454401,
+      "sha256": "59f9d879bd2d90ee19f81f5b11716a527225db5b253f52d4566d8689328bb531"
+    },
+    {
+      "path": "artifacts/round3/C/config.json",
+      "bytes": 470,
+      "sha256": "f710a75cfd6149691e3ac64b47b17b8af0cd43c6ff10aa083d956ae4e63aba73"
+    },
+    {
+      "path": "artifacts/round3/D/checkpoint.pt",
+      "bytes": 11647937,
+      "sha256": "4821f1830230864d7a5526b02af63fbce83431d812b7394a20247b91508ca64e"
+    },
+    {
+      "path": "artifacts/round3/D/config.json",
+      "bytes": 473,
+      "sha256": "d426902ecd6cff0b4f47d6bdab3dba7c801790b5343692577ba42fc62caecf33"
+    },
+    {
+      "path": "artifacts/round3/PPO_C/ppo_best.pt",
+      "bytes": 11458183,
+      "sha256": "4f4c3cfedfaf99efbe6acd040c9f21afcb09c53976a6c6059a858e965b4817c9"
+    },
+    {
+      "path": "artifacts/round3/README.md",
+      "bytes": 1273,
+      "sha256": "13c5d1bdfa4551915c78c2c160b1bd6c14cdc2d539eed0d569d44f4db7a73041"
+    },
+    {
+      "path": "artifacts/round3/mahjong_v2_C/mahjong_bot.zip",
+      "bytes": 11670,
+      "sha256": "320b9429d9cb0b57f63fa568c98fff48bdc9f609429f1d90ba4680f854354137"
+    },
+    {
+      "path": "artifacts/round3/mahjong_v2_C/mahjong_model.pt",
+      "bytes": 3805546,
+      "sha256": "6a04a73896bd5ec6cd3f5b9dcb6cfaacb48a2c2eb8917e13b87ab5e5caf18ff9"
+    },
+    {
+      "path": "artifacts/round3/mahjong_v2_C/manifest.json",
+      "bytes": 994,
+      "sha256": "ff5909a282668c8134be1f46c7f2d923a87021785f551f4cf23fa6f74e78f90a"
+    },
+    {
+      "path": "artifacts/round3/mahjong_v2_D/mahjong_bot.zip",
+      "bytes": 11670,
+      "sha256": "981a24e374408f8349065e0ed6b082daf2888f1771b3fbd89988dd83168c71a3"
+    },
+    {
+      "path": "artifacts/round3/mahjong_v2_D/mahjong_model.pt",
+      "bytes": 3870059,
+      "sha256": "0cadac65ae6e245c4431d338e192953c2d32ea1c9a9d919228d8d88b0fa6448c"
+    },
+    {
+      "path": "artifacts/round3/mahjong_v2_D/manifest.json",
+      "bytes": 997,
+      "sha256": "98a9e3cb010f2fd23b23ba8d2ce9bb27f10046ba8e53cf9368c67a38d1c89f48"
+    },
+    {
+      "path": "artifacts/round3/references/bc_v1.pt",
+      "bytes": 239970,
+      "sha256": "9408b540e144ca2be7d9056d1137f6942f2acf8b588924d9d99e613631827942"
+    },
+    {
+      "path": "artifacts/round3/references/rl_v1.pt",
+      "bytes": 691298,
+      "sha256": "efcb5d4c99ef4c1bb7a445384458a679e52708c1ecb2b73fb882c455d7b3e936"
+    }
+  ],
+  "local_checkpoints": [
+    {
+      "path": "runs/codex_v2/A/checkpoint.pt",
+      "bytes": 690466,
+      "sha256": "82dc885561038a630e00dcccab4bc43905452e74d17fc04376691d1095f51ae8"
+    },
+    {
+      "path": "runs/codex_v2/A0/checkpoint.pt",
+      "bytes": 364514,
+      "sha256": "ccde9d0c4227749c194482af57b5965463f7cd08ee8821162299e0ebc385651b"
+    },
+    {
+      "path": "runs/codex_v2/B/checkpoint.pt",
+      "bytes": 738914,
+      "sha256": "6f1865e191ba6834bc15f9deeea32976ba626685a5cfc73c505ca82f0b518572"
+    },
+    {
+      "path": "runs/codex_v2/C/checkpoint.pt",
+      "bytes": 11454401,
+      "sha256": "59f9d879bd2d90ee19f81f5b11716a527225db5b253f52d4566d8689328bb531"
+    },
+    {
+      "path": "runs/codex_v2/C_seed2/checkpoint.pt",
+      "bytes": 11454401,
+      "sha256": "3cfe2d2409d522168e69d82980a08dcc68945d23b358286719ac0811007e6ba1"
+    },
+    {
+      "path": "runs/codex_v2/D/checkpoint.pt",
+      "bytes": 11647937,
+      "sha256": "4821f1830230864d7a5526b02af63fbce83431d812b7394a20247b91508ca64e"
+    },
+    {
+      "path": "runs/codex_v2/D_seed2/checkpoint.pt",
+      "bytes": 11647937,
+      "sha256": "6affb8813f3c609f5c3882db6727dd1c984ace8d22eddb13d8e26765568f88b7"
+    },
+    {
+      "path": "runs/codex_v2/PPO_C/checkpoint.pt",
+      "bytes": 11458247,
+      "sha256": "905dae59a99a4032c9bb30baf0082e1a777d7d5191ddcb975171e8b8f776576a"
+    },
+    {
+      "path": "runs/codex_v2/PPO_C/eval_best.pt",
+      "bytes": 11454401,
+      "sha256": "59f9d879bd2d90ee19f81f5b11716a527225db5b253f52d4566d8689328bb531"
+    },
+    {
+      "path": "runs/codex_v2/PPO_C/iteration_0010.pt",
+      "bytes": 11458183,
+      "sha256": "4f4c3cfedfaf99efbe6acd040c9f21afcb09c53976a6c6059a858e965b4817c9"
+    },
+    {
+      "path": "runs/codex_v2/PPO_C/iteration_0020.pt",
+      "bytes": 11458183,
+      "sha256": "492c477294b89cb922d4af13f3ced70dee8878f1bc0d63d6d511713d24c6919a"
+    },
+    {
+      "path": "runs/codex_v2/PPO_C/iteration_0030.pt",
+      "bytes": 11458247,
+      "sha256": "db6332af8f440d96ee86c0b530a2e3794eda1b2c5e975a386ab8f4b3c635505f"
+    },
+    {
+      "path": "runs/codex_v2/PPO_C/iteration_0040.pt",
+      "bytes": 11458247,
+      "sha256": "905dae59a99a4032c9bb30baf0082e1a777d7d5191ddcb975171e8b8f776576a"
+    },
+    {
+      "path": "runs/codex_v2/PPO_C/ppo_best.pt",
+      "bytes": 11458183,
+      "sha256": "4f4c3cfedfaf99efbe6acd040c9f21afcb09c53976a6c6059a858e965b4817c9"
+    }
+  ]
+}

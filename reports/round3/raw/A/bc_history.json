@@ -1,0 +1,248 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 0.4023633753455619,
+    "gradient_updates": 1773,
+    "mean_grad_norm": 0.2604484216336873,
+    "train_seconds": 10.273190874839202,
+    "samples_per_second": 176710.0428792933,
+    "val": {
+      "loss": 0.4034729052362638,
+      "nonforced_loss": 1.2758134671433201,
+      "accuracy": 0.8570837616265952,
+      "samples": 239322,
+      "metrics": {
+        "all": {
+          "correct": 205119,
+          "samples": 239322,
+          "accuracy": 0.8570837616265952
+        },
+        "nonpass": {
+          "correct": 34253,
+          "samples": 66709,
+          "accuracy": 0.5134689472185162
+        },
+        "nonforced": {
+          "correct": 41482,
+          "samples": 75685,
+          "accuracy": 0.5480874677941467
+        },
+        "pass": {
+          "correct": 170866,
+          "samples": 172613,
+          "accuracy": 0.9898790936951446
+        },
+        "hu": {
+          "correct": 1222,
+          "samples": 1222,
+          "accuracy": 1.0
+        },
+        "play": {
+          "correct": 30170,
+          "samples": 59733,
+          "accuracy": 0.5050809435320509
+        },
+        "chi": {
+          "correct": 1168,
+          "samples": 3182,
+          "accuracy": 0.3670647391577624
+        },
+        "peng": {
+          "correct": 1560,
+          "samples": 2387,
+          "accuracy": 0.6535400083787181
+        },
+        "gang": {
+          "correct": 20,
+          "samples": 43,
+          "accuracy": 0.46511627906976744
+        },
+        "angang": {
+          "correct": 18,
+          "samples": 25,
+          "accuracy": 0.72
+        },
+        "bugang": {
+          "correct": 95,
+          "samples": 117,
+          "accuracy": 0.811965811965812
+        }
+      },
+      "accuracy_by_verb": {
+        "pass": 0.9898790936951446,
+        "hu": 1.0,
+        "play": 0.5050809435320509,
+        "chi": 0.3670647391577624,
+        "peng": 0.6535400083787181,
+        "gang": 0.46511627906976744,
+        "angang": 0.72,
+        "bugang": 0.811965811965812
+      }
+    },
+    "elapsed_seconds": 13.713241999968886
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.32513364798865435,
+    "gradient_updates": 3546,
+    "mean_grad_norm": 0.3045664483369304,
+    "train_seconds": 13.0939064999111,
+    "samples_per_second": 138642.81068543796,
+    "val": {
+      "loss": 0.39647381686312333,
+      "nonforced_loss": 1.253681798726901,
+      "accuracy": 0.8605560709002933,
+      "samples": 239322,
+      "metrics": {
+        "all": {
+          "correct": 205950,
+          "samples": 239322,
+          "accuracy": 0.8605560709002933
+        },
+        "nonpass": {
+          "correct": 35168,
+          "samples": 66709,
+          "accuracy": 0.5271852373742674
+        },
+        "nonforced": {
+          "correct": 42313,
+          "samples": 75685,
+          "accuracy": 0.5590671863645372
+        },
+        "pass": {
+          "correct": 170782,
+          "samples": 172613,
+          "accuracy": 0.989392455956388
+        },
+        "hu": {
+          "correct": 1222,
+          "samples": 1222,
+          "accuracy": 1.0
+        },
+        "play": {
+          "correct": 30833,
+          "samples": 59733,
+          "accuracy": 0.5161803358277669
+        },
+        "chi": {
+          "correct": 1410,
+          "samples": 3182,
+          "accuracy": 0.44311753614079197
+        },
+        "peng": {
+          "correct": 1580,
+          "samples": 2387,
+          "accuracy": 0.6619187264348555
+        },
+        "gang": {
+          "correct": 19,
+          "samples": 43,
+          "accuracy": 0.4418604651162791
+        },
+        "angang": {
+          "correct": 8,
+          "samples": 25,
+          "accuracy": 0.32
+        },
+        "bugang": {
+          "correct": 96,
+          "samples": 117,
+          "accuracy": 0.8205128205128205
+        }
+      },
+      "accuracy_by_verb": {
+        "pass": 0.989392455956388,
+        "hu": 1.0,
+        "play": 0.5161803358277669,
+        "chi": 0.44311753614079197,
+        "peng": 0.6619187264348555,
+        "gang": 0.4418604651162791,
+        "angang": 0.32,
+        "bugang": 0.8205128205128205
+      }
+    },
+    "elapsed_seconds": 28.667368334019557
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.29776522332734107,
+    "gradient_updates": 5319,
+    "mean_grad_norm": 0.3130352440370521,
+    "train_seconds": 11.23234924999997,
+    "samples_per_second": 161620.33067125338,
+    "val": {
+      "loss": 0.40499901054861087,
+      "nonforced_loss": 1.2806391353421949,
+      "accuracy": 0.8618931815712721,
+      "samples": 239322,
+      "metrics": {
+        "all": {
+          "correct": 206270,
+          "samples": 239322,
+          "accuracy": 0.8618931815712721
+        },
+        "nonpass": {
+          "correct": 34946,
+          "samples": 66709,
+          "accuracy": 0.5238573505823801
+        },
+        "nonforced": {
+          "correct": 42633,
+          "samples": 75685,
+          "accuracy": 0.5632952368368898
+        },
+        "pass": {
+          "correct": 171324,
+          "samples": 172613,
+          "accuracy": 0.9925324280326511
+        },
+        "hu": {
+          "correct": 1222,
+          "samples": 1222,
+          "accuracy": 1.0
+        },
+        "play": {
+          "correct": 30829,
+          "samples": 59733,
+          "accuracy": 0.5161133711683659
+        },
+        "chi": {
+          "correct": 1263,
+          "samples": 3182,
+          "accuracy": 0.39692017598994345
+        },
+        "peng": {
+          "correct": 1505,
+          "samples": 2387,
+          "accuracy": 0.6304985337243402
+        },
+        "gang": {
+          "correct": 23,
+          "samples": 43,
+          "accuracy": 0.5348837209302325
+        },
+        "angang": {
+          "correct": 8,
+          "samples": 25,
+          "accuracy": 0.32
+        },
+        "bugang": {
+          "correct": 96,
+          "samples": 117,
+          "accuracy": 0.8205128205128205
+        }
+      },
+      "accuracy_by_verb": {
+        "pass": 0.9925324280326511,
+        "hu": 1.0,
+        "play": 0.5161133711683659,
+        "chi": 0.39692017598994345,
+        "peng": 0.6304985337243402,
+        "gang": 0.5348837209302325,
+        "angang": 0.32,
+        "bugang": 0.8205128205128205
+      }
+    },
+    "elapsed_seconds": 41.36294537503272
+  }
+]

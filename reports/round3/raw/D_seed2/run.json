@@ -1,0 +1,41 @@
+{
+  "data": [
+    "data/codex_v2/enhanced_v2"
+  ],
+  "output": "runs/codex_v2/D_seed2",
+  "config": {
+    "seed": 20261120,
+    "hidden": 64,
+    "capacity": 128,
+    "actors": 4,
+    "episodes_per_actor": 1,
+    "iterations": 2000,
+    "device": "cpu",
+    "actor_timeout": 300,
+    "ppo": {
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "learning_rate": 0.0003,
+      "epochs": 3,
+      "minibatch_size": 256,
+      "clip_epsilon": 0.2,
+      "value_coefficient": 0.5,
+      "entropy_coefficient": 0.01
+    },
+    "feature_set": "enhanced",
+    "feature_version": "v2",
+    "architecture": "small_resnet"
+  },
+  "feature_set": "enhanced",
+  "architecture": "small_resnet",
+  "actor_only_control": false,
+  "epochs": 3,
+  "batch_size": 1024,
+  "lr": 0.001,
+  "device": "mps",
+  "seed": 20261120,
+  "threads": 4,
+  "parameters": 966444,
+  "optimized_parameters": 966187,
+  "manifest_sha256": "4ecc9c643c0bcfb63758ef1d61b7b54cc0231e5215f741ba1b5f13f785920f58"
+}

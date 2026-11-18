@@ -1,0 +1,139 @@
+.......................s...........ssFF..F.F........                     [100%]
+=================================== FAILURES ===================================
+____ DependencyBoundaryTests.test_fdl_compiles_and_encodes_without_rl_stack ____
+
+self = <tests.test_dependency_boundaries.DependencyBoundaryTests testMethod=test_fdl_compiles_and_encodes_without_rl_stack>
+
+        def test_fdl_compiles_and_encodes_without_rl_stack(self):
+>           self.run_isolated(
+                ["rlframework", "torch", "tensordict"],
+                """
+    from fdl import Compiler
+    from pathlib import Path
+    from tempfile import TemporaryDirectory
+    from types import SimpleNamespace
+    with TemporaryDirectory() as folder:
+        root = Path(folder)
+        proto, feature = root/'frame.proto', root/'feature.fdl'
+        proto.write_text('message Frame { required float hp = 1; }')
+        feature.write_text('main(Frame) -> [ hp: norm(0,100) ]')
+        result = Compiler().compile_paths([proto], [feature]).require_success()
+        namespace = {}
+        exec(next(iter(result.python_sources.values())), namespace)
+        assert namespace['main'](SimpleNamespace(hp=25)) == [.25]
+    """,
+            )
+
+rl_framework/tests/test_dependency_boundaries.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+rl_framework/tests/test_dependency_boundaries.py:30: in run_isolated
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+E   AssertionError: 1 != 0 : Traceback (most recent call last):
+E     File "<string>", line 10, in <module>
+E   ModuleNotFoundError: No module named 'fdl'
+____ DependencyBoundaryTests.test_generated_runtime_does_not_import_parser _____
+
+self = <tests.test_dependency_boundaries.DependencyBoundaryTests testMethod=test_generated_runtime_does_not_import_parser>
+
+        def test_generated_runtime_does_not_import_parser(self):
+>           self.run_isolated(
+                ["pyparsing", "fdl.project", "fdl.semantic", "fdl.proto_parser"],
+                """
+    from pathlib import Path
+    from types import SimpleNamespace
+    from rlframework.utils.fdl_bridge import load_fdl, FDLFieldBinding
+    root = Path("rl_examples/03_fdl_treasure_grid/generated")
+    assert root.joinpath('features.json').is_file(), 'build example features before this test'
+    adapter = load_fdl(root, [FDLFieldBinding('obs', Path('feature.fdl'), 'observation')])
+    assert adapter.spec.fields['obs'].shape == (86,)
+    """,
+            )
+
+rl_framework/tests/test_dependency_boundaries.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+rl_framework/tests/test_dependency_boundaries.py:30: in run_isolated
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+E   AssertionError: 1 != 0 : Traceback (most recent call last):
+E     File "<string>", line 14, in <module>
+E   AssertionError: build example features before this test
+____ FeatureAdapterTests.test_loader_rejects_missing_and_modified_artifacts ____
+
+self = <tests.test_features_and_specs.FeatureAdapterTests testMethod=test_loader_rejects_missing_and_modified_artifacts>
+
+    def test_loader_rejects_missing_and_modified_artifacts(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            proto, feature = root / "f.proto", root / "f.fdl"
+            binding = FDLFieldBinding("obs", feature, "main")
+            with self.assertRaises(FileNotFoundError):
+                load_fdl(root, [binding])
+            proto.write_text(
+                "message Frame { required float hp = 1; }", encoding="utf-8"
+            )
+            feature.write_text("main(Frame) -> [ hp ]", encoding="utf-8")
+>           compile_fdl([proto], [feature], root)
+
+rl_framework/tests/test_features_and_specs.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+proto_paths = [PosixPath('/var/folders/_5/gvs4wnz17dd_djsrwcs3n1m40000gn/T/tmp4mg9jcls/f.proto')]
+fdl_paths = [PosixPath('/var/folders/_5/gvs4wnz17dd_djsrwcs3n1m40000gn/T/tmp4mg9jcls/f.fdl')]
+output_directory = PosixPath('/var/folders/_5/gvs4wnz17dd_djsrwcs3n1m40000gn/T/tmp4mg9jcls')
+operator_paths = ()
+
+    def compile_fdl(
+        proto_paths: Sequence[Path],
+        fdl_paths: Sequence[Path],
+        output_directory: Path,
+        operator_paths: Sequence[Path] = (),
+    ) -> Path:
+        """Write generated modules, docs and a relative, content-addressed manifest."""
+>       from fdl.project import Compiler
+E       ModuleNotFoundError: No module named 'fdl'
+
+rl_framework/rlframework/utils/fdl_bridge.py:37: ModuleNotFoundError
+_ FeatureAdapterTests.test_multiple_fdl_rules_become_separate_tensor_dict_fields _
+
+self = <tests.test_features_and_specs.FeatureAdapterTests testMethod=test_multiple_fdl_rules_become_separate_tensor_dict_fields>
+
+    def test_multiple_fdl_rules_become_separate_tensor_dict_fields(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            proto = root / "frame.proto"
+            feature = root / "feature.fdl"
+            proto.write_text(
+                "message Frame { required float hp = 1; required int32 mask = 2; }",
+                encoding="utf-8",
+            )
+            feature.write_text(
+                "observation(Frame) -> [ hp: norm(0, 100) ]\n"
+                "action_mask(Frame) -> [ mask: one_hot(0, 1) ]\n",
+                encoding="utf-8",
+            )
+>           compile_fdl([proto], [feature], root / "generated")
+
+rl_framework/tests/test_features_and_specs.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+proto_paths = [PosixPath('/var/folders/_5/gvs4wnz17dd_djsrwcs3n1m40000gn/T/tmp684icfv1/frame.proto')]
+fdl_paths = [PosixPath('/var/folders/_5/gvs4wnz17dd_djsrwcs3n1m40000gn/T/tmp684icfv1/feature.fdl')]
+output_directory = PosixPath('/var/folders/_5/gvs4wnz17dd_djsrwcs3n1m40000gn/T/tmp684icfv1/generated')
+operator_paths = ()
+
+    def compile_fdl(
+        proto_paths: Sequence[Path],
+        fdl_paths: Sequence[Path],
+        output_directory: Path,
+        operator_paths: Sequence[Path] = (),
+    ) -> Path:
+        """Write generated modules, docs and a relative, content-addressed manifest."""
+>       from fdl.project import Compiler
+E       ModuleNotFoundError: No module named 'fdl'
+
+rl_framework/rlframework/utils/fdl_bridge.py:37: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED rl_framework/tests/test_dependency_boundaries.py::DependencyBoundaryTests::test_fdl_compiles_and_encodes_without_rl_stack
+FAILED rl_framework/tests/test_dependency_boundaries.py::DependencyBoundaryTests::test_generated_runtime_does_not_import_parser
+FAILED rl_framework/tests/test_features_and_specs.py::FeatureAdapterTests::test_loader_rejects_missing_and_modified_artifacts
+FAILED rl_framework/tests/test_features_and_specs.py::FeatureAdapterTests::test_multiple_fdl_rules_become_separate_tensor_dict_fields
+4 failed, 45 passed, 3 skipped in 12.70s

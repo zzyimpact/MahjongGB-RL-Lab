@@ -1,0 +1,50 @@
+{
+  "decisive_episode_seed": 797,
+  "episode": {
+    "trajectories": 4,
+    "keys": [
+      "TrajectoryKey(env_id='audit', episode_id=20, agent_id='1', segment_id=20)",
+      "TrajectoryKey(env_id='audit', episode_id=20, agent_id='0', segment_id=20)",
+      "TrajectoryKey(env_id='audit', episode_id=20, agent_id='2', segment_id=20)",
+      "TrajectoryKey(env_id='audit', episode_id=20, agent_id='3', segment_id=20)"
+    ],
+    "env_steps": 181,
+    "agent_steps": 361
+  },
+  "telescoping_max_abs_err": 3.5762786865234375e-07,
+  "reward_only_on_last_decision": true,
+  "terminal_flags_and_discounts_ok": true,
+  "terminal_rewards_by_seat": {
+    "1": -0.625,
+    "0": -0.625,
+    "2": -0.625,
+    "3": 1.875
+  },
+  "zero_sum_check": true,
+  "return_identity": true,
+  "numpy_gae_max_abs_err": 2.4683620787179644e-07,
+  "ratio_before_update": {
+    "max_abs_dev_from_1": 9.5367431640625e-07,
+    "note": "behavior logp stored detached at action time; identical weights must give ratio 1"
+  },
+  "gradient_update_formula": {
+    "formula": "epochs(3) * ceil(agent_steps / minibatch(256))",
+    "iterations_mismatching": 0,
+    "total_iterations": 300
+  },
+  "rl_v1_totals_from_logs": {
+    "sum_env_steps": 423189.0,
+    "sum_agent_steps": 846109.0,
+    "sum_gradient_updates": 10401.0,
+    "sum_completed_episodes": 2400.0,
+    "episodes_per_iteration": [
+      8.0
+    ],
+    "distinct_walls_note": "each episode uses seed 2026+cursor; 2400 episodes = 2400 distinct seeds/walls"
+  },
+  "nonzero_terminal_fraction": {
+    "first50": 0.1275,
+    "last50": 0.2325,
+    "definition": "fraction of per-seat trajectories with nonzero summed reward (win or loss, not draw)"
+  }
+}

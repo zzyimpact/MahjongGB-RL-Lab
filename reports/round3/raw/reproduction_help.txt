@@ -1,0 +1,15 @@
+usage: round3.py [-h] [--input INPUT] --data-root DATA_ROOT --output OUTPUT
+                 [--device DEVICE] [--workers WORKERS]
+                 [--ppo-iterations PPO_ITERATIONS] [--old-bc OLD_BC]
+                 [--old-rl OLD_RL]
+
+options:
+  -h, --help            show this help message and exit
+  --input INPUT
+  --data-root DATA_ROOT
+  --output OUTPUT
+  --device DEVICE
+  --workers WORKERS
+  --ppo-iterations PPO_ITERATIONS
+  --old-bc OLD_BC
+  --old-rl OLD_RL

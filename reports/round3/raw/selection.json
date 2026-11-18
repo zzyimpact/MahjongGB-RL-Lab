@@ -1,0 +1,15 @@
+{
+  "selected": "C",
+  "rule": "Highest development-arena mean reward versus frozen Teacher; candidate set A/B/C/D only",
+  "development": "runs/codex_v2/arena_dev/results.json",
+  "frozen_checkpoint_sha256": {
+    "A": "82dc885561038a630e00dcccab4bc43905452e74d17fc04376691d1095f51ae8",
+    "B": "6f1865e191ba6834bc15f9deeea32976ba626685a5cfc73c505ca82f0b518572",
+    "C": "59f9d879bd2d90ee19f81f5b11716a527225db5b253f52d4566d8689328bb531",
+    "D": "4821f1830230864d7a5526b02af63fbce83431d812b7394a20247b91508ca64e",
+    "A0": "ccde9d0c4227749c194482af57b5965463f7cd08ee8821162299e0ebc385651b",
+    "legacy_bc": "9408b540e144ca2be7d9056d1137f6942f2acf8b588924d9d99e613631827942"
+  },
+  "test_accessed": false,
+  "final_arena_accessed": false
+}

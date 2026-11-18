@@ -1,0 +1,9 @@
+{
+  "resume": "runs/codex_v2/C/checkpoint.pt",
+  "bc_reference": "runs/codex_v2/C/checkpoint.pt",
+  "bc_kl": 0.02,
+  "eval_every": 10,
+  "eval_walls": 50,
+  "eval_seed": 8100000,
+  "resume_sha256": "59f9d879bd2d90ee19f81f5b11716a527225db5b253f52d4566d8689328bb531"
+}

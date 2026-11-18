@@ -1,0 +1,36 @@
+{
+  "identical_assignments": true,
+  "identical_basic_prefix_labels_masks_game_ids": true,
+  "legal_samples": 2284530,
+  "source_reconstruction_checked_game_ids": [
+    0,
+    238,
+    263,
+    5604,
+    6264,
+    6372,
+    11810,
+    12192,
+    12287
+  ],
+  "enhanced_float16_storage_lossless": true,
+  "unique_enhanced_samples": {
+    "train": 968370,
+    "val": 135646,
+    "test": 125322
+  },
+  "cross_split_unique_enhanced_byte_overlap": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "historical_teacher": {
+    "seeds": [
+      0,
+      999
+    ],
+    "unique_walls": 1000,
+    "ijcai_overlap": 0,
+    "used_in_round3": false
+  }
+}
