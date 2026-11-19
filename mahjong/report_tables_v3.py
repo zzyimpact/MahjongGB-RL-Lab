@@ -68,7 +68,8 @@ def generate(root,report,release):
     for n,r in test['models'].items():
         for cat,m in r['metrics']['metrics'].items():classes.append([n,cat,m['correct'],m['samples'],pct(m['accuracy'])])
     paired_table=table(['预注册差值','均值 [95% CI]','三主要比较 Bonferroni 区间'],[[n,ci(r),'[%+.4f, %+.4f]'%tuple(r['bonferroni_family_ci95'])] for n,r in confirm['contrasts'].items()])
-    (report/'RESULT_TABLES.md').write_text('# 最终机器记录汇总\n\n## 五冻结对手 / 500独立墙\n\n'+final_table+'\n每模型每对手2000局，四座位先按墙聚合；区间不是把座位当独立样本计算。\n\n'+paired_table+'\n## 封存后 Test\n\n'+test_table+'\n总体准确率含大量强制PASS；只看总体准确率会夸大模型质量。Test仅51副独立墙。少样本 GANG/ANGANG 指标不能代表稳定水平。\n\n'+table(['模型','类别','正确','真实样本数','准确率'],classes))
+    opponents_table=table(['模型 vs 对手','reward [95% CI]','墙聚类SE','原始得分差 [95% CI]','胜率','负率','荒庄率','独立墙'],[[n,ci(r['reward']),'%.5f'%r['reward']['se'],ci(r['score_difference']),pct(r['win']['mean']),pct(r['loss']['mean']),pct(r['draw']['mean']),r['reward']['walls']] for n,r in final['summary'].items()])
+    (report/'RESULT_TABLES.md').write_text('# 最终机器记录汇总\n\n## 五冻结对手 / 500独立墙\n\n'+final_table+'\n每模型每对手2000局，四座位先按墙聚合；区间不是把座位当独立样本计算。\n\n'+paired_table+'\n## 各冻结对手的完整统计\n\n'+opponents_table+'\n原始得分差为候选分数减其余三家平均分；零和规则下与候选reward线性相关，不能当作额外独立证据。胜/负/荒庄也是按墙聚合，完整比例区间在raw Arena JSON。\n\n## 封存后 Test\n\n'+test_table+'\n总体准确率含大量强制PASS；只看总体准确率会夸大模型质量。Test仅51副独立墙。少样本 GANG/ANGANG 指标不能代表稳定水平。\n\n'+table(['模型','类别','正确','真实样本数','准确率'],classes))
     deploy=[];runtime=[]
     for directory in sorted(release.iterdir()):
         if not directory.is_dir() or not (directory/'submission_check.json').exists():continue
