@@ -22,5 +22,7 @@
   "training_seed_selection": "Retain preregistered main seed 20261119 unless paired development CI supports a different seed; all seeds remain reported",
   "revision_time": "2026-11-19 Asia/Shanghai",
   "additional_development_control": "D/V3 legacy Adam .001, full 1024 position batches, no smoothing/WD, clip10, minimum12 epochs; registered before any final outcome; binary-fraction feature storage is lossless but elided forced rows change batch shape and floating-point kernels",
-  "legacy_replication": "After V3 legacy epoch1 validation NF CE .8232 and development mean .3015, before final sealing: repeat same full-batch Adam D/V3 recipe at seeds 20261120/20261121; keep main training seed unless paired development interval supports another"
+  "legacy_replication": "After V3 legacy epoch1 validation NF CE .8232 and development mean .3015, before final sealing: repeat same full-batch Adam D/V3 recipe at seeds 20261120/20261121; keep main training seed unless paired development interval supports another",
+  "legacy_stage_selection": "Compare main-seed legacy val-best plus epochs3/6/12 on development only; retain val-best unless a later paired reward interval excludes zero; repeat selected stage on other training seeds",
+  "legacy_ppo": "After legacy main-seed stage screening, 1024-game anchor1.0 PPO with isolated critic, new training seeds130010000+, new periodic development110300000+64 walls, episode-local stochastic seeds enabled. Fresh BC initialization, not old PPO continuation."
 }

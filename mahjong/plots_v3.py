@@ -34,7 +34,7 @@ def plots(root,output,final_arena=None):
     fig.savefig(output/'bc_ablations.png');plt.close(fig)
     fig,ax=plt.subplots(2,2,figsize=(12,8),layout='constrained');found=False
     for directory in sorted(root.glob('PPO*')):
-        if directory.name=='PPO_smoke' or not (directory/'metrics.jsonl').exists():continue
+        if 'smoke' in directory.name.lower() or not (directory/'metrics.jsonl').exists():continue
         h=[json.loads(line) for line in (directory/'metrics.jsonl').read_text().splitlines()]
         if not h:continue
         found=True;steps=[r['counters']['completed_episodes'] for r in h]
