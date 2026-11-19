@@ -70,3 +70,27 @@ def test_custom_arena_registry_blocks_final_development_overlap(tmp_path):
     (prior/'arena_config.json').write_text(json.dumps(dict(purpose='development',wall_ids=[wall_hash(170000000)])))
     with pytest.raises(ValueError,match='overlap'):
         run({'C':'artifacts/round3/C/checkpoint.pt'},{'random':None},'reports/round3/raw/split_manifest.json',tmp_path/'final',170000000,2,1,'final',registry_root=tmp_path)
+
+
+def test_candidate_shanten_matches_native_combined_after_real_melds():
+    from MahjongGB import MahjongShanten
+    from mahjong.env import Environment
+    from tensordict import TensorDict
+    seen=set();checked=0;rng=np.random.RandomState(517)
+    for seed in range(12):
+        env=Environment(feature_set='v3');env.reset({'seed':180000000+seed})
+        while not env.core.done:
+            actions={}
+            for seat in env.core.obs:
+                v=env.views[seat];a=encode(v,'v3')
+                for action in v.valid:
+                    if 2<=action<36:
+                        hand=v.hand.copy();hand.remove(v.TILE_LIST[action-2])
+                        combined=MahjongShanten(pack=tuple(v.packs[0]),hand=tuple(hand))
+                        assert a['candidate'][action-2,6]*16==combined
+                        seen.add(len(v.packs[0]));checked+=1
+                melds=[x for x in v.valid if x>=36]
+                action=1 if 1 in v.valid else int(rng.choice(melds if melds else v.valid))
+                actions[str(seat)]=TensorDict({'action':torch.tensor(action)},[])
+            env.step(actions)
+    assert checked>500 and {0,1,2}.issubset(seen)

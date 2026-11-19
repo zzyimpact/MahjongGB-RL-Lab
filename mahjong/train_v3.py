@@ -28,7 +28,27 @@ class Dataset:
             g=gm[int(gid)]
             if g['split']!=split or self.manifest['groups'][g['wall_id']]!=split:raise ValueError('cache/split mismatch')
         self.counts=self.manifest['summary'][split]
+        self.full_index=None
+        if split=='train' and config.get('bc',{}).get('sampling')=='full_equivalent':
+            path=self.root/'train_full_index.npy';record=json.loads((self.root/'full_sampling.json').read_text())
+            if record['manifest_sha256']!=hashlib.sha256((self.root/'manifest.json').read_bytes()).hexdigest() or record['index_sha256']!=hashlib.sha256(path.read_bytes()).hexdigest():raise ValueError('full sampling index identity mismatch')
+            self.full_index=np.load(path,mmap_mode='r')
+            if len(self.full_index)!=self.counts['samples'] or not np.array_equal(self.full_index[self.full_index>=0],np.arange(len(self))):raise ValueError('full sampling index malformed')
     def __len__(self):return len(self.arrays['action'])
+    @property
+    def training_samples(self):return len(self.full_index) if self.full_index is not None else len(self)
+    def training_batches(self,batch_size,device,seed):
+        if self.full_index is None:
+            for inputs,mask,action in self.batches(batch_size,device,seed):yield inputs,mask,action,len(action)
+            return
+        order=np.random.RandomState(seed).permutation(len(self.full_index))
+        for start in range(0,len(order),batch_size):
+            positions=order[start:start+batch_size];ix=self.full_index[positions];ix=ix[ix>=0]
+            inputs={k:torch.tensor(np.asarray(self.arrays[k][ix]),device=device,dtype=torch.float32) for k in self.keys}
+            if self.config.get('feature_set','basic')=='basic':inputs['obs']=inputs['obs'][:,:6]
+            mask=torch.tensor(np.asarray(self.arrays['mask'][ix]),device=device,dtype=torch.bool)
+            action=torch.tensor(np.asarray(self.arrays['action'][ix]),device=device,dtype=torch.long)
+            yield inputs,mask,action,len(positions)
     def batches(self, batch_size, device, seed=None):
         order=np.random.RandomState(seed).permutation(len(self)) if seed is not None else None
         for start in range(0,len(self),batch_size):
@@ -85,11 +105,14 @@ def train(config_file,data,output,resume=False):
     out.mkdir(parents=True,exist_ok=True);torch.set_num_threads(4)
     seed=cfg['seed'];torch.manual_seed(seed);np.random.seed(seed);random.seed(seed)
     device=torch.device(cfg.get('device','mps'));policy=make_policy(config=cfg).to(device);model=policy.module
-    params=bc_parameters(model);spec=cfg['bc'];optimizer=torch.optim.AdamW(params,lr=spec['lr'],weight_decay=spec['weight_decay'])
+    params=bc_parameters(model);spec=cfg['bc']
+    optimizer_class={'adamw':torch.optim.AdamW,'adam':torch.optim.Adam}[spec.get('optimizer','adamw')]
+    optimizer=optimizer_class(params,lr=spec['lr'],weight_decay=spec['weight_decay'])
     train_ds=Dataset(data,'train',cfg);val_ds=Dataset(data,'val',cfg)
     run=dict(config=cfg,data=str(data),manifest_sha256=hashlib.sha256((Path(data)/'manifest.json').read_bytes()).hexdigest(),
              source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
              source_files={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in Path('mahjong').glob('*.py')},parameters=sum(p.numel() for p in model.parameters()))
+    if train_ds.full_index is not None:run['full_sampling']=json.loads((Path(data)/'full_sampling.json').read_text())
     history=[];updates=0;best=float('inf');best_epoch=0;start_epoch=1;elapsed=0.
     if resume:
         old=json.loads((out/'run.json').read_text())
@@ -108,14 +131,19 @@ def train(config_file,data,output,resume=False):
             atomic_save(state,best_path)
     else:
         (out/'run.json').write_text(json.dumps(run,indent=2));(out/'config.json').write_text(json.dumps(cfg,indent=2))
-    steps=math.ceil(len(train_ds)/spec['batch_size']);total=steps*spec.get('schedule_epochs',spec['epochs']);warmup=steps*spec['warmup_epochs'];begin=time.monotonic()
+    steps=math.ceil(train_ds.training_samples/spec['batch_size']);total=steps*spec.get('schedule_epochs',spec['epochs']);warmup=steps*spec['warmup_epochs'];begin=time.monotonic()
     for epoch in range(start_epoch,spec['epochs']+1):
         model.train();seen=0;ce_sum=objective_sum=grad_sum=0.;epoch_begin=time.monotonic()
-        for inputs,mask,action in train_ds.batches(spec['batch_size'],device,seed+epoch):
+        for inputs,mask,action,denominator in train_ds.training_batches(spec['batch_size'],device,seed+epoch):
             lr=lr_at(updates,total,warmup,spec['lr'],spec['min_lr']) if spec.get('schedule','cosine')=='cosine' else spec['lr']*min(1.,(updates+1)/max(1,warmup))
             for group in optimizer.param_groups:group['lr']=lr
             optimizer.zero_grad(set_to_none=True)
-            logits,_=model(*(inputs[k] for k in train_ds.keys));loss,ce=masked_loss(logits,mask,action,spec['label_smoothing']);loss.backward()
+            if len(action):
+                logits,_=model(*(inputs[k] for k in train_ds.keys));loss,ce=masked_loss(logits,mask,action,spec['label_smoothing'])
+                (loss*len(action)/denominator).backward()
+            else:
+                # A fully forced batch still advances Adam's momentum and LR.
+                loss=sum(p.sum()*0. for p in params);ce=loss.reshape(1);loss.backward()
             norm=torch.nn.utils.clip_grad_norm_(params,spec['grad_clip'])
             if not torch.isfinite(norm):raise FloatingPointError('nonfinite gradients')
             optimizer.step();updates+=1;seen+=len(action);ce_sum+=float(ce.sum());objective_sum+=float(loss)*len(action);grad_sum+=float(norm)
