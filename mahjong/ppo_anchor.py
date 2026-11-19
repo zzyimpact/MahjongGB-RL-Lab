@@ -26,5 +26,8 @@ class BCReferenceLoss:
         obs=items.get('obs');x=[obs.get(k).float() for k in self.keys]
         with torch.no_grad():reference,_=self.model(*x)
         current,_=self.policy.module(*x)
-        kl=masked_reference_kl(current,reference,obs.get('action_mask').bool())[valid].mean()
-        return self.coefficient*kl,{'bc_reference_kl':kl}
+        all_kl=masked_reference_kl(current,reference,obs.get('action_mask').bool())
+        kl=all_kl[valid].mean()
+        nonforced=valid & (obs.get('action_mask').sum(-1)>1)
+        nf=all_kl[nonforced].mean() if nonforced.any() else kl*0
+        return self.coefficient*kl,{'bc_reference_kl':kl,'bc_reference_kl_nonforced':nf}
