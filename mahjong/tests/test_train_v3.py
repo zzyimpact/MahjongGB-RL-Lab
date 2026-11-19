@@ -17,3 +17,7 @@ def test_lr_warmup_cosine_schedule():
     assert lr_at(9,100,10,.001,.00001)==.001
     assert lr_at(100,100,10,.001,.00001)==.00001
     assert lr_at(80,100,10,.001,.00001)<lr_at(40,100,10,.001,.00001)
+
+
+def test_cosine_stays_at_floor_after_decay_horizon():
+    assert lr_at(200,120,10,.0002,.000025)==.000025

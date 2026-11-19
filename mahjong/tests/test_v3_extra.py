@@ -62,3 +62,11 @@ def test_training_resume_matches_uninterrupted(tmp_path,monkeypatch):
     for k,v in a['policy'].items():torch.testing.assert_close(v,b['policy'][k],rtol=0,atol=0)
     assert a['bc']['updates']==b['bc']['updates']==9
     assert a['bc']['history'][-1]['val']==b['bc']['history'][-1]['val']
+
+
+def test_custom_arena_registry_blocks_final_development_overlap(tmp_path):
+    from mahjong.arena_v3 import run,wall_hash
+    prior=tmp_path/'development';prior.mkdir()
+    (prior/'arena_config.json').write_text(json.dumps(dict(purpose='development',wall_ids=[wall_hash(170000000)])))
+    with pytest.raises(ValueError,match='overlap'):
+        run({'C':'artifacts/round3/C/checkpoint.pt'},{'random':None},'reports/round3/raw/split_manifest.json',tmp_path/'final',170000000,2,1,'final',registry_root=tmp_path)

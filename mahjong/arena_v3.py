@@ -12,7 +12,7 @@ import time
 from .arena import identity, init_worker, worker, summarize, cluster_stats
 from .gamecore.engine import GameCore
 
-HISTORICAL_RANGES = [(7000000,4),(8000000,100),(9000000,300),(8100000,50),
+HISTORICAL_RANGES = [(1000,1000),(2026,2400),(100000,100),(7000000,4),(8000000,100),(9000000,300),(8100000,50),
                      (9100000,300),(9200000,300),(42000000,320)]
 
 
@@ -40,7 +40,9 @@ def aggregate(wall_records):
         scores={c:cluster_stats(list(v.values())) for c,v in values.items()},paired_differences=paired)
 
 
-def run(candidates, opponents, manifest, output, seed, walls, workers=6, purpose='development', resume=False):
+def run(candidates, opponents, manifest, output, seed, walls, workers=6, purpose='development', resume=False, registry_root='runs/final_v3'):
+    if walls<2 or workers<1 or not candidates or not opponents:raise ValueError('Arena needs >=2 walls, workers, candidates and opponents')
+    if set(candidates)&{'random','teacher'}:raise ValueError('Reserved policy name used for checkpoint')
     output=Path(output);paths=dict(candidates)
     for name,path in opponents.items():
         if path is not None:
@@ -51,10 +53,10 @@ def run(candidates, opponents, manifest, output, seed, walls, workers=6, purpose
     for start,n in HISTORICAL_RANGES:excluded.update(wall_hash(s) for s in range(start,start+n))
     # Repeated development comparisons may intentionally reuse the same wall
     # set. A final population may never overlap any development population.
-    for registered in Path('runs/final_v3').glob('**/arena_config.json'):
+    for registered in Path(registry_root).glob('**/arena_config.json'):
         previous=json.loads(registered.read_text())
         if previous['purpose']!=purpose:excluded.update(previous['wall_ids'])
-    for registered in Path('runs/final_v3').glob('**/training_walls.json'):
+    for registered in Path(registry_root).glob('**/training_walls.json'):
         excluded.update(json.loads(registered.read_text())['planned_wall_ids'])
     ids=[wall_hash(s) for s in range(seed,seed+walls)]
     if len(set(ids))!=walls or set(ids)&excluded:raise ValueError('arena wall populations overlap')
@@ -97,13 +99,13 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--candidate',action='append',required=True);p.add_argument('--opponent',action='append',required=True)
     p.add_argument('--manifest',default='reports/round3/raw/split_manifest.json');p.add_argument('--output',required=True)
     p.add_argument('--seed',type=int,default=110000000);p.add_argument('--walls',type=int,default=32);p.add_argument('--workers',type=int,default=6)
-    p.add_argument('--purpose',choices=['development','final'],required=True);p.add_argument('--resume',action='store_true');a=p.parse_args()
+    p.add_argument('--registry-root',default='runs/final_v3');p.add_argument('--purpose',choices=['development','final'],required=True);p.add_argument('--resume',action='store_true');a=p.parse_args()
     candidates=dict(x.split('=',1) for x in a.candidate);opponents={}
     for x in a.opponent:
         if '=' in x:k,v=x.split('=',1);opponents[k]=v
         else:
             if x not in ('random','teacher'):raise ValueError('unknown opponent')
             opponents[x]=None
-    run(candidates,opponents,a.manifest,a.output,a.seed,a.walls,a.workers,a.purpose,a.resume)
+    run(candidates,opponents,a.manifest,a.output,a.seed,a.walls,a.workers,a.purpose,a.resume,a.registry_root)
 
 if __name__=='__main__':main()

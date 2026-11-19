@@ -57,7 +57,7 @@ def export(checkpoint, output):
     model.load_state_dict(weights,strict=True);output.mkdir(parents=True,exist_ok=False)
     torch.save(weights,output/'mahjong_model.pt',_use_new_zipfile_serialization=False,pickle_protocol=2)
     source=Path(__file__).parent
-    config=dict(model_spec(cfg),capacity=cfg.get('capacity',128),weight_path='data/mahjong_model.pt')
+    config=dict(model_spec(cfg),capacity=cfg.get('capacity',128),weight_path='data/mahjong_model.pt',weight_sha256=hashlib.sha256((output/'mahjong_model.pt').read_bytes()).hexdigest())
     bundle={'mahjong/'+name:(source/name).read_text() for name in SOURCES}
     bundle['mahjong/bot_config.json']=json.dumps(config)
     with zipfile.ZipFile(output/'mahjong_bot.zip','w',zipfile.ZIP_DEFLATED) as z:

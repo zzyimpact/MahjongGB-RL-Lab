@@ -1,6 +1,7 @@
 """Deployment-only model loader; no TensorDict, framework or training imports."""
 
 import json
+import hashlib
 import os
 import pkgutil
 import numpy as np
@@ -12,8 +13,24 @@ def load():
     game = __package__.split(".")[0]
     config = json.loads(pkgutil.get_data(game, "bot_config.json").decode("utf-8"))
     torch.set_num_threads(1)
+    if config.get("feature_set") == "v3":
+        import MahjongGB
+        required = ("RegularShanten", "SevenPairsShanten", "ThirteenOrphansShanten",
+                    "KnittedStraightShanten", "HonorsAndKnittedTilesShanten")
+        missing = [name for name in required if not hasattr(MahjongGB, name)]
+        if missing:
+            raise RuntimeError("V3 requires MahjongGB shanten APIs: " + ", ".join(missing))
+        if config.get("activation", "gelu") == "gelu" and not hasattr(torch.nn, "GELU"):
+            raise RuntimeError("V3 GELU requires a compatible PyTorch runtime; tested with 2.3.1")
     model = make_model(config)
     path = os.environ.get("BOT_MODEL_PATH", config["weight_path"])
+    if config.get("weight_sha256"):
+        digest = hashlib.sha256()
+        with open(path, "rb") as stream:
+            for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+                digest.update(chunk)
+        if digest.hexdigest() != config["weight_sha256"]:
+            raise RuntimeError("Uploaded weights do not match this code file (SHA-256 mismatch)")
     model.load_state_dict(torch.load(path, map_location="cpu"), strict=True)
     model.eval()
 

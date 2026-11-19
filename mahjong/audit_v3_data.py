@@ -41,7 +41,14 @@ def audit(root,source,output):
                 a=np.load(root/(split+'_'+k+'.npy'),mmap_mode='r');expected=np.asarray([r['action_mask' if k=='mask' else k] for r in rows],dtype=a.dtype)
                 np.testing.assert_array_equal(a[indices],expected)
             replayed.append(dict(game_id=gid,split=split,decisions=len(rows),identical=True))
-    result=dict(feature_provenance=guard,split_statistics=manifest['summary'],duplicate_statistics=summary,replay_spot_checks=replayed,
+    files={}
+    for path in sorted(root.glob('*.npy')):
+        digest=hashlib.sha256()
+        with path.open('rb') as f:
+            for chunk in iter(lambda:f.read(1024*1024),b''):digest.update(chunk)
+        array=np.load(path,mmap_mode='r')
+        files[path.name]=dict(bytes=path.stat().st_size,sha256=digest.hexdigest(),shape=list(array.shape),dtype=str(array.dtype))
+    result=dict(cache_files=files,feature_provenance=guard,split_statistics=manifest['summary'],duplicate_statistics=summary,replay_spot_checks=replayed,
         warning='byte repetition does not imply wall leakage; forced observations were not materialized and are excluded from duplicate counts',
         manifest_sha256=hashlib.sha256((root/'manifest.json').read_bytes()).hexdigest())
     Path(output).write_text(json.dumps(result,indent=2));print(json.dumps(summary))

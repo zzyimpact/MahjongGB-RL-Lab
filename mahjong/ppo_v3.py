@@ -63,12 +63,15 @@ class MixedCollector:
         self.policy=make_policy(config=config);self.environment=Environment(feature_set=config.get('feature_set','basic'))
         self.router=StaticPolicyRouter({str(i):PolicyRef('shared',self.policy) for i in range(4)})
         self.frozen={k:FrozenOpponent(p,config.get('feature_set','basic')) for k,p in opponents.items()}
+        self.episode_action_seeds=config.get('rl',{}).get('episode_action_seeds',False)
         self.mode=mode;self.gamma=config['ppo']['gamma'];self.gae_lambda=config['ppo']['gae_lambda']
         self.inner=SparseDecisionCollector(self.environment,self.router,SharedTensorRewardResolver('rewards',{str(i):i for i in range(4)}),
             gamma=self.gamma,gae_lambda=self.gae_lambda,env_id='actor_%d'%worker_id)
         self.episode_stats=[]
     def collect_episode(self,config=None,deterministic=False):
-        seed=int(config['seed']);names=sorted(self.frozen);name=names[(seed//4)%len(names)] if names else 'self'
+        seed=int(config['seed'])
+        if getattr(self,'episode_action_seeds',False):torch.manual_seed(int(np.random.SeedSequence([seed,577]).generate_state(1)[0]))
+        names=sorted(self.frozen);name=names[(seed//4)%len(names)] if names else 'self'
         learning={seed%4,(seed+1)%4} if self.mode=='mixed' and names else set(range(4))
         version=self.router.versions['shared']
         self.inner.router=StaticPolicyRouter({str(i):PolicyRef('shared',self.policy,version) if i in learning else PolicyRef('frozen_'+name,self.frozen[name],0) for i in range(4)})
@@ -99,7 +102,7 @@ def train(config_file,checkpoint,output,resume=False):
     training_walls=[wall_hash(s) for s in range(cfg['seed'],cfg['seed']+cfg['iterations']*cfg['actors']*cfg['episodes_per_actor'])]
     excluded=set(json.loads(Path('reports/round3/raw/split_manifest.json').read_text())['groups'])
     for start,n in HISTORICAL_RANGES:excluded.update(wall_hash(s) for s in range(start,start+n))
-    for p in Path('runs/final_v3').glob('**/arena_config.json'):excluded.update(json.loads(p.read_text())['wall_ids'])
+    for p in out.parent.glob('**/arena_config.json'):excluded.update(json.loads(p.read_text())['wall_ids'])
     if len(set(training_walls))!=len(training_walls) or set(training_walls)&excluded:raise ValueError('PPO training wall leakage')
     provenance=dict(config=cfg,bc=identity(checkpoint),frozen={k:identity(v) for k,v in frozen.items()},critic_gradients='detached from actor backbone')
     (out/'training_walls.json').write_text(json.dumps(dict(seed=cfg['seed'],planned_wall_ids=training_walls),indent=2))
@@ -117,7 +120,7 @@ def train(config_file,checkpoint,output,resume=False):
     def evaluate(path,iteration):
         directory=out/('dev_%04d'%iteration)
         result=run_arena({'candidate':str(path)},eval_opponents,'reports/round3/raw/split_manifest.json',directory,
-            rl['eval_seed'],rl['eval_walls'],workers=cfg['actors'],purpose='development',resume=directory.exists())
+            rl['eval_seed'],rl['eval_walls'],workers=cfg['actors'],purpose='development',resume=directory.exists(),registry_root=out.parent)
         score=result['aggregate']['scores']['candidate'];evaluations.append(dict(iteration=iteration,score=score,sha256=hashlib.sha256(Path(path).read_bytes()).hexdigest()))
         (out/'evaluations.json').write_text(json.dumps(evaluations,indent=2));return score['mean']
     if not evaluations:evaluate(out/'initial_bc.pt',0)

@@ -15,7 +15,7 @@ def seal(candidates,output,reason):
     if output.exists():raise FileExistsError('Do not rewrite a final-selection seal')
     selection=dict(sealed_time=time.time(),source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
         rationale=reason,selection_rule='development mean reward across five frozen opponents; validation CE and complexity secondary',
-        candidates={k:identity(v) for k,v in candidates.items()},final_seed=112000000,final_walls=300,
+        candidates={k:identity(v) for k,v in candidates.items()},final_seed=112000000,final_walls=500,
         heldout_test='same 51 walls as round3, not used for this round selection; historical results already public')
     output.write_text(json.dumps(selection,indent=2));return selection
 

@@ -98,6 +98,14 @@ def train(config_file,data,output,resume=False):
         history=state['bc']['history'];updates=state['bc']['updates'];best=state['bc']['best_val'];best_epoch=state['bc']['best_epoch'];start_epoch=state['bc']['epoch']+1;elapsed=state['bc']['elapsed_seconds']
         torch.set_rng_state(state['torch_rng'].cpu());random.setstate(state['python_rng']);np.random.set_state(state['numpy_rng'])
         if 'mps_rng' in state and device.type=='mps':torch.mps.set_rng_state(state['mps_rng'].cpu())
+        # Recover an interruption after last.pt was committed but before the
+        # same newly-best epoch reached checkpoint.pt. Never silently select a
+        # stale best file after resumption.
+        best_path=out/'checkpoint.pt'
+        saved_epoch=torch.load(best_path,map_location='cpu')['bc']['epoch'] if best_path.exists() else None
+        if saved_epoch!=best_epoch:
+            if state['bc']['epoch']!=best_epoch:raise ValueError('Best checkpoint missing or inconsistent with last.pt')
+            atomic_save(state,best_path)
     else:
         (out/'run.json').write_text(json.dumps(run,indent=2));(out/'config.json').write_text(json.dumps(cfg,indent=2))
     steps=math.ceil(len(train_ds)/spec['batch_size']);total=steps*spec.get('schedule_epochs',spec['epochs']);warmup=steps*spec['warmup_epochs'];begin=time.monotonic()

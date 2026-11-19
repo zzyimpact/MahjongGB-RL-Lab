@@ -45,3 +45,13 @@ def test_historical_adapter_agrees_with_original_features():
     obs=TensorDict({k:torch.tensor(x) for k,x in a.items()},[])
     with torch.no_grad():expected=model(torch.tensor(encode(v,'basic')['obs']).unsqueeze(0))[0].masked_fill(~torch.tensor(a['action_mask']),-1e9).argmax().item()
     assert int(opponent.act(obs).action['action'])==expected
+
+
+def test_episode_seeded_actor_replay_independent_of_previous_episode():
+    torch.set_num_threads(1);cfg=json.loads(Path('mahjong/configs/v3/V3.json').read_text());cfg['rl']={'episode_action_seeds':True}
+    collector=MixedCollector(0,cfg,{'C':'artifacts/round3/C/checkpoint.pt'})
+    def actions(seed):
+        b=collector.collect_episode(config={'seed':seed})
+        return {t.key.agent_id:t.data.get(('action','action')).clone() for t in b.trajectories}
+    first=actions(136000000);actions(136000001);second=actions(136000000)
+    for seat,x in first.items():torch.testing.assert_close(x,second[seat],rtol=0,atol=0)
