@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 import random
 import shutil
+import subprocess
 import time
 import numpy as np
 import torch
@@ -105,15 +106,20 @@ def train(config_file,checkpoint,output,resume=False):
     for p in out.parent.glob('**/arena_config.json'):excluded.update(json.loads(p.read_text())['wall_ids'])
     if len(set(training_walls))!=len(training_walls) or set(training_walls)&excluded:raise ValueError('PPO training wall leakage')
     provenance=dict(config=cfg,bc=identity(checkpoint),frozen={k:identity(v) for k,v in frozen.items()},critic_gradients='detached from actor backbone')
+    source=dict(commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+        files={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in Path('mahjong').glob('*.py')})
     (out/'training_walls.json').write_text(json.dumps(dict(seed=cfg['seed'],planned_wall_ids=training_walls),indent=2))
     counters=dict(env_steps=0,agent_steps=0,gradient_updates=0,completed_episodes=0);history=[];cursor=0;first=1;elapsed=0.;evaluations=[]
     if resume:
-        if json.loads((out/'experiment.json').read_text())!=provenance:raise ValueError('PPO resume identities changed')
+        previous=json.loads((out/'experiment.json').read_text())
+        if {k:v for k,v in previous.items() if k!='source'}!=provenance:raise ValueError('PPO resume identities changed')
+        source=previous.get('source',dict(resume_source=source,original_launch_source_recorded=False))
         old=torch.load(out/'last.pt',map_location='cpu');policy.load_state_dict(old['policy']);learner.optimizer.load_state_dict(old['optimizer'])
         first=old['iteration']+1;counters=old['counters'];cursor=old['episode_cursor'];history=old['rl_history'];elapsed=old['elapsed_seconds'];evaluations=old['evaluations']
         torch.set_rng_state(old['torch_rng']);np.random.set_state(old['numpy_rng']);random.setstate(old['python_rng'])
         if cfg['device']=='mps' and 'mps_rng' in old:torch.mps.set_rng_state(old['mps_rng'])
     else:
+        provenance['source']=source
         (out/'experiment.json').write_text(json.dumps(provenance,indent=2));(out/'config.json').write_text(json.dumps(cfg,indent=2))
         shutil.copy2(checkpoint,out/'initial_bc.pt');shutil.copy2(checkpoint,out/'eval_best.pt')
     eval_opponents={'random':None,'teacher':None,**rl['eval_opponents']}
@@ -158,7 +164,7 @@ def train(config_file,checkpoint,output,resume=False):
                 history.append(row);log.write(json.dumps(row)+'\n');log.flush();print(json.dumps({k:row[k] for k in ('iteration','warmup','actor_changed','seconds','mean_terminal_reward','non_draw_rate')}),flush=True)
                 state=dict(policy={k:v.detach().cpu() for k,v in policy.state_dict().items()},optimizer=learner.optimizer.state_dict(),config=cfg,
                     iteration=iteration,counters=counters,episode_cursor=collector.episode_cursor,torch_rng=torch.get_rng_state(),python_rng=random.getstate(),numpy_rng=np.random.get_state(),
-                    rl_history=history,elapsed_seconds=elapsed+time.monotonic()-start,evaluations=evaluations)
+                    rl_history=history,elapsed_seconds=elapsed+time.monotonic()-start,evaluations=evaluations,source_provenance=source)
                 if cfg['device']=='mps':state['mps_rng']=torch.mps.get_rng_state()
                 atomic_save(state,out/'last.pt')
                 if iteration%rl['eval_every']==0 or iteration==cfg['iterations'] or iteration==rl['warmup_iterations']:
