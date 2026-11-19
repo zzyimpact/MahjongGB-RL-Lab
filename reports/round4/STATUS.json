@@ -1,0 +1,38 @@
+{
+  "status": "in_progress",
+  "workspace": "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work",
+  "recovered_base_commit": "d150d3d7e9345642e76f62571cad21dc48b87294",
+  "original_path": "/Users/zzy/Desktop/Coding/rl-lab",
+  "original_access": "Operation not permitted; original directory preserved",
+  "data": {
+    "games": 12288,
+    "walls": 512,
+    "same_round3_split": true,
+    "train_nonforced": 576202
+  },
+  "completed": [
+    "full v3 replay",
+    "V3 full-game feature consistency",
+    "resumable BC tests",
+    "D initial recipe 12 epochs",
+    "V3 initial recipe 12 epochs",
+    "multi-opponent arena implementation",
+    "single-file and ZIP local deployment",
+    "4-game PPO pipeline smoke"
+  ],
+  "running": [
+    "BC ablation queue",
+    "PPO mixed opponents pilot",
+    "128-wall development training study"
+  ],
+  "pending": [
+    "regularized D/V3",
+    "multiple training seeds",
+    "final candidate freeze and independent test/arena",
+    "final release reports"
+  ],
+  "baseline_tests": {
+    "mahjong": "28 passed; 3 export tests skipped without env checkpoint",
+    "framework_combined": "60 passed, 6 skipped, 4 failed due missing optional fdl sources not present in repository"
+  }
+}

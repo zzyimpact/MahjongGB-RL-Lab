@@ -24,7 +24,7 @@
   "use_candidate": true,
   "use_context": true,
   "bc": {
-    "epochs": 12,
+    "epochs": 20,
     "min_epochs": 12,
     "patience": 6,
     "min_delta": 0.001,
@@ -34,6 +34,7 @@
     "warmup_epochs": 1,
     "weight_decay": 0.01,
     "label_smoothing": 0.1,
-    "grad_clip": 5.0
+    "grad_clip": 5.0,
+    "schedule_epochs": 12
   }
 }

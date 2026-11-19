@@ -100,7 +100,7 @@ def train(config_file,data,output,resume=False):
         if 'mps_rng' in state and device.type=='mps':torch.mps.set_rng_state(state['mps_rng'].cpu())
     else:
         (out/'run.json').write_text(json.dumps(run,indent=2));(out/'config.json').write_text(json.dumps(cfg,indent=2))
-    steps=math.ceil(len(train_ds)/spec['batch_size']);total=steps*spec['epochs'];warmup=steps*spec['warmup_epochs'];begin=time.monotonic()
+    steps=math.ceil(len(train_ds)/spec['batch_size']);total=steps*spec.get('schedule_epochs',spec['epochs']);warmup=steps*spec['warmup_epochs'];begin=time.monotonic()
     for epoch in range(start_epoch,spec['epochs']+1):
         model.train();seen=0;ce_sum=objective_sum=grad_sum=0.;epoch_begin=time.monotonic()
         for inputs,mask,action in train_ds.batches(spec['batch_size'],device,seed+epoch):
