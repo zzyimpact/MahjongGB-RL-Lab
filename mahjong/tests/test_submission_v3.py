@@ -37,7 +37,7 @@ def test_single_file_default_user_storage_path(tmp_path):
     root=tmp_path/'release';export('artifacts/round3/D/checkpoint.pt',root)
     (root/'data').mkdir();shutil.copy2(root/'mahjong_model.pt',root/'data/mahjong_model.pt')
     env=dict(os.environ);env.pop('BOT_MODEL_PATH',None)
-    process=subprocess.run([sys.executable,'mahjong_bot.py'],input='1\n0 0 0\n1 0 0 0 0 W1 W1 W1 W1 W2 W3 W4 W5 W6 T1 T2 B1 F1\n2 B2\n',
+    process=subprocess.run([sys.executable,'mahjong_bot.py'],input='1\n0 0 0\n\n\n1 0 0 0 0 W1 W1 W1 W1 W2 W3 W4 W5 W6 T1 T2 B1 F1\n2 B2\n',
         text=True,capture_output=True,cwd=root,env=env,timeout=15)
     assert process.returncode==0,process.stderr
     assert process.stdout.count('>>>BOTZONE_REQUEST_KEEP_RUNNING<<<')==3

@@ -65,6 +65,9 @@ class BotProcess:
         return self.send_raw(lines)
 
     def send_raw(self, lines):
+        # Official cold SimpleIO frames also contain data and globaldata lines.
+        if lines and lines[0].isdigit():
+            lines = list(lines) + ["", ""]
         start = time.monotonic()
         self.proc.stdin.write("\n".join(lines) + "\n")
         self.proc.stdin.flush()

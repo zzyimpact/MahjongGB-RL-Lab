@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "request_count": 3,
+  "responses": [
+    "PASS",
+    "PASS",
+    "PLAY F1"
+  ],
+  "json_zip": true,
+  "json_single": true,
+  "simple_with_metadata": true,
+  "cold_json_history": true,
+  "fan_only_extension": true,
+  "startup_debug": {
+    "model": "D_v2",
+    "weight": "data/mahjong_D_v2.pt",
+    "sha256": "eafa8f8b744b373a127222b5f5bdca89e7c00f1c1d9e430c2820f3b5abef81ae",
+    "shanten": "not_used"
+  },
+  "scope": "Protocol smoke only; no game simulation, training or score experiment",
+  "online_botzone_verified": false
+}

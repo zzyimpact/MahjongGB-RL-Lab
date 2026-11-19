@@ -1,0 +1,37 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "mahjong/tests/test_botzone_delivery.py",
+    "mahjong/tests/test_submission_v3.py",
+    "-q"
+  ],
+  "returncode": 0,
+  "tests": "13 passed",
+  "synthetic_hands": 1004,
+  "shanten_function_comparisons": 2020,
+  "training_runs": 0,
+  "new_games": 0,
+  "online_verified": false,
+  "documentation_sha256": {
+    "bot_wiki": {
+      "sha256": "51b0e858fcc2ab3efb606341f8321ae4eb11b4141672989220797739fc1d3dce"
+    },
+    "mahjong_wiki": {
+      "sha256": "f3374834ac36a726129c56aeff69de51f8243776daaf794430a5674c8270d470"
+    },
+    "reference_tree": {
+      "sha256": "586d90edfe93d15d0fb80f987cb76fb9e446a73380c454053acfaa4fc688f8d4"
+    },
+    "reference_native": {
+      "sha256": "8fec170e6edd8a4e655816652ca5ad79fa1f7523ba1d29a2f9a1a2248cbc1a50"
+    },
+    "reference_sample": {
+      "sha256": "ca46e2943960c8b6e57087e973f25988a0cdaa26fc50318a9f8b7e3bf8cf6705"
+    },
+    "reference_judge": {
+      "sha256": "656c53ee2793eb098891054c84fb0d80ec2272935a14922a5aed8b074a4b597d"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "game": "mahjong",
+  "training_counters": {
+    "env_steps": 0,
+    "agent_steps": 0,
+    "gradient_updates": 0,
+    "completed_episodes": 0
+  },
+  "iteration": 0,
+  "config": {
+    "seed": 20261121,
+    "hidden": 64,
+    "capacity": 128,
+    "actors": 4,
+    "episodes_per_actor": 1,
+    "iterations": 2000,
+    "device": "mps",
+    "actor_timeout": 300,
+    "ppo": {
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "learning_rate": 0.0003,
+      "epochs": 3,
+      "minibatch_size": 256,
+      "clip_epsilon": 0.2,
+      "value_coefficient": 0.5,
+      "entropy_coefficient": 0.01
+    },
+    "feature_set": "v3",
+    "feature_version": "v3",
+    "architecture": "v3_resnet",
+    "activation": "gelu",
+    "use_candidate": true,
+    "use_context": true,
+    "bc": {
+      "epochs": 20,
+      "min_epochs": 12,
+      "patience": 6,
+      "min_delta": 0.001,
+      "batch_size": 1024,
+      "lr": 0.001,
+      "min_lr": 0.001,
+      "warmup_epochs": 0,
+      "weight_decay": 0.0,
+      "label_smoothing": 0.0,
+      "grad_clip": 10.0,
+      "optimizer": "adam",
+      "sampling": "full_equivalent",
+      "schedule": "constant"
+    }
+  },
+  "source_checkpoint_sha256": "775e1478460d21ce83949dd36450bcc31730cdd68bb32cbb656b19935b1d932f",
+  "files": {
+    "mahjong_V3_BC_seed3.pt": "a9e99f404ddb78e902f4362e0b7cbc43a228390b56b9de7bfb9f1e31655a1035",
+    "botzone_V3_BC_seed3.zip": "a8074a2d5822b6b8b0160d4ef7ffbc841cfe8b057bf5f71ac524f1eae4950134",
+    "botzone_V3_BC_seed3.py": "3a9579310361c6154f3fa30b4c7d2bceb7f5004ee17144055eb1aa1afe97f057"
+  },
+  "weight_file": "mahjong_V3_BC_seed3.pt",
+  "zip_file": "botzone_V3_BC_seed3.zip",
+  "single_file": "botzone_V3_BC_seed3.py",
+  "model_id": "V3_BC_seed3",
+  "keep_running": true,
+  "weight_embedding": false
+}

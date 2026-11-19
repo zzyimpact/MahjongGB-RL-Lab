@@ -12,7 +12,13 @@ CODE_LIMIT=4000000
 
 def verify(root):
     root=Path(root);manifest=json.loads((root/'manifest.json').read_text())
-    weight=root/'mahjong_model.pt';archive=root/'mahjong_bot.zip';single=root/'mahjong_bot.py'
+    weight_name=manifest.get('weight_file','mahjong_model.pt')
+    zip_name=manifest.get('zip_file','mahjong_bot.zip')
+    single_name=manifest.get('single_file','mahjong_bot.py')
+    for name,suffix in ((weight_name,'.pt'),(zip_name,'.zip'),(single_name,'.py')):
+        if Path(name).name!=name or not name.endswith(suffix):
+            raise ValueError('Invalid deployment filename')
+    weight=root/weight_name;archive=root/zip_name;single=root/single_name
     entries=[];unsafe=[];bot_config=None
     with zipfile.ZipFile(archive) as z:
         for info in z.infolist():
@@ -29,7 +35,8 @@ def verify(root):
     hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in (weight,archive,single)}
     checks=dict(model_size=weight.stat().st_size<=MODEL_LIMIT,zip_size=archive.stat().st_size<CODE_LIMIT,
         expanded_size=sum(x['bytes'] for x in entries)<CODE_LIMIT,single_file_size=single.stat().st_size<CODE_LIMIT,
-        resource_allowlist=not unsafe,runtime_weight_identity=bot_config is not None and bot_config.get('weight_sha256')==hashes['mahjong_model.pt'],hash_identity=all(manifest['files'].get(k)==v for k,v in hashes.items()))
+        resource_allowlist=not unsafe,runtime_weight_identity=bot_config is not None and bot_config.get('weight_sha256')==hashes[weight_name]
+            and bot_config.get('weight_path')=='data/'+weight_name,hash_identity=all(manifest['files'].get(k)==v for k,v in hashes.items()))
     report=dict(passed=all(checks.values()),checks=checks,model=dict(path=str(weight.resolve()),bytes=weight.stat().st_size,limit=MODEL_LIMIT),
         code_zip=dict(path=str(archive.resolve()),bytes=archive.stat().st_size,expanded_bytes=sum(x['bytes'] for x in entries),limit_exclusive=CODE_LIMIT),
         single_file=dict(path=str(single.resolve()),bytes=single.stat().st_size,limit_exclusive=CODE_LIMIT),resources=entries,unsafe_resources=unsafe,sha256=hashes,

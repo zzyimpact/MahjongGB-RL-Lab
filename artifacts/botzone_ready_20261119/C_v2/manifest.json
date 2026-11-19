@@ -1,0 +1,45 @@
+{
+  "game": "mahjong",
+  "training_counters": {
+    "env_steps": 0,
+    "agent_steps": 0,
+    "gradient_updates": 0,
+    "completed_episodes": 0
+  },
+  "iteration": 0,
+  "config": {
+    "seed": 20261119,
+    "hidden": 64,
+    "capacity": 128,
+    "actors": 4,
+    "episodes_per_actor": 1,
+    "iterations": 2000,
+    "device": "cpu",
+    "actor_timeout": 300,
+    "ppo": {
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "learning_rate": 0.0003,
+      "epochs": 3,
+      "minibatch_size": 256,
+      "clip_epsilon": 0.2,
+      "value_coefficient": 0.5,
+      "entropy_coefficient": 0.01
+    },
+    "feature_set": "basic",
+    "feature_version": "v1",
+    "architecture": "small_resnet"
+  },
+  "source_checkpoint_sha256": "59f9d879bd2d90ee19f81f5b11716a527225db5b253f52d4566d8689328bb531",
+  "files": {
+    "mahjong_C_v2.pt": "917bfd0b3ac5a0b8c081f224e5c2d222f03c233e9e77c759f83672564a1e55e3",
+    "botzone_C_v2.zip": "14e89119ad92912af43494fbf9d1b060baaa974edf281bbe46cbf21f36044b31",
+    "botzone_C_v2.py": "a98eb5de0776228cb50536c0c2186447fa10e590b178568ea041aa0c94c05171"
+  },
+  "weight_file": "mahjong_C_v2.pt",
+  "zip_file": "botzone_C_v2.zip",
+  "single_file": "botzone_C_v2.py",
+  "model_id": "C_v2",
+  "keep_running": true,
+  "weight_embedding": false
+}

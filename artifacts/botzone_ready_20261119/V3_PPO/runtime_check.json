@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "request_count": 3,
+  "responses": [
+    "PASS",
+    "PASS",
+    "PLAY F1"
+  ],
+  "json_zip": true,
+  "json_single": true,
+  "simple_with_metadata": true,
+  "cold_json_history": true,
+  "fan_only_extension": true,
+  "startup_debug": {
+    "model": "V3_PPO",
+    "weight": "data/mahjong_V3_PPO.pt",
+    "sha256": "cea3e4efc4e8b823cd183c83dbe5f1ca94c42167a338484597807fcbae73b915",
+    "shanten": "python"
+  },
+  "scope": "Protocol smoke only; no game simulation, training or score experiment",
+  "online_botzone_verified": false
+}

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "request_count": 3,
+  "responses": [
+    "PASS",
+    "PASS",
+    "PLAY F1"
+  ],
+  "json_zip": true,
+  "json_single": true,
+  "simple_with_metadata": true,
+  "cold_json_history": true,
+  "fan_only_extension": true,
+  "startup_debug": {
+    "model": "C_v2",
+    "weight": "data/mahjong_C_v2.pt",
+    "sha256": "917bfd0b3ac5a0b8c081f224e5c2d222f03c233e9e77c759f83672564a1e55e3",
+    "shanten": "not_used"
+  },
+  "scope": "Protocol smoke only; no game simulation, training or score experiment",
+  "online_botzone_verified": false
+}

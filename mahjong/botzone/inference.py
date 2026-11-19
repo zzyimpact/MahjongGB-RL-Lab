@@ -14,18 +14,16 @@ def load():
     config = json.loads(pkgutil.get_data(game, "bot_config.json").decode("utf-8"))
     torch.set_num_threads(1)
     if config.get("feature_set") == "v3":
-        import MahjongGB
-        required = ("RegularShanten", "SevenPairsShanten", "ThirteenOrphansShanten",
-                    "KnittedStraightShanten", "HonorsAndKnittedTilesShanten")
-        missing = [name for name in required if not hasattr(MahjongGB, name)]
-        if missing:
-            raise RuntimeError("V3 requires MahjongGB shanten APIs: " + ", ".join(missing))
+        from .shanten_backend import BACKEND
+        config["shanten_backend"] = BACKEND
         if config.get("activation", "gelu") == "gelu" and not hasattr(torch.nn, "GELU"):
             raise RuntimeError("V3 GELU requires a compatible PyTorch runtime; tested with 2.3.1")
     model = make_model(config)
     path = os.environ.get("BOT_MODEL_PATH", config["weight_path"])
     if config.get("weight_sha256"):
         digest = hashlib.sha256()
+        if not os.path.isfile(path):
+            raise RuntimeError("Upload the matching weight file to Botzone user storage: " + path)
         with open(path, "rb") as stream:
             for chunk in iter(lambda: stream.read(1024 * 1024), b""):
                 digest.update(chunk)

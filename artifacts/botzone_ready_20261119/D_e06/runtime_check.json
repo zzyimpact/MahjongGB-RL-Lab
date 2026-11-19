@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "request_count": 3,
+  "responses": [
+    "PASS",
+    "PASS",
+    "PLAY F1"
+  ],
+  "json_zip": true,
+  "json_single": true,
+  "simple_with_metadata": true,
+  "cold_json_history": true,
+  "fan_only_extension": true,
+  "startup_debug": {
+    "model": "D_e06",
+    "weight": "data/mahjong_D_e06.pt",
+    "sha256": "520bb5358615e572948bd68d1ea48bd8576bba19c8d76f8bc6967ba5621be01e",
+    "shanten": "not_used"
+  },
+  "scope": "Protocol smoke only; no game simulation, training or score experiment",
+  "online_botzone_verified": false
+}
