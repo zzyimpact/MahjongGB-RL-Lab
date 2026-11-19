@@ -53,6 +53,15 @@ def plots(root,output,final_arena=None):
         a.errorbar(mean,yy,xerr=[mean-ci[:,0],ci[:,1]-mean],fmt='o',capsize=3);a.set_yticks(yy,labels=names);a.axvline(0,color='gray',lw=.7)
         a.set(xlabel='Mean normalized reward (score / 32), five frozen opponents equally weighted',title='Independent final arena: wall-cluster bootstrap 95% CI');a.grid(axis='x',alpha=.2)
         fig.savefig(output/'final_arena.png');fig.savefig(output/'final_arena.pdf');plt.close(fig)
+        followup=root/'supplementary_confirmation.json'
+        if followup.exists():
+            extra=json.loads(followup.read_text());old=r['aggregate']['paired_differences']['V3_legacy_e01 - PPO_extended_last']
+            values=[dict(mean=-old['mean'],ci95=[-old['ci95'][1],-old['ci95'][0]]),extra['statistics']]
+            means=np.array([v['mean'] for v in values]);bounds=np.array([v['ci95'] for v in values])
+            fig,a=plt.subplots(figsize=(9,3.2),layout='constrained');a.errorbar(means,[1,0],xerr=[means-bounds[:,0],bounds[:,1]-means],fmt='o',capsize=4)
+            a.set_yticks([1,0],labels=['Exploratory late snapshot: first 500 walls','Independent confirmation: new 500 walls'])
+            a.axvline(0,color='gray',lw=1);a.grid(axis='x',alpha=.2);a.set(xlabel='Paired change in five-opponent reward (PPO last minus BC), 95% CI',title='Late PPO signal did not clear the independent adoption threshold')
+            fig.savefig(output/'ppo_confirmation.png');fig.savefig(output/'ppo_confirmation.pdf');plt.close(fig)
 
 
 def main():

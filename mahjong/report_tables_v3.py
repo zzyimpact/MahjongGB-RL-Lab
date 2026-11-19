@@ -74,6 +74,13 @@ def generate(root,report,release):
     confirm=read(root/'confirmatory_statistics.json')
     text+='\n'+table(['预注册差值','均值 / 95% CI','三主要比较 Bonferroni 区间'],[[n,ci(r),'[%+.4f, %+.4f]'%tuple(r['bonferroni_family_ci95'])] for n,r in confirm['contrasts'].items() if n.startswith(ppo+' - ')])
     text+='\nPPO结果解释和是否采用见 FINAL_REPORT。未针对所有潜在退化原因做独立因果实验：价值隔离、对手混合、更小更新强度是联合防护，不能把与第三轮差异归功于其中一个组件。初始两次pilot未记录启动源码hash、也未保存子进程RNG恢复点，因此不能为其补造启动身份或承诺跨中断逐bit一致。第三次最终候选实验已直接保存源码身份并启用episode独立随机种子；仍不承诺跨平台浮点内核逐bit一致。\n'
+    followup=None
+    if (root/'supplementary_confirmation.json').exists():
+        followup=read(root/'supplementary_confirmation.json');extra=read(root/'arena_confirmation/results.json')
+        text+='\n## 长程最后权重的额外独立确认\n\n第一批最终池中，未被预选为PPO主候选的长程last相对BC出现+0.01747的探索性信号。没有将该结果改写成原预注册主假设；另行保存确认计划、锁定相同两个checkpoint，在113000000起500副全新墙上复验，无新训练/调参。\n\n'
+        text+=table(['模型','另500墙综合reward [95% CI]'],[[n,ci(v)] for n,v in extra['aggregate']['scores'].items()])
+        text+='\n'+table(['独立配对差','奖励差 [95% CI]','通过预设采用门槛','最终推荐'],[[followup['contrast'],ci(followup['statistics']),str(followup['accepted']),followup['recommended_model']]])
+        text+='\n采用门槛是配对95%区间下界>0，且没有对手的区间完全低于-.02。此次仍跨零，按计划结束研究并保留BC。未把第一批用于发现信号的500墙与新500墙混合后再声称独立确认；也不把未显著解释成确定无效。长程PPO另提供为真实RL备选。\n'
     (report/'RL_STUDY.md').write_text(text)
     final_table=table(['模型','Random','Teacher','RL v1','C','D','综合reward [95% CI]'],[[n]+['%+.4f'%final['summary'][n+' vs '+o]['reward']['mean'] for o in ['random','teacher','rl_v1','C','D']]+[ci(r)] for n,r in final['aggregate']['scores'].items()])
     test_table=table(['模型','Test全样本CE','Test非强制CE','All Acc','Play Acc','Nonpass Acc','Nonforced Acc'],[[n,'%.5f'%r['metrics']['loss'],'%.5f'%r['metrics']['nonforced_loss']]+[pct(r['metrics']['metrics'][k]['accuracy']) for k in ['all','play','nonpass','nonforced']] for n,r in test['models'].items()])
@@ -95,7 +102,14 @@ def generate(root,report,release):
     text+='\nZIP和单文件运行在干净临时目录，四席轮换，逐响应一致，冷启动重放一致。稳态均值含PASS/初始化等便宜请求，不能替代非强制完整决策基准；后者见 ARCHITECTURE_AND_FEATURES 与 raw/model_benchmark_final.json。\n\n'
     text+='**真实 Botzone 线上未验证。** Python3.6只是语法解析检查，实际运行是本机Python3.10/PyTorch2.3.1/PyMahjongGB1.4.0。V3需要五类native shanten/有效牌API和GELU，平台旧库缺失时明确报错。模型文件额度不代表运行内存额度。\n\n上传时只选该目录的 `mahjong_bot.py` 作为代码文件；`mahjong_model.pt` 单独放用户存储，默认路径 `data/mahjong_model.pt`。同目录代码绑定其权重SHA，不混用BC/PPO/其他版本。ZIP只作为备用打包格式，不要求用户同时上传多个代码文件。\n'
     (report/'SUBMISSION_CHECK.md').write_text(text)
-    result=dict(training=training,ppo=rl,selected=roles,final_scores=final['aggregate']['scores'],confirmatory=confirm,seed_stability=seeds,seed_stability_legacy=legacy_seeds)
+    if followup is not None:
+        extra=read(root/'arena_confirmation/results.json')
+        text='# 补充独立确认：固定长程PPO与BC\n\n先保存确认计划，再执行新500墙、四座位、五冻结对手，共20,000完整局；本阶段未训练或改变权重。第一批最终池对late-snapshot选择只算探索性信息。\n\n'
+        text+=table(['模型 vs 对手','reward [95% CI]','墙聚类SE','胜率','负率','荒庄率','独立墙'],[[n,ci(v['reward']),'%.5f'%v['reward']['se'],pct(v['win']['mean']),pct(v['loss']['mean']),pct(v['draw']['mean']),v['reward']['walls']] for n,v in extra['summary'].items()])
+        text+='\n'+table(['长程PPO−BC','配对奖励差 [95% CI]'],[['五对手等权综合',ci(followup['statistics'])]]+[[n,ci(v)] for n,v in followup['opponent_differences'].items()])
+        text+='\n综合区间仍跨零，未通过预设采用门槛，推荐保持BC；这不是确定无效或等效性的证明。完整计划、SHA、逐局记录与统计保存在raw。\n\n![PPO follow-up](figures/ppo_confirmation.png)\n'
+        (report/'CONFIRMATION_RESULTS.md').write_text(text)
+    result=dict(training=training,ppo=rl,selected=roles,final_scores=final['aggregate']['scores'],confirmatory=confirm,seed_stability=seeds,seed_stability_legacy=legacy_seeds,supplementary_confirmation=followup)
     (root/'report_summary.json').write_text(json.dumps(result,indent=2));return result
 
 

@@ -38,7 +38,21 @@ def verify_sealed_evaluation(raw,selection_sha256):
             raise ValueError('Final evaluation checkpoint differs from seal: '+name)
     if any(walls['overlaps'].values()) or walls['unique_walls']['final']!=selected['final_walls']:
         raise ValueError('Final arena wall independence failed')
-    return dict(candidates=len(names),final_walls=arena['walls'],games=expected_games,test_and_arena_bound_to_seal=True,wall_populations_disjoint=True)
+    checked=dict(candidates=len(names),final_walls=arena['walls'],games=expected_games,test_and_arena_bound_to_seal=True,wall_populations_disjoint=True)
+    plan_path=raw/'supplementary_confirmation_plan.json'
+    if plan_path.exists():
+        plan=json.loads(plan_path.read_text());outcome=json.loads((raw/'supplementary_confirmation.json').read_text())
+        cfg=json.loads((raw/'arena_confirmation/arena_config.json').read_text());result=json.loads((raw/'arena_confirmation/results.json').read_text())
+        if outcome['plan_sha256']!=digest(plan_path.read_bytes()) or cfg['purpose']!='confirmation' or cfg['walls']!=plan['walls'] or cfg['seed_start']!=plan['seed']:
+            raise ValueError('Supplementary confirmation plan mismatch')
+        if set(cfg['candidates'])!=set(plan['candidates']) or any(cfg['identities'][n]['sha256']!=v['sha256'] for n,v in plan['candidates'].items()):
+            raise ValueError('Supplementary candidate mismatch')
+        if result['games']!=len(plan['candidates'])*len(cfg['opponents'])*plan['walls']*4 or walls['unique_walls']['confirmation']!=plan['walls']:
+            raise ValueError('Supplementary confirmation incomplete')
+        accepted=outcome['statistics']['ci95'][0]>0 and all(v['ci95'][1]>=-.02 for v in outcome['opponent_differences'].values())
+        if accepted!=outcome['accepted']:raise ValueError('Supplementary adoption rule mismatch')
+        checked['followup']=dict(walls=plan['walls'],games=result['games'],plan_identity_verified=True,recommended_model=outcome['recommended_model'])
+    return checked
 
 
 def verify_archive(manifest_path,release_root):
