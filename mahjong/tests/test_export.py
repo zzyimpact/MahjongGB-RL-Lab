@@ -36,7 +36,8 @@ BOT_FILES = (
     "mahjong/botzone/runner.py",
     "mahjong/botzone/session.py",
     "mahjong/botzone/inference.py",
-    "mahjong/gamecore/engine.py",
+    "mahjong/model_v3.py",
+    "mahjong/features_v3.py",
 )
 
 
@@ -82,7 +83,7 @@ class BotProcess:
         self.proc.wait(timeout=10)
 
 
-def play_game(seed, seat0_handler, rng):
+def play_game(seed, seat0_handler, rng, candidate_seat=0):
     """Judge game; seat 0 uses seat0_handler(request)->response, others random."""
     core = GameCore()
     core.r.seed(seed)
@@ -103,7 +104,7 @@ def play_game(seed, seat0_handler, rng):
             for event in events:
                 observers[p].request2obs(event)
             for message in platform_messages(events, p):
-                if p == 0:
+                if p == candidate_seat:
                     responses[p] = seat0_handler(message)
                     history0.append((message, responses[p]))
                 else:
@@ -214,7 +215,7 @@ def _model_response(request, bot_dir, env):
         session = _SESSION
     except NameError:
         import torch
-        from mahjong.model import Model, make_model
+        from mahjong.model import Model, make_model, input_keys
 
         config = json.loads((bot_dir / "mahjong" / "bot_config.json").read_text())
         model = make_model(config)
@@ -223,8 +224,8 @@ def _model_response(request, bot_dir, env):
 
         def choose(arrays):
             with torch.no_grad():
-                obs = torch.from_numpy(arrays["obs"]).float().unsqueeze(0)
-                logits, _ = model(obs)
+                inputs = [torch.from_numpy(arrays[k]).float().unsqueeze(0) for k in input_keys(config)]
+                logits, _ = model(*inputs)
                 mask = torch.from_numpy(arrays["action_mask"]).bool().unsqueeze(0)
                 return int(logits.masked_fill(~mask, -1e9).argmax(dim=-1).item())
 

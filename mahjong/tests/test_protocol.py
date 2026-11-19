@@ -66,7 +66,7 @@ class MahjongProtocolTest(unittest.TestCase):
             core = GameCore()
             core.r.seed(seed)
             core.reset()
-            bots = [Session(choose) for _ in range(4)]
+            bots = [Session(choose, feature_set="v3") for _ in range(4)]
             observers = [SeatView(i) for i in range(4)]
             offsets = [0] * 4
             discards = {}
@@ -94,8 +94,8 @@ class MahjongProtocolTest(unittest.TestCase):
                     self.assertEqual(bots[p].view.packs, observers[p].packs)
                     self.assertEqual(bots[p].view.tileWall, observers[p].tileWall)
                     if p in core.obs:
-                        np.testing.assert_array_equal(encode(observers[p], "enhanced")["obs"],
-                                                      encode(bots[p].view, "enhanced")["obs"])
+                        for key, value in encode(observers[p], "v3").items():
+                            np.testing.assert_array_equal(value, encode(bots[p].view, "v3")[key])
                     for key, value in encode(observers[p]).items():
                         # Nonactive observers may retain different obsolete legal sets;
                         # only active decision masks are meaningful.
