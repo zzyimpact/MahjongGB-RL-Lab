@@ -11,7 +11,7 @@ def main():
     manifest=json.loads(Path('reports/round3/raw/split_manifest.json').read_text())
     groups={s:{w for w,t in manifest['groups'].items() if t==s} for s in ('train','val','test')}
     groups['historical']={wall_hash(i) for start,n in HISTORICAL_RANGES for i in range(start,start+n)}
-    groups.update(development=set(),final=set(),ppo_training=set());registrations=[]
+    groups.update(development=set(),final=set(),confirmation=set(),ppo_training=set());registrations=[]
     for path in Path(a.root).glob('**/arena_config.json'):
         r=json.loads(path.read_text());assert r['wall_ids']==[wall_hash(i) for i in range(r['seed_start'],r['seed_start']+r['walls'])]
         groups[r['purpose']].update(r['wall_ids']);registrations.append(dict(path=str(path),purpose=r['purpose'],walls=r['walls'],sha256=hashlib.sha256(path.read_bytes()).hexdigest()))

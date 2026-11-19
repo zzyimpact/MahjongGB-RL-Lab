@@ -101,7 +101,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--candidate',action='append',required=True);p.add_argument('--opponent',action='append',required=True)
     p.add_argument('--manifest',default='reports/round3/raw/split_manifest.json');p.add_argument('--output',required=True)
     p.add_argument('--seed',type=int,default=110000000);p.add_argument('--walls',type=int,default=32);p.add_argument('--workers',type=int,default=6)
-    p.add_argument('--registry-root',default='runs/final_v3');p.add_argument('--purpose',choices=['development','final'],required=True);p.add_argument('--resume',action='store_true');a=p.parse_args()
+    p.add_argument('--registry-root',default='runs/final_v3');p.add_argument('--purpose',choices=['development','final','confirmation'],required=True);p.add_argument('--resume',action='store_true');a=p.parse_args()
     candidates=dict(x.split('=',1) for x in a.candidate);opponents={}
     for x in a.opponent:
         if '=' in x:k,v=x.split('=',1);opponents[k]=v
