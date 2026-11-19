@@ -11,28 +11,26 @@
     "train_nonforced": 576202
   },
   "completed": [
-    "full v3 replay",
-    "V3 full-game feature consistency",
-    "resumable BC tests",
-    "D initial recipe 12 epochs",
-    "V3 initial recipe 12 epochs",
-    "multi-opponent arena implementation",
-    "single-file and ZIP local deployment",
-    "4-game PPO pipeline smoke"
+    "V3 and all primary feature/activation ablations, 12 epochs each",
+    "D constant and regularized controls",
+    "two controlled PPO experiments, 1024 games each",
+    "128-wall five-opponent paired development evaluations",
+    "full-batch sampling index verified against all training decisions",
+    "41 Mahjong regression tests passed",
+    "single-file and ZIP deployment smoke checks"
   ],
   "running": [
-    "BC ablation queue",
-    "PPO mixed opponents pilot",
-    "128-wall development training study"
+    "three-seed D/V3 comparison",
+    "legacy Adam recipe D/V3 queued"
   ],
   "pending": [
-    "regularized D/V3",
-    "multiple training seeds",
-    "final candidate freeze and independent test/arena",
-    "final release reports"
+    "candidate seal",
+    "heldout test and 500-wall final arena",
+    "final release verification and reports"
   ],
   "baseline_tests": {
     "mahjong": "28 passed; 3 export tests skipped without env checkpoint",
     "framework_combined": "60 passed, 6 skipped, 4 failed due missing optional fdl sources not present in repository"
-  }
+  },
+  "latest_code_commit": "729795e"
 }

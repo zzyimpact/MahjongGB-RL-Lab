@@ -21,7 +21,7 @@ def merge(directories,output):
 
 
 def seed_stability(results,families,output):
-    rows=json.loads(Path(results).read_text())['wall_records'];x={}
+    rows=json.loads(Path(results).read_text())['wall_records'];x={};reference_walls=None
     for family,names in families.items():
         matrix=[];wallsets=[]
         for name in names:
@@ -31,6 +31,8 @@ def seed_stability(results,families,output):
             if not grouped:raise ValueError('missing training seed candidate '+name)
             wallsets.append(sorted(grouped));matrix.append([np.mean([r['reward'] for r in grouped[s]]) for s in sorted(grouped)])
         if any(s!=wallsets[0] for s in wallsets):raise ValueError('unpaired seed arenas')
+        if reference_walls is not None and reference_walls!=wallsets[0]:raise ValueError('unpaired family walls')
+        reference_walls=wallsets[0]
         x[family]=np.asarray(matrix)
     if len({v.shape for v in x.values()})!=1:raise ValueError('families need matched seed and wall counts')
     nseeds,nwalls=next(iter(x.values())).shape;rng=np.random.RandomState(20261119);boot={k:[] for k in x}
@@ -45,11 +47,37 @@ def seed_stability(results,families,output):
     Path(output).write_text(json.dumps(result,indent=2));return result
 
 
+def confirmatory(results,selection,output):
+    arena=json.loads(Path(results).read_text());sealed=json.loads(Path(selection).read_text());roles=sealed['roles'];rows=arena['wall_records']
+    pairs=[(roles['selected_bc'],'D_original'),(roles['selected_bc'],roles['same_recipe_d']),(roles['selected_ppo'],roles['selected_bc'])]
+    def wall_means(name):
+        grouped={}
+        for r in rows:
+            if r['candidate']==name:grouped.setdefault(r['seed'],[]).append(r['reward'])
+        if any(len(v)!=5 for v in grouped.values()):raise ValueError('confirmation requires five frozen opponents')
+        return {k:float(np.mean(v)) for k,v in grouped.items()}
+    out={};rng=np.random.RandomState(20261119)
+    for a,b in pairs:
+        av,bv=wall_means(a),wall_means(b)
+        if av.keys()!=bv.keys() or len(av)!=sealed['final_walls']:raise ValueError('incomplete paired final arena')
+        diff=np.array([av[s]-bv[s] for s in sorted(av)]);n=len(diff)
+        samples=diff[rng.randint(0,n,size=(20000,n))].mean(1)
+        out[a+' - '+b]=dict(mean=float(diff.mean()),walls=n,se=float(diff.std(ddof=1)/np.sqrt(n)),
+            ci95=np.quantile(samples,[.025,.975]).tolist(),bonferroni_family_ci95=np.quantile(samples,[.025/len(pairs),1-.025/len(pairs)]).tolist())
+    result=dict(contrasts=out,bootstrap_replicates=20000,seed=20261119,method='paired wall bootstrap; three prespecified contrasts; Bonferroni percentile intervals are approximate',
+                selection_sha256=hashlib.sha256(Path(selection).read_bytes()).hexdigest())
+    Path(output).write_text(json.dumps(result,indent=2));return result
+
+
 def main():
     p=argparse.ArgumentParser();s=p.add_subparsers(dest='cmd',required=True)
     m=s.add_parser('merge');m.add_argument('--input',nargs='+',required=True);m.add_argument('--output',required=True)
     b=s.add_parser('seeds');b.add_argument('--input',required=True);b.add_argument('--families',required=True,help='JSON mapping family to aligned seed model names');b.add_argument('--output',required=True)
-    a=p.parse_args();result=merge(a.input,a.output) if a.cmd=='merge' else seed_stability(a.input,json.loads(a.families),a.output)
+    c=s.add_parser('confirmatory');c.add_argument('--input',required=True);c.add_argument('--selection',required=True);c.add_argument('--output',required=True)
+    a=p.parse_args()
+    if a.cmd=='merge':result=merge(a.input,a.output)
+    elif a.cmd=='seeds':result=seed_stability(a.input,json.loads(a.families),a.output)
+    else:result=confirmatory(a.input,a.selection,a.output)
     print(json.dumps(result.get('aggregate',result),indent=2))
 
 if __name__=='__main__':main()

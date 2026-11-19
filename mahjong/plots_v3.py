@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 def plots(root,output,final_arena=None):
     root=Path(root);output=Path(output);output.mkdir(parents=True,exist_ok=True)
     plt.rcParams.update({'font.size':10,'axes.spines.top':False,'axes.spines.right':False,'figure.dpi':140})
-    main=['D_retrained','V3','D_regularized','V3_regularized'];fig,ax=plt.subplots(2,2,figsize=(12,8),layout='constrained')
+    main=['D_retrained','V3','D_regularized','V3_regularized','D_legacy','V3_legacy'];fig,ax=plt.subplots(2,2,figsize=(12,8),layout='constrained')
     for name in main:
         p=root/name/'history.json'
         if not p.exists():continue
@@ -51,7 +51,7 @@ def plots(root,output,final_arena=None):
         r=json.loads(Path(final_arena).read_text());scores=r['aggregate']['scores'];names=list(scores);mean=np.array([scores[n]['mean'] for n in names]);ci=np.array([scores[n]['ci95'] for n in names])
         fig,a=plt.subplots(figsize=(9,max(4,len(names)*.5)),layout='constrained');yy=np.arange(len(names))
         a.errorbar(mean,yy,xerr=[mean-ci[:,0],ci[:,1]-mean],fmt='o',capsize=3);a.set_yticks(yy,labels=names);a.axvline(0,color='gray',lw=.7)
-        a.set(xlabel='Mean terminal reward / 32, equal weights over five frozen opponents',title='Independent final arena: wall-cluster bootstrap 95% CI');a.grid(axis='x',alpha=.2)
+        a.set(xlabel='Mean normalized reward (score / 32), five frozen opponents equally weighted',title='Independent final arena: wall-cluster bootstrap 95% CI');a.grid(axis='x',alpha=.2)
         fig.savefig(output/'final_arena.png');fig.savefig(output/'final_arena.pdf');plt.close(fig)
 
 

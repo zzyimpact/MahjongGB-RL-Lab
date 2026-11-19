@@ -12,7 +12,9 @@ import time
 from .arena import identity, init_worker, worker, summarize, cluster_stats
 from .gamecore.engine import GameCore
 
-HISTORICAL_RANGES = [(1000,1000),(2026,2400),(100000,100),(7000000,4),(8000000,100),(9000000,300),(8100000,50),
+# Round1 source/report specifies teacher 1000-1999; a round3 audit instead
+# recorded 0-999. Conservatively exclude both documented populations.
+HISTORICAL_RANGES = [(0,1000),(1000,1000),(2026,2400),(100000,100),(7000000,4),(8000000,100),(9000000,300),(8100000,50),
                      (9100000,300),(9200000,300),(42000000,320)]
 
 

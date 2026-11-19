@@ -10,13 +10,17 @@ from .arena import identity,load_checkpoint
 from .train_v3 import Dataset,evaluate
 
 
-def seal(candidates,output,reason):
+def seal(candidates,output,reason,roles=None):
     output=Path(output)
     if output.exists():raise FileExistsError('Do not rewrite a final-selection seal')
     selection=dict(sealed_time=time.time(),source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
         rationale=reason,selection_rule='development mean reward across five frozen opponents; validation CE and complexity secondary',
         candidates={k:identity(v) for k,v in candidates.items()},final_seed=112000000,final_walls=500,
         heldout_test='same 51 walls as round3, not used for this round selection; historical results already public')
+    if roles is not None:
+        for role in ('selected_bc','selected_ppo','same_recipe_d'):
+            if roles[role] not in candidates:raise ValueError('Selection role has no sealed checkpoint: '+role)
+        selection['roles']=roles
     output.write_text(json.dumps(selection,indent=2));return selection
 
 
@@ -35,10 +39,10 @@ def test(seal_path,data,output,device='cpu'):
 
 def main():
     p=argparse.ArgumentParser();sub=p.add_subparsers(dest='command',required=True)
-    s=sub.add_parser('seal');s.add_argument('--candidate',action='append',required=True);s.add_argument('--output',required=True);s.add_argument('--reason',required=True)
+    s=sub.add_parser('seal');s.add_argument('--candidate',action='append',required=True);s.add_argument('--output',required=True);s.add_argument('--reason',required=True);s.add_argument('--roles-file')
     t=sub.add_parser('test');t.add_argument('--seal',required=True);t.add_argument('--data',default='data/final_v3');t.add_argument('--output',required=True);t.add_argument('--device',default='cpu')
     a=p.parse_args()
-    result=seal(dict(x.split('=',1) for x in a.candidate),a.output,a.reason) if a.command=='seal' else test(a.seal,a.data,a.output,a.device)
+    result=seal(dict(x.split('=',1) for x in a.candidate),a.output,a.reason,json.loads(Path(a.roles_file).read_text()) if a.roles_file else None) if a.command=='seal' else test(a.seal,a.data,a.output,a.device)
     print(json.dumps(result,indent=2))
 
 if __name__=='__main__':main()
