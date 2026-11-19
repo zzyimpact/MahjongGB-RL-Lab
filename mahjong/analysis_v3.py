@@ -69,15 +69,46 @@ def confirmatory(results,selection,output):
     Path(output).write_text(json.dumps(result,indent=2));return result
 
 
+def followup(results,plan_path,output):
+    plan=json.loads(Path(plan_path).read_text());arena=json.loads(Path(results).read_text())
+    config=json.loads((Path(results).parent/'arena_config.json').read_text())
+    if config['purpose']!='confirmation' or config['seed_start']!=plan['seed'] or config['walls']!=plan['walls']:
+        raise ValueError('Follow-up population differs from registered plan')
+    if set(config['candidates'])!=set(plan['candidates']):raise ValueError('Follow-up candidates changed')
+    for name,item in plan['candidates'].items():
+        if config['identities'][name]['sha256']!=item['sha256']:raise ValueError('Follow-up checkpoint changed')
+    names=plan['primary_contrast'].split(' - ');rows=arena['wall_records'];opponents=config['opponents']
+    def values(name):
+        r={}
+        for row in rows:
+            if row['candidate']==name:r.setdefault(row['seed'],{})[row['opponent']]=row['reward']
+        if len(r)!=plan['walls'] or any(set(x)!=set(opponents) for x in r.values()):raise ValueError('Incomplete follow-up walls/opponents')
+        return r
+    a,b=map(values,names)
+    if a.keys()!=b.keys():raise ValueError('Unpaired follow-up walls')
+    rng=np.random.RandomState(plan['bootstrap_seed']);seeds=sorted(a)
+    diffs={o:np.array([a[s][o]-b[s][o] for s in seeds]) for o in opponents}
+    diff=np.mean(list(diffs.values()),axis=0);samples=diff[rng.randint(0,len(diff),(plan['bootstrap_replicates'],len(diff)))].mean(1)
+    contrast=dict(mean=float(diff.mean()),walls=len(diff),se=float(diff.std(ddof=1)/np.sqrt(len(diff))),ci95=np.quantile(samples,[.025,.975]).tolist())
+    by_opponent={o:cluster_stats(v,seed=plan['bootstrap_seed']) for o,v in diffs.items()}
+    accepted=contrast['ci95'][0]>0 and all(x['ci95'][1]>=-.02 for x in by_opponent.values())
+    result=dict(plan_sha256=hashlib.sha256(Path(plan_path).read_bytes()).hexdigest(),contrast=plan['primary_contrast'],statistics=contrast,
+        opponent_differences=by_opponent,accepted=accepted,recommended_model=names[0] if accepted else names[1],
+        method='One separately registered follow-up contrast, new500-wall population;20k paired wall bootstrap; original final pool is exploratory for this late-snapshot selection.')
+    Path(output).write_text(json.dumps(result,indent=2));return result
+
+
 def main():
     p=argparse.ArgumentParser();s=p.add_subparsers(dest='cmd',required=True)
     m=s.add_parser('merge');m.add_argument('--input',nargs='+',required=True);m.add_argument('--output',required=True)
     b=s.add_parser('seeds');b.add_argument('--input',required=True);b.add_argument('--families',required=True,help='JSON mapping family to aligned seed model names');b.add_argument('--output',required=True)
     c=s.add_parser('confirmatory');c.add_argument('--input',required=True);c.add_argument('--selection',required=True);c.add_argument('--output',required=True)
+    f=s.add_parser('followup');f.add_argument('--input',required=True);f.add_argument('--plan',required=True);f.add_argument('--output',required=True)
     a=p.parse_args()
     if a.cmd=='merge':result=merge(a.input,a.output)
     elif a.cmd=='seeds':result=seed_stability(a.input,json.loads(a.families),a.output)
-    else:result=confirmatory(a.input,a.selection,a.output)
+    elif a.cmd=='confirmatory':result=confirmatory(a.input,a.selection,a.output)
+    else:result=followup(a.input,a.plan,a.output)
     print(json.dumps(result.get('aggregate',result),indent=2))
 
 if __name__=='__main__':main()
