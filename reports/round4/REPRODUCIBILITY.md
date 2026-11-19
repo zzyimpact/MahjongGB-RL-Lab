@@ -54,6 +54,14 @@ curl -L --fail 'https://huggingface.co/datasets/Dannibal/ijcai-mahjong-corpora-2
  mahjong/configs/v3/D_regularized.json mahjong/configs/v3/V3_regularized.json
 ```
 
+阶段性快照的开发Arena可自动等待训练完成后运行：
+
+```bash
+.venv/bin/python -m mahjong.study_v3 --root runs/reproduce_v3 --models D_legacy V3_legacy --epochs 3 6 12 --walls 128 --seed 111000000 --workers 4
+```
+
+该命令仍属于开发评估，不读取最终墙或测试分类指标。
+
 主配方另外使用 seed 20261120、20261121（首个为 20261119）：
 
 ```bash
