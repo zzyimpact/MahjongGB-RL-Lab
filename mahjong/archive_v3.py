@@ -31,6 +31,8 @@ def archive(root,selection,artifacts,reports):
     raw=reports/'raw';raw.mkdir(parents=True,exist_ok=True);records=[]
     for source in sorted(root.rglob('*')):
         if not source.is_file() or source.suffix not in ('.json','.jsonl','.txt','.log'):continue
+        # Never capture the archive/verification command's own changing stdout.
+        if source.name in ('archive_stdout.log','release_verification_stdout.log'):continue
         rel=source.relative_to(root);target=raw/rel;target.parent.mkdir(parents=True,exist_ok=True)
         content=source.read_bytes()
         if source.suffix=='.jsonl':
