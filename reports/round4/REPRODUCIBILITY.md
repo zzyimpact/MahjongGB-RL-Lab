@@ -77,6 +77,16 @@ curl -L --fail 'https://huggingface.co/datasets/Dannibal/ijcai-mahjong-corpora-2
 .venv/bin/python -m mahjong.experiment_v3 --data data/reproduce_v3 --root runs/reproduce_v3 --configs mahjong/configs/v3/D_legacy.json mahjong/configs/v3/V3_legacy.json
 ```
 
+旧Adam配方也用相同的另外两个训练seed复验；D固定比较第6epoch，V3固定比较第1epoch，阶段在主seed开发Arena上事先确定：
+
+```bash
+.venv/bin/python -m mahjong.experiment_v3 --data data/reproduce_v3 --root runs/reproduce_v3 --configs \
+ mahjong/configs/v3/D_legacy_seed2.json mahjong/configs/v3/V3_legacy_seed2.json \
+ mahjong/configs/v3/D_legacy_seed3.json mahjong/configs/v3/V3_legacy_seed3.json
+.venv/bin/python -m mahjong.study_v3 --root runs/reproduce_v3 --models D_legacy_seed2 D_legacy_seed3 --epochs 6 --walls 128 --seed 111000000 --workers 4
+.venv/bin/python -m mahjong.study_v3 --root runs/reproduce_v3 --models V3_legacy_seed2 V3_legacy_seed3 --epochs 1 --walls 128 --seed 111000000 --workers 4
+```
+
 该控制重新回放训练集，恢复原始完整样本排序，严格核对每个非强制样本的 mask/action/game_id。按完整 1,815,376 行洗牌、每批 1024 行；只省略零梯度强制行的前向，仍用原完整批数作分母，因此每 epoch 1,773 次更新。Adam .001、无平滑/WD、clip10，GroupNorm 逐样本梯度等价有测试；不承诺不同 batch shape 的硬件浮点结果逐 bit 相同。不是增加专家数据，也不与主 AdamW 配方混为单变量消融。
 
 单实验中断恢复：
@@ -126,6 +136,15 @@ test 沿用第三轮 51 墙；它不是项目历史上从未公开过的测试�
 训练种子 130000000 起，两个控制实验故意复用训练墙；实际执行对局数和独立训练墙数分别报告。初始纯流程 smoke 使用 135000000 起 4 局，不能当作实力实验。周期评估选 `ppo_best.pt`；`eval_best.pt` 同时保护 BC，`last.pt` 保留最后状态，原 BC 永不覆盖。
 
 完整策略、优化器、RNG、episode cursor 及轨迹计数支持 `--resume`。初始版本没有保存各 actor 子进程的 RNG 状态，因此跨中断恢复不承诺与不间断 PPO 逐 bit 一致；从起点在同样环境运行的 seed、对手和采样计划固定。所有恢复后的局号仍递增，不复用先前 episode seed。
+
+更强的旧Adam配方V3第1epoch另外开展了新PPO，直接记录启动源码commit与文件SHA，且开启episode独立随机种子。新训练种子130010000起，周期开发种子110300000起64墙：
+
+```bash
+.venv/bin/python -m mahjong.ppo_v3 --config mahjong/configs/v3/PPO_V3_legacy.json --checkpoint runs/reproduce_v3/V3_legacy/epoch_001.pt --output runs/reproduce_v3/PPO_V3_legacy
+.venv/bin/python -m mahjong.ppo_v3 --config mahjong/configs/v3/PPO_V3_legacy_extended.json --checkpoint runs/reproduce_v3/V3_legacy/epoch_001.pt --output runs/reproduce_v3/PPO_V3_legacy_extended
+```
+
+扩展配置最多192iteration/3072局，按原来的连续三次开发评估退化规则早停。为不改写已完成的1024局实验，扩展实验从相同BC在新目录重新运行，前1024局种子故意重复，不能相加成新的独立墙。它不是加载第三轮退化PPO。实际执行次数以各`summary.json`为准；跨平台数值结果仍不承诺逐bit相同。
 
 ## 导出、文件限制与运行验证
 

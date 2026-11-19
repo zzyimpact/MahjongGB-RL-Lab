@@ -11,6 +11,29 @@ from .verify_submission import verify
 def digest(data):return hashlib.sha256(data).hexdigest()
 
 
+def verify_sealed_evaluation(raw,selection_sha256):
+    """Bind final evaluation and test records to the pre-evaluation seal."""
+    raw=Path(raw);selection_path=raw/'selection.json'
+    if digest(selection_path.read_bytes())!=selection_sha256:raise ValueError('Selection seal identity mismatch')
+    selected=json.loads(selection_path.read_text())
+    arena=json.loads((raw/'arena_final/arena_config.json').read_text())
+    test=json.loads((raw/'test_metrics.json').read_text())
+    confirm=json.loads((raw/'confirmatory_statistics.json').read_text())
+    walls=json.loads((raw/'wall_audit_final.json').read_text())
+    names=set(selected['candidates'])
+    if set(arena['candidates'])!=names or set(test['models'])!=names:raise ValueError('Sealed candidate population differs from final evaluation')
+    if arena['purpose']!='final' or arena['walls']!=selected['final_walls'] or arena['seed_start']!=selected['final_seed']:
+        raise ValueError('Final arena population differs from seal')
+    if test['seal_sha256']!=selection_sha256 or confirm['selection_sha256']!=selection_sha256:
+        raise ValueError('Final statistics use a different selection seal')
+    for name,record in selected['candidates'].items():
+        if arena['identities'][name]['sha256']!=record['sha256'] or test['models'][name]['identity']['sha256']!=record['sha256']:
+            raise ValueError('Final evaluation checkpoint differs from seal: '+name)
+    if any(walls['overlaps'].values()) or walls['unique_walls']['final']!=selected['final_walls']:
+        raise ValueError('Final arena wall independence failed')
+    return dict(candidates=len(names),final_walls=arena['walls'],test_and_arena_bound_to_seal=True,wall_populations_disjoint=True)
+
+
 def verify_archive(manifest_path,release_root):
     manifest_path=Path(manifest_path);manifest=json.loads(manifest_path.read_text());models={};raw_count=0
     for name,r in manifest['models'].items():
@@ -24,6 +47,7 @@ def verify_archive(manifest_path,release_root):
         source=gzip.decompress(content) if path.name.endswith('.jsonl.gz') else content
         if digest(source)!=r['source_sha256']:raise ValueError('Lossless source identity mismatch: '+str(path))
         raw_count+=1
+    evaluation=verify_sealed_evaluation(manifest_path.parent/'raw',manifest['selection_sha256'])
     releases={};allowed={r['sha256'] for r in manifest['models'].values()}
     for path in sorted(Path(release_root).iterdir()):
         if not path.is_dir() or not (path/'manifest.json').exists():continue
@@ -32,7 +56,7 @@ def verify_archive(manifest_path,release_root):
         if not runtime['zip_single_responses_identical'] or any(r['illegal_actions'] for r in runtime['results'].values()):raise ValueError('Recorded deployment run failed')
         releases[path.name]=dict(passed=check['passed'],model_bytes=check['model']['bytes'],zip_bytes=check['code_zip']['bytes'],expanded_bytes=check['code_zip']['expanded_bytes'],single_bytes=check['single_file']['bytes'])
     if not releases:raise ValueError('No published deployment artifacts')
-    return dict(passed=True,manifest_sha256=digest(manifest_path.read_bytes()),models=models,verified_raw_files=raw_count,releases=releases,
+    return dict(passed=True,manifest_sha256=digest(manifest_path.read_bytes()),models=models,verified_raw_files=raw_count,releases=releases,evaluation=evaluation,
                 scope='Checks archive identity and saved runtime results; does not repeat online or local gameplay',online_botzone_verified=False)
 
 
