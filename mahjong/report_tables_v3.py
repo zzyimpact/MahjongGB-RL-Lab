@@ -34,6 +34,13 @@ def generate(root,report,release):
     epoch_table=table(['Run','Epoch','Train NF CE','Val NF CE','Val Play','LR','梯度范数（裁剪前均值）','更新'],epochs)
     seed_table=table(['模型族','三 seed 开发均值','seed 标准差','双层 bootstrap 95% CI'],[[n,', '.join('%+.4f'%x for x in r['seed_means']),'%.4f'%r['seed_std'],'[%+.4f, %+.4f]'%tuple(r['hierarchical_ci95'])] for n,r in seeds['families'].items()])
     text='# BC 训练充分性研究\n\n所有表由 `mahjong.report_tables_v3` 读取原始记录生成。CE 默认指非强制决策；全样本 CE 另保存在 JSON。测试指标仅在候选 SHA 封存后读取。\n\n## 配方与选择\n\n'
+    historical=read(root/'historical_checkpoint_epochs.json')
+    text+='先纠正历史预算与发布状态的区别：第三轮C/D各训练3 epoch，但发布checkpoint均保留第1 epoch、1773更新的验证最佳权重。实际状态重新读取于 `raw/historical_checkpoint_epochs.json`，没有改写历史权重。\n\n'
+    historical_rows=[]
+    for n,r in historical.items():
+        history=read(Path('reports/round3/raw')/n/'bc_history.json')
+        for e in history:historical_rows.append([n,e['epoch'],'是' if e['epoch']==r['stored_bc_epoch'] else '否','%.4f'%e['val']['nonforced_loss'],pct(e['val']['metrics']['play']['accuracy'])])
+    text+=table(['历史模型','训练epoch','是否实际发布','Val NF CE','Val Play'],historical_rows)+'\n'
     text+='主配方使用 AdamW、非强制 batch512、5e-4 学习率、1 epoch warmup、20 epoch cosine 规划、weight decay .01、合法标签平滑 .02、clip5。至少观察12 epoch，验证 CE 改善需超过 .001，patience6。更保守配方联合改变 batch256/lr2e-4/smoothing.1，并在12 epoch衰减至floor；不是单变量因果试验。\n\n'
     text+='D_constant 只去掉主配方 cosine。D_legacy/V3_legacy 使用旧 Adam .001、完整序列1024分批、无平滑/WD、clip10；从随机初始化重新训练。强制行没有有效梯度，因此只对同批非强制行前向，仍除原始完整批大小。全部训练集原始位置、mask、action经重新回放核验；GroupNorm逐样本梯度等价测试通过。不同批 shape/数值内核不承诺与历史运行逐bit相同。\n\n'
     text+='## 全部实际 BC 运行\n\n'+tr_table+'\n累计更新包含保留 checkpoint 之后的观察训练。`checkpoint.pt` 是验证规则选出的较早状态，`last.pt` 和阶段快照另存。BC 不优化无价值监督的 Critic。\n\n## 3/6/12 等阶段\n\n'+epoch_table
