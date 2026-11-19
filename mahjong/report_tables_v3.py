@@ -67,6 +67,7 @@ def generate(root,report,release):
     text+='每局两学习席轮转，其余两席由冻结 BC/C/D 按 seed 循环；不是四席实时共享策略。Critic 在共享状态输入处 detach，前8 iteration只训练价值头，Actor逐tensor保持不变。Actor更新学习率2e-5，clip .1，entropy .001，2 PPO epoch，batch512，每iteration16局。KL方向为 KL(BC || current)，只在合法动作上归一化，reference冻结。\n\n'
     text+='初始两个控制实验只改变 KL 系数 .2→1.0。它们复用同一组1024训练墙，warmup权重逐tensor相同。两次执行的2048局不能称为2048副独立牌墙。统计学习席reward，不用零和四席均值证明牌力。\n\n## 实际规模\n\n'+rl_table
     text+='\n第三次 `PPO_V3_legacy` 从更强的旧Adam配方 V3 第1epoch重新开始，KL系数1.0；使用130010000起的新1024训练墙、110300000起的新64周期开发墙，并启用逐episode独立随机种子。它不是在前两次PPO权重上续训。主配置、源码commit及源码文件SHA由该次启动直接记录。\n'
+    text+='\n第四次 `PPO_V3_legacy_extended` 将相同配方扩展到最多3072局。为完整保留短程结果，它在新目录从相同BC重新运行，重复的前1024局不能当作新独立训练墙；前缀权重的实际核对见 `raw/ppo_extended_prefix_check.json`。它使用同一周期开发集，属于开发阶段扩展验证。实际停止位置以表中计数为准。\n'
     text+='\n耗时含周期开发评估、不含最初 BC 基线评估；非荒庄率由每局两学习席终局reward重建。下面是warmup后每iteration指标的简单均值，不是按全体样本重加权的估计。\n\n'+losses
     text+='\n![PPO learning curves](figures/ppo_learning_curves.png)\n\n每16 iteration以64开发墙、五冻结对手选 `ppo_best.pt`，另外保留 `last.pt`、周期快照、原始BC和包含BC的 `eval_best.pt`。128墙作开发比较，最终选择规则与候选SHA在新的500墙之前封存。\n\n'
     text+='## 独立最终配对结果\n\n'+table(['候选','五对手综合reward [95% CI]'],[[n,ci(final['aggregate']['scores'][n])] for n in [bc,ppo]])
