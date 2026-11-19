@@ -51,16 +51,16 @@ def benchmark(directory,games=8):
             finally:process.close()
             rss=re.search(r'(\d+)\s+maximum resident set size',stderr.read_text());lat=np.asarray(process.latencies)*1000
             cold=[]
-            for index in [0,len(histories)-1]:
+            for index in sorted({0,len(histories)-1,max(range(len(histories)),key=lambda i:len(histories[i]))}):
                 h=histories[index];p=Process(root,script,directory/'mahjong_model.pt',root/'cold_time.txt')
                 lines=[str(len(h))]
                 for req,res in h[:-1]:lines.extend([req,res])
                 try:response=p.raw(lines+[h[-1][0]])
                 finally:p.close()
                 if response!=h[-1][1]:raise AssertionError('cold-history mismatch')
-                cold.append(dict(turns=len(h),seconds=p.latencies[0]))
+                cold.append(dict(game_index=index,turns=len(h),seconds=p.latencies[0]))
             results[kind]=dict(games=games,seats=[i%4 for i in range(games)],illegal_actions=0,requests=len(lat),scores=scores,
-                cold_start_ms=float(lat[0]),steady_mean_ms=float(lat[1:].mean()),steady_p95_ms=float(np.quantile(lat[1:],.95)),
+                cold_start_ms=float(lat[0]),longest_history_turns=max(map(len,histories)),steady_mean_ms=float(lat[1:].mean()),steady_p95_ms=float(np.quantile(lat[1:],.95)),
                 steady_max_ms=float(lat[1:].max()),max_request_ms=float(lat.max()),peak_rss_bytes=int(rss.group(1)) if rss else None,cold_replays=cold)
             all_histories[kind]=histories
     if all_histories['zip']!=all_histories['single']:raise AssertionError('ZIP and single-file decisions differ')
