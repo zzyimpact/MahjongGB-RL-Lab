@@ -1,5 +1,11 @@
 # 强化学习课程：三个 Botzone 游戏示例
 
+## 课程最终报告（2026-11-20）
+
+[正式中文报告](reports/course_submission/FINAL_COURSE_REPORT.md) · [5 页 A4 PDF](reports/course_submission/FINAL_COURSE_REPORT.pdf) · [来源核验与重建说明](reports/course_submission/README.md)
+
+最终提交并成功运行的策略为 **V3 短程 PPO**（由提交者确认）。报告已区分整次实验 1024 局与提交权重 iteration 48 累计 768 局、422 次更新。下方各轮次说明保留为当时的历史记录。
+
 这套示例使用给定的RL框架训练国标麻将、双升和掼蛋。学生可任选一个游戏，修改特征、网络、算法和超参数。默认训练是多进程同步PPO：一个 learner、多个 CPU actor；四个玩家使用同一份模型参数的策略，收集各自轨迹用于训练。双升、掼蛋只学习出牌，开局阶段的决策使用手写规则。
 
 ## 国标麻将第四轮：V3最终候选（2026-11-19）

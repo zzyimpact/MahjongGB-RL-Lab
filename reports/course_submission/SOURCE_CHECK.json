@@ -1,0 +1,321 @@
+{
+  "report_source_commit": "034b93f95e0ff0d00ba820b1c48808aacf325e11",
+  "round4_development_commit": "d83016398c663cee929b05e0d66a24dc52401af7",
+  "scope": "Read existing artifacts only. No new training, match, or model change.",
+  "selected_model": "PPO_legacy_best",
+  "selected_iteration": 48,
+  "selected_counters": {
+    "env_steps": 96567,
+    "agent_steps": 192861,
+    "gradient_updates": 422,
+    "completed_episodes": 768
+  },
+  "whole_run": {
+    "env_steps": 129419,
+    "agent_steps": 258479,
+    "gradient_updates": 568,
+    "completed_episodes": 1024,
+    "iteration": 64,
+    "seconds": 710.1823980000336,
+    "best_development_score": 0.3287841796875,
+    "best_post_ppo_score": 0.3287841796875,
+    "warmup_episodes": 128,
+    "stopped_early": false
+  },
+  "warmup_games": 128,
+  "bc_initialization": "V3_legacy_e01",
+  "tensor_identity_verified": true,
+  "weights": [
+    {
+      "path": "artifacts/round4/PPO_legacy_best/checkpoint.pt",
+      "sha256": "3da57c2e0bffca4090e44632e585f91ffd5a796071e6ad231f30b458e8e720d6",
+      "bytes": 14531859
+    },
+    {
+      "path": "artifacts/round4/releases/PPO/mahjong_model.pt",
+      "sha256": "0e8212c1dbb9b893bdc38542e7cdef4c71272059a4fa897ee0fbeeb8432d5306",
+      "bytes": 4805859
+    },
+    {
+      "path": "artifacts/botzone_ready_20261119/V3_PPO/mahjong_V3_PPO.pt",
+      "sha256": "cea3e4efc4e8b823cd183c83dbe5f1ca94c42167a338484597807fcbae73b915",
+      "bytes": 4805859
+    }
+  ],
+  "deployment": {
+    "zip_bytes": 16615,
+    "expanded_bytes": 45816,
+    "code_zip": "artifacts/botzone_ready_20261119/V3_PPO/botzone_V3_PPO.zip",
+    "sha256": "63ff8f74216a432e4a4d02dfcaa18fc731749bc4669ce9aff6684aee0e36672a",
+    "online_status": "Successfully submitted and run, as explicitly confirmed by the user.",
+    "online_scores_or_rank": "Not provided; no claim is made."
+  },
+  "dataset": {
+    "train": {
+      "samples": 1815376,
+      "games": 9840,
+      "walls": 410,
+      "stored_nonforced": 576202
+    },
+    "val": {
+      "samples": 239322,
+      "games": 1224,
+      "walls": 51,
+      "stored_nonforced": 75685
+    },
+    "test": {
+      "samples": 229832,
+      "games": 1224,
+      "walls": 51,
+      "stored_nonforced": 73294
+    }
+  },
+  "core_results": {
+    "D_original": {
+      "parameters": 966444,
+      "bc_epoch": 1,
+      "play": {
+        "correct": 37244,
+        "samples": 57222,
+        "accuracy": 0.6508685470623187
+      },
+      "reward": {
+        "mean": 0.13789375,
+        "walls": 500,
+        "se": 0.007118769804726823,
+        "ci95": [
+          0.124427890625,
+          0.15213179687499997
+        ]
+      },
+      "checkpoint": "artifacts/round3/D/checkpoint.pt",
+      "sha256": "4821f1830230864d7a5526b02af63fbce83431d812b7394a20247b91508ca64e"
+    },
+    "D_legacy_e06": {
+      "parameters": 966444,
+      "bc_epoch": 6,
+      "play": {
+        "correct": 38034,
+        "samples": 57222,
+        "accuracy": 0.6646744259201006
+      },
+      "reward": {
+        "mean": 0.21723125,
+        "walls": 500,
+        "se": 0.008754762477014032,
+        "ci95": [
+          0.20045906250000003,
+          0.234359375
+        ]
+      },
+      "checkpoint": "artifacts/round4/D_legacy_e06/checkpoint.pt",
+      "sha256": "3ee490454fff61ac2f40c314ba996be77265db75874b2af6c18067d469f9eed3"
+    },
+    "V3_legacy_e01": {
+      "parameters": 1199917,
+      "bc_epoch": 1,
+      "play": {
+        "correct": 39378,
+        "samples": 57222,
+        "accuracy": 0.6881618957743525
+      },
+      "reward": {
+        "mean": 0.27936875,
+        "walls": 500,
+        "se": 0.008648765076751169,
+        "ci95": [
+          0.26294265625,
+          0.296562890625
+        ]
+      },
+      "checkpoint": "artifacts/round4/V3_legacy_e01/checkpoint.pt",
+      "sha256": "361ce9f282f53d34248339c1bf977bc78147013fa9964c2288bf75b8b746cb0f"
+    },
+    "PPO_legacy_best": {
+      "parameters": 1199917,
+      "bc_epoch": null,
+      "play": {
+        "correct": 39440,
+        "samples": 57222,
+        "accuracy": 0.6892453951277481
+      },
+      "reward": {
+        "mean": 0.28725,
+        "walls": 500,
+        "se": 0.008966741730320247,
+        "ci95": [
+          0.2698996875,
+          0.30567203125
+        ]
+      },
+      "checkpoint": "artifacts/round4/PPO_legacy_best/checkpoint.pt",
+      "sha256": "3da57c2e0bffca4090e44632e585f91ffd5a796071e6ad231f30b458e8e720d6"
+    }
+  },
+  "paired_statistics": {
+    "contrasts": {
+      "V3_legacy_e01 - D_original": {
+        "mean": 0.141475,
+        "walls": 500,
+        "se": 0.00978397863574115,
+        "ci95": [
+          0.122053125,
+          0.160793828125
+        ],
+        "bonferroni_family_ci95": [
+          0.11767057291666665,
+          0.16497187500000002
+        ]
+      },
+      "V3_legacy_e01 - D_legacy_e06": {
+        "mean": 0.062137500000000005,
+        "walls": 500,
+        "se": 0.010201882267680176,
+        "ci95": [
+          0.042203125,
+          0.08214070312499999
+        ],
+        "bonferroni_family_ci95": [
+          0.037651901041666665,
+          0.08632317708333334
+        ]
+      },
+      "PPO_legacy_best - V3_legacy_e01": {
+        "mean": 0.007881250000000001,
+        "walls": 500,
+        "se": 0.004692879586752308,
+        "ci95": [
+          -0.0014968749999999984,
+          0.017109374999999996
+        ],
+        "bonferroni_family_ci95": [
+          -0.0035772135416666678,
+          0.019002135416666666
+        ]
+      }
+    },
+    "bootstrap_replicates": 20000,
+    "seed": 20261119,
+    "method": "paired wall bootstrap; three prespecified contrasts; Bonferroni percentile intervals are approximate",
+    "selection_sha256": "65f37a60cc727e2058fbcab7d1d8823b6e1fbb949b451423c10982f7125a892e"
+  },
+  "development_ablations": {
+    "V3_no_context - V3_e03": {
+      "mean": -0.015856933593749997,
+      "walls": 128,
+      "se": 0.02031917609606838,
+      "ci95": [
+        -0.054873046875,
+        0.023193664550781246
+      ]
+    },
+    "V3_no_quality - V3_e03": {
+      "mean": -0.07498779296875,
+      "walls": 128,
+      "se": 0.020322534467095713,
+      "ci95": [
+        -0.11502716064453126,
+        -0.036474609375
+      ]
+    },
+    "V3_relu - V3_e03": {
+      "mean": -0.028393554687499996,
+      "walls": 128,
+      "se": 0.021683421831136373,
+      "ci95": [
+        -0.0708746337890625,
+        0.012024230957031245
+      ]
+    }
+  },
+  "learning_curve": [
+    {
+      "epoch": 1,
+      "train_nonforced_ce": 0.624418994916898,
+      "validation_nonforced_ce": 0.8232440390784997
+    },
+    {
+      "epoch": 2,
+      "train_nonforced_ce": 0.36286429172905293,
+      "validation_nonforced_ce": 0.8537349451184391
+    },
+    {
+      "epoch": 3,
+      "train_nonforced_ce": 0.29215873451247076,
+      "validation_nonforced_ce": 0.899349314509511
+    },
+    {
+      "epoch": 4,
+      "train_nonforced_ce": 0.2523646883927944,
+      "validation_nonforced_ce": 0.9192520910740497
+    },
+    {
+      "epoch": 5,
+      "train_nonforced_ce": 0.2265707745475051,
+      "validation_nonforced_ce": 0.9338903622306889
+    },
+    {
+      "epoch": 6,
+      "train_nonforced_ce": 0.20676497494569343,
+      "validation_nonforced_ce": 1.0032648046604038
+    },
+    {
+      "epoch": 7,
+      "train_nonforced_ce": 0.19154917781572076,
+      "validation_nonforced_ce": 1.0003022802705344
+    },
+    {
+      "epoch": 8,
+      "train_nonforced_ce": 0.1797698270713445,
+      "validation_nonforced_ce": 1.0230336728259501
+    },
+    {
+      "epoch": 9,
+      "train_nonforced_ce": 0.1707080896133078,
+      "validation_nonforced_ce": 1.0647538919922004
+    },
+    {
+      "epoch": 10,
+      "train_nonforced_ce": 0.16255299002405402,
+      "validation_nonforced_ce": 1.0985713225134914
+    },
+    {
+      "epoch": 11,
+      "train_nonforced_ce": 0.15646139193008027,
+      "validation_nonforced_ce": 1.1083081432099842
+    },
+    {
+      "epoch": 12,
+      "train_nonforced_ce": 0.15064101606289554,
+      "validation_nonforced_ce": 1.1384140539840293
+    }
+  ],
+  "source_files": {
+    "reports/round4/ARTIFACT_MANIFEST.json": "f4330d5e39af4e30470e171121286bb9b55eff1ba8c0fa9c8c53ebe6d4b49247",
+    "mahjong/model_v3.py": "ccbeee82ec428edb85e9c3543d66c1d5f8e9418e61c5c1485a6492924f334059",
+    "mahjong/features.py": "634b90c1a58d832956663bdca493b95b983a57be72e1c31bf6dbf18534b6791f",
+    "mahjong/features_v3.py": "960083850d72ce475952d6ee8e69d716ad0fa65d31adaa105265a574694a7dc6",
+    "mahjong/train_v3.py": "5893928fc790eebeab9566ec2584c6fb4d58e25aa1dcaaa232f4210b5c8075a2",
+    "mahjong/ppo_v3.py": "24095dda66f5200715b9e29627035b47ddb61575226c4c40183f3c8b3e0f3d54",
+    "mahjong/ppo_anchor.py": "19a940cd2a969504bb09ca1cc00729946be88adaf82f7affd400f1632e504bf5",
+    "rl_framework/rlframework/algorithm/ppo.py": "61e939fbd8d470e586f69b631b9f7957b7c611b168d619deab2bca2d998cc7ce",
+    "reports/round4/raw/dataset_manifest.json": "0e4d7d7124756669d15a7306d9a12c2a1f1ccc188cdcb7e98f67aa6c2ad1738c",
+    "reports/round4/raw/V3_legacy/config.json": "eab5e5fc181f49ec4a731f99ba2be882af3a344c153d5edf02998ff079831211",
+    "reports/round4/raw/V3_legacy/history.json": "102a53b25edcfc00b073428b11663bd19647271e5e408c1e0b2742783c0fb600",
+    "reports/round4/raw/V3_legacy/summary.json": "58c86cd3396ce7107c00013c13cb7f3961f44b372a7f79c5e268b1ec727357d3",
+    "reports/round4/raw/D_legacy/config.json": "b75008f62f175927d91b97ad08595dbce8de4ab6e74febe4e992dae8aa4122d8",
+    "reports/round4/raw/test_metrics.json": "39896bb3fa3df095aeb16fd0da86f3944a55686f7fde7b1258d78a0d20d80ad4",
+    "reports/round4/raw/arena_final/results.json": "e306040522b496a9884ce68d0d19a05e41962c58ad27a0558824404e5ba2e73c",
+    "reports/round4/raw/confirmatory_statistics.json": "0b64b7a7387e378c5753dbe81141427dfc20e8f8d9d93b63b5de9a2bf568e36a",
+    "reports/round4/raw/development_three_seeds.json": "e013f3223508d19fd8cd035f67808cc739eca8884b31920e11871ebd94037c77",
+    "reports/round4/raw/seed_stability_legacy.json": "290d3ee61695a086374a81423bf741e8dc8f7ff22994d72aa8ae86d25db02685",
+    "reports/round4/raw/PPO_V3_legacy/config.json": "c2af30b64c76efd7493c2b846465d3d2350790527640b2821c4f4fdd8810071f",
+    "reports/round4/raw/PPO_V3_legacy/metrics.jsonl.gz": "3174a2d9a7026cb7031d257a594ed26186efb957c9f97ee902106acbcdd1197c",
+    "reports/round4/raw/PPO_V3_legacy/summary.json": "50d7ac0a57ae80537e99937fd9e565adcb660814f24a4b08258134289a58c154",
+    "reports/round4/raw/PPO_V3_legacy/evaluations.json": "cbaf3b85b813335ae919a4035c1b83ebc67a5ebacebfb96c920279e60f19b376",
+    "reports/round4/raw/model_benchmark_final.json": "e5f8eb7d673760a8beccaebfed19e8b6b5ab7168599a740df3dc6ef0e9fd3373",
+    "reports/round4/raw/environment.json": "06afa3d29ec127d72016e2c929cf10f5ef8f322efe1a7629242ec236848e482b",
+    "artifacts/botzone_ready_20261119/V3_PPO/submission_check.json": "9107c452b5aebd33c3aa981d16585ed2ec7766521cc623317bfa2137306b2d86",
+    "artifacts/botzone_ready_20261119/V3_PPO/runtime_check.json": "dafa0adeb9beb18f186dd29e4d00bdc73ec26b6f0a2a0bec79378f2eb940c530"
+  }
+}

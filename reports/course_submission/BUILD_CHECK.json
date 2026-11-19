@@ -1,0 +1,15 @@
+{
+  "pages": 5,
+  "page_size": "A4",
+  "body_chinese_characters": 2777,
+  "all_chinese_characters": 3127,
+  "markdown_sha256": "b416963e42fb051a55657104b56dff448df9b2f492e0fcb5e393a77d7b053a31",
+  "pdf_sha256": "a67bfdc75d7a8180f2ade3d2c6b2a44e6921f6934aa4cb64719c7cf5f27d1c09",
+  "pdf_bytes": 570616,
+  "expected_text_tokens_verified": true,
+  "font": "/System/Library/Fonts/Supplemental/Songti.ttc",
+  "font_subfont_index": 6,
+  "bold_font": "/System/Library/Fonts/STHeiti Medium.ttc",
+  "bold_subfont_index": 1,
+  "visual_review": "Required after rendering; not established by this script."
+}
