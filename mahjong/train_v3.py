@@ -12,11 +12,13 @@ import torch
 from .model import input_keys
 from .policy import make_policy
 from .train_bc import CATEGORIES, bc_parameters
+from .cache_identity import check as check_feature_cache
 
 
 class Dataset:
     def __init__(self, root, split, config):
         self.root=Path(root);self.split=split;self.config=config
+        check_feature_cache(self.root)
         self.manifest=json.loads((self.root/'manifest.json').read_text())
         if self.manifest.get('schema')!=3 or not self.manifest.get('complete'):raise ValueError('requires complete schema-3 cache')
         self.keys=input_keys(config)
@@ -86,7 +88,8 @@ def train(config_file,data,output,resume=False):
     params=bc_parameters(model);spec=cfg['bc'];optimizer=torch.optim.AdamW(params,lr=spec['lr'],weight_decay=spec['weight_decay'])
     train_ds=Dataset(data,'train',cfg);val_ds=Dataset(data,'val',cfg)
     run=dict(config=cfg,data=str(data),manifest_sha256=hashlib.sha256((Path(data)/'manifest.json').read_bytes()).hexdigest(),
-             source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),parameters=sum(p.numel() for p in model.parameters()))
+             source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+             source_files={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in Path('mahjong').glob('*.py')},parameters=sum(p.numel() for p in model.parameters()))
     history=[];updates=0;best=float('inf');best_epoch=0;start_epoch=1;elapsed=0.
     if resume:
         old=json.loads((out/'run.json').read_text())
@@ -101,7 +104,7 @@ def train(config_file,data,output,resume=False):
     for epoch in range(start_epoch,spec['epochs']+1):
         model.train();seen=0;ce_sum=objective_sum=grad_sum=0.;epoch_begin=time.monotonic()
         for inputs,mask,action in train_ds.batches(spec['batch_size'],device,seed+epoch):
-            lr=lr_at(updates,total,warmup,spec['lr'],spec['min_lr'])
+            lr=lr_at(updates,total,warmup,spec['lr'],spec['min_lr']) if spec.get('schedule','cosine')=='cosine' else spec['lr']*min(1.,(updates+1)/max(1,warmup))
             for group in optimizer.param_groups:group['lr']=lr
             optimizer.zero_grad(set_to_none=True)
             logits,_=model(*(inputs[k] for k in train_ds.keys));loss,ce=masked_loss(logits,mask,action,spec['label_smoothing']);loss.backward()

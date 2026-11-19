@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "registered_before_arena": true,
+  "bc_split": "round3 identical 410/51/51 original walls",
+  "selection": "equal mean terminal reward across random, teacher, rl_v1, C, D; paired wall-cluster CI; prefer simpler candidate when differences uncertain",
+  "screening_walls": 32,
+  "expanded_development_walls": 128,
+  "final_walls": 300,
+  "development_seed": 110000000,
+  "confirmation_seed": 111000000,
+  "final_seed": 112000000,
+  "ppo_seed": 130000000,
+  "test_access": "only after candidate freeze",
+  "training_selection": "validation nonforced CE, minimum improvement .001, patience 6, earliest stop epoch 12",
+  "augmentation": "none; naive suit swaps are not invariant to All Green fan"
+}

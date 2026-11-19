@@ -14,6 +14,7 @@ import time
 import numpy as np
 from .replay import RecordingSession, response_to_action, seat_pairs
 from .data_v2 import wall_identity
+from .cache_identity import check as check_feature_cache
 
 KEYS = ('obs','history','melds','candidate','mask','action','game_id')
 DTYPES = dict(obs=np.float16,history=np.int8,melds=np.int8,candidate=np.float16,mask=bool,action=np.int16,game_id=np.int32)
@@ -67,6 +68,7 @@ def main():
     if hashlib.sha256(a.input.read_bytes()).hexdigest()!=source['source_sha256']:raise ValueError('raw corpus identity mismatch')
     if a.output.exists() and not a.resume:p.error('output exists, use --resume only for this exact input')
     a.output.mkdir(parents=True,exist_ok=True)
+    check_feature_cache(a.output,create=not a.resume)
     start=time.monotonic();game_map={g['game_id']:g for g in source['games']};jobs=[];existing=[]
     with gzip.open(a.input,'rt') as f:
         records=list(enumerate(f))
