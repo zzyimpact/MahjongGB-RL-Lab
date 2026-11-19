@@ -1,6 +1,6 @@
 # 课程最终报告
 
-正式正文：[Markdown](FINAL_COURSE_REPORT.md) · [5 页 A4 PDF](FINAL_COURSE_REPORT.pdf)。提交前填写 Markdown 中的 `【姓名】` 和 `【学号】`，然后重新生成 PDF；未代填任何个人信息。
+正式正文：[Markdown](FINAL_COURSE_REPORT.md) · [5 页 A4 PDF](FINAL_COURSE_REPORT.pdf)。已按用户提供的信息填写作者张朕源、学号 2200017763，并同步更新 PDF，无需再填写个人信息。
 
 最终 Botzone 策略为用户确认已提交并成功运行的 **V3 短程 PPO**，对应 `artifacts/round4/PPO_legacy_best/checkpoint.pt`，不是 BC 或 `PPO_long`。整次 PPO 实验共 1024 局；选中的 iteration 48 权重累计经历 768 局、422 次优化器更新，包含前 128 局 Critic 预热。
 

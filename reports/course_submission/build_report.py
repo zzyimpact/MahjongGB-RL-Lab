@@ -327,12 +327,16 @@ def make_pdf(font, bold, font_index, bold_index):
         canvas.drawCentredString(A4[0]/2,28,str(doc.page));canvas.restoreState()
 
     output=HERE/"FINAL_COURSE_REPORT.pdf"
+    identity=re.search(r"^作者：(.+?)\s+学号：(\S+)",text,re.M)
+    if identity is None:raise ValueError("Report must include author and student ID")
+    author_name,student_id=identity.groups()
     doc=SimpleDocTemplate(str(output),pagesize=A4,leftMargin=54,rightMargin=54,topMargin=49,bottomMargin=45,
-        title="基于行为克隆与 PPO 强化学习的国标麻将智能体设计与实现",author="【姓名】",pageCompression=1)
+        title="基于行为克隆与 PPO 强化学习的国标麻将智能体设计与实现",author=author_name,pageCompression=1)
     doc.build(story,onFirstPage=page,onLaterPages=page)
     reader=PdfReader(output);extracted="\n".join(p.extract_text() for p in reader.pages)
-    for token in ("768", "422", "1024", "68.92%", "0.2873", "【姓名】", "【学号】", "完成提交并成功运行"):
+    for token in ("768", "422", "1024", "68.92%", "0.2873", author_name, student_id, "完成提交并成功运行"):
         assert token in extracted, token
+    assert reader.metadata.author==author_name
     assert 4<=len(reader.pages)<=6, f"Unexpected page count: {len(reader.pages)}"
     body=text.split("## 1.",1)[1].split("## 参考文献",1)[0]
     qa={"pages":len(reader.pages),"page_size":"A4", "body_chinese_characters":len(re.findall(r"[\u4e00-\u9fff]",body)),
