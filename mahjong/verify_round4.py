@@ -17,6 +17,7 @@ def verify_sealed_evaluation(raw,selection_sha256):
     if digest(selection_path.read_bytes())!=selection_sha256:raise ValueError('Selection seal identity mismatch')
     selected=json.loads(selection_path.read_text())
     arena=json.loads((raw/'arena_final/arena_config.json').read_text())
+    result=json.loads((raw/'arena_final/results.json').read_text())
     test=json.loads((raw/'test_metrics.json').read_text())
     confirm=json.loads((raw/'confirmatory_statistics.json').read_text())
     walls=json.loads((raw/'wall_audit_final.json').read_text())
@@ -24,6 +25,12 @@ def verify_sealed_evaluation(raw,selection_sha256):
     if set(arena['candidates'])!=names or set(test['models'])!=names:raise ValueError('Sealed candidate population differs from final evaluation')
     if arena['purpose']!='final' or arena['walls']!=selected['final_walls'] or arena['seed_start']!=selected['final_seed']:
         raise ValueError('Final arena population differs from seal')
+    expected_games=len(names)*len(arena['opponents'])*arena['walls']*4
+    if result['games']!=expected_games:raise ValueError('Final arena game budget incomplete')
+    for name in names:
+        for opponent in arena['opponents']:
+            if result['summary'][name+' vs '+opponent]['reward']['walls']!=arena['walls']:
+                raise ValueError('Final opponent wall population incomplete')
     if test['seal_sha256']!=selection_sha256 or confirm['selection_sha256']!=selection_sha256:
         raise ValueError('Final statistics use a different selection seal')
     for name,record in selected['candidates'].items():
@@ -31,7 +38,7 @@ def verify_sealed_evaluation(raw,selection_sha256):
             raise ValueError('Final evaluation checkpoint differs from seal: '+name)
     if any(walls['overlaps'].values()) or walls['unique_walls']['final']!=selected['final_walls']:
         raise ValueError('Final arena wall independence failed')
-    return dict(candidates=len(names),final_walls=arena['walls'],test_and_arena_bound_to_seal=True,wall_populations_disjoint=True)
+    return dict(candidates=len(names),final_walls=arena['walls'],games=expected_games,test_and_arena_bound_to_seal=True,wall_populations_disjoint=True)
 
 
 def verify_archive(manifest_path,release_root):
