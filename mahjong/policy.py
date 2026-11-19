@@ -7,12 +7,12 @@ from rlframework.collectors.sparse import SparseDecisionCollector
 from rlframework.collectors.routing import StaticPolicyRouter
 from rlframework.collector import PolicyRef
 from rlframework.collectors.rewards import SharedTensorRewardResolver
-from .model import Model, make_model
+from .model import Model, make_model, input_keys
 from .env import Environment
 
 
 def make_policy(hidden=64, config=None):
-    return NamedCategoricalPolicy(make_model(config or {"hidden": hidden}), input_keys=("obs",))
+    return NamedCategoricalPolicy(make_model(config or {"hidden": hidden}), input_keys=input_keys(config or {}))
 
 
 def make_collector(

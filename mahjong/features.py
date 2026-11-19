@@ -10,6 +10,9 @@ FEATURE_CHANNELS = {'basic': 6, 'enhanced': 34}
 
 
 def encode(view, feature_set='basic'):
+    if feature_set == 'v3':
+        from .features_v3 import encode_v3
+        return encode_v3(view, encode(view, 'enhanced'))
     if feature_set not in FEATURE_CHANNELS:
         raise ValueError('Unsupported feature set: ' + feature_set)
     observation = np.zeros((FEATURE_CHANNELS[feature_set], 36), dtype=np.float32)

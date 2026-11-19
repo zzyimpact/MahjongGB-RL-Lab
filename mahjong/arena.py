@@ -7,7 +7,7 @@ from pathlib import Path
 import time
 import numpy as np
 import torch
-from .model import make_model
+from .model import make_model, input_keys
 from .features import encode
 from .gamecore.engine import GameCore
 from .observation import SeatView
@@ -37,7 +37,7 @@ def choose(name,view,rng):
     model,config=MODELS[name]
     arrays=encode(view,config.get('feature_set','basic'))
     with torch.inference_mode():
-        logits,_=model(torch.from_numpy(arrays['obs']).unsqueeze(0))
+        logits,_=model(*(torch.from_numpy(arrays[k]).float().unsqueeze(0) for k in input_keys(config)))
         mask=torch.from_numpy(arrays['action_mask']).unsqueeze(0)
         return int(logits.masked_fill(~mask,-1e9).argmax(-1))
 

@@ -1,7 +1,7 @@
 """Optional forward KL(ref || current) on identical legal-action support."""
 import torch
 from .arena import load_checkpoint
-from .model import model_spec
+from .model import model_spec, input_keys
 
 
 def masked_reference_kl(logits, reference_logits, action_mask):
@@ -20,11 +20,11 @@ class BCReferenceLoss:
         if coefficient<0:raise ValueError('negative KL coefficient')
         self.model.to(device).eval()
         for p in self.model.parameters():p.requires_grad_(False)
-        self.policy=policy;self.coefficient=coefficient
+        self.policy=policy;self.coefficient=coefficient;self.keys=input_keys(config)
 
     def __call__(self,items,valid):
-        obs=items.get('obs');x=obs.get('obs').float()
-        with torch.no_grad():reference,_=self.model(x)
-        current,_=self.policy.module(x)
+        obs=items.get('obs');x=[obs.get(k).float() for k in self.keys]
+        with torch.no_grad():reference,_=self.model(*x)
+        current,_=self.policy.module(*x)
         kl=masked_reference_kl(current,reference,obs.get('action_mask').bool())[valid].mean()
         return self.coefficient*kl,{'bc_reference_kl':kl}

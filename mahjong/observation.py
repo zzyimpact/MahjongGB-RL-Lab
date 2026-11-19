@@ -38,6 +38,7 @@ class SeatView:
     def __init__(self, seatWind):
         self.seatWind = seatWind
         self.valid = []
+        self.public_actions = []
         self.hand = []
         self.packs = [[] for i in range(4)]
         self.history = [[] for i in range(4)]
@@ -71,6 +72,17 @@ class SeatView:
     def request2obs(self, request):
         self.last_event = request
         t = request.split()
+        # Every observer receives the same public event order. Own draw identity
+        # stays private and is deliberately omitted from public history tokens.
+        if t[0] == 'Draw':
+            self.public_actions.append((1, 1, 0))
+        elif t[0] == 'Player' and t[2] in ('Draw','Play','Chi','Peng','Gang','AnGang','BuGang'):
+            verb = t[2]
+            actor = (int(t[1]) - self.seatWind) % 4
+            kind = {'Draw':1,'Play':2,'Chi':3,'Peng':4,'Gang':5,'AnGang':6,'BuGang':7}[verb]
+            tile = t[3] if verb in ('Play','Chi','BuGang') else getattr(self, 'curTile', None) if verb in ('Peng','Gang') else None
+            self.public_actions.append((actor + 1, kind, self.OFFSET_TILE[tile] + 1 if tile else 0))
+        self.public_actions = self.public_actions[-16:]
         if t[0] == "Wind":
             self.prevalentWind = int(t[1])
             return

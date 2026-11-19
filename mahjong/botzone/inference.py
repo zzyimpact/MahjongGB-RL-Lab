@@ -5,7 +5,7 @@ import os
 import pkgutil
 import numpy as np
 import torch
-from ..model import Model, make_model
+from ..model import Model, make_model, input_keys
 
 
 def load():
@@ -21,7 +21,7 @@ def load():
         with torch.no_grad():
             inputs = [
                 torch.from_numpy(np.asarray(arrays[k])).float().unsqueeze(0)
-                for k in ("obs",)
+                for k in input_keys(config)
             ]
             logits, _ = model(*inputs)
             mask = torch.from_numpy(arrays["action_mask"]).bool().unsqueeze(0)
