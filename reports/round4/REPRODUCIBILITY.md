@@ -62,6 +62,15 @@ curl -L --fail 'https://huggingface.co/datasets/Dannibal/ijcai-mahjong-corpora-2
  mahjong/configs/v3/D_retrained_seed3.json mahjong/configs/v3/V3_seed3.json
 ```
 
+补充的旧 Adam 配方延长训练控制（同样在最终封存前注册）：
+
+```bash
+.venv/bin/python -m mahjong.full_sampling_v3 --source data/ijcai2026/final2_all.jsonl.gz --data data/reproduce_v3 --workers 6
+.venv/bin/python -m mahjong.experiment_v3 --data data/reproduce_v3 --root runs/reproduce_v3 --configs mahjong/configs/v3/D_legacy.json mahjong/configs/v3/V3_legacy.json
+```
+
+该控制重新回放训练集，恢复原始完整样本排序，严格核对每个非强制样本的 mask/action/game_id。按完整 1,815,376 行洗牌、每批 1024 行；只省略零梯度强制行的前向，仍用原完整批数作分母，因此每 epoch 1,773 次更新。Adam .001、无平滑/WD、clip10，GroupNorm 逐样本梯度等价有测试；不承诺不同 batch shape 的硬件浮点结果逐 bit 相同。不是增加专家数据，也不与主 AdamW 配方混为单变量消融。
+
 单实验中断恢复：
 
 ```bash
@@ -86,7 +95,7 @@ curl -L --fail 'https://huggingface.co/datasets/Dannibal/ijcai-mahjong-corpora-2
 
 每副墙四个候选座位，各场对手都是其余三席同一冻结策略。统计以墙聚类，五对手等权综合分也在同一墙上先聚合，然后用 5,000 次 bootstrap、seed 20261119 计算区间。相同墙的四场绝不视为四个独立样本。跨训练 seed 结果另用 seed 对和共同墙双层 bootstrap（仅三个训练 seed，仍有统计局限）。
 
-`arena_v3` 默认对 `runs/final_v3` 下注册集合执行交叉排除；使用其他根目录时须提供 `--registry-root`，如上例。PPO 和 study 队列自动使用对应实验根目录；所有新开发/训练集合应注册在同一根目录。`wall_audit_v3 --root ...` 可检查指定根目录。相同开发集合重复评估允许共享墙，最终集合不能与开发/训练共享墙。
+`arena_v3` 默认对 `runs/final_v3` 下注册集合执行交叉排除；使用其他根目录时须提供 `--registry-root`，如上例。PPO 和 study 队列自动使用对应实验根目录；所有新开发/训练集合应注册在同一根目录。历史 Teacher 种子在 Round1 写为1000–1999、Round3审计写为0–999；本轮保守排除两段，不覆盖历史报告。`wall_audit_v3 --root ...` 可检查指定根目录。相同开发集合重复评估允许共享墙，最终集合不能与开发/训练共享墙。
 
 候选封存与 test：
 
@@ -135,3 +144,16 @@ PYTHONPATH="$PWD/rl_framework/tests:$PWD" .venv/bin/python -m pytest rl_framewor
 完整框架测试中的四个 FDL 集成测试依赖仓库未包含的 `fdl`/生成样例，当前会因缺失模块失败；CUDA 测试在此 MPS 机器上跳过。不能把这些记录写成“整个仓库全绿”。Mahjong 新功能、PPO 数学/轨迹及已具备依赖的框架核心另有通过记录。全部首轮错误和后续针对性测试日志保留，最终精确结果见 FINAL_REPORT。
 
 原始训练指标、配置、源代码 SHA、缓存身份、Arena 逐局/逐墙记录、性能基准与最终 checkpoint manifest 均随最终发布保存到 `reports/round4/raw`、`artifacts/round4`。完整本机训练优化器快照仍留在 `runs/final_v3`，大缓存留在 `data/final_v3`。最终文件索引与 Git 发布身份以 `ARTIFACT_MANIFEST.json` 和 `FINAL_REPORT.md` 为准。
+
+## 生成最终表格与归档
+
+先使用 `mahjong.analysis_v3 merge` 合并相同128墙的开发记录，再使用 `seeds` 对三组配对训练种子计算双层bootstrap。`finalize_v3 seal` 支持 `--roles-file` 将推荐BC、PPO和同配方D的名称一并锁定。之后运行 test 和 `arena_v3 --purpose final --seed 112000000 --walls 500`。精确候选路径、角色与SHA保存在最终 `raw/selection.json`，实际Arena命令对应 `raw/arena_final/arena_config.json`。封存后没有按final结果重新调参。
+
+```bash
+.venv/bin/python -m mahjong.analysis_v3 confirmatory --input runs/final_v3/arena_final/results.json --selection runs/final_v3/selection.json --output runs/final_v3/confirmatory_statistics.json
+.venv/bin/python -m mahjong.plots_v3 --final-arena runs/final_v3/arena_final/results.json
+.venv/bin/python -m mahjong.report_tables_v3
+.venv/bin/python -m mahjong.archive_v3
+```
+
+最终三项主要对比另给20,000次配对墙bootstrap和Bonferroni区间；这些是近似频率学区间。探索性消融仍为未校正的边际95%区间。归档脚本对入选模型逐字节复制，对JSONL无损gzip，并记录压缩前后SHA。原有文件、原有训练快照与历史日志不被覆盖。
