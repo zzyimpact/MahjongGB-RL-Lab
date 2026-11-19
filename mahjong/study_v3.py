@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import time
 from .arena_v3 import run
+from .arena import identity
 
 
 def main():
@@ -17,10 +18,15 @@ def main():
     for name in a.models:
         model=a.root/name;output=a.root/('arena_'+name+('_epochs' if a.epochs else ''))
         while not (model/'summary.json').exists():time.sleep(10)
-        if (output/'results.json').exists():result=json.loads((output/'results.json').read_text())
+        candidates={name:str(model/'checkpoint.pt')} if not a.epochs else {name+'_e%02d'%e:str(model/('epoch_%03d.pt'%e)) for e in a.epochs}
+        if (output/'results.json').exists():
+            cached=json.loads((output/'arena_config.json').read_text())
+            if cached['seed_start']!=a.seed or cached['walls']!=a.walls or cached['candidates']!=list(candidates) or cached['opponents']!=list(opponents):raise ValueError('Cached development result uses a different evaluation configuration')
+            paths=dict(candidates);paths.update({k:v for k,v in opponents.items() if v is not None})
+            if any(cached['identities'][k]['sha256']!=identity(v)['sha256'] for k,v in paths.items()):raise ValueError('Cached development result uses different checkpoint weights')
+            result=json.loads((output/'results.json').read_text())
         else:
             state[name]={'status':'running'};status.write_text(json.dumps(state,indent=2))
-            candidates={name:str(model/'checkpoint.pt')} if not a.epochs else {name+'_e%02d'%e:str(model/('epoch_%03d.pt'%e)) for e in a.epochs}
             result=run(candidates,opponents,'reports/round3/raw/split_manifest.json',output,a.seed,a.walls,a.workers,'development',output.exists(),a.root)
         state[name]=dict(status='completed',scores=result['aggregate']['scores']);status.write_text(json.dumps(state,indent=2))
         print(json.dumps(dict(model=name,**state[name])),flush=True)
