@@ -1,0 +1,4 @@
+-r requirements.txt
+PyMahjongGB==1.4.0
+pytest==9.2.0
+matplotlib==3.10.9

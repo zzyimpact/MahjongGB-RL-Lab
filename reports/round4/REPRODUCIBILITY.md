@@ -10,7 +10,7 @@
 
 ```bash
 python3.10 -m venv .venv
-.venv/bin/python -m pip install torch==2.3.1 tensordict==0.1.0 numpy==1.26.4 PyMahjongGB==1.4.0 pytest==9.2.0 matplotlib==3.10.9
+.venv/bin/python -m pip install -r requirements-round4.txt
 .venv/bin/python -m pip install -e ./rl_framework
 ```
 

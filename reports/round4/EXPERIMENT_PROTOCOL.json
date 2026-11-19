@@ -21,5 +21,5 @@
   ],
   "training_seed_selection": "Retain preregistered main seed 20261119 unless paired development CI supports a different seed; all seeds remain reported",
   "revision_time": "2026-11-19 Asia/Shanghai",
-  "additional_development_control": "D/V3 legacy Adam .001, full 1024 position batches, no smoothing/WD, clip10, minimum12 epochs; registered before any final outcome; float16 cache not bit-identical to historical float32 training"
+  "additional_development_control": "D/V3 legacy Adam .001, full 1024 position batches, no smoothing/WD, clip10, minimum12 epochs; registered before any final outcome; binary-fraction feature storage is lossless but elided forced rows change batch shape and floating-point kernels"
 }
