@@ -1,0 +1,6 @@
+{
+  "script": "audit/rule_checks.py",
+  "original_sha256": "98b3c343fb00cecda11f62028619a2fec855d2ca800c5699e9fa2741efa6f605",
+  "only_change": "redirect output to runs/final_v3/rule_checks.json",
+  "passed": 12
+}

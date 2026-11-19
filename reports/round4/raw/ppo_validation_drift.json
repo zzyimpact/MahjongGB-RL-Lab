@@ -1,0 +1,346 @@
+{
+  "reference": {
+    "path": "runs/final_v3/V3/checkpoint.pt",
+    "sha256": "a153ad964c75abd032567192833a2f60dcd09bd27994664e60e2181bb9f8edac",
+    "bytes": 14203316,
+    "config": {
+      "seed": 20261119,
+      "hidden": 64,
+      "capacity": 128,
+      "actors": 4,
+      "episodes_per_actor": 1,
+      "iterations": 2000,
+      "device": "mps",
+      "actor_timeout": 300,
+      "ppo": {
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.0003,
+        "epochs": 3,
+        "minibatch_size": 256,
+        "clip_epsilon": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01
+      },
+      "feature_set": "v3",
+      "feature_version": "v3",
+      "architecture": "v3_resnet",
+      "activation": "gelu",
+      "use_candidate": true,
+      "use_context": true,
+      "bc": {
+        "epochs": 20,
+        "min_epochs": 12,
+        "patience": 6,
+        "min_delta": 0.001,
+        "batch_size": 512,
+        "lr": 0.0005,
+        "min_lr": 2.5e-05,
+        "warmup_epochs": 1,
+        "weight_decay": 0.01,
+        "label_smoothing": 0.02,
+        "grad_clip": 5.0
+      }
+    }
+  },
+  "split": "validation nonforced observations",
+  "candidates": {
+    "mixed_best": {
+      "samples": 75685,
+      "changed": 3811,
+      "kl_sum": 1033.8338868618011,
+      "action_change_fraction": 0.05035343859417322,
+      "mean_forward_kl": 0.013659693292750229,
+      "identity": {
+        "path": "runs/final_v3/PPO_V3_mixed/ppo_best.pt",
+        "sha256": "0d3d1eaeaa0b428527a7eaf9e020a31104adb35ddf24b6ac77adb99a6ee2ebb8",
+        "bytes": 14507667,
+        "config": {
+          "seed": 130000000,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 4,
+          "iterations": 64,
+          "device": "cpu",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 2e-05,
+            "epochs": 2,
+            "minibatch_size": 512,
+            "clip_epsilon": 0.1,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.001,
+            "max_grad_norm": 0.5
+          },
+          "feature_set": "v3",
+          "feature_version": "v3",
+          "architecture": "v3_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 512,
+            "lr": 0.0005,
+            "min_lr": 2.5e-05,
+            "warmup_epochs": 1,
+            "weight_decay": 0.01,
+            "label_smoothing": 0.02,
+            "grad_clip": 5.0
+          },
+          "rl": {
+            "mode": "mixed",
+            "bc_kl": 0.2,
+            "warmup_iterations": 8,
+            "eval_every": 16,
+            "eval_seed": 110200000,
+            "eval_walls": 64,
+            "stop_margin": 0.04,
+            "opponents": {
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            },
+            "eval_opponents": {
+              "rl_v1": "artifacts/round3/references/rl_v1.pt",
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            }
+          }
+        }
+      },
+      "actual_optimizer_lr": [
+        2e-05
+      ],
+      "parameter_delta": {
+        "conv": {
+          "changed_values": 306688,
+          "l2": 0.20228630304336548
+        },
+        "actor": {
+          "changed_values": 52917,
+          "l2": 0.08879224210977554
+        },
+        "critic": {
+          "changed_values": 33025,
+          "l2": 0.20381082594394684
+        },
+        "hidden": {
+          "changed_values": 626175,
+          "l2": 0.2985031008720398
+        },
+        "discard": {
+          "changed_values": 24065,
+          "l2": 0.07025358825922012
+        },
+        "context": {
+          "changed_values": 131200,
+          "l2": 0.138040229678154
+        }
+      }
+    },
+    "mixed_last": {
+      "samples": 75685,
+      "changed": 3935,
+      "kl_sum": 1193.6575436592102,
+      "action_change_fraction": 0.051991808152209815,
+      "mean_forward_kl": 0.015771388566548326,
+      "identity": {
+        "path": "runs/final_v3/PPO_V3_mixed/last.pt",
+        "sha256": "fad17d13bcdd6ad5e058f5f73344222564710b3aa20a0510390d707523121ce2",
+        "bytes": 14536225,
+        "config": {
+          "seed": 130000000,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 4,
+          "iterations": 64,
+          "device": "cpu",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 2e-05,
+            "epochs": 2,
+            "minibatch_size": 512,
+            "clip_epsilon": 0.1,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.001,
+            "max_grad_norm": 0.5
+          },
+          "feature_set": "v3",
+          "feature_version": "v3",
+          "architecture": "v3_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 512,
+            "lr": 0.0005,
+            "min_lr": 2.5e-05,
+            "warmup_epochs": 1,
+            "weight_decay": 0.01,
+            "label_smoothing": 0.02,
+            "grad_clip": 5.0
+          },
+          "rl": {
+            "mode": "mixed",
+            "bc_kl": 0.2,
+            "warmup_iterations": 8,
+            "eval_every": 16,
+            "eval_seed": 110200000,
+            "eval_walls": 64,
+            "stop_margin": 0.04,
+            "opponents": {
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            },
+            "eval_opponents": {
+              "rl_v1": "artifacts/round3/references/rl_v1.pt",
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            }
+          }
+        }
+      },
+      "actual_optimizer_lr": [
+        2e-05
+      ],
+      "parameter_delta": {
+        "conv": {
+          "changed_values": 306684,
+          "l2": 0.29714056849479675
+        },
+        "actor": {
+          "changed_values": 58323,
+          "l2": 0.13803231716156006
+        },
+        "critic": {
+          "changed_values": 33025,
+          "l2": 0.31431272625923157
+        },
+        "hidden": {
+          "changed_values": 626175,
+          "l2": 0.44497522711753845
+        },
+        "discard": {
+          "changed_values": 24065,
+          "l2": 0.11431584507226944
+        },
+        "context": {
+          "changed_values": 131200,
+          "l2": 0.20275798439979553
+        }
+      }
+    },
+    "anchor_best": {
+      "samples": 75685,
+      "changed": 2664,
+      "kl_sum": 545.7855610847473,
+      "action_change_fraction": 0.03519852018233468,
+      "mean_forward_kl": 0.007211277810461087,
+      "identity": {
+        "path": "runs/final_v3/PPO_V3_anchor/ppo_best.pt",
+        "sha256": "6b3f70deb741ae68b467db6f30d96d890e6a186b14e854b4cc8092ca7121c2b9",
+        "bytes": 14546387,
+        "config": {
+          "seed": 130000000,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 4,
+          "iterations": 64,
+          "device": "cpu",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 2e-05,
+            "epochs": 2,
+            "minibatch_size": 512,
+            "clip_epsilon": 0.1,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.001,
+            "max_grad_norm": 0.5
+          },
+          "feature_set": "v3",
+          "feature_version": "v3",
+          "architecture": "v3_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 512,
+            "lr": 0.0005,
+            "min_lr": 2.5e-05,
+            "warmup_epochs": 1,
+            "weight_decay": 0.01,
+            "label_smoothing": 0.02,
+            "grad_clip": 5.0
+          },
+          "rl": {
+            "mode": "mixed",
+            "bc_kl": 1.0,
+            "warmup_iterations": 8,
+            "eval_every": 16,
+            "eval_seed": 110200000,
+            "eval_walls": 64,
+            "stop_margin": 0.04,
+            "opponents": {
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            },
+            "eval_opponents": {
+              "rl_v1": "artifacts/round3/references/rl_v1.pt",
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            }
+          }
+        }
+      },
+      "actual_optimizer_lr": [
+        2e-05
+      ],
+      "parameter_delta": {
+        "conv": {
+          "changed_values": 306688,
+          "l2": 0.27352777123451233
+        },
+        "actor": {
+          "changed_values": 56274,
+          "l2": 0.1327407956123352
+        },
+        "critic": {
+          "changed_values": 33025,
+          "l2": 0.31010016798973083
+        },
+        "hidden": {
+          "changed_values": 626431,
+          "l2": 0.4181738495826721
+        },
+        "discard": {
+          "changed_values": 24065,
+          "l2": 0.08317437022924423
+        },
+        "context": {
+          "changed_values": 131200,
+          "l2": 0.2009323090314865
+        }
+      }
+    }
+  }
+}

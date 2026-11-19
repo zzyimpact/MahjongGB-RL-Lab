@@ -1,0 +1,273 @@
+{
+  "submission_check": {
+    "passed": true,
+    "checks": {
+      "model_size": true,
+      "zip_size": true,
+      "expanded_size": true,
+      "single_file_size": true,
+      "resource_allowlist": true,
+      "hash_identity": true
+    },
+    "model": {
+      "path": "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/submissions/mahjong_v3/export_V3_smoke/mahjong_model.pt",
+      "bytes": 4805859,
+      "limit": 268435456
+    },
+    "code_zip": {
+      "path": "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/submissions/mahjong_v3/export_V3_smoke/mahjong_bot.zip",
+      "bytes": 11846,
+      "expanded_bytes": 34092,
+      "limit_exclusive": 4000000
+    },
+    "single_file": {
+      "path": "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/submissions/mahjong_v3/export_V3_smoke/mahjong_bot.py",
+      "bytes": 37082,
+      "limit_exclusive": 4000000
+    },
+    "resources": [
+      {
+        "path": "__main__.py",
+        "bytes": 47,
+        "sha256": "7903be757766d6583ddd20781e547808ecd8e94e9b318e99c8ab7c1bf7389d9a"
+      },
+      {
+        "path": "mahjong/__init__.py",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "mahjong/rules.py",
+        "bytes": 262,
+        "sha256": "2579c83f5aa56b841d5f4b2c15a6419042192c4bbaf49c1cebd4679485df8286"
+      },
+      {
+        "path": "mahjong/observation.py",
+        "bytes": 13556,
+        "sha256": "865a597b739d623839f58be2a70332c11a0450a80fb156bc4f3f15f54ff780ea"
+      },
+      {
+        "path": "mahjong/features.py",
+        "bytes": 3316,
+        "sha256": "634b90c1a58d832956663bdca493b95b983a57be72e1c31bf6dbf18534b6791f"
+      },
+      {
+        "path": "mahjong/features_v3.py",
+        "bytes": 4231,
+        "sha256": "960083850d72ce475952d6ee8e69d716ad0fa65d31adaa105265a574694a7dc6"
+      },
+      {
+        "path": "mahjong/model.py",
+        "bytes": 3585,
+        "sha256": "193a1258843f6e97e5f4f15c5c96e54f0c2391bcd4432ab20552bad8e954bde9"
+      },
+      {
+        "path": "mahjong/model_v3.py",
+        "bytes": 3286,
+        "sha256": "ccbeee82ec428edb85e9c3543d66c1d5f8e9418e61c5c1485a6492924f334059"
+      },
+      {
+        "path": "mahjong/botzone/__init__.py",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "mahjong/botzone/session.py",
+        "bytes": 3432,
+        "sha256": "f1e4c8c113927efba5a5ae7cf885d6dd928ae7a13fcd2bc0f9ec3b9683757a55"
+      },
+      {
+        "path": "mahjong/botzone/inference.py",
+        "bytes": 1083,
+        "sha256": "a51b818d45173bec3593d56a4327925d06d3bc30426ca48868917e7f46decd3c"
+      },
+      {
+        "path": "mahjong/botzone/runner.py",
+        "bytes": 1047,
+        "sha256": "f7b72adf6c798163b21eadd423bfd155fb14c95505c6947b24c513f8537e9a41"
+      },
+      {
+        "path": "mahjong/bot_config.json",
+        "bytes": 247,
+        "sha256": "caf343e86c624583ace366da7041addb1a67d7cc3fe7fab2a86b11da14a82e6d"
+      }
+    ],
+    "unsafe_resources": [],
+    "sha256": {
+      "mahjong_model.pt": "e11612011d8b621c81d26bc29dc2d0a341fc2b9e1728118233355abaf8516a51",
+      "mahjong_bot.zip": "11808243a9e41b48189500312d30d9dd074b4496eabb0f9366f9ca69b98ccf81",
+      "mahjong_bot.py": "c058d6a3e11eb320af670c3babdf525469d0ab1227f410410014aeb5821610f0"
+    },
+    "online_botzone_verified": false
+  },
+  "runtime": {
+    "python": "3.10.22 (main, Oct  9 2026, 15:10:41) [Clang 22.1.3 ]",
+    "torch": "2.3.1"
+  },
+  "local_only": true,
+  "results": {
+    "zip": {
+      "games": 8,
+      "seats": [
+        0,
+        1,
+        2,
+        3,
+        0,
+        1,
+        2,
+        3
+      ],
+      "illegal_actions": 0,
+      "requests": 1216,
+      "scores": [
+        [
+          -8,
+          44,
+          -8,
+          -28
+        ],
+        [
+          -8,
+          35,
+          -8,
+          -19
+        ],
+        [
+          -18,
+          -8,
+          34,
+          -8
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "cold_start_ms": 718.7605830840766,
+      "steady_mean_ms": 0.6195553388722517,
+      "steady_p95_ms": 2.029729285277426,
+      "steady_max_ms": 5.0319170113652945,
+      "max_request_ms": 718.7605830840766,
+      "peak_rss_bytes": 204357632,
+      "cold_replays": [
+        {
+          "turns": 107,
+          "seconds": 0.6090109590440989
+        },
+        {
+          "turns": 168,
+          "seconds": 0.6354209592100233
+        }
+      ]
+    },
+    "single": {
+      "games": 8,
+      "seats": [
+        0,
+        1,
+        2,
+        3,
+        0,
+        1,
+        2,
+        3
+      ],
+      "illegal_actions": 0,
+      "requests": 1216,
+      "scores": [
+        [
+          -8,
+          44,
+          -8,
+          -28
+        ],
+        [
+          -8,
+          35,
+          -8,
+          -19
+        ],
+        [
+          -18,
+          -8,
+          34,
+          -8
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "cold_start_ms": 618.9527921378613,
+      "steady_mean_ms": 0.5606323413535523,
+      "steady_p95_ms": 1.7251088749617332,
+      "steady_max_ms": 3.8062920793890953,
+      "max_request_ms": 618.9527921378613,
+      "peak_rss_bytes": 204652544,
+      "cold_replays": [
+        {
+          "turns": 107,
+          "seconds": 0.6372795000206679
+        },
+        {
+          "turns": 168,
+          "seconds": 0.6141609170008451
+        }
+      ]
+    }
+  },
+  "zip_single_responses_identical": true
+}

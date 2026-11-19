@@ -1,0 +1,12 @@
+{
+  "env_steps": 133508,
+  "agent_steps": 266700,
+  "gradient_updates": 590,
+  "completed_episodes": 1024,
+  "iteration": 64,
+  "seconds": 895.7710574588273,
+  "best_development_score": 0.263525390625,
+  "best_post_ppo_score": 0.263525390625,
+  "warmup_episodes": 128,
+  "stopped_early": false
+}

@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "checks": {
+    "model_size": true,
+    "zip_size": true,
+    "expanded_size": true,
+    "single_file_size": true,
+    "resource_allowlist": true,
+    "runtime_weight_identity": true,
+    "hash_identity": true
+  },
+  "model": {
+    "path": "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/artifacts/round4/releases/PPO/mahjong_model.pt",
+    "bytes": 4805859,
+    "limit": 268435456
+  },
+  "code_zip": {
+    "path": "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/artifacts/round4/releases/PPO/mahjong_bot.zip",
+    "bytes": 12319,
+    "expanded_bytes": 35174,
+    "limit_exclusive": 4000000
+  },
+  "single_file": {
+    "path": "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/artifacts/round4/releases/PPO/mahjong_bot.py",
+    "bytes": 38181,
+    "limit_exclusive": 4000000
+  },
+  "resources": [
+    {
+      "path": "__main__.py",
+      "bytes": 47,
+      "sha256": "7903be757766d6583ddd20781e547808ecd8e94e9b318e99c8ab7c1bf7389d9a"
+    },
+    {
+      "path": "mahjong/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mahjong/rules.py",
+      "bytes": 262,
+      "sha256": "2579c83f5aa56b841d5f4b2c15a6419042192c4bbaf49c1cebd4679485df8286"
+    },
+    {
+      "path": "mahjong/observation.py",
+      "bytes": 13556,
+      "sha256": "865a597b739d623839f58be2a70332c11a0450a80fb156bc4f3f15f54ff780ea"
+    },
+    {
+      "path": "mahjong/features.py",
+      "bytes": 3316,
+      "sha256": "634b90c1a58d832956663bdca493b95b983a57be72e1c31bf6dbf18534b6791f"
+    },
+    {
+      "path": "mahjong/features_v3.py",
+      "bytes": 4231,
+      "sha256": "960083850d72ce475952d6ee8e69d716ad0fa65d31adaa105265a574694a7dc6"
+    },
+    {
+      "path": "mahjong/model.py",
+      "bytes": 3585,
+      "sha256": "193a1258843f6e97e5f4f15c5c96e54f0c2391bcd4432ab20552bad8e954bde9"
+    },
+    {
+      "path": "mahjong/model_v3.py",
+      "bytes": 3286,
+      "sha256": "ccbeee82ec428edb85e9c3543d66c1d5f8e9418e61c5c1485a6492924f334059"
+    },
+    {
+      "path": "mahjong/botzone/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mahjong/botzone/session.py",
+      "bytes": 3432,
+      "sha256": "f1e4c8c113927efba5a5ae7cf885d6dd928ae7a13fcd2bc0f9ec3b9683757a55"
+    },
+    {
+      "path": "mahjong/botzone/inference.py",
+      "bytes": 2080,
+      "sha256": "46f1f11f1a1ee5298f4073dee44354f7abe419220453ffc03076fcfaec8ae7d7"
+    },
+    {
+      "path": "mahjong/botzone/runner.py",
+      "bytes": 1047,
+      "sha256": "f7b72adf6c798163b21eadd423bfd155fb14c95505c6947b24c513f8537e9a41"
+    },
+    {
+      "path": "mahjong/bot_config.json",
+      "bytes": 332,
+      "sha256": "462fa719e19c2720610f9a78da71c4d619c15344ae7b614711f0524aa4d14775"
+    }
+  ],
+  "unsafe_resources": [],
+  "sha256": {
+    "mahjong_model.pt": "0e8212c1dbb9b893bdc38542e7cdef4c71272059a4fa897ee0fbeeb8432d5306",
+    "mahjong_bot.zip": "c60be5516cf57d35fe6fbd4c8ee57e53d9d5a8f248ed9e0a0cfd6af9b9fda5a3",
+    "mahjong_bot.py": "626ad763b2915bf23b035f2026adb75f1516b475998411c92d6e54421cb7a106"
+  },
+  "online_botzone_verified": false
+}

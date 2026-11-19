@@ -1,0 +1,41 @@
+{
+  "mahjong_full": {
+    "passed": 41,
+    "seconds": 26.87,
+    "log": "mahjong_full_regression.log"
+  },
+  "focused_after_controls": {
+    "passed": 15,
+    "seconds": 5.89,
+    "log": "postanalysis_regression.log"
+  },
+  "framework_available": {
+    "passed": 32,
+    "skipped": 3,
+    "deselected": 4,
+    "log": "core_regression_available.log"
+  },
+  "rule_cases": {
+    "script": "audit/rule_checks.py",
+    "original_sha256": "98b3c343fb00cecda11f62028619a2fec855d2ca800c5699e9fa2741efa6f605",
+    "only_change": "redirect output to runs/final_v3/rule_checks.json",
+    "passed": 12
+  },
+  "limits": "Four optional FDL integration tests lack modules/examples in the repository; CUDA tests skipped on MPS host; local verification only.",
+  "final_mahjong": {
+    "passed": 42,
+    "seconds": 30.55,
+    "log": "final_mahjong_regression.log",
+    "checkpoint": "runs/final_v3/V3_legacy/epoch_001.pt"
+  },
+  "delivery_suite": {
+    "passed": 43,
+    "seconds": 41.05,
+    "log": "delivery_mahjong_regression.log",
+    "checkpoint": "runs/final_v3/PPO_V3_legacy_extended/last.pt"
+  },
+  "followup_regression": {
+    "passed": 2,
+    "log": "followup_regression.log"
+  }
+}

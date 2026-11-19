@@ -1,0 +1,5 @@
+{
+  "warmup_weights_identical": true,
+  "warmup_games": 128,
+  "configs_differ_only_kl": true
+}

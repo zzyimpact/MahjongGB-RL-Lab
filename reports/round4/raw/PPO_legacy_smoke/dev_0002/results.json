@@ -1,0 +1,376 @@
+{
+  "summary": {
+    "candidate vs C": {
+      "reward": {
+        "mean": -0.1953125,
+        "walls": 2,
+        "se": 0.3125,
+        "ci95": [
+          -0.5078125,
+          0.1171875
+        ]
+      },
+      "score_difference": {
+        "mean": -8.333333333333332,
+        "walls": 2,
+        "se": 13.33333333333333,
+        "ci95": [
+          -21.666666666666664,
+          4.999999999999999
+        ]
+      },
+      "win": {
+        "mean": 0.125,
+        "walls": 2,
+        "se": 0.125,
+        "ci95": [
+          0.0,
+          0.25
+        ]
+      },
+      "loss": {
+        "mean": 0.625,
+        "walls": 2,
+        "se": 0.37499999999999994,
+        "ci95": [
+          0.25,
+          1.0
+        ]
+      },
+      "draw": {
+        "mean": 0.25,
+        "walls": 2,
+        "se": 0.25,
+        "ci95": [
+          0.0,
+          0.5
+        ]
+      }
+    },
+    "candidate vs D": {
+      "reward": {
+        "mean": 0.0546875,
+        "walls": 2,
+        "se": 0.34374999999999994,
+        "ci95": [
+          -0.2890625,
+          0.3984375
+        ]
+      },
+      "score_difference": {
+        "mean": 2.333333333333334,
+        "walls": 2,
+        "se": 14.666666666666666,
+        "ci95": [
+          -12.333333333333332,
+          17.0
+        ]
+      },
+      "win": {
+        "mean": 0.25,
+        "walls": 2,
+        "se": 0.25,
+        "ci95": [
+          0.0,
+          0.5
+        ]
+      },
+      "loss": {
+        "mean": 0.625,
+        "walls": 2,
+        "se": 0.125,
+        "ci95": [
+          0.5,
+          0.75
+        ]
+      },
+      "draw": {
+        "mean": 0.125,
+        "walls": 2,
+        "se": 0.125,
+        "ci95": [
+          0.0,
+          0.25
+        ]
+      }
+    },
+    "candidate vs random": {
+      "reward": {
+        "mean": 0.65234375,
+        "walls": 2,
+        "se": 0.12890625,
+        "ci95": [
+          0.5234375,
+          0.78125
+        ]
+      },
+      "score_difference": {
+        "mean": 27.83333333333333,
+        "walls": 2,
+        "se": 5.499999999999997,
+        "ci95": [
+          22.333333333333332,
+          33.33333333333333
+        ]
+      },
+      "win": {
+        "mean": 0.625,
+        "walls": 2,
+        "se": 0.125,
+        "ci95": [
+          0.5,
+          0.75
+        ]
+      },
+      "loss": {
+        "mean": 0.0,
+        "walls": 2,
+        "se": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "draw": {
+        "mean": 0.375,
+        "walls": 2,
+        "se": 0.125,
+        "ci95": [
+          0.25,
+          0.5
+        ]
+      }
+    },
+    "candidate vs rl_v1": {
+      "reward": {
+        "mean": 0.453125,
+        "walls": 2,
+        "se": 0.578125,
+        "ci95": [
+          -0.125,
+          1.03125
+        ]
+      },
+      "score_difference": {
+        "mean": 19.333333333333332,
+        "walls": 2,
+        "se": 24.666666666666664,
+        "ci95": [
+          -5.333333333333333,
+          44.0
+        ]
+      },
+      "win": {
+        "mean": 0.375,
+        "walls": 2,
+        "se": 0.37499999999999994,
+        "ci95": [
+          0.0,
+          0.75
+        ]
+      },
+      "loss": {
+        "mean": 0.25,
+        "walls": 2,
+        "se": 0.25,
+        "ci95": [
+          0.0,
+          0.5
+        ]
+      },
+      "draw": {
+        "mean": 0.375,
+        "walls": 2,
+        "se": 0.125,
+        "ci95": [
+          0.25,
+          0.5
+        ]
+      }
+    },
+    "candidate vs teacher": {
+      "reward": {
+        "mean": -0.0625,
+        "walls": 2,
+        "se": 0.3203125,
+        "ci95": [
+          -0.3828125,
+          0.2578125
+        ]
+      },
+      "score_difference": {
+        "mean": -2.666666666666666,
+        "walls": 2,
+        "se": 13.666666666666664,
+        "ci95": [
+          -16.333333333333332,
+          11.0
+        ]
+      },
+      "win": {
+        "mean": 0.25,
+        "walls": 2,
+        "se": 0.25,
+        "ci95": [
+          0.0,
+          0.5
+        ]
+      },
+      "loss": {
+        "mean": 0.625,
+        "walls": 2,
+        "se": 0.125,
+        "ci95": [
+          0.5,
+          0.75
+        ]
+      },
+      "draw": {
+        "mean": 0.125,
+        "walls": 2,
+        "se": 0.125,
+        "ci95": [
+          0.0,
+          0.25
+        ]
+      }
+    }
+  },
+  "paired_differences": {},
+  "wall_records": [
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110400000,
+      "wall_id": "b7a2b3614cf6aca0fce36daaf1838454baf05174f9906c1b776ac57813d46e3b",
+      "reward": 0.5234375,
+      "score_difference": 22.333333333333332,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110400000,
+      "wall_id": "b7a2b3614cf6aca0fce36daaf1838454baf05174f9906c1b776ac57813d46e3b",
+      "reward": -0.3828125,
+      "score_difference": -16.333333333333332,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110400000,
+      "wall_id": "b7a2b3614cf6aca0fce36daaf1838454baf05174f9906c1b776ac57813d46e3b",
+      "reward": -0.125,
+      "score_difference": -5.333333333333333,
+      "win": 0.0,
+      "loss": 0.5,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110400000,
+      "wall_id": "b7a2b3614cf6aca0fce36daaf1838454baf05174f9906c1b776ac57813d46e3b",
+      "reward": 0.1171875,
+      "score_difference": 4.999999999999999,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110400000,
+      "wall_id": "b7a2b3614cf6aca0fce36daaf1838454baf05174f9906c1b776ac57813d46e3b",
+      "reward": -0.2890625,
+      "score_difference": -12.333333333333332,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110400001,
+      "wall_id": "e09f68d25190d77e0213a0587b23dbe94b2dc3250ce5ec4c9f0b3c53c0e1a915",
+      "reward": 0.78125,
+      "score_difference": 33.33333333333333,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110400001,
+      "wall_id": "e09f68d25190d77e0213a0587b23dbe94b2dc3250ce5ec4c9f0b3c53c0e1a915",
+      "reward": 0.2578125,
+      "score_difference": 11.0,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110400001,
+      "wall_id": "e09f68d25190d77e0213a0587b23dbe94b2dc3250ce5ec4c9f0b3c53c0e1a915",
+      "reward": 1.03125,
+      "score_difference": 44.0,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110400001,
+      "wall_id": "e09f68d25190d77e0213a0587b23dbe94b2dc3250ce5ec4c9f0b3c53c0e1a915",
+      "reward": -0.5078125,
+      "score_difference": -21.666666666666664,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110400001,
+      "wall_id": "e09f68d25190d77e0213a0587b23dbe94b2dc3250ce5ec4c9f0b3c53c0e1a915",
+      "reward": 0.3984375,
+      "score_difference": 17.0,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    }
+  ],
+  "aggregate": {
+    "rule": "equal mean over frozen opponents; resample shared walls",
+    "opponents": [
+      "C",
+      "D",
+      "random",
+      "rl_v1",
+      "teacher"
+    ],
+    "scores": {
+      "candidate": {
+        "mean": 0.18046875,
+        "walls": 2,
+        "se": 0.21171875,
+        "ci95": [
+          -0.03125,
+          0.3921875
+        ]
+      }
+    },
+    "paired_differences": {}
+  },
+  "games": 40,
+  "seconds": 2.156003416981548
+}

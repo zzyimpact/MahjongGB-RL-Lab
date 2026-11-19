@@ -1,0 +1,59 @@
+{
+  "game": "mahjong",
+  "training_counters": {
+    "env_steps": 0,
+    "agent_steps": 0,
+    "gradient_updates": 0,
+    "completed_episodes": 0
+  },
+  "iteration": 0,
+  "config": {
+    "seed": 20261119,
+    "hidden": 64,
+    "capacity": 128,
+    "actors": 4,
+    "episodes_per_actor": 1,
+    "iterations": 2000,
+    "device": "mps",
+    "actor_timeout": 300,
+    "ppo": {
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "learning_rate": 0.0003,
+      "epochs": 3,
+      "minibatch_size": 256,
+      "clip_epsilon": 0.2,
+      "value_coefficient": 0.5,
+      "entropy_coefficient": 0.01
+    },
+    "feature_set": "enhanced",
+    "feature_version": "v2",
+    "architecture": "small_resnet",
+    "activation": "gelu",
+    "use_candidate": true,
+    "use_context": true,
+    "bc": {
+      "epochs": 20,
+      "min_epochs": 12,
+      "patience": 6,
+      "min_delta": 0.001,
+      "batch_size": 1024,
+      "lr": 0.001,
+      "min_lr": 0.001,
+      "warmup_epochs": 0,
+      "weight_decay": 0.0,
+      "label_smoothing": 0.0,
+      "grad_clip": 10.0,
+      "optimizer": "adam",
+      "sampling": "full_equivalent",
+      "schedule": "constant"
+    }
+  },
+  "source_checkpoint_sha256": "3ee490454fff61ac2f40c314ba996be77265db75874b2af6c18067d469f9eed3",
+  "files": {
+    "mahjong_bot.py": "c1db253d2e043b53fd60d984ba638bcf0f2ad8aecc2d09af34ea26ade7bd1edb",
+    "mahjong_bot.zip": "88e31a2ee3739f1c4827fe2387282e0c1e575898e1c37c0f6cd7c90f29cd3945",
+    "mahjong_model.pt": "7e6ce89acecae536f148b9e3b25cfbb1fecd742e9cc8415dd83efd12c3ecdea2"
+  },
+  "weight_embedding": false
+}

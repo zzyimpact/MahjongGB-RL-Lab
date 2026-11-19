@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "source_sha256": "f3565b2c5c27459abe5fb4bd1b867bc7d1faddd06dba857f6f216d3db4d484b1",
+  "manifest_sha256": "0e4d7d7124756669d15a7306d9a12c2a1f1ccc188cdcb7e98f67aa6c2ad1738c",
+  "index_sha256": "6e5aa0199406468a3b427d3dbc4b968d518fb611961e4931848b1fee9aa22c27",
+  "samples": 1815376,
+  "nonforced": 576202,
+  "games": 9840,
+  "seconds": 9.257269500056282,
+  "method": "replay game/seat ordering, validate every nonforced mask/action/game_id, forced index -1"
+}

@@ -2,6 +2,22 @@
 
 这套示例使用给定的RL框架训练国标麻将、双升和掼蛋。学生可任选一个游戏，修改特征、网络、算法和超参数。默认训练是多进程同步PPO：一个 learner、多个 CPU actor；四个玩家使用同一份模型参数的策略，收集各自轨迹用于训练。双升、掼蛋只学习出牌，开局阶段的决策使用手写规则。
 
+## 国标麻将第四轮：V3最终候选（2026-11-19）
+
+新增公开行动/副露结构与候选弃牌质量特征，完成1,199,917参数V3、18组BC训练、关键消融、两种配方各三seed复验，以及包含3072局长程实验的真实PPO研究。推荐主seed的V3 BC；同时提供真实RL更新后的PPO权重和较快的D兼容备选。新候选在封存身份后使用500副独立牌墙、五冻结对手、四座位进行最终确认。
+
+- [最终报告与13个研究问题](reports/round4/FINAL_REPORT.md)
+- [训练充分性与真实学习曲线](reports/round4/TRAINING_STUDY.md)
+- [最终对战、置信区间和分类指标](reports/round4/RESULT_TABLES.md)
+- [PPO研究与退化保护](reports/round4/RL_STUDY.md)
+- [单个Python代码文件、独立权重与备用ZIP](artifacts/round4/README.md)
+- [文件体积/完整对局部署核验](reports/round4/SUBMISSION_CHECK.md)
+- [从数据到发布的复现命令](reports/round4/REPRODUCIBILITY.md)
+
+**只允许上传一个代码文件时，直接上传 `artifacts/round4/releases/BC/mahjong_bot.py`；同目录的 `mahjong_model.pt` 单独上传到用户存储。** 代码与权重必须成套。若课程要求最终策略必须经过RL更新，使用`releases/PPO/`套件；推荐BC本身没有接受PPO更新。尚未验证官方Baseline或真实Botzone线上环境。
+
+下文保留课程原始示例和第三轮历史指引。V3的实际依赖、版本限制与单文件上传说明以第四轮文档为准，不把本机通过等同于线上通过。
+
 ## 国标麻将第三轮实验（2026-11-19）
 
 已修复 BC 只训练 Actor 和按局切分泄漏，完成全量 12,288 局/512 牌墙的四模型消融、独立复式评估、受控 PPO 与本地部署验证。正式候选为开发集预选的 BC C；增强模型 D 是备选。短 PPO 出现退化，保留 BC。尚未验证课程官方 Baseline 或真实 Botzone 上传。

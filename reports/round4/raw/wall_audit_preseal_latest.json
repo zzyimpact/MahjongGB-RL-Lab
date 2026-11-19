@@ -1,0 +1,232 @@
+{
+  "unique_walls": {
+    "train": 410,
+    "val": 51,
+    "test": 51,
+    "historical": 5874,
+    "development": 226,
+    "final": 0,
+    "ppo_training": 1028
+  },
+  "overlaps": {
+    "final vs development": 0,
+    "historical vs development": 0,
+    "historical vs final": 0,
+    "ppo_training vs development": 0,
+    "ppo_training vs final": 0,
+    "ppo_training vs historical": 0,
+    "test vs development": 0,
+    "test vs final": 0,
+    "test vs historical": 0,
+    "test vs ppo_training": 0,
+    "train vs development": 0,
+    "train vs final": 0,
+    "train vs historical": 0,
+    "train vs ppo_training": 0,
+    "train vs test": 0,
+    "val vs development": 0,
+    "val vs final": 0,
+    "val vs historical": 0,
+    "val vs ppo_training": 0,
+    "val vs test": 0,
+    "val vs train": 0
+  },
+  "registrations": [
+    {
+      "path": "runs/final_v3/arena_epochs/arena_config.json",
+      "purpose": "development",
+      "walls": 32,
+      "sha256": "621fad35054f9a6a8abb0c3b0f71055f1a0383071514bac9bbcb8cac3c45d389"
+    },
+    {
+      "path": "runs/final_v3/arena_PPO_anchor_confirmation/arena_config.json",
+      "purpose": "development",
+      "walls": 128,
+      "sha256": "ef938cf1156baa28b2a092fce8ffe5f017b30c51a93a6149e4492b6d1354cd5a"
+    },
+    {
+      "path": "runs/final_v3/PPO_V3_mixed/dev_0008/arena_config.json",
+      "purpose": "development",
+      "walls": 64,
+      "sha256": "6095b5fbba7c8be369206cd21ea7c374abe42086cf5723426c146b8ebba50cf7"
+    },
+    {
+      "path": "runs/final_v3/PPO_V3_mixed/dev_0064/arena_config.json",
+      "purpose": "development",
+      "walls": 64,
+      "sha256": "b1f135b608cc089e02398be12ee8e141566324455b329685baa6f71d7fa2c007"
+    },
+    {
+      "path": "runs/final_v3/PPO_V3_mixed/dev_0000/arena_config.json",
+      "purpose": "development",
+      "walls": 64,
+      "sha256": "6d3ba49160f8ff76224bde892960d3901a04d6df82594d0879dc1ad8f6cddf11"
+    },
+    {
+      "path": "runs/final_v3/PPO_V3_mixed/dev_0048/arena_config.json",
+      "purpose": "development",
+      "walls": 64,
+      "sha256": "c36fab664e0be684c50387d168dc7a393ed061d387dcf929db4530fedad28581"
+    },
+    {
+      "path": "runs/final_v3/PPO_V3_mixed/dev_0032/arena_config.json",
+      "purpose": "development",
+      "walls": 64,
+      "sha256": "1fe29476bec02893c6ad4a791ddf5bf9dd571220164e1dee24c0ea770fbb2838"
+    },
+    {
+      "path": "runs/final_v3/PPO_V3_mixed/dev_0016/arena_config.json",
+      "purpose": "development",
+      "walls": 64,
+      "sha256": "1d2af9bffa5f09e0ab050632da6417a8aed3569b2f8f60a112401a4e517ce8fb"
+    },
+    {
+      "path": "runs/final_v3/PPO_V3_anchor/dev_0008/arena_config.json",
+      "purpose": "development",
+      "walls": 64,
+      "sha256": "23dfd8d31a57663f4c83b06e3129367884eadbb4e0b7d9a76aee4946693ddfce"
+    },
+    {
+      "path": "runs/final_v3/PPO_V3_anchor/dev_0064/arena_config.json",
+      "purpose": "development",
+      "walls": 64,
+      "sha256": "6e5011018632b7a91ab8e8cf0b83b96432f698f4d105c6232e38b47a11f217bd"
+    },
+    {
+      "path": "runs/final_v3/PPO_V3_anchor/dev_0000/arena_config.json",
+      "purpose": "development",
+      "walls": 64,
+      "sha256": "fb038dfb3f56731c04af39fd405365fa596c6b7373ed11e8846ed2c8a2c31c4b"
+    },
+    {
+      "path": "runs/final_v3/PPO_V3_anchor/dev_0048/arena_config.json",
+      "purpose": "development",
+      "walls": 64,
+      "sha256": "c8ad4aab9006cb9e6ef06c10168e2045e806c115d3ff1edf2ea56da6bde1b2f6"
+    },
+    {
+      "path": "runs/final_v3/PPO_V3_anchor/dev_0032/arena_config.json",
+      "purpose": "development",
+      "walls": 64,
+      "sha256": "20d796ee9755761ee6620ac6815ed20dfe31f86638d1267126cf697476607e94"
+    },
+    {
+      "path": "runs/final_v3/PPO_V3_anchor/dev_0016/arena_config.json",
+      "purpose": "development",
+      "walls": 64,
+      "sha256": "ba23e0eb83aff7315d3073e374297dd631e121f389c854c0c10b176c3efc3af1"
+    },
+    {
+      "path": "runs/final_v3/PPO_smoke/dev_0001/arena_config.json",
+      "purpose": "development",
+      "walls": 2,
+      "sha256": "864f2e59a49d17ae99a282506d550f305725c3a0a906af9c15039a877470096a"
+    },
+    {
+      "path": "runs/final_v3/PPO_smoke/dev_0000/arena_config.json",
+      "purpose": "development",
+      "walls": 2,
+      "sha256": "f81a34039d2c31c2268a41a753c6dd285f2142eb38a1c3738421a216a61439e9"
+    },
+    {
+      "path": "runs/final_v3/PPO_smoke/dev_0002/arena_config.json",
+      "purpose": "development",
+      "walls": 2,
+      "sha256": "0454c55209342bcae54f0a97665051e54bc6ab141bdfea184c6c79c6b862e687"
+    },
+    {
+      "path": "runs/final_v3/arena_training_study/arena_config.json",
+      "purpose": "development",
+      "walls": 128,
+      "sha256": "82c420280ce08b6788e5558d0f411797e3dc37432600dd639d21dadda3417139"
+    },
+    {
+      "path": "runs/final_v3/arena_D_constant/arena_config.json",
+      "purpose": "development",
+      "walls": 128,
+      "sha256": "5d905e1c3128b7b51aeedbe5228d784921804b96a747fbb83b4139ec933f8870"
+    },
+    {
+      "path": "runs/final_v3/arena_V3_regularized/arena_config.json",
+      "purpose": "development",
+      "walls": 128,
+      "sha256": "420a79e0a76a4f93fc6c4673a185b3650d23256a96e0b6766662ea44122f164b"
+    },
+    {
+      "path": "runs/final_v3/arena_no_quality/arena_config.json",
+      "purpose": "development",
+      "walls": 128,
+      "sha256": "b7e2a343f7cc4337a7602d7f017036f5100ccfda5293e643311b98eb955e999e"
+    },
+    {
+      "path": "runs/final_v3/arena_V3_no_context/arena_config.json",
+      "purpose": "development",
+      "walls": 128,
+      "sha256": "245ab09b77bd03e77434198fec8b88b39d52aacb3579cadaefba044329bfb400"
+    },
+    {
+      "path": "runs/final_v3/arena_V3_relu/arena_config.json",
+      "purpose": "development",
+      "walls": 128,
+      "sha256": "e15f5b864580fdeb91bf24d9cdafd05b68f66d4d61f055d2d669fe3f7f07fd5d"
+    },
+    {
+      "path": "runs/final_v3/arena_D_retrained_seed2/arena_config.json",
+      "purpose": "development",
+      "walls": 128,
+      "sha256": "f14060aa21df45bb8d603dbf669b3a00022293352222e464547b34475164bf10"
+    },
+    {
+      "path": "runs/final_v3/arena_PPO_mixed_confirmation/arena_config.json",
+      "purpose": "development",
+      "walls": 128,
+      "sha256": "ce8878bd1bc45b6917e18c434e0e8712118988bd4252dfadd4660287a7d318cc"
+    },
+    {
+      "path": "runs/final_v3/arena_D_retrained_seed3/arena_config.json",
+      "purpose": "development",
+      "walls": 128,
+      "sha256": "f02ce132bd8ce4193739c25d94aaa4c37c996e935b3ff469f39f42510be26602"
+    },
+    {
+      "path": "runs/final_v3/arena_V3_seed2/arena_config.json",
+      "purpose": "development",
+      "walls": 128,
+      "sha256": "779f82973679157f2ed6991185d6d3c7b5b55ed2ec6d0a9a84cfbcd48f284766"
+    },
+    {
+      "path": "runs/final_v3/arena_D_regularized/arena_config.json",
+      "purpose": "development",
+      "walls": 128,
+      "sha256": "a7853f7b3d71e8f3936d20ec053df8690e4ecbcf289242e94809945cb296c867"
+    },
+    {
+      "path": "runs/final_v3/arena_V3_seed3/arena_config.json",
+      "purpose": "development",
+      "walls": 128,
+      "sha256": "8a0210258c4272b825d362f70b91ffaab88dfa1ae56879b58f3a098de1c1a199"
+    },
+    {
+      "path": "runs/final_v3/arena_baselines/arena_config.json",
+      "purpose": "development",
+      "walls": 32,
+      "sha256": "20368e7fdd7c64e1719b6f3428ba427d004fa05136176134898e9716f1f5796b"
+    },
+    {
+      "path": "runs/final_v3/PPO_V3_mixed/training_walls.json",
+      "purpose": "ppo_training",
+      "planned_walls": 1024
+    },
+    {
+      "path": "runs/final_v3/PPO_V3_anchor/training_walls.json",
+      "purpose": "ppo_training",
+      "planned_walls": 1024
+    },
+    {
+      "path": "runs/final_v3/PPO_smoke/training_walls.json",
+      "purpose": "ppo_training",
+      "planned_walls": 4
+    }
+  ],
+  "note": "Development repeats share walls intentionally; PPO ablations may share training walls. Those are unions, not extra independent walls."
+}

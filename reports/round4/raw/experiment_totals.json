@@ -1,0 +1,272 @@
+{
+  "bc": {
+    "runs": 18,
+    "epochs": 216,
+    "updates": 316800,
+    "summed_job_seconds": 9691.104532792,
+    "records": [
+      {
+        "name": "D_constant",
+        "best_epoch": 3,
+        "best_val_nonforced_ce": 1.0262521791530583,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 365.87222404195927,
+        "parameters": 966444,
+        "checkpoint_bytes": 11653954,
+        "stopped_early": true
+      },
+      {
+        "name": "D_legacy",
+        "best_epoch": 1,
+        "best_val_nonforced_ce": 0.9817893803005466,
+        "epochs": 12,
+        "updates": 21276,
+        "seconds": 467.1634587079752,
+        "parameters": 966444,
+        "checkpoint_bytes": 11653826,
+        "stopped_early": true
+      },
+      {
+        "name": "D_legacy_seed2",
+        "best_epoch": 2,
+        "best_val_nonforced_ce": 0.9630251789515136,
+        "epochs": 12,
+        "updates": 21276,
+        "seconds": 565.8725853750948,
+        "parameters": 966444,
+        "checkpoint_bytes": 11654466,
+        "stopped_early": true
+      },
+      {
+        "name": "D_legacy_seed3",
+        "best_epoch": 2,
+        "best_val_nonforced_ce": 0.9766872783266994,
+        "epochs": 12,
+        "updates": 21276,
+        "seconds": 556.7241698328871,
+        "parameters": 966444,
+        "checkpoint_bytes": 11654466,
+        "stopped_early": true
+      },
+      {
+        "name": "D_regularized",
+        "best_epoch": 4,
+        "best_val_nonforced_ce": 1.04700757173028,
+        "epochs": 12,
+        "updates": 27012,
+        "seconds": 556.1309543340467,
+        "parameters": 966444,
+        "checkpoint_bytes": 11654594,
+        "stopped_early": true
+      },
+      {
+        "name": "D_retrained",
+        "best_epoch": 2,
+        "best_val_nonforced_ce": 1.0408729647474937,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 357.8251019997988,
+        "parameters": 966444,
+        "checkpoint_bytes": 11649218,
+        "stopped_early": true
+      },
+      {
+        "name": "D_retrained_seed2",
+        "best_epoch": 3,
+        "best_val_nonforced_ce": 1.025583398031056,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 304.79576695803553,
+        "parameters": 966444,
+        "checkpoint_bytes": 11654210,
+        "stopped_early": true
+      },
+      {
+        "name": "D_retrained_seed3",
+        "best_epoch": 2,
+        "best_val_nonforced_ce": 1.0258290386281854,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 313.9237984579522,
+        "parameters": 966444,
+        "checkpoint_bytes": 11653762,
+        "stopped_early": true
+      },
+      {
+        "name": "V3",
+        "best_epoch": 3,
+        "best_val_nonforced_ce": 0.9105882718114657,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 494.90674266708083,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14203316,
+        "stopped_early": true
+      },
+      {
+        "name": "V3_legacy",
+        "best_epoch": 1,
+        "best_val_nonforced_ce": 0.8232440390784997,
+        "epochs": 12,
+        "updates": 21276,
+        "seconds": 748.5847731248941,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14207284,
+        "stopped_early": true
+      },
+      {
+        "name": "V3_legacy_seed2",
+        "best_epoch": 1,
+        "best_val_nonforced_ce": 0.8414546926482914,
+        "epochs": 12,
+        "updates": 21276,
+        "seconds": 963.5907272920012,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14207220,
+        "stopped_early": true
+      },
+      {
+        "name": "V3_legacy_seed3",
+        "best_epoch": 1,
+        "best_val_nonforced_ce": 0.8252163225934899,
+        "epochs": 12,
+        "updates": 21276,
+        "seconds": 1084.102133042179,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14207220,
+        "stopped_early": true
+      },
+      {
+        "name": "V3_no_context",
+        "best_epoch": 2,
+        "best_val_nonforced_ce": 0.9280453942210622,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 465.4547724169679,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14206324,
+        "stopped_early": true
+      },
+      {
+        "name": "V3_no_quality",
+        "best_epoch": 2,
+        "best_val_nonforced_ce": 0.9436892446772602,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 521.5970865827985,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14206132,
+        "stopped_early": true
+      },
+      {
+        "name": "V3_regularized",
+        "best_epoch": 5,
+        "best_val_nonforced_ce": 0.960410490437339,
+        "epochs": 12,
+        "updates": 27012,
+        "seconds": 646.6761914161034,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14208884,
+        "stopped_early": true
+      },
+      {
+        "name": "V3_relu",
+        "best_epoch": 2,
+        "best_val_nonforced_ce": 0.908428309928822,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 500.62328962492757,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14206516,
+        "stopped_early": true
+      },
+      {
+        "name": "V3_seed2",
+        "best_epoch": 4,
+        "best_val_nonforced_ce": 0.9191769525508171,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 382.35264962515794,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14208372,
+        "stopped_early": true
+      },
+      {
+        "name": "V3_seed3",
+        "best_epoch": 3,
+        "best_val_nonforced_ce": 0.9327479834568235,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 394.9081072921399,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14207796,
+        "stopped_early": true
+      }
+    ]
+  },
+  "ppo": {
+    "runs": 4,
+    "executed_games": 6144,
+    "decisions": 1575075,
+    "updates": 3466,
+    "summed_job_seconds": 4603.63107729191,
+    "research_unique_training_walls": 4096,
+    "smoke_unique_walls": 8,
+    "records": [
+      {
+        "name": "PPO_V3_anchor",
+        "env_steps": 133279,
+        "agent_steps": 266229,
+        "gradient_updates": 576,
+        "completed_episodes": 1024,
+        "iteration": 64,
+        "seconds": 846.9390245829709,
+        "best_development_score": 0.2608154296875,
+        "best_post_ppo_score": 0.2608154296875,
+        "warmup_episodes": 128,
+        "stopped_early": false
+      },
+      {
+        "name": "PPO_V3_legacy",
+        "env_steps": 129419,
+        "agent_steps": 258479,
+        "gradient_updates": 568,
+        "completed_episodes": 1024,
+        "iteration": 64,
+        "seconds": 710.1823980000336,
+        "best_development_score": 0.3287841796875,
+        "best_post_ppo_score": 0.3287841796875,
+        "warmup_episodes": 128,
+        "stopped_early": false
+      },
+      {
+        "name": "PPO_V3_legacy_extended",
+        "env_steps": 392355,
+        "agent_steps": 783667,
+        "gradient_updates": 1732,
+        "completed_episodes": 3072,
+        "iteration": 192,
+        "seconds": 2150.738597250078,
+        "best_development_score": 0.3373046875,
+        "best_post_ppo_score": 0.3373046875,
+        "warmup_episodes": 128,
+        "stopped_early": false
+      },
+      {
+        "name": "PPO_V3_mixed",
+        "env_steps": 133508,
+        "agent_steps": 266700,
+        "gradient_updates": 590,
+        "completed_episodes": 1024,
+        "iteration": 64,
+        "seconds": 895.7710574588273,
+        "best_development_score": 0.263525390625,
+        "best_post_ppo_score": 0.263525390625,
+        "warmup_episodes": 128,
+        "stopped_early": false
+      }
+    ]
+  },
+  "note": "Job durations overlap; summed job seconds are not elapsed wall-clock time. Research PPO runs share intentionally repeated prefixes. Smoke episodes excluded from research totals."
+}

@@ -1,0 +1,12 @@
+{
+  "base": "d150d3d7e9345642e76f62571cad21dc48b87294",
+  "protected_paths": [
+    "artifacts/round3",
+    "reports/round3",
+    "audit",
+    "mahjong/gamecore",
+    "mahjong/rules.py"
+  ],
+  "changed_tracked_files": [],
+  "preserved": true
+}

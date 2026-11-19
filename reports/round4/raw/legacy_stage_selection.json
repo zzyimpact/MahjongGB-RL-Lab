@@ -1,0 +1,100 @@
+{
+  "time": 1795079326.797017,
+  "selected_v3_stage": 1,
+  "selected_d_stage": 6,
+  "bc": {
+    "path": "runs/final_v3/V3_legacy/epoch_001.pt",
+    "sha256": "361ce9f282f53d34248339c1bf977bc78147013fa9964c2288bf75b8b746cb0f",
+    "bytes": 14207098,
+    "config": {
+      "seed": 20261119,
+      "hidden": 64,
+      "capacity": 128,
+      "actors": 4,
+      "episodes_per_actor": 1,
+      "iterations": 2000,
+      "device": "mps",
+      "actor_timeout": 300,
+      "ppo": {
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.0003,
+        "epochs": 3,
+        "minibatch_size": 256,
+        "clip_epsilon": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01
+      },
+      "feature_set": "v3",
+      "feature_version": "v3",
+      "architecture": "v3_resnet",
+      "activation": "gelu",
+      "use_candidate": true,
+      "use_context": true,
+      "bc": {
+        "epochs": 20,
+        "min_epochs": 12,
+        "patience": 6,
+        "min_delta": 0.001,
+        "batch_size": 1024,
+        "lr": 0.001,
+        "min_lr": 0.001,
+        "warmup_epochs": 0,
+        "weight_decay": 0.0,
+        "label_smoothing": 0.0,
+        "grad_clip": 10.0,
+        "optimizer": "adam",
+        "sampling": "full_equivalent",
+        "schedule": "constant"
+      }
+    }
+  },
+  "d": {
+    "path": "runs/final_v3/D_legacy/epoch_006.pt",
+    "sha256": "3ee490454fff61ac2f40c314ba996be77265db75874b2af6c18067d469f9eed3",
+    "bytes": 11657082,
+    "config": {
+      "seed": 20261119,
+      "hidden": 64,
+      "capacity": 128,
+      "actors": 4,
+      "episodes_per_actor": 1,
+      "iterations": 2000,
+      "device": "mps",
+      "actor_timeout": 300,
+      "ppo": {
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.0003,
+        "epochs": 3,
+        "minibatch_size": 256,
+        "clip_epsilon": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01
+      },
+      "feature_set": "enhanced",
+      "feature_version": "v2",
+      "architecture": "small_resnet",
+      "activation": "gelu",
+      "use_candidate": true,
+      "use_context": true,
+      "bc": {
+        "epochs": 20,
+        "min_epochs": 12,
+        "patience": 6,
+        "min_delta": 0.001,
+        "batch_size": 1024,
+        "lr": 0.001,
+        "min_lr": 0.001,
+        "warmup_epochs": 0,
+        "weight_decay": 0.0,
+        "label_smoothing": 0.0,
+        "grad_clip": 10.0,
+        "optimizer": "adam",
+        "sampling": "full_equivalent",
+        "schedule": "constant"
+      }
+    }
+  },
+  "rationale": "V3 later stages lack paired improvement over val-best e1; D e6 minus val-best e1 +.050720 [.012351,.089001]. Main training seed remains pending replicated checks. No final arena or test opened."
+}

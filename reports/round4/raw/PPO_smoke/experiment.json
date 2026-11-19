@@ -1,0 +1,205 @@
+{
+  "config": {
+    "seed": 135000000,
+    "hidden": 64,
+    "capacity": 128,
+    "actors": 2,
+    "episodes_per_actor": 1,
+    "iterations": 2,
+    "device": "cpu",
+    "actor_timeout": 300,
+    "ppo": {
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "learning_rate": 1e-05,
+      "epochs": 1,
+      "minibatch_size": 512,
+      "clip_epsilon": 0.1,
+      "value_coefficient": 0.5,
+      "entropy_coefficient": 0.001
+    },
+    "feature_set": "enhanced",
+    "feature_version": "v2",
+    "architecture": "small_resnet",
+    "activation": "gelu",
+    "use_candidate": true,
+    "use_context": true,
+    "bc": {
+      "epochs": 20,
+      "min_epochs": 12,
+      "patience": 6,
+      "min_delta": 0.001,
+      "batch_size": 512,
+      "lr": 0.0005,
+      "min_lr": 2.5e-05,
+      "warmup_epochs": 1,
+      "weight_decay": 0.01,
+      "label_smoothing": 0.02,
+      "grad_clip": 5.0
+    },
+    "rl": {
+      "mode": "mixed",
+      "bc_kl": 0.2,
+      "warmup_iterations": 1,
+      "eval_every": 1,
+      "eval_seed": 110100000,
+      "eval_walls": 2,
+      "opponents": {
+        "C": "artifacts/round3/C/checkpoint.pt",
+        "D": "artifacts/round3/D/checkpoint.pt"
+      },
+      "eval_opponents": {
+        "rl_v1": "artifacts/round3/references/rl_v1.pt",
+        "C": "artifacts/round3/C/checkpoint.pt",
+        "D": "artifacts/round3/D/checkpoint.pt"
+      }
+    }
+  },
+  "bc": {
+    "path": "runs/final_v3/D_retrained/checkpoint.pt",
+    "sha256": "f315d70c2ad720ee50fd65c42f41a2e3e49e7b5284fd09254666c3005adadc09",
+    "bytes": 11649218,
+    "config": {
+      "seed": 20261119,
+      "hidden": 64,
+      "capacity": 128,
+      "actors": 4,
+      "episodes_per_actor": 1,
+      "iterations": 2000,
+      "device": "mps",
+      "actor_timeout": 300,
+      "ppo": {
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.0003,
+        "epochs": 3,
+        "minibatch_size": 256,
+        "clip_epsilon": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01
+      },
+      "feature_set": "enhanced",
+      "feature_version": "v2",
+      "architecture": "small_resnet",
+      "activation": "gelu",
+      "use_candidate": true,
+      "use_context": true,
+      "bc": {
+        "epochs": 20,
+        "min_epochs": 12,
+        "patience": 6,
+        "min_delta": 0.001,
+        "batch_size": 512,
+        "lr": 0.0005,
+        "min_lr": 2.5e-05,
+        "warmup_epochs": 1,
+        "weight_decay": 0.01,
+        "label_smoothing": 0.02,
+        "grad_clip": 5.0
+      }
+    }
+  },
+  "frozen": {
+    "C": {
+      "path": "artifacts/round3/C/checkpoint.pt",
+      "sha256": "59f9d879bd2d90ee19f81f5b11716a527225db5b253f52d4566d8689328bb531",
+      "bytes": 11454401,
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "basic",
+        "feature_version": "v1",
+        "architecture": "small_resnet"
+      }
+    },
+    "D": {
+      "path": "artifacts/round3/D/checkpoint.pt",
+      "sha256": "4821f1830230864d7a5526b02af63fbce83431d812b7394a20247b91508ca64e",
+      "bytes": 11647937,
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "enhanced",
+        "feature_version": "v2",
+        "architecture": "small_resnet"
+      }
+    },
+    "BC": {
+      "path": "runs/final_v3/D_retrained/checkpoint.pt",
+      "sha256": "f315d70c2ad720ee50fd65c42f41a2e3e49e7b5284fd09254666c3005adadc09",
+      "bytes": 11649218,
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "enhanced",
+        "feature_version": "v2",
+        "architecture": "small_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 512,
+          "lr": 0.0005,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.02,
+          "grad_clip": 5.0
+        }
+      }
+    }
+  },
+  "critic_gradients": "detached from actor backbone"
+}

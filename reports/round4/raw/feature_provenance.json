@@ -1,0 +1,12 @@
+{
+  "feature_version": "v3",
+  "sources": {
+    "features.py": "634b90c1a58d832956663bdca493b95b983a57be72e1c31bf6dbf18534b6791f",
+    "features_v3.py": "960083850d72ce475952d6ee8e69d716ad0fa65d31adaa105265a574694a7dc6",
+    "observation.py": "a680e7858f6c6e686cad1fa6d221c54ae65e2abed75b7c430ab76f3033559959",
+    "botzone/session.py": "f1e4c8c113927efba5a5ae7cf885d6dd928ae7a13fcd2bc0f9ec3b9683757a55",
+    "replay.py": "d0b78bc62fef3fa32194d3fafd39ed0fbc65f4a10c71b39fb33ab5bc7dd3d29e",
+    "rules.py": "b2382a6e170ad91ebc5db3091b297635c64fa39bbe3b3a0d8b35846dad185160"
+  },
+  "PyMahjongGB": "1.4.0"
+}

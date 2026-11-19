@@ -1,0 +1,7 @@
+{
+  "requested_walls": 127,
+  "existing_walls": 128,
+  "rejected": true,
+  "returncode": 1,
+  "output_unchanged": true
+}

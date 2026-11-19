@@ -1,0 +1,8 @@
+{
+  "selected_seed": 20261119,
+  "v3_stage": 1,
+  "d_stage": 6,
+  "comparison_source": "development_legacy_three_seeds.json",
+  "reason": "Neither alternate V3 seed has a paired128-wall95% interval wholly above main seed. Seed3 point estimate is highest, but seed3-main CI[-.0014792,.0809735] includes zero. Keep main seed by registered rule.",
+  "no_test_or_final_outcomes_used": true
+}

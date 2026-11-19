@@ -1,0 +1,132 @@
+{
+  "PPO_long": {
+    "identity": {
+      "path": "runs/final_v3/PPO_V3_legacy_extended/last.pt",
+      "sha256": "c48108c2e764e4758735736b1968afb6e2d61f15d54a1ccf57762f1528709fba",
+      "bytes": 14695841,
+      "config": {
+        "seed": 130010000,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 4,
+        "iterations": 192,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 2e-05,
+          "epochs": 2,
+          "minibatch_size": 512,
+          "clip_epsilon": 0.1,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.001,
+          "max_grad_norm": 0.5
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 1024,
+          "lr": 0.001,
+          "min_lr": 0.001,
+          "warmup_epochs": 0,
+          "weight_decay": 0.0,
+          "label_smoothing": 0.0,
+          "grad_clip": 10.0,
+          "optimizer": "adam",
+          "sampling": "full_equivalent",
+          "schedule": "constant"
+        },
+        "rl": {
+          "mode": "mixed",
+          "bc_kl": 1.0,
+          "warmup_iterations": 8,
+          "eval_every": 16,
+          "eval_seed": 110300000,
+          "eval_walls": 64,
+          "stop_margin": 0.04,
+          "opponents": {
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          },
+          "eval_opponents": {
+            "rl_v1": "artifacts/round3/references/rl_v1.pt",
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          },
+          "episode_action_seeds": true
+        }
+      }
+    },
+    "parameters": 1199917,
+    "module_parameters": {
+      "conv": 307648,
+      "event_seat": 40,
+      "event_type": 64,
+      "tile": 560,
+      "meld_type": 40,
+      "context": 131200,
+      "hidden": 626432,
+      "actor": 60395,
+      "discard_context": 16448,
+      "discard": 24065,
+      "critic": 33025
+    },
+    "layer_macs": {
+      "conv.0": 414720,
+      "conv.1.layers.2": 1327104,
+      "conv.1.layers.5": 1327104,
+      "conv.2.layers.2": 1327104,
+      "conv.2.layers.5": 1327104,
+      "conv.3.layers.2": 1327104,
+      "conv.3.layers.5": 1327104,
+      "conv.4.layers.2": 1327104,
+      "conv.4.layers.5": 1327104,
+      "context.0": 131072,
+      "hidden.0": 626176,
+      "discard_context": 16384,
+      "discard.0": 809472,
+      "discard.2": 4352,
+      "actor": 60160,
+      "critic.0": 32768,
+      "critic.2": 128
+    },
+    "total_macs": 12712064,
+    "approximate_flops": 25424128,
+    "flops_scope": "conv/linear multiply-adds only; excludes activations, normalization, embedding, feature encoding",
+    "samples": 300,
+    "feature": {
+      "mean_ms": 0.435023990770181,
+      "median_ms": 0.30070857610553503,
+      "p95_ms": 1.2231501517817382,
+      "max_ms": 1.8949999939650297
+    },
+    "forward_including_tensor_conversion_and_mask": {
+      "mean_ms": 0.39859500403205556,
+      "median_ms": 0.38622901774942875,
+      "p95_ms": 0.4802751704119146,
+      "max_ms": 0.5834579933434725
+    },
+    "full_decision": {
+      "mean_ms": 0.8336189948022366,
+      "median_ms": 0.6829164922237396,
+      "p95_ms": 1.692866731900722,
+      "max_ms": 2.478457987308502
+    },
+    "shanten_cache": {
+      "hits": 260,
+      "misses": 2066,
+      "maxsize": 65536,
+      "currsize": 2066
+    }
+  }
+}

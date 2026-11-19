@@ -1,0 +1,87 @@
+{
+  "V3": {
+    "status": "completed",
+    "command": [
+      "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/.venv/bin/python",
+      "-m",
+      "mahjong.train_v3",
+      "--config",
+      "mahjong/configs/v3/V3.json",
+      "--data",
+      "data/final_v3",
+      "--output",
+      "runs/final_v3/V3"
+    ],
+    "start_time": 1795072916.903005,
+    "returncode": 0,
+    "end_time": 1795073413.5508301
+  },
+  "V3_no_quality": {
+    "status": "completed",
+    "command": [
+      "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/.venv/bin/python",
+      "-m",
+      "mahjong.train_v3",
+      "--config",
+      "mahjong/configs/v3/V3_no_quality.json",
+      "--data",
+      "data/final_v3",
+      "--output",
+      "runs/final_v3/V3_no_quality"
+    ],
+    "start_time": 1795073413.551339,
+    "returncode": 0,
+    "end_time": 1795073936.487839
+  },
+  "V3_no_context": {
+    "status": "completed",
+    "command": [
+      "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/.venv/bin/python",
+      "-m",
+      "mahjong.train_v3",
+      "--config",
+      "mahjong/configs/v3/V3_no_context.json",
+      "--data",
+      "data/final_v3",
+      "--output",
+      "runs/final_v3/V3_no_context"
+    ],
+    "start_time": 1795073936.4886022,
+    "returncode": 0,
+    "end_time": 1795074403.483187
+  },
+  "V3_relu": {
+    "status": "completed",
+    "command": [
+      "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/.venv/bin/python",
+      "-m",
+      "mahjong.train_v3",
+      "--config",
+      "mahjong/configs/v3/V3_relu.json",
+      "--data",
+      "data/final_v3",
+      "--output",
+      "runs/final_v3/V3_relu"
+    ],
+    "start_time": 1795074403.483844,
+    "returncode": 0,
+    "end_time": 1795074905.4094841
+  },
+  "D_constant": {
+    "status": "completed",
+    "command": [
+      "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/.venv/bin/python",
+      "-m",
+      "mahjong.train_v3",
+      "--config",
+      "mahjong/configs/v3/D_constant.json",
+      "--data",
+      "data/final_v3",
+      "--output",
+      "runs/final_v3/D_constant"
+    ],
+    "start_time": 1795074905.4100559,
+    "returncode": 0,
+    "end_time": 1795075272.550302
+  }
+}

@@ -184,3 +184,20 @@ PYTHONPATH="$PWD/rl_framework/tests:$PWD" .venv/bin/python -m pytest rl_framewor
 ```
 
 最终三项主要对比另给20,000次配对墙bootstrap和Bonferroni区间；这些是近似频率学区间。探索性消融仍为未校正的边际95%区间。归档脚本对入选模型逐字节复制，对JSONL无损gzip，并记录压缩前后SHA。原有文件、原有训练快照与历史日志不被覆盖。
+
+## 长程PPO信号的第二组独立确认
+
+第一批最终池中，长程last出现探索性收益；它不是原先预选的短程PPO主候选。因此另行封存 `raw/supplementary_confirmation_plan.json`，只对固定BC和固定长程last增加一组113000000起500墙；不改网络、权重或训练参数。`purpose=confirmation` 会排除之前final、development及训练墙。
+
+```bash
+.venv/bin/python -m mahjong.arena_v3 \
+ --candidate V3_legacy_e01=runs/final_v3/V3_legacy/epoch_001.pt \
+ --candidate PPO_extended_last=runs/final_v3/PPO_V3_legacy_extended/last.pt \
+ --opponent random --opponent teacher \
+ --opponent rl_v1=artifacts/round3/references/rl_v1.pt \
+ --opponent C=artifacts/round3/C/checkpoint.pt --opponent D=artifacts/round3/D/checkpoint.pt \
+ --output runs/final_v3/arena_confirmation --seed 113000000 --walls 500 --workers 10 --purpose confirmation
+.venv/bin/python -m mahjong.analysis_v3 followup --input runs/final_v3/arena_confirmation/results.json --plan runs/final_v3/supplementary_confirmation_plan.json --output runs/final_v3/supplementary_confirmation.json
+```
+
+若从发布模型复现，可将上述checkpoint路径换为对应 `artifacts/round4/<模型名>/checkpoint.pt`，SHA必须匹配。对新实验根目录提供 `--registry-root` 并复制/重建其此前注册集合；不要用空注册目录绕过独立性审计。原先500墙只支持这项late-snapshot选择的探索性观察，第二500墙单独用于确认，没有合并后冒充未见评估。采用门槛未通过，最终仍推荐BC并保留长程RL权重。所有原主要结论保留。

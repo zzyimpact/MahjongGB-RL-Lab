@@ -1,0 +1,29 @@
+F...                                                                     [100%]
+=================================== FAILURES ===================================
+__________________________ test_kong_and_last_wall_v3 __________________________
+
+    def test_kong_and_last_wall_v3():
+>       v=view();v.request2obs('Draw B3');v.request2obs('Player 0 AnGang W1');a=encode(v,'v3')
+
+mahjong/tests/test_v3_extra.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+mahjong/features.py:15: in encode
+    return encode_v3(view, encode(view, 'enhanced'))
+mahjong/features_v3.py:93: in encode_v3
+    candidate=candidate_features(view, base['obs']))
+mahjong/features_v3.py:49: in candidate_features
+    shape, useful = hand_shapes(tuple(sorted(hand, key=INDEX.get)), len(view.packs[0]))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+hand = ('W2', 'W3', 'W4', 'W5', 'W6', 'T1', ...), packs = 1
+
+    @lru_cache(maxsize=65536)
+    def hand_shapes(hand, packs):
+        """Native shanten + useful tiles; cache contains no hidden/live state."""
+>       regular = RegularShanten(hand)
+E       TypeError: ERROR_INVALID_HAND
+
+mahjong/features_v3.py:22: TypeError
+=========================== short test summary info ============================
+FAILED mahjong/tests/test_v3_extra.py::test_kong_and_last_wall_v3 - TypeError...
+1 failed, 3 passed in 1.51s

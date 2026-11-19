@@ -1,0 +1,47 @@
+{
+  "contrasts": {
+    "V3_legacy_e01 - D_original": {
+      "mean": 0.141475,
+      "walls": 500,
+      "se": 0.00978397863574115,
+      "ci95": [
+        0.122053125,
+        0.160793828125
+      ],
+      "bonferroni_family_ci95": [
+        0.11767057291666665,
+        0.16497187500000002
+      ]
+    },
+    "V3_legacy_e01 - D_legacy_e06": {
+      "mean": 0.062137500000000005,
+      "walls": 500,
+      "se": 0.010201882267680176,
+      "ci95": [
+        0.042203125,
+        0.08214070312499999
+      ],
+      "bonferroni_family_ci95": [
+        0.037651901041666665,
+        0.08632317708333334
+      ]
+    },
+    "PPO_legacy_best - V3_legacy_e01": {
+      "mean": 0.007881250000000001,
+      "walls": 500,
+      "se": 0.004692879586752308,
+      "ci95": [
+        -0.0014968749999999984,
+        0.017109374999999996
+      ],
+      "bonferroni_family_ci95": [
+        -0.0035772135416666678,
+        0.019002135416666666
+      ]
+    }
+  },
+  "bootstrap_replicates": 20000,
+  "seed": 20261119,
+  "method": "paired wall bootstrap; three prespecified contrasts; Bonferroni percentile intervals are approximate",
+  "selection_sha256": "65f37a60cc727e2058fbcab7d1d8823b6e1fbb949b451423c10982f7125a892e"
+}

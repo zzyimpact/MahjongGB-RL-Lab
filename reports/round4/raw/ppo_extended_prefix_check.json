@@ -1,0 +1,17 @@
+{
+  "iteration": 64,
+  "policy_tensors_identical": true,
+  "first_counters": {
+    "env_steps": 129419,
+    "agent_steps": 258479,
+    "gradient_updates": 568,
+    "completed_episodes": 1024
+  },
+  "second_counters": {
+    "env_steps": 129419,
+    "agent_steps": 258479,
+    "gradient_updates": 568,
+    "completed_episodes": 1024
+  },
+  "note": "Same1024episode prefix repeated, not additional independent training walls; all policy tensors compared on CPU."
+}

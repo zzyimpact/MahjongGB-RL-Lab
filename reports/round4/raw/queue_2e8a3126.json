@@ -1,0 +1,36 @@
+{
+  "D_legacy": {
+    "status": "completed",
+    "command": [
+      "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/.venv/bin/python",
+      "-m",
+      "mahjong.train_v3",
+      "--config",
+      "mahjong/configs/v3/D_legacy.json",
+      "--data",
+      "data/final_v3",
+      "--output",
+      "runs/final_v3/D_legacy"
+    ],
+    "start_time": 1795077898.505138,
+    "returncode": 0,
+    "end_time": 1795078367.3171232
+  },
+  "V3_legacy": {
+    "status": "completed",
+    "command": [
+      "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/.venv/bin/python",
+      "-m",
+      "mahjong.train_v3",
+      "--config",
+      "mahjong/configs/v3/V3_legacy.json",
+      "--data",
+      "data/final_v3",
+      "--output",
+      "runs/final_v3/V3_legacy"
+    ],
+    "start_time": 1795078367.319145,
+    "returncode": 0,
+    "end_time": 1795079117.829736
+  }
+}

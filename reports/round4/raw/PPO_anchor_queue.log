@@ -1,0 +1,167 @@
+{"jobs_done": 1, "jobs_total": 320, "seconds": 3.020068750018254}
+{"jobs_done": 21, "jobs_total": 320, "seconds": 4.523447916842997}
+{"jobs_done": 41, "jobs_total": 320, "seconds": 6.1529840000439435}
+{"jobs_done": 61, "jobs_total": 320, "seconds": 7.9439109589438885}
+{"jobs_done": 81, "jobs_total": 320, "seconds": 10.21238841698505}
+{"jobs_done": 101, "jobs_total": 320, "seconds": 11.406717750011012}
+{"jobs_done": 121, "jobs_total": 320, "seconds": 12.814999874914065}
+{"jobs_done": 141, "jobs_total": 320, "seconds": 14.544984083855525}
+{"jobs_done": 161, "jobs_total": 320, "seconds": 16.144767083926126}
+{"jobs_done": 181, "jobs_total": 320, "seconds": 18.413844124879688}
+{"jobs_done": 201, "jobs_total": 320, "seconds": 19.67298245895654}
+{"jobs_done": 221, "jobs_total": 320, "seconds": 21.401027374900877}
+{"jobs_done": 241, "jobs_total": 320, "seconds": 22.891770499991253}
+{"jobs_done": 261, "jobs_total": 320, "seconds": 24.440005874959752}
+{"jobs_done": 281, "jobs_total": 320, "seconds": 26.261092792032287}
+{"jobs_done": 301, "jobs_total": 320, "seconds": 28.233744874829426}
+{"rule": "equal mean over frozen opponents; resample shared walls", "opponents": ["C", "D", "random", "rl_v1", "teacher"], "scores": {"candidate": {"mean": 0.2541748046875, "walls": 64, "se": 0.024305451732422406, "ci95": [0.20739318847656252, 0.3017828369140625]}}, "paired_differences": {}}
+{"iteration": 1, "warmup": true, "actor_changed": false, "seconds": 8.495494917035103, "mean_terminal_reward": 0.1328125, "non_draw_rate": 0.8125}
+{"iteration": 2, "warmup": true, "actor_changed": false, "seconds": 15.820795333012938, "mean_terminal_reward": -0.1083984375, "non_draw_rate": 0.9375}
+{"iteration": 3, "warmup": true, "actor_changed": false, "seconds": 24.419107499998063, "mean_terminal_reward": 0.107421875, "non_draw_rate": 0.75}
+{"iteration": 4, "warmup": true, "actor_changed": false, "seconds": 32.40605070791207, "mean_terminal_reward": -0.1552734375, "non_draw_rate": 0.6875}
+{"iteration": 5, "warmup": true, "actor_changed": false, "seconds": 39.91386854182929, "mean_terminal_reward": 0.0869140625, "non_draw_rate": 0.8125}
+{"iteration": 6, "warmup": true, "actor_changed": false, "seconds": 47.52199741685763, "mean_terminal_reward": -0.015625, "non_draw_rate": 0.6875}
+{"iteration": 7, "warmup": true, "actor_changed": false, "seconds": 54.94280404201709, "mean_terminal_reward": 0.056640625, "non_draw_rate": 0.875}
+{"iteration": 8, "warmup": true, "actor_changed": false, "seconds": 62.11588583281264, "mean_terminal_reward": -0.0634765625, "non_draw_rate": 0.875}
+{"jobs_done": 1, "jobs_total": 320, "seconds": 3.2746679589617997}
+{"jobs_done": 21, "jobs_total": 320, "seconds": 4.787061624927446}
+{"jobs_done": 41, "jobs_total": 320, "seconds": 6.378196999896318}
+{"jobs_done": 61, "jobs_total": 320, "seconds": 8.08454608405009}
+{"jobs_done": 81, "jobs_total": 320, "seconds": 10.267034333897755}
+{"jobs_done": 101, "jobs_total": 320, "seconds": 11.501449167029932}
+{"jobs_done": 121, "jobs_total": 320, "seconds": 13.030234874924645}
+{"jobs_done": 141, "jobs_total": 320, "seconds": 15.03329704189673}
+{"jobs_done": 161, "jobs_total": 320, "seconds": 16.60501154186204}
+{"jobs_done": 181, "jobs_total": 320, "seconds": 18.922854125034064}
+{"jobs_done": 201, "jobs_total": 320, "seconds": 20.150138499913737}
+{"jobs_done": 221, "jobs_total": 320, "seconds": 21.857067583827302}
+{"jobs_done": 241, "jobs_total": 320, "seconds": 23.388105749851093}
+{"jobs_done": 261, "jobs_total": 320, "seconds": 24.940820042043924}
+{"jobs_done": 281, "jobs_total": 320, "seconds": 26.7741161249578}
+{"jobs_done": 301, "jobs_total": 320, "seconds": 28.725468166870996}
+{"rule": "equal mean over frozen opponents; resample shared walls", "opponents": ["C", "D", "random", "rl_v1", "teacher"], "scores": {"candidate": {"mean": 0.2541748046875, "walls": 64, "se": 0.024305451732422406, "ci95": [0.20739318847656252, 0.3017828369140625]}}, "paired_differences": {}}
+{"iteration": 9, "warmup": false, "actor_changed": true, "seconds": 107.40881074988283, "mean_terminal_reward": -0.0966796875, "non_draw_rate": 0.625}
+{"iteration": 10, "warmup": false, "actor_changed": true, "seconds": 118.57270424999297, "mean_terminal_reward": -0.201171875, "non_draw_rate": 0.9375}
+{"iteration": 11, "warmup": false, "actor_changed": true, "seconds": 129.16890104184859, "mean_terminal_reward": 0.1416015625, "non_draw_rate": 0.75}
+{"iteration": 12, "warmup": false, "actor_changed": true, "seconds": 140.0098514170386, "mean_terminal_reward": 0.06640625, "non_draw_rate": 0.8125}
+{"iteration": 13, "warmup": false, "actor_changed": true, "seconds": 150.87369470787235, "mean_terminal_reward": 0.1748046875, "non_draw_rate": 0.75}
+{"iteration": 14, "warmup": false, "actor_changed": true, "seconds": 161.0683625829406, "mean_terminal_reward": -0.1689453125, "non_draw_rate": 0.8125}
+{"iteration": 15, "warmup": false, "actor_changed": true, "seconds": 173.7856629579328, "mean_terminal_reward": -0.0849609375, "non_draw_rate": 0.625}
+{"iteration": 16, "warmup": false, "actor_changed": true, "seconds": 186.0250390828587, "mean_terminal_reward": 0.1630859375, "non_draw_rate": 0.5}
+{"jobs_done": 1, "jobs_total": 320, "seconds": 2.5719482919666916}
+{"jobs_done": 21, "jobs_total": 320, "seconds": 4.021452584071085}
+{"jobs_done": 41, "jobs_total": 320, "seconds": 5.5668495839927346}
+{"jobs_done": 61, "jobs_total": 320, "seconds": 7.245919791981578}
+{"jobs_done": 81, "jobs_total": 320, "seconds": 8.895297375041991}
+{"jobs_done": 101, "jobs_total": 320, "seconds": 10.278961916919798}
+{"jobs_done": 121, "jobs_total": 320, "seconds": 11.802408749936149}
+{"jobs_done": 141, "jobs_total": 320, "seconds": 13.641206041909754}
+{"jobs_done": 161, "jobs_total": 320, "seconds": 15.078897916944697}
+{"jobs_done": 181, "jobs_total": 320, "seconds": 17.303658625110984}
+{"jobs_done": 201, "jobs_total": 320, "seconds": 18.499837584095076}
+{"jobs_done": 221, "jobs_total": 320, "seconds": 20.052769541973248}
+{"jobs_done": 241, "jobs_total": 320, "seconds": 21.57109933393076}
+{"jobs_done": 261, "jobs_total": 320, "seconds": 23.06313016708009}
+{"jobs_done": 281, "jobs_total": 320, "seconds": 24.83437120891176}
+{"jobs_done": 301, "jobs_total": 320, "seconds": 26.773938874946907}
+{"rule": "equal mean over frozen opponents; resample shared walls", "opponents": ["C", "D", "random", "rl_v1", "teacher"], "scores": {"candidate": {"mean": 0.2516845703125, "walls": 64, "se": 0.025734406300490953, "ci95": [0.2012921142578125, 0.30017211914062497]}}, "paired_differences": {}}
+{"iteration": 17, "warmup": false, "actor_changed": true, "seconds": 225.790346249938, "mean_terminal_reward": -0.0068359375, "non_draw_rate": 0.6875}
+{"iteration": 18, "warmup": false, "actor_changed": true, "seconds": 236.40194141701795, "mean_terminal_reward": -0.0478515625, "non_draw_rate": 0.75}
+{"iteration": 19, "warmup": false, "actor_changed": true, "seconds": 247.86624758294784, "mean_terminal_reward": -0.048828125, "non_draw_rate": 0.5625}
+{"iteration": 20, "warmup": false, "actor_changed": true, "seconds": 258.6288251669612, "mean_terminal_reward": 0.0693359375, "non_draw_rate": 0.8125}
+{"iteration": 21, "warmup": false, "actor_changed": true, "seconds": 271.1414649169892, "mean_terminal_reward": 0.0673828125, "non_draw_rate": 0.5}
+{"iteration": 22, "warmup": false, "actor_changed": true, "seconds": 283.62714270781726, "mean_terminal_reward": -0.0458984375, "non_draw_rate": 0.5}
+{"iteration": 23, "warmup": false, "actor_changed": true, "seconds": 295.72270866693, "mean_terminal_reward": 0.1318359375, "non_draw_rate": 0.6875}
+{"iteration": 24, "warmup": false, "actor_changed": true, "seconds": 306.12258674995974, "mean_terminal_reward": 0.03515625, "non_draw_rate": 0.8125}
+{"iteration": 25, "warmup": false, "actor_changed": true, "seconds": 317.0342870419845, "mean_terminal_reward": 0.1103515625, "non_draw_rate": 0.6875}
+{"iteration": 26, "warmup": false, "actor_changed": true, "seconds": 327.7755178329535, "mean_terminal_reward": -0.2314453125, "non_draw_rate": 0.8125}
+{"iteration": 27, "warmup": false, "actor_changed": true, "seconds": 339.57091120793484, "mean_terminal_reward": 0.017578125, "non_draw_rate": 0.75}
+{"iteration": 28, "warmup": false, "actor_changed": true, "seconds": 350.3869367078878, "mean_terminal_reward": 0.12890625, "non_draw_rate": 0.75}
+{"iteration": 29, "warmup": false, "actor_changed": true, "seconds": 361.11629745783284, "mean_terminal_reward": 0.0205078125, "non_draw_rate": 0.6875}
+{"iteration": 30, "warmup": false, "actor_changed": true, "seconds": 371.8606841249857, "mean_terminal_reward": 0.130859375, "non_draw_rate": 0.8125}
+{"iteration": 31, "warmup": false, "actor_changed": true, "seconds": 383.2935032919049, "mean_terminal_reward": 0.0517578125, "non_draw_rate": 0.6875}
+{"iteration": 32, "warmup": false, "actor_changed": true, "seconds": 394.8274758749176, "mean_terminal_reward": 0.0810546875, "non_draw_rate": 0.5625}
+{"jobs_done": 1, "jobs_total": 320, "seconds": 2.6450576251372695}
+{"jobs_done": 21, "jobs_total": 320, "seconds": 3.9112335410900414}
+{"jobs_done": 41, "jobs_total": 320, "seconds": 5.402019666042179}
+{"jobs_done": 61, "jobs_total": 320, "seconds": 7.060040750075132}
+{"jobs_done": 81, "jobs_total": 320, "seconds": 8.7127781661693}
+{"jobs_done": 101, "jobs_total": 320, "seconds": 10.090957541018724}
+{"jobs_done": 121, "jobs_total": 320, "seconds": 11.53986341599375}
+{"jobs_done": 141, "jobs_total": 320, "seconds": 13.304362375056371}
+{"jobs_done": 161, "jobs_total": 320, "seconds": 14.606729250168428}
+{"jobs_done": 181, "jobs_total": 320, "seconds": 16.86104275006801}
+{"jobs_done": 201, "jobs_total": 320, "seconds": 17.99259716598317}
+{"jobs_done": 221, "jobs_total": 320, "seconds": 19.47103220806457}
+{"jobs_done": 241, "jobs_total": 320, "seconds": 20.974604791030288}
+{"jobs_done": 261, "jobs_total": 320, "seconds": 22.393243375001475}
+{"jobs_done": 281, "jobs_total": 320, "seconds": 24.14492854103446}
+{"jobs_done": 301, "jobs_total": 320, "seconds": 25.904270375147462}
+{"rule": "equal mean over frozen opponents; resample shared walls", "opponents": ["C", "D", "random", "rl_v1", "teacher"], "scores": {"candidate": {"mean": 0.25869140625, "walls": 64, "se": 0.025212619001342453, "ci95": [0.2110821533203125, 0.30698364257812494]}}, "paired_differences": {}}
+{"iteration": 33, "warmup": false, "actor_changed": true, "seconds": 431.93804041692056, "mean_terminal_reward": 0.0322265625, "non_draw_rate": 0.8125}
+{"iteration": 34, "warmup": false, "actor_changed": true, "seconds": 445.9201383329928, "mean_terminal_reward": -0.0947265625, "non_draw_rate": 0.8125}
+{"iteration": 35, "warmup": false, "actor_changed": true, "seconds": 459.40133754187264, "mean_terminal_reward": -0.12890625, "non_draw_rate": 0.75}
+{"iteration": 36, "warmup": false, "actor_changed": true, "seconds": 472.56245129182935, "mean_terminal_reward": 0.052734375, "non_draw_rate": 0.8125}
+{"iteration": 37, "warmup": false, "actor_changed": true, "seconds": 486.1093580829911, "mean_terminal_reward": 0.00390625, "non_draw_rate": 0.625}
+{"iteration": 38, "warmup": false, "actor_changed": true, "seconds": 499.1521916668862, "mean_terminal_reward": 0.021484375, "non_draw_rate": 0.4375}
+{"iteration": 39, "warmup": false, "actor_changed": true, "seconds": 508.8171145420056, "mean_terminal_reward": 0.0732421875, "non_draw_rate": 0.8125}
+{"iteration": 40, "warmup": false, "actor_changed": true, "seconds": 520.7688467919361, "mean_terminal_reward": 0.0380859375, "non_draw_rate": 0.625}
+{"iteration": 41, "warmup": false, "actor_changed": true, "seconds": 531.4117574170232, "mean_terminal_reward": 0.0654296875, "non_draw_rate": 0.8125}
+{"iteration": 42, "warmup": false, "actor_changed": true, "seconds": 543.0845666669775, "mean_terminal_reward": -0.0703125, "non_draw_rate": 0.6875}
+{"iteration": 43, "warmup": false, "actor_changed": true, "seconds": 553.1226877500303, "mean_terminal_reward": 0.1591796875, "non_draw_rate": 1.0}
+{"iteration": 44, "warmup": false, "actor_changed": true, "seconds": 563.810044541955, "mean_terminal_reward": -0.0302734375, "non_draw_rate": 0.8125}
+{"iteration": 45, "warmup": false, "actor_changed": true, "seconds": 573.2967163748108, "mean_terminal_reward": 0.123046875, "non_draw_rate": 0.8125}
+{"iteration": 46, "warmup": false, "actor_changed": true, "seconds": 585.8395413749386, "mean_terminal_reward": -0.09375, "non_draw_rate": 0.625}
+{"iteration": 47, "warmup": false, "actor_changed": true, "seconds": 597.5739664579742, "mean_terminal_reward": -0.041015625, "non_draw_rate": 0.8125}
+{"iteration": 48, "warmup": false, "actor_changed": true, "seconds": 608.9967339998111, "mean_terminal_reward": 0.1220703125, "non_draw_rate": 0.6875}
+{"jobs_done": 1, "jobs_total": 320, "seconds": 2.385903458110988}
+{"jobs_done": 21, "jobs_total": 320, "seconds": 3.799361207988113}
+{"jobs_done": 41, "jobs_total": 320, "seconds": 5.3810763750225306}
+{"jobs_done": 61, "jobs_total": 320, "seconds": 7.0875622080639005}
+{"jobs_done": 81, "jobs_total": 320, "seconds": 8.88604125007987}
+{"jobs_done": 101, "jobs_total": 320, "seconds": 10.235948333051056}
+{"jobs_done": 121, "jobs_total": 320, "seconds": 11.685220750048757}
+{"jobs_done": 141, "jobs_total": 320, "seconds": 13.40464675007388}
+{"jobs_done": 161, "jobs_total": 320, "seconds": 14.753364332951605}
+{"jobs_done": 181, "jobs_total": 320, "seconds": 17.109795458149165}
+{"jobs_done": 201, "jobs_total": 320, "seconds": 18.11407950008288}
+{"jobs_done": 221, "jobs_total": 320, "seconds": 19.668698332970962}
+{"jobs_done": 241, "jobs_total": 320, "seconds": 21.17711295792833}
+{"jobs_done": 261, "jobs_total": 320, "seconds": 22.62755641597323}
+{"jobs_done": 281, "jobs_total": 320, "seconds": 24.37541737500578}
+{"jobs_done": 301, "jobs_total": 320, "seconds": 26.224428041139618}
+{"rule": "equal mean over frozen opponents; resample shared walls", "opponents": ["C", "D", "random", "rl_v1", "teacher"], "scores": {"candidate": {"mean": 0.24357910156249998, "walls": 64, "se": 0.022898272567673735, "ci95": [0.19843505859375, 0.2875494384765625]}}, "paired_differences": {}}
+{"iteration": 49, "warmup": false, "actor_changed": true, "seconds": 648.6390009168535, "mean_terminal_reward": 0.033203125, "non_draw_rate": 0.625}
+{"iteration": 50, "warmup": false, "actor_changed": true, "seconds": 660.4278779998422, "mean_terminal_reward": -0.052734375, "non_draw_rate": 0.625}
+{"iteration": 51, "warmup": false, "actor_changed": true, "seconds": 671.4384042078163, "mean_terminal_reward": 0.0078125, "non_draw_rate": 0.875}
+{"iteration": 52, "warmup": false, "actor_changed": true, "seconds": 681.7325556250289, "mean_terminal_reward": -0.2109375, "non_draw_rate": 0.875}
+{"iteration": 53, "warmup": false, "actor_changed": true, "seconds": 694.6734764168505, "mean_terminal_reward": -0.068359375, "non_draw_rate": 0.4375}
+{"iteration": 54, "warmup": false, "actor_changed": true, "seconds": 706.5519639998674, "mean_terminal_reward": -0.23046875, "non_draw_rate": 0.6875}
+{"iteration": 55, "warmup": false, "actor_changed": true, "seconds": 717.8035455418285, "mean_terminal_reward": 0.1240234375, "non_draw_rate": 0.75}
+{"iteration": 56, "warmup": false, "actor_changed": true, "seconds": 729.2075318749994, "mean_terminal_reward": 0.0341796875, "non_draw_rate": 0.625}
+{"iteration": 57, "warmup": false, "actor_changed": true, "seconds": 740.4741872078739, "mean_terminal_reward": 0.1005859375, "non_draw_rate": 0.75}
+{"iteration": 58, "warmup": false, "actor_changed": true, "seconds": 751.123994207941, "mean_terminal_reward": -0.1005859375, "non_draw_rate": 0.75}
+{"iteration": 59, "warmup": false, "actor_changed": true, "seconds": 762.9940869999118, "mean_terminal_reward": 0.232421875, "non_draw_rate": 0.75}
+{"iteration": 60, "warmup": false, "actor_changed": true, "seconds": 774.4205986249726, "mean_terminal_reward": 0.0078125, "non_draw_rate": 0.75}
+{"iteration": 61, "warmup": false, "actor_changed": true, "seconds": 785.0911775419954, "mean_terminal_reward": -0.0537109375, "non_draw_rate": 0.625}
+{"iteration": 62, "warmup": false, "actor_changed": true, "seconds": 795.8705407078378, "mean_terminal_reward": -0.0400390625, "non_draw_rate": 0.8125}
+{"iteration": 63, "warmup": false, "actor_changed": true, "seconds": 805.8517155419104, "mean_terminal_reward": -0.1708984375, "non_draw_rate": 0.6875}
+{"iteration": 64, "warmup": false, "actor_changed": true, "seconds": 818.476277791895, "mean_terminal_reward": -0.12109375, "non_draw_rate": 0.5625}
+{"jobs_done": 1, "jobs_total": 320, "seconds": 3.1617268749978393}
+{"jobs_done": 21, "jobs_total": 320, "seconds": 4.495077333180234}
+{"jobs_done": 41, "jobs_total": 320, "seconds": 6.197288332972676}
+{"jobs_done": 61, "jobs_total": 320, "seconds": 7.87886079098098}
+{"jobs_done": 81, "jobs_total": 320, "seconds": 10.097895708167925}
+{"jobs_done": 101, "jobs_total": 320, "seconds": 11.198355708038434}
+{"jobs_done": 121, "jobs_total": 320, "seconds": 12.69689470808953}
+{"jobs_done": 141, "jobs_total": 320, "seconds": 14.470072583062574}
+{"jobs_done": 161, "jobs_total": 320, "seconds": 15.960659665986896}
+{"jobs_done": 181, "jobs_total": 320, "seconds": 18.2329094579909}
+{"jobs_done": 201, "jobs_total": 320, "seconds": 19.192797291092575}
+{"jobs_done": 221, "jobs_total": 320, "seconds": 20.5288656251505}
+{"jobs_done": 241, "jobs_total": 320, "seconds": 21.792506583034992}
+{"jobs_done": 261, "jobs_total": 320, "seconds": 23.084440083010122}
+{"jobs_done": 281, "jobs_total": 320, "seconds": 24.51965312496759}
+{"jobs_done": 301, "jobs_total": 320, "seconds": 26.270800250116736}
+{"rule": "equal mean over frozen opponents; resample shared walls", "opponents": ["C", "D", "random", "rl_v1", "teacher"], "scores": {"candidate": {"mean": 0.2608154296875, "walls": 64, "se": 0.026229172998668025, "ci95": [0.2084210205078125, 0.31106079101562495]}}, "paired_differences": {}}
+{"env_steps": 133279, "agent_steps": 266229, "gradient_updates": 576, "completed_episodes": 1024, "iteration": 64, "seconds": 846.9390245829709, "best_development_score": 0.2608154296875, "best_post_ppo_score": 0.2608154296875, "warmup_episodes": 128, "stopped_early": false}

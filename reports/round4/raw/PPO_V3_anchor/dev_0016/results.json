@@ -1,0 +1,3786 @@
+{
+  "summary": {
+    "candidate vs C": {
+      "reward": {
+        "mean": 0.045166015625,
+        "walls": 64,
+        "se": 0.04679628858202146,
+        "ci95": [
+          -0.0472442626953125,
+          0.13807067871093737
+        ]
+      },
+      "score_difference": {
+        "mean": 1.9270833333333335,
+        "walls": 64,
+        "se": 1.9966416461662486,
+        "ci95": [
+          -2.0157552083333337,
+          5.891015624999994
+        ]
+      },
+      "win": {
+        "mean": 0.23046875,
+        "walls": 64,
+        "se": 0.02178246264643767,
+        "ci95": [
+          0.1875,
+          0.2734375
+        ]
+      },
+      "loss": {
+        "mean": 0.55859375,
+        "walls": 64,
+        "se": 0.035101092091936785,
+        "ci95": [
+          0.48828125,
+          0.625
+        ]
+      },
+      "draw": {
+        "mean": 0.2109375,
+        "walls": 64,
+        "se": 0.030097163050864403,
+        "ci95": [
+          0.15625,
+          0.26953125
+        ]
+      }
+    },
+    "candidate vs D": {
+      "reward": {
+        "mean": 0.1107177734375,
+        "walls": 64,
+        "se": 0.04978099108492679,
+        "ci95": [
+          0.013546752929687501,
+          0.20668029785156228
+        ]
+      },
+      "score_difference": {
+        "mean": 4.723958333333333,
+        "walls": 64,
+        "se": 2.1239889529568767,
+        "ci95": [
+          0.5779947916666666,
+          8.818359374999993
+        ]
+      },
+      "win": {
+        "mean": 0.234375,
+        "walls": 64,
+        "se": 0.026041666666666668,
+        "ci95": [
+          0.18359375,
+          0.28515625
+        ]
+      },
+      "loss": {
+        "mean": 0.45703125,
+        "walls": 64,
+        "se": 0.03501819232945666,
+        "ci95": [
+          0.390625,
+          0.52734375
+        ]
+      },
+      "draw": {
+        "mean": 0.30859375,
+        "walls": 64,
+        "se": 0.03328781653306042,
+        "ci95": [
+          0.24609375,
+          0.37109375
+        ]
+      }
+    },
+    "candidate vs random": {
+      "reward": {
+        "mean": 0.552490234375,
+        "walls": 64,
+        "se": 0.04912806831606553,
+        "ci95": [
+          0.45849609375,
+          0.6492980957031249
+        ]
+      },
+      "score_difference": {
+        "mean": 23.572916666666664,
+        "walls": 64,
+        "se": 2.096130914818796,
+        "ci95": [
+          19.5625,
+          27.70338541666666
+        ]
+      },
+      "win": {
+        "mean": 0.40234375,
+        "walls": 64,
+        "se": 0.030301676137813115,
+        "ci95": [
+          0.34375,
+          0.4609375
+        ]
+      },
+      "loss": {
+        "mean": 0.0,
+        "walls": 64,
+        "se": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "draw": {
+        "mean": 0.59765625,
+        "walls": 64,
+        "se": 0.030301676137813115,
+        "ci95": [
+          0.5390625,
+          0.65625
+        ]
+      }
+    },
+    "candidate vs rl_v1": {
+      "reward": {
+        "mean": 0.5115966796875,
+        "walls": 64,
+        "se": 0.05394365063209622,
+        "ci95": [
+          0.4078369140625,
+          0.6124298095703125
+        ]
+      },
+      "score_difference": {
+        "mean": 21.828125,
+        "walls": 64,
+        "se": 2.3015957603027717,
+        "ci95": [
+          17.401041666666664,
+          26.130338541666664
+        ]
+      },
+      "win": {
+        "mean": 0.4140625,
+        "walls": 64,
+        "se": 0.03209123182768549,
+        "ci95": [
+          0.3515625,
+          0.4765625
+        ]
+      },
+      "loss": {
+        "mean": 0.13671875,
+        "walls": 64,
+        "se": 0.022909690158310774,
+        "ci95": [
+          0.09375,
+          0.18359375
+        ]
+      },
+      "draw": {
+        "mean": 0.44921875,
+        "walls": 64,
+        "se": 0.03207235796154211,
+        "ci95": [
+          0.38671875,
+          0.51171875
+        ]
+      }
+    },
+    "candidate vs teacher": {
+      "reward": {
+        "mean": 0.0384521484375,
+        "walls": 64,
+        "se": 0.04673667712808948,
+        "ci95": [
+          -0.051641845703124994,
+          0.12817687988281246
+        ]
+      },
+      "score_difference": {
+        "mean": 1.6406249999999996,
+        "walls": 64,
+        "se": 1.994098224131818,
+        "ci95": [
+          -2.203385416666667,
+          5.468880208333331
+        ]
+      },
+      "win": {
+        "mean": 0.2265625,
+        "walls": 64,
+        "se": 0.0234375,
+        "ci95": [
+          0.1796875,
+          0.2734375
+        ]
+      },
+      "loss": {
+        "mean": 0.60546875,
+        "walls": 64,
+        "se": 0.03468461194719611,
+        "ci95": [
+          0.53515625,
+          0.671875
+        ]
+      },
+      "draw": {
+        "mean": 0.16796875,
+        "walls": 64,
+        "se": 0.028420890350383674,
+        "ci95": [
+          0.11328125,
+          0.2265625
+        ]
+      }
+    }
+  },
+  "paired_differences": {},
+  "wall_records": [
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200000,
+      "wall_id": "ed99f45571674839d8ca6983846318c70d9da9a5805222260b43e89f2bdda1de",
+      "reward": 0.5234375,
+      "score_difference": 22.333333333333332,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200000,
+      "wall_id": "ed99f45571674839d8ca6983846318c70d9da9a5805222260b43e89f2bdda1de",
+      "reward": 0.515625,
+      "score_difference": 21.999999999999996,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200000,
+      "wall_id": "ed99f45571674839d8ca6983846318c70d9da9a5805222260b43e89f2bdda1de",
+      "reward": -0.328125,
+      "score_difference": -14.0,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200000,
+      "wall_id": "ed99f45571674839d8ca6983846318c70d9da9a5805222260b43e89f2bdda1de",
+      "reward": 0.359375,
+      "score_difference": 15.333333333333334,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200000,
+      "wall_id": "ed99f45571674839d8ca6983846318c70d9da9a5805222260b43e89f2bdda1de",
+      "reward": -0.09375,
+      "score_difference": -3.9999999999999996,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200001,
+      "wall_id": "53c16e81e4d5fc1be27106b3536ed1e73966b30898f7d63ccda41705f6a5d0a6",
+      "reward": 0.28125,
+      "score_difference": 12.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200001,
+      "wall_id": "53c16e81e4d5fc1be27106b3536ed1e73966b30898f7d63ccda41705f6a5d0a6",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200001,
+      "wall_id": "53c16e81e4d5fc1be27106b3536ed1e73966b30898f7d63ccda41705f6a5d0a6",
+      "reward": 0.671875,
+      "score_difference": 28.666666666666664,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200001,
+      "wall_id": "53c16e81e4d5fc1be27106b3536ed1e73966b30898f7d63ccda41705f6a5d0a6",
+      "reward": -0.09375,
+      "score_difference": -3.9999999999999996,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200001,
+      "wall_id": "53c16e81e4d5fc1be27106b3536ed1e73966b30898f7d63ccda41705f6a5d0a6",
+      "reward": -0.0234375,
+      "score_difference": -1.0,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200002,
+      "wall_id": "bc410c09ff3fc0ef00cd23ee02ae1701039a41305666d8703712cfef95714543",
+      "reward": 0.7734375,
+      "score_difference": 33.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200002,
+      "wall_id": "bc410c09ff3fc0ef00cd23ee02ae1701039a41305666d8703712cfef95714543",
+      "reward": 0.5234375,
+      "score_difference": 22.333333333333332,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200002,
+      "wall_id": "bc410c09ff3fc0ef00cd23ee02ae1701039a41305666d8703712cfef95714543",
+      "reward": 1.296875,
+      "score_difference": 55.33333333333333,
+      "win": 1.0,
+      "loss": 0.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200002,
+      "wall_id": "bc410c09ff3fc0ef00cd23ee02ae1701039a41305666d8703712cfef95714543",
+      "reward": 0.5546875,
+      "score_difference": 23.666666666666664,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200002,
+      "wall_id": "bc410c09ff3fc0ef00cd23ee02ae1701039a41305666d8703712cfef95714543",
+      "reward": 0.6875,
+      "score_difference": 29.333333333333332,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200003,
+      "wall_id": "d9fa22dfb68d44a1c2d826a1bea39f81acd17959a0a56179683f5b3afe09e4bc",
+      "reward": 0.265625,
+      "score_difference": 11.333333333333334,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200003,
+      "wall_id": "d9fa22dfb68d44a1c2d826a1bea39f81acd17959a0a56179683f5b3afe09e4bc",
+      "reward": 0.9765625,
+      "score_difference": 41.66666666666667,
+      "win": 0.75,
+      "loss": 0.25,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200003,
+      "wall_id": "d9fa22dfb68d44a1c2d826a1bea39f81acd17959a0a56179683f5b3afe09e4bc",
+      "reward": 0.5078125,
+      "score_difference": 21.666666666666664,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200003,
+      "wall_id": "d9fa22dfb68d44a1c2d826a1bea39f81acd17959a0a56179683f5b3afe09e4bc",
+      "reward": -0.375,
+      "score_difference": -15.999999999999998,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200003,
+      "wall_id": "d9fa22dfb68d44a1c2d826a1bea39f81acd17959a0a56179683f5b3afe09e4bc",
+      "reward": -0.046875,
+      "score_difference": -2.0000000000000018,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200004,
+      "wall_id": "bf5db8677193e7175fc7e7acdc11e328d6be277bbc4f97ca7a401eb9aab82c68",
+      "reward": 0.5625,
+      "score_difference": 24.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200004,
+      "wall_id": "bf5db8677193e7175fc7e7acdc11e328d6be277bbc4f97ca7a401eb9aab82c68",
+      "reward": -0.390625,
+      "score_difference": -16.666666666666668,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200004,
+      "wall_id": "bf5db8677193e7175fc7e7acdc11e328d6be277bbc4f97ca7a401eb9aab82c68",
+      "reward": -0.1484375,
+      "score_difference": -6.333333333333333,
+      "win": 0.0,
+      "loss": 0.25,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200004,
+      "wall_id": "bf5db8677193e7175fc7e7acdc11e328d6be277bbc4f97ca7a401eb9aab82c68",
+      "reward": 0.0,
+      "score_difference": -8.881784197001252e-16,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200004,
+      "wall_id": "bf5db8677193e7175fc7e7acdc11e328d6be277bbc4f97ca7a401eb9aab82c68",
+      "reward": -0.359375,
+      "score_difference": -15.333333333333332,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200005,
+      "wall_id": "c312cce3b997fd4fb1c0446250e0fbeb0d48887a2e1451a4a9faa2e7a2fcd709",
+      "reward": 1.1875,
+      "score_difference": 50.666666666666664,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200005,
+      "wall_id": "c312cce3b997fd4fb1c0446250e0fbeb0d48887a2e1451a4a9faa2e7a2fcd709",
+      "reward": -0.3984375,
+      "score_difference": -17.0,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200005,
+      "wall_id": "c312cce3b997fd4fb1c0446250e0fbeb0d48887a2e1451a4a9faa2e7a2fcd709",
+      "reward": 1.09375,
+      "score_difference": 46.666666666666664,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200005,
+      "wall_id": "c312cce3b997fd4fb1c0446250e0fbeb0d48887a2e1451a4a9faa2e7a2fcd709",
+      "reward": 0.0,
+      "score_difference": -4.440892098500626e-16,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200005,
+      "wall_id": "c312cce3b997fd4fb1c0446250e0fbeb0d48887a2e1451a4a9faa2e7a2fcd709",
+      "reward": 0.1171875,
+      "score_difference": 4.999999999999999,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200006,
+      "wall_id": "10a421b2fd4998678ea15b529e40d8f320dbf0e723ca396dedd473383899003d",
+      "reward": 0.28125,
+      "score_difference": 12.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200006,
+      "wall_id": "10a421b2fd4998678ea15b529e40d8f320dbf0e723ca396dedd473383899003d",
+      "reward": 0.0234375,
+      "score_difference": 1.0,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200006,
+      "wall_id": "10a421b2fd4998678ea15b529e40d8f320dbf0e723ca396dedd473383899003d",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.0,
+      "loss": 0.0,
+      "draw": 1.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200006,
+      "wall_id": "10a421b2fd4998678ea15b529e40d8f320dbf0e723ca396dedd473383899003d",
+      "reward": -0.15625,
+      "score_difference": -6.666666666666667,
+      "win": 0.0,
+      "loss": 0.25,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200006,
+      "wall_id": "10a421b2fd4998678ea15b529e40d8f320dbf0e723ca396dedd473383899003d",
+      "reward": -0.125,
+      "score_difference": -5.333333333333333,
+      "win": 0.0,
+      "loss": 0.25,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200007,
+      "wall_id": "7dcf1639dc85918cdd5ab69bba2eb0c6e2ed9945477e57eabd7821eb6808c45d",
+      "reward": 0.3984375,
+      "score_difference": 17.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200007,
+      "wall_id": "7dcf1639dc85918cdd5ab69bba2eb0c6e2ed9945477e57eabd7821eb6808c45d",
+      "reward": 0.0078125,
+      "score_difference": 0.3333333333333339,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200007,
+      "wall_id": "7dcf1639dc85918cdd5ab69bba2eb0c6e2ed9945477e57eabd7821eb6808c45d",
+      "reward": 0.84375,
+      "score_difference": 36.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200007,
+      "wall_id": "7dcf1639dc85918cdd5ab69bba2eb0c6e2ed9945477e57eabd7821eb6808c45d",
+      "reward": -0.3359375,
+      "score_difference": -14.333333333333334,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200007,
+      "wall_id": "7dcf1639dc85918cdd5ab69bba2eb0c6e2ed9945477e57eabd7821eb6808c45d",
+      "reward": -0.7890625,
+      "score_difference": -33.66666666666667,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200008,
+      "wall_id": "6ef565144ba636577f9d763d83ebacde3fe00121ae4704b783aee40a76f56665",
+      "reward": 0.6484375,
+      "score_difference": 27.666666666666664,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200008,
+      "wall_id": "6ef565144ba636577f9d763d83ebacde3fe00121ae4704b783aee40a76f56665",
+      "reward": -0.2578125,
+      "score_difference": -11.0,
+      "win": 0.0,
+      "loss": 0.25,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200008,
+      "wall_id": "6ef565144ba636577f9d763d83ebacde3fe00121ae4704b783aee40a76f56665",
+      "reward": -0.34375,
+      "score_difference": -14.666666666666668,
+      "win": 0.0,
+      "loss": 0.5,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200008,
+      "wall_id": "6ef565144ba636577f9d763d83ebacde3fe00121ae4704b783aee40a76f56665",
+      "reward": 0.4375,
+      "score_difference": 18.666666666666664,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200008,
+      "wall_id": "6ef565144ba636577f9d763d83ebacde3fe00121ae4704b783aee40a76f56665",
+      "reward": -0.2109375,
+      "score_difference": -9.0,
+      "win": 0.0,
+      "loss": 0.5,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200009,
+      "wall_id": "518b8d8cca7ee7b17c4960d0f388c07d35b98ed647ac2bc9bd9b23030c9b840a",
+      "reward": 0.6953125,
+      "score_difference": 29.666666666666664,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200009,
+      "wall_id": "518b8d8cca7ee7b17c4960d0f388c07d35b98ed647ac2bc9bd9b23030c9b840a",
+      "reward": 0.125,
+      "score_difference": 5.333333333333334,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200009,
+      "wall_id": "518b8d8cca7ee7b17c4960d0f388c07d35b98ed647ac2bc9bd9b23030c9b840a",
+      "reward": 0.6484375,
+      "score_difference": 27.666666666666668,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200009,
+      "wall_id": "518b8d8cca7ee7b17c4960d0f388c07d35b98ed647ac2bc9bd9b23030c9b840a",
+      "reward": -0.1875,
+      "score_difference": -8.0,
+      "win": 0.0,
+      "loss": 0.5,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200009,
+      "wall_id": "518b8d8cca7ee7b17c4960d0f388c07d35b98ed647ac2bc9bd9b23030c9b840a",
+      "reward": -0.0859375,
+      "score_difference": -3.666666666666665,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200010,
+      "wall_id": "fa99faa95b8d4db2483b8f6de1e5a54bce5d49775042e05058a59769eb25ce6c",
+      "reward": 0.7421875,
+      "score_difference": 31.666666666666664,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200010,
+      "wall_id": "fa99faa95b8d4db2483b8f6de1e5a54bce5d49775042e05058a59769eb25ce6c",
+      "reward": 0.515625,
+      "score_difference": 22.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200010,
+      "wall_id": "fa99faa95b8d4db2483b8f6de1e5a54bce5d49775042e05058a59769eb25ce6c",
+      "reward": 0.7734375,
+      "score_difference": 33.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200010,
+      "wall_id": "fa99faa95b8d4db2483b8f6de1e5a54bce5d49775042e05058a59769eb25ce6c",
+      "reward": 0.359375,
+      "score_difference": 15.333333333333334,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200010,
+      "wall_id": "fa99faa95b8d4db2483b8f6de1e5a54bce5d49775042e05058a59769eb25ce6c",
+      "reward": 0.421875,
+      "score_difference": 18.0,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200011,
+      "wall_id": "0b88f9a22d96edab9dced499d4e1f314ed4a2669aecf2ba60df5a305fd2b2066",
+      "reward": 0.2578125,
+      "score_difference": 11.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200011,
+      "wall_id": "0b88f9a22d96edab9dced499d4e1f314ed4a2669aecf2ba60df5a305fd2b2066",
+      "reward": 0.1171875,
+      "score_difference": 5.0,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200011,
+      "wall_id": "0b88f9a22d96edab9dced499d4e1f314ed4a2669aecf2ba60df5a305fd2b2066",
+      "reward": 0.6328125,
+      "score_difference": 27.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200011,
+      "wall_id": "0b88f9a22d96edab9dced499d4e1f314ed4a2669aecf2ba60df5a305fd2b2066",
+      "reward": -0.3984375,
+      "score_difference": -17.0,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200011,
+      "wall_id": "0b88f9a22d96edab9dced499d4e1f314ed4a2669aecf2ba60df5a305fd2b2066",
+      "reward": -0.203125,
+      "score_difference": -8.666666666666666,
+      "win": 0.0,
+      "loss": 0.5,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200012,
+      "wall_id": "0d31573091ce6c3ded4b7e5861133c7e6925495e9f637881adf6108b3257127a",
+      "reward": 0.75,
+      "score_difference": 32.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200012,
+      "wall_id": "0d31573091ce6c3ded4b7e5861133c7e6925495e9f637881adf6108b3257127a",
+      "reward": 0.0,
+      "score_difference": -4.440892098500626e-16,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200012,
+      "wall_id": "0d31573091ce6c3ded4b7e5861133c7e6925495e9f637881adf6108b3257127a",
+      "reward": 1.0390625,
+      "score_difference": 44.33333333333333,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200012,
+      "wall_id": "0d31573091ce6c3ded4b7e5861133c7e6925495e9f637881adf6108b3257127a",
+      "reward": 0.25,
+      "score_difference": 10.666666666666666,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200012,
+      "wall_id": "0d31573091ce6c3ded4b7e5861133c7e6925495e9f637881adf6108b3257127a",
+      "reward": -0.0703125,
+      "score_difference": -3.0,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200013,
+      "wall_id": "4381a92e0f4475eba4c5f8fb6be29229577282686423bcc0187eace64699a4c3",
+      "reward": 1.2109375,
+      "score_difference": 51.666666666666664,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200013,
+      "wall_id": "4381a92e0f4475eba4c5f8fb6be29229577282686423bcc0187eace64699a4c3",
+      "reward": 0.46875,
+      "score_difference": 20.0,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200013,
+      "wall_id": "4381a92e0f4475eba4c5f8fb6be29229577282686423bcc0187eace64699a4c3",
+      "reward": 0.671875,
+      "score_difference": 28.666666666666664,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200013,
+      "wall_id": "4381a92e0f4475eba4c5f8fb6be29229577282686423bcc0187eace64699a4c3",
+      "reward": 0.046875,
+      "score_difference": 1.9999999999999996,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200013,
+      "wall_id": "4381a92e0f4475eba4c5f8fb6be29229577282686423bcc0187eace64699a4c3",
+      "reward": -0.2578125,
+      "score_difference": -11.0,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200014,
+      "wall_id": "9ae806dd1860a56bfe5d7b9cea15b876ab29c697267db01ca35c5ba9d1808b31",
+      "reward": 0.7734375,
+      "score_difference": 33.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200014,
+      "wall_id": "9ae806dd1860a56bfe5d7b9cea15b876ab29c697267db01ca35c5ba9d1808b31",
+      "reward": 0.140625,
+      "score_difference": 5.999999999999999,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200014,
+      "wall_id": "9ae806dd1860a56bfe5d7b9cea15b876ab29c697267db01ca35c5ba9d1808b31",
+      "reward": 0.4765625,
+      "score_difference": 20.333333333333332,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200014,
+      "wall_id": "9ae806dd1860a56bfe5d7b9cea15b876ab29c697267db01ca35c5ba9d1808b31",
+      "reward": 0.4921875,
+      "score_difference": 21.0,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200014,
+      "wall_id": "9ae806dd1860a56bfe5d7b9cea15b876ab29c697267db01ca35c5ba9d1808b31",
+      "reward": -0.28125,
+      "score_difference": -12.0,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200015,
+      "wall_id": "e4e64858c7d162ff882953f66cc22719fec0bc5230e0d85c5b66af0749e8b112",
+      "reward": 1.0,
+      "score_difference": 42.666666666666664,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200015,
+      "wall_id": "e4e64858c7d162ff882953f66cc22719fec0bc5230e0d85c5b66af0749e8b112",
+      "reward": -0.765625,
+      "score_difference": -32.666666666666664,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200015,
+      "wall_id": "e4e64858c7d162ff882953f66cc22719fec0bc5230e0d85c5b66af0749e8b112",
+      "reward": 1.3203125,
+      "score_difference": 56.33333333333333,
+      "win": 0.75,
+      "loss": 0.25,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200015,
+      "wall_id": "e4e64858c7d162ff882953f66cc22719fec0bc5230e0d85c5b66af0749e8b112",
+      "reward": 0.171875,
+      "score_difference": 7.333333333333334,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200015,
+      "wall_id": "e4e64858c7d162ff882953f66cc22719fec0bc5230e0d85c5b66af0749e8b112",
+      "reward": -0.3515625,
+      "score_difference": -15.0,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200016,
+      "wall_id": "ffe94dcd87d6d8a34414cf93dc7a15aa743f28abbecfe0c4a1dde3a31d7acd6b",
+      "reward": 0.671875,
+      "score_difference": 28.666666666666664,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200016,
+      "wall_id": "ffe94dcd87d6d8a34414cf93dc7a15aa743f28abbecfe0c4a1dde3a31d7acd6b",
+      "reward": 0.46875,
+      "score_difference": 19.999999999999996,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200016,
+      "wall_id": "ffe94dcd87d6d8a34414cf93dc7a15aa743f28abbecfe0c4a1dde3a31d7acd6b",
+      "reward": 1.5390625,
+      "score_difference": 65.66666666666667,
+      "win": 0.75,
+      "loss": 0.25,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200016,
+      "wall_id": "ffe94dcd87d6d8a34414cf93dc7a15aa743f28abbecfe0c4a1dde3a31d7acd6b",
+      "reward": -0.0625,
+      "score_difference": -2.666666666666666,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200016,
+      "wall_id": "ffe94dcd87d6d8a34414cf93dc7a15aa743f28abbecfe0c4a1dde3a31d7acd6b",
+      "reward": 0.46875,
+      "score_difference": 20.0,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200017,
+      "wall_id": "f2585684e3febc7ba2bd7b5920b575a20cf4cb4591bb082b17b459589a368788",
+      "reward": 0.546875,
+      "score_difference": 23.333333333333332,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200017,
+      "wall_id": "f2585684e3febc7ba2bd7b5920b575a20cf4cb4591bb082b17b459589a368788",
+      "reward": -0.5,
+      "score_difference": -21.333333333333332,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200017,
+      "wall_id": "f2585684e3febc7ba2bd7b5920b575a20cf4cb4591bb082b17b459589a368788",
+      "reward": 0.34375,
+      "score_difference": 14.666666666666666,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200017,
+      "wall_id": "f2585684e3febc7ba2bd7b5920b575a20cf4cb4591bb082b17b459589a368788",
+      "reward": 0.0703125,
+      "score_difference": 3.0000000000000013,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200017,
+      "wall_id": "f2585684e3febc7ba2bd7b5920b575a20cf4cb4591bb082b17b459589a368788",
+      "reward": 0.640625,
+      "score_difference": 27.333333333333332,
+      "win": 0.75,
+      "loss": 0.25,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200018,
+      "wall_id": "64d7514c7ed2fe799854cc8dcc5874180b969bbef8b2018b5f69df4ed34ab1a1",
+      "reward": 1.3203125,
+      "score_difference": 56.333333333333336,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200018,
+      "wall_id": "64d7514c7ed2fe799854cc8dcc5874180b969bbef8b2018b5f69df4ed34ab1a1",
+      "reward": 0.5546875,
+      "score_difference": 23.666666666666668,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200018,
+      "wall_id": "64d7514c7ed2fe799854cc8dcc5874180b969bbef8b2018b5f69df4ed34ab1a1",
+      "reward": 0.984375,
+      "score_difference": 42.0,
+      "win": 0.75,
+      "loss": 0.25,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200018,
+      "wall_id": "64d7514c7ed2fe799854cc8dcc5874180b969bbef8b2018b5f69df4ed34ab1a1",
+      "reward": 0.0234375,
+      "score_difference": 1.0000000000000013,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200018,
+      "wall_id": "64d7514c7ed2fe799854cc8dcc5874180b969bbef8b2018b5f69df4ed34ab1a1",
+      "reward": 0.0078125,
+      "score_difference": 0.3333333333333335,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200019,
+      "wall_id": "bb59b27ed132bb80366644bd8934e4f649d0f79f94e04b5ac730eb567ac14903",
+      "reward": 0.515625,
+      "score_difference": 22.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200019,
+      "wall_id": "bb59b27ed132bb80366644bd8934e4f649d0f79f94e04b5ac730eb567ac14903",
+      "reward": 0.0859375,
+      "score_difference": 3.6666666666666674,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200019,
+      "wall_id": "bb59b27ed132bb80366644bd8934e4f649d0f79f94e04b5ac730eb567ac14903",
+      "reward": 0.890625,
+      "score_difference": 38.0,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200019,
+      "wall_id": "bb59b27ed132bb80366644bd8934e4f649d0f79f94e04b5ac730eb567ac14903",
+      "reward": -0.25,
+      "score_difference": -10.666666666666666,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200019,
+      "wall_id": "bb59b27ed132bb80366644bd8934e4f649d0f79f94e04b5ac730eb567ac14903",
+      "reward": 0.6875,
+      "score_difference": 29.333333333333332,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200020,
+      "wall_id": "59b58b2d63eb9b1f411d55c7ffc1843b77069133c843e58da4fa08d4c3620439",
+      "reward": 0.5390625,
+      "score_difference": 23.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200020,
+      "wall_id": "59b58b2d63eb9b1f411d55c7ffc1843b77069133c843e58da4fa08d4c3620439",
+      "reward": -0.1171875,
+      "score_difference": -4.999999999999999,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200020,
+      "wall_id": "59b58b2d63eb9b1f411d55c7ffc1843b77069133c843e58da4fa08d4c3620439",
+      "reward": 0.4609375,
+      "score_difference": 19.666666666666664,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200020,
+      "wall_id": "59b58b2d63eb9b1f411d55c7ffc1843b77069133c843e58da4fa08d4c3620439",
+      "reward": 0.015625,
+      "score_difference": 0.6666666666666679,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200020,
+      "wall_id": "59b58b2d63eb9b1f411d55c7ffc1843b77069133c843e58da4fa08d4c3620439",
+      "reward": 0.9453125,
+      "score_difference": 40.333333333333336,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200021,
+      "wall_id": "bdb4552c51a6597eabe73e3a4b32cec6dbc81b7b97d42879bbd84c1a83b31978",
+      "reward": 0.25,
+      "score_difference": 10.666666666666666,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200021,
+      "wall_id": "bdb4552c51a6597eabe73e3a4b32cec6dbc81b7b97d42879bbd84c1a83b31978",
+      "reward": 0.1328125,
+      "score_difference": 5.666666666666667,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200021,
+      "wall_id": "bdb4552c51a6597eabe73e3a4b32cec6dbc81b7b97d42879bbd84c1a83b31978",
+      "reward": 0.390625,
+      "score_difference": 16.666666666666664,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200021,
+      "wall_id": "bdb4552c51a6597eabe73e3a4b32cec6dbc81b7b97d42879bbd84c1a83b31978",
+      "reward": -0.0234375,
+      "score_difference": -0.9999999999999982,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200021,
+      "wall_id": "bdb4552c51a6597eabe73e3a4b32cec6dbc81b7b97d42879bbd84c1a83b31978",
+      "reward": 0.328125,
+      "score_difference": 14.000000000000004,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200022,
+      "wall_id": "3a14d71d45597460ee35c3331a15f75b35b0d3de75b3c719690f2ed4a58a04e3",
+      "reward": 1.1875,
+      "score_difference": 50.666666666666664,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200022,
+      "wall_id": "3a14d71d45597460ee35c3331a15f75b35b0d3de75b3c719690f2ed4a58a04e3",
+      "reward": 0.5234375,
+      "score_difference": 22.333333333333332,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200022,
+      "wall_id": "3a14d71d45597460ee35c3331a15f75b35b0d3de75b3c719690f2ed4a58a04e3",
+      "reward": 1.3125,
+      "score_difference": 56.0,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200022,
+      "wall_id": "3a14d71d45597460ee35c3331a15f75b35b0d3de75b3c719690f2ed4a58a04e3",
+      "reward": 0.0546875,
+      "score_difference": 2.3333333333333335,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200022,
+      "wall_id": "3a14d71d45597460ee35c3331a15f75b35b0d3de75b3c719690f2ed4a58a04e3",
+      "reward": -0.0625,
+      "score_difference": -2.6666666666666665,
+      "win": 0.0,
+      "loss": 0.25,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200023,
+      "wall_id": "6f30ab761f55f4696f86eb972b43d293d5de293e24211fe03bc2253ef616ec56",
+      "reward": 0.8671875,
+      "score_difference": 37.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200023,
+      "wall_id": "6f30ab761f55f4696f86eb972b43d293d5de293e24211fe03bc2253ef616ec56",
+      "reward": 0.140625,
+      "score_difference": 5.999999999999999,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200023,
+      "wall_id": "6f30ab761f55f4696f86eb972b43d293d5de293e24211fe03bc2253ef616ec56",
+      "reward": 1.359375,
+      "score_difference": 58.0,
+      "win": 1.0,
+      "loss": 0.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200023,
+      "wall_id": "6f30ab761f55f4696f86eb972b43d293d5de293e24211fe03bc2253ef616ec56",
+      "reward": -0.1484375,
+      "score_difference": -6.333333333333335,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200023,
+      "wall_id": "6f30ab761f55f4696f86eb972b43d293d5de293e24211fe03bc2253ef616ec56",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200024,
+      "wall_id": "5636d7a189920cbb2f29c533611229331c673976932ee2734a85bcaf5e1e1f31",
+      "reward": 0.25,
+      "score_difference": 10.666666666666666,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200024,
+      "wall_id": "5636d7a189920cbb2f29c533611229331c673976932ee2734a85bcaf5e1e1f31",
+      "reward": -0.5,
+      "score_difference": -21.333333333333336,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200024,
+      "wall_id": "5636d7a189920cbb2f29c533611229331c673976932ee2734a85bcaf5e1e1f31",
+      "reward": 0.703125,
+      "score_difference": 30.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200024,
+      "wall_id": "5636d7a189920cbb2f29c533611229331c673976932ee2734a85bcaf5e1e1f31",
+      "reward": 0.1953125,
+      "score_difference": 8.333333333333334,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200024,
+      "wall_id": "5636d7a189920cbb2f29c533611229331c673976932ee2734a85bcaf5e1e1f31",
+      "reward": 0.125,
+      "score_difference": 5.333333333333333,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200025,
+      "wall_id": "ae21b6106164beb3d8684dbd2de7074e70802cb3c26edf305fb1ad0415e83cd5",
+      "reward": 0.4453125,
+      "score_difference": 19.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200025,
+      "wall_id": "ae21b6106164beb3d8684dbd2de7074e70802cb3c26edf305fb1ad0415e83cd5",
+      "reward": 0.5390625,
+      "score_difference": 23.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200025,
+      "wall_id": "ae21b6106164beb3d8684dbd2de7074e70802cb3c26edf305fb1ad0415e83cd5",
+      "reward": 0.625,
+      "score_difference": 26.666666666666668,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200025,
+      "wall_id": "ae21b6106164beb3d8684dbd2de7074e70802cb3c26edf305fb1ad0415e83cd5",
+      "reward": -0.2578125,
+      "score_difference": -10.999999999999998,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200025,
+      "wall_id": "ae21b6106164beb3d8684dbd2de7074e70802cb3c26edf305fb1ad0415e83cd5",
+      "reward": -0.0625,
+      "score_difference": -2.6666666666666665,
+      "win": 0.0,
+      "loss": 0.25,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200026,
+      "wall_id": "40ff801a8b3921aae9cd7697cfd92478df28801920b6d31cd0bd108e878e0317",
+      "reward": 0.7265625,
+      "score_difference": 31.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200026,
+      "wall_id": "40ff801a8b3921aae9cd7697cfd92478df28801920b6d31cd0bd108e878e0317",
+      "reward": -0.0390625,
+      "score_difference": -1.666666666666666,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200026,
+      "wall_id": "40ff801a8b3921aae9cd7697cfd92478df28801920b6d31cd0bd108e878e0317",
+      "reward": 0.671875,
+      "score_difference": 28.666666666666664,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200026,
+      "wall_id": "40ff801a8b3921aae9cd7697cfd92478df28801920b6d31cd0bd108e878e0317",
+      "reward": 0.1171875,
+      "score_difference": 5.0,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200026,
+      "wall_id": "40ff801a8b3921aae9cd7697cfd92478df28801920b6d31cd0bd108e878e0317",
+      "reward": 0.4453125,
+      "score_difference": 18.999999999999996,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200027,
+      "wall_id": "9e795af3063379ca232e684226ba7a90a70a4d0aab7d95240c703d0ad608badb",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.0,
+      "loss": 0.0,
+      "draw": 1.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200027,
+      "wall_id": "9e795af3063379ca232e684226ba7a90a70a4d0aab7d95240c703d0ad608badb",
+      "reward": 0.1875,
+      "score_difference": 7.999999999999998,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200027,
+      "wall_id": "9e795af3063379ca232e684226ba7a90a70a4d0aab7d95240c703d0ad608badb",
+      "reward": 0.625,
+      "score_difference": 26.666666666666664,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200027,
+      "wall_id": "9e795af3063379ca232e684226ba7a90a70a4d0aab7d95240c703d0ad608badb",
+      "reward": -0.0625,
+      "score_difference": -2.6666666666666665,
+      "win": 0.0,
+      "loss": 0.25,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200027,
+      "wall_id": "9e795af3063379ca232e684226ba7a90a70a4d0aab7d95240c703d0ad608badb",
+      "reward": -0.1015625,
+      "score_difference": -4.333333333333334,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200028,
+      "wall_id": "32bd1dbba17b3300ae058e1a5f97ffd8a4fa45fdfc7b1dbc1cad1909e832d6d9",
+      "reward": 0.2578125,
+      "score_difference": 11.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200028,
+      "wall_id": "32bd1dbba17b3300ae058e1a5f97ffd8a4fa45fdfc7b1dbc1cad1909e832d6d9",
+      "reward": -0.25,
+      "score_difference": -10.666666666666666,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200028,
+      "wall_id": "32bd1dbba17b3300ae058e1a5f97ffd8a4fa45fdfc7b1dbc1cad1909e832d6d9",
+      "reward": 0.328125,
+      "score_difference": 14.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200028,
+      "wall_id": "32bd1dbba17b3300ae058e1a5f97ffd8a4fa45fdfc7b1dbc1cad1909e832d6d9",
+      "reward": 0.7890625,
+      "score_difference": 33.666666666666664,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200028,
+      "wall_id": "32bd1dbba17b3300ae058e1a5f97ffd8a4fa45fdfc7b1dbc1cad1909e832d6d9",
+      "reward": -0.3359375,
+      "score_difference": -14.333333333333332,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200029,
+      "wall_id": "0acfd5ba895e06dab4fe2d8ae237a64443e328977811336a2fe7b7b5499907c8",
+      "reward": 1.3828125,
+      "score_difference": 59.0,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200029,
+      "wall_id": "0acfd5ba895e06dab4fe2d8ae237a64443e328977811336a2fe7b7b5499907c8",
+      "reward": -0.1171875,
+      "score_difference": -5.0,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200029,
+      "wall_id": "0acfd5ba895e06dab4fe2d8ae237a64443e328977811336a2fe7b7b5499907c8",
+      "reward": 0.875,
+      "score_difference": 37.333333333333336,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200029,
+      "wall_id": "0acfd5ba895e06dab4fe2d8ae237a64443e328977811336a2fe7b7b5499907c8",
+      "reward": -0.125,
+      "score_difference": -5.333333333333332,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200029,
+      "wall_id": "0acfd5ba895e06dab4fe2d8ae237a64443e328977811336a2fe7b7b5499907c8",
+      "reward": 0.4453125,
+      "score_difference": 19.0,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200030,
+      "wall_id": "dde03e1d9dedb5c6a12441c212283f9fd062942e856164364d29789545aa6772",
+      "reward": 0.25,
+      "score_difference": 10.666666666666666,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200030,
+      "wall_id": "dde03e1d9dedb5c6a12441c212283f9fd062942e856164364d29789545aa6772",
+      "reward": 0.7578125,
+      "score_difference": 32.33333333333333,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200030,
+      "wall_id": "dde03e1d9dedb5c6a12441c212283f9fd062942e856164364d29789545aa6772",
+      "reward": -0.125,
+      "score_difference": -5.333333333333333,
+      "win": 0.0,
+      "loss": 0.25,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200030,
+      "wall_id": "dde03e1d9dedb5c6a12441c212283f9fd062942e856164364d29789545aa6772",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.0,
+      "loss": 0.0,
+      "draw": 1.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200030,
+      "wall_id": "dde03e1d9dedb5c6a12441c212283f9fd062942e856164364d29789545aa6772",
+      "reward": -0.1484375,
+      "score_difference": -6.333333333333333,
+      "win": 0.0,
+      "loss": 0.25,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200031,
+      "wall_id": "3f46f8d6f63c01b1d9e7c58436597e8fc63a879799bf961bda85ebdd8a2c9283",
+      "reward": 0.28125,
+      "score_difference": 12.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200031,
+      "wall_id": "3f46f8d6f63c01b1d9e7c58436597e8fc63a879799bf961bda85ebdd8a2c9283",
+      "reward": 0.34375,
+      "score_difference": 14.666666666666668,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200031,
+      "wall_id": "3f46f8d6f63c01b1d9e7c58436597e8fc63a879799bf961bda85ebdd8a2c9283",
+      "reward": 0.59375,
+      "score_difference": 25.333333333333336,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200031,
+      "wall_id": "3f46f8d6f63c01b1d9e7c58436597e8fc63a879799bf961bda85ebdd8a2c9283",
+      "reward": -0.0546875,
+      "score_difference": -2.3333333333333344,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200031,
+      "wall_id": "3f46f8d6f63c01b1d9e7c58436597e8fc63a879799bf961bda85ebdd8a2c9283",
+      "reward": 0.6875,
+      "score_difference": 29.333333333333336,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200032,
+      "wall_id": "b34259e3431f8516374ee16b732a342a5b1c510d3fb133f3172e0e7ef584e8d4",
+      "reward": 0.265625,
+      "score_difference": 11.333333333333334,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200032,
+      "wall_id": "b34259e3431f8516374ee16b732a342a5b1c510d3fb133f3172e0e7ef584e8d4",
+      "reward": -0.421875,
+      "score_difference": -18.0,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200032,
+      "wall_id": "b34259e3431f8516374ee16b732a342a5b1c510d3fb133f3172e0e7ef584e8d4",
+      "reward": -0.2890625,
+      "score_difference": -12.333333333333334,
+      "win": 0.0,
+      "loss": 0.5,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200032,
+      "wall_id": "b34259e3431f8516374ee16b732a342a5b1c510d3fb133f3172e0e7ef584e8d4",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200032,
+      "wall_id": "b34259e3431f8516374ee16b732a342a5b1c510d3fb133f3172e0e7ef584e8d4",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.0,
+      "loss": 0.0,
+      "draw": 1.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200033,
+      "wall_id": "b7380c02b6f6fc9ea4037abb7e26029c454098491ce19bbd094f3a39f77fd50b",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.0,
+      "loss": 0.0,
+      "draw": 1.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200033,
+      "wall_id": "b7380c02b6f6fc9ea4037abb7e26029c454098491ce19bbd094f3a39f77fd50b",
+      "reward": 0.4375,
+      "score_difference": 18.666666666666668,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200033,
+      "wall_id": "b7380c02b6f6fc9ea4037abb7e26029c454098491ce19bbd094f3a39f77fd50b",
+      "reward": 0.828125,
+      "score_difference": 35.333333333333336,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200033,
+      "wall_id": "b7380c02b6f6fc9ea4037abb7e26029c454098491ce19bbd094f3a39f77fd50b",
+      "reward": 0.3828125,
+      "score_difference": 16.333333333333332,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200033,
+      "wall_id": "b7380c02b6f6fc9ea4037abb7e26029c454098491ce19bbd094f3a39f77fd50b",
+      "reward": 0.015625,
+      "score_difference": 0.6666666666666661,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200034,
+      "wall_id": "b5ff2855354cf65eb10cd7618a626c42faffbf404cb9a7e361f4cc7633b5c2da",
+      "reward": 0.2578125,
+      "score_difference": 11.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200034,
+      "wall_id": "b5ff2855354cf65eb10cd7618a626c42faffbf404cb9a7e361f4cc7633b5c2da",
+      "reward": 0.03125,
+      "score_difference": 1.3333333333333326,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200034,
+      "wall_id": "b5ff2855354cf65eb10cd7618a626c42faffbf404cb9a7e361f4cc7633b5c2da",
+      "reward": 0.5390625,
+      "score_difference": 23.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200034,
+      "wall_id": "b5ff2855354cf65eb10cd7618a626c42faffbf404cb9a7e361f4cc7633b5c2da",
+      "reward": 0.7734375,
+      "score_difference": 33.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200034,
+      "wall_id": "b5ff2855354cf65eb10cd7618a626c42faffbf404cb9a7e361f4cc7633b5c2da",
+      "reward": 0.2109375,
+      "score_difference": 9.0,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200035,
+      "wall_id": "17d5d9f131d018069dddc4db7cc5760181e68b0b48ad04fc296c15a5b18b081b",
+      "reward": 0.671875,
+      "score_difference": 28.666666666666664,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200035,
+      "wall_id": "17d5d9f131d018069dddc4db7cc5760181e68b0b48ad04fc296c15a5b18b081b",
+      "reward": 0.1484375,
+      "score_difference": 6.333333333333336,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200035,
+      "wall_id": "17d5d9f131d018069dddc4db7cc5760181e68b0b48ad04fc296c15a5b18b081b",
+      "reward": 0.3515625,
+      "score_difference": 15.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200035,
+      "wall_id": "17d5d9f131d018069dddc4db7cc5760181e68b0b48ad04fc296c15a5b18b081b",
+      "reward": -1.28125,
+      "score_difference": -54.66666666666667,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200035,
+      "wall_id": "17d5d9f131d018069dddc4db7cc5760181e68b0b48ad04fc296c15a5b18b081b",
+      "reward": -0.3125,
+      "score_difference": -13.333333333333332,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200036,
+      "wall_id": "b03936553234516a7122bc82400382cf679e3d0f734af6f72639a4267db6b0e2",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.0,
+      "loss": 0.0,
+      "draw": 1.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200036,
+      "wall_id": "b03936553234516a7122bc82400382cf679e3d0f734af6f72639a4267db6b0e2",
+      "reward": 0.0625,
+      "score_difference": 2.666666666666668,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200036,
+      "wall_id": "b03936553234516a7122bc82400382cf679e3d0f734af6f72639a4267db6b0e2",
+      "reward": 0.4453125,
+      "score_difference": 19.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200036,
+      "wall_id": "b03936553234516a7122bc82400382cf679e3d0f734af6f72639a4267db6b0e2",
+      "reward": 0.421875,
+      "score_difference": 18.000000000000004,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200036,
+      "wall_id": "b03936553234516a7122bc82400382cf679e3d0f734af6f72639a4267db6b0e2",
+      "reward": 0.15625,
+      "score_difference": 6.666666666666668,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200037,
+      "wall_id": "d3e4b195f6fe38e3aea021061a44a826f8f37b2cc97696321ac8a93ebdd220d1",
+      "reward": 0.765625,
+      "score_difference": 32.666666666666664,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200037,
+      "wall_id": "d3e4b195f6fe38e3aea021061a44a826f8f37b2cc97696321ac8a93ebdd220d1",
+      "reward": -0.3359375,
+      "score_difference": -14.333333333333332,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200037,
+      "wall_id": "d3e4b195f6fe38e3aea021061a44a826f8f37b2cc97696321ac8a93ebdd220d1",
+      "reward": 0.265625,
+      "score_difference": 11.333333333333334,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200037,
+      "wall_id": "d3e4b195f6fe38e3aea021061a44a826f8f37b2cc97696321ac8a93ebdd220d1",
+      "reward": -0.1875,
+      "score_difference": -8.0,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200037,
+      "wall_id": "d3e4b195f6fe38e3aea021061a44a826f8f37b2cc97696321ac8a93ebdd220d1",
+      "reward": 0.0390625,
+      "score_difference": 1.666666666666667,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200038,
+      "wall_id": "c3e2458cfb378ab7b12e09bc5481eb189d5d2b23d639e8f9acbd46726c4eb8fb",
+      "reward": 0.9140625,
+      "score_difference": 39.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200038,
+      "wall_id": "c3e2458cfb378ab7b12e09bc5481eb189d5d2b23d639e8f9acbd46726c4eb8fb",
+      "reward": 0.0,
+      "score_difference": 8.881784197001252e-16,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200038,
+      "wall_id": "c3e2458cfb378ab7b12e09bc5481eb189d5d2b23d639e8f9acbd46726c4eb8fb",
+      "reward": 0.4921875,
+      "score_difference": 21.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200038,
+      "wall_id": "c3e2458cfb378ab7b12e09bc5481eb189d5d2b23d639e8f9acbd46726c4eb8fb",
+      "reward": 0.9609375,
+      "score_difference": 41.0,
+      "win": 0.75,
+      "loss": 0.25,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200038,
+      "wall_id": "c3e2458cfb378ab7b12e09bc5481eb189d5d2b23d639e8f9acbd46726c4eb8fb",
+      "reward": 0.625,
+      "score_difference": 26.666666666666664,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200039,
+      "wall_id": "de00a1d295c96fabdbed73143c1ebb2c0187bf2270dc7d6a92b3f5582427e7a4",
+      "reward": 0.7734375,
+      "score_difference": 33.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200039,
+      "wall_id": "de00a1d295c96fabdbed73143c1ebb2c0187bf2270dc7d6a92b3f5582427e7a4",
+      "reward": -0.0625,
+      "score_difference": -2.6666666666666665,
+      "win": 0.0,
+      "loss": 0.25,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200039,
+      "wall_id": "de00a1d295c96fabdbed73143c1ebb2c0187bf2270dc7d6a92b3f5582427e7a4",
+      "reward": -0.28125,
+      "score_difference": -12.0,
+      "win": 0.0,
+      "loss": 0.5,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200039,
+      "wall_id": "de00a1d295c96fabdbed73143c1ebb2c0187bf2270dc7d6a92b3f5582427e7a4",
+      "reward": 0.8984375,
+      "score_difference": 38.33333333333333,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200039,
+      "wall_id": "de00a1d295c96fabdbed73143c1ebb2c0187bf2270dc7d6a92b3f5582427e7a4",
+      "reward": 0.09375,
+      "score_difference": 4.0,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200040,
+      "wall_id": "00d255ea53b22940a859dd57bff1f24d02daf44cd8ae3e03ead2c7b4b214c7b8",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.0,
+      "loss": 0.0,
+      "draw": 1.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200040,
+      "wall_id": "00d255ea53b22940a859dd57bff1f24d02daf44cd8ae3e03ead2c7b4b214c7b8",
+      "reward": 0.0234375,
+      "score_difference": 1.0,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200040,
+      "wall_id": "00d255ea53b22940a859dd57bff1f24d02daf44cd8ae3e03ead2c7b4b214c7b8",
+      "reward": 0.9140625,
+      "score_difference": 39.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200040,
+      "wall_id": "00d255ea53b22940a859dd57bff1f24d02daf44cd8ae3e03ead2c7b4b214c7b8",
+      "reward": -0.53125,
+      "score_difference": -22.666666666666668,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200040,
+      "wall_id": "00d255ea53b22940a859dd57bff1f24d02daf44cd8ae3e03ead2c7b4b214c7b8",
+      "reward": 0.984375,
+      "score_difference": 42.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200041,
+      "wall_id": "e9c24134341eb31dd17d625b51d7b03977210e2fd9f25ae2fcfe379c8cb5cbfa",
+      "reward": 0.2890625,
+      "score_difference": 12.333333333333334,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200041,
+      "wall_id": "e9c24134341eb31dd17d625b51d7b03977210e2fd9f25ae2fcfe379c8cb5cbfa",
+      "reward": 0.609375,
+      "score_difference": 26.0,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200041,
+      "wall_id": "e9c24134341eb31dd17d625b51d7b03977210e2fd9f25ae2fcfe379c8cb5cbfa",
+      "reward": -0.125,
+      "score_difference": -5.333333333333333,
+      "win": 0.0,
+      "loss": 0.5,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200041,
+      "wall_id": "e9c24134341eb31dd17d625b51d7b03977210e2fd9f25ae2fcfe379c8cb5cbfa",
+      "reward": 0.203125,
+      "score_difference": 8.666666666666668,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200041,
+      "wall_id": "e9c24134341eb31dd17d625b51d7b03977210e2fd9f25ae2fcfe379c8cb5cbfa",
+      "reward": -0.3359375,
+      "score_difference": -14.333333333333332,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200042,
+      "wall_id": "0681e5e7a21959eb0d246d78d766a593b245e0b923035c7cbf85f0ccaaed4150",
+      "reward": 0.3125,
+      "score_difference": 13.333333333333334,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200042,
+      "wall_id": "0681e5e7a21959eb0d246d78d766a593b245e0b923035c7cbf85f0ccaaed4150",
+      "reward": 0.03125,
+      "score_difference": 1.333333333333333,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200042,
+      "wall_id": "0681e5e7a21959eb0d246d78d766a593b245e0b923035c7cbf85f0ccaaed4150",
+      "reward": 0.25,
+      "score_difference": 10.666666666666666,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200042,
+      "wall_id": "0681e5e7a21959eb0d246d78d766a593b245e0b923035c7cbf85f0ccaaed4150",
+      "reward": 0.1015625,
+      "score_difference": 4.333333333333336,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200042,
+      "wall_id": "0681e5e7a21959eb0d246d78d766a593b245e0b923035c7cbf85f0ccaaed4150",
+      "reward": 0.3984375,
+      "score_difference": 17.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200043,
+      "wall_id": "c89db0905237fb54300854d09f95edc22d02e2115cc5c8d7e74c2c5d23ede46a",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.0,
+      "loss": 0.0,
+      "draw": 1.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200043,
+      "wall_id": "c89db0905237fb54300854d09f95edc22d02e2115cc5c8d7e74c2c5d23ede46a",
+      "reward": -0.3984375,
+      "score_difference": -17.0,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200043,
+      "wall_id": "c89db0905237fb54300854d09f95edc22d02e2115cc5c8d7e74c2c5d23ede46a",
+      "reward": 0.984375,
+      "score_difference": 42.0,
+      "win": 0.75,
+      "loss": 0.25,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200043,
+      "wall_id": "c89db0905237fb54300854d09f95edc22d02e2115cc5c8d7e74c2c5d23ede46a",
+      "reward": 0.1171875,
+      "score_difference": 4.999999999999999,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200043,
+      "wall_id": "c89db0905237fb54300854d09f95edc22d02e2115cc5c8d7e74c2c5d23ede46a",
+      "reward": -0.3203125,
+      "score_difference": -13.666666666666666,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200044,
+      "wall_id": "896629a79f58c0f209caaffc5460c0396c844ab2ba060787f931e2f889e99f7d",
+      "reward": 0.2734375,
+      "score_difference": 11.666666666666666,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200044,
+      "wall_id": "896629a79f58c0f209caaffc5460c0396c844ab2ba060787f931e2f889e99f7d",
+      "reward": -0.25,
+      "score_difference": -10.666666666666666,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200044,
+      "wall_id": "896629a79f58c0f209caaffc5460c0396c844ab2ba060787f931e2f889e99f7d",
+      "reward": 0.3828125,
+      "score_difference": 16.333333333333332,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200044,
+      "wall_id": "896629a79f58c0f209caaffc5460c0396c844ab2ba060787f931e2f889e99f7d",
+      "reward": -0.671875,
+      "score_difference": -28.666666666666664,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200044,
+      "wall_id": "896629a79f58c0f209caaffc5460c0396c844ab2ba060787f931e2f889e99f7d",
+      "reward": 0.1171875,
+      "score_difference": 5.0,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200045,
+      "wall_id": "522de153be129d5e5a5d12579be4bcc9111713eecdf0f22715a9ea882318af93",
+      "reward": 1.1875,
+      "score_difference": 50.666666666666664,
+      "win": 1.0,
+      "loss": 0.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200045,
+      "wall_id": "522de153be129d5e5a5d12579be4bcc9111713eecdf0f22715a9ea882318af93",
+      "reward": 0.2109375,
+      "score_difference": 9.000000000000002,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200045,
+      "wall_id": "522de153be129d5e5a5d12579be4bcc9111713eecdf0f22715a9ea882318af93",
+      "reward": 0.5546875,
+      "score_difference": 23.666666666666668,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200045,
+      "wall_id": "522de153be129d5e5a5d12579be4bcc9111713eecdf0f22715a9ea882318af93",
+      "reward": -0.3203125,
+      "score_difference": -13.666666666666666,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200045,
+      "wall_id": "522de153be129d5e5a5d12579be4bcc9111713eecdf0f22715a9ea882318af93",
+      "reward": 0.5859375,
+      "score_difference": 25.0,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200046,
+      "wall_id": "11c9962163d68e82b9cb548428151f57339a62aae9c5c101b97e5c643bd78a0d",
+      "reward": 0.2578125,
+      "score_difference": 11.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200046,
+      "wall_id": "11c9962163d68e82b9cb548428151f57339a62aae9c5c101b97e5c643bd78a0d",
+      "reward": 0.140625,
+      "score_difference": 6.000000000000001,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200046,
+      "wall_id": "11c9962163d68e82b9cb548428151f57339a62aae9c5c101b97e5c643bd78a0d",
+      "reward": 0.7265625,
+      "score_difference": 31.0,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200046,
+      "wall_id": "11c9962163d68e82b9cb548428151f57339a62aae9c5c101b97e5c643bd78a0d",
+      "reward": 0.703125,
+      "score_difference": 30.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200046,
+      "wall_id": "11c9962163d68e82b9cb548428151f57339a62aae9c5c101b97e5c643bd78a0d",
+      "reward": 0.421875,
+      "score_difference": 18.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200047,
+      "wall_id": "995175b4a22eca7f0a4de7195141fa52fc543bea04355c2198aa8e839b61776c",
+      "reward": 0.8359375,
+      "score_difference": 35.666666666666664,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200047,
+      "wall_id": "995175b4a22eca7f0a4de7195141fa52fc543bea04355c2198aa8e839b61776c",
+      "reward": 0.4140625,
+      "score_difference": 17.666666666666668,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200047,
+      "wall_id": "995175b4a22eca7f0a4de7195141fa52fc543bea04355c2198aa8e839b61776c",
+      "reward": 0.1328125,
+      "score_difference": 5.666666666666667,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200047,
+      "wall_id": "995175b4a22eca7f0a4de7195141fa52fc543bea04355c2198aa8e839b61776c",
+      "reward": 0.1640625,
+      "score_difference": 7.0,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200047,
+      "wall_id": "995175b4a22eca7f0a4de7195141fa52fc543bea04355c2198aa8e839b61776c",
+      "reward": -0.203125,
+      "score_difference": -8.666666666666666,
+      "win": 0.0,
+      "loss": 0.5,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200048,
+      "wall_id": "60cd63d38e318758cb918b1ccc433c17cac922f25b6f0d552da10c5d679c3929",
+      "reward": 0.265625,
+      "score_difference": 11.333333333333334,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200048,
+      "wall_id": "60cd63d38e318758cb918b1ccc433c17cac922f25b6f0d552da10c5d679c3929",
+      "reward": -0.7734375,
+      "score_difference": -33.0,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200048,
+      "wall_id": "60cd63d38e318758cb918b1ccc433c17cac922f25b6f0d552da10c5d679c3929",
+      "reward": 0.25,
+      "score_difference": 10.666666666666666,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200048,
+      "wall_id": "60cd63d38e318758cb918b1ccc433c17cac922f25b6f0d552da10c5d679c3929",
+      "reward": 0.2109375,
+      "score_difference": 9.0,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200048,
+      "wall_id": "60cd63d38e318758cb918b1ccc433c17cac922f25b6f0d552da10c5d679c3929",
+      "reward": 0.546875,
+      "score_difference": 23.333333333333332,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200049,
+      "wall_id": "864c697718dd7947be7119312361f09832df7b71cdeeb84f2168c7906e1226b4",
+      "reward": 1.328125,
+      "score_difference": 56.666666666666664,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200049,
+      "wall_id": "864c697718dd7947be7119312361f09832df7b71cdeeb84f2168c7906e1226b4",
+      "reward": 0.5078125,
+      "score_difference": 21.666666666666664,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200049,
+      "wall_id": "864c697718dd7947be7119312361f09832df7b71cdeeb84f2168c7906e1226b4",
+      "reward": 0.625,
+      "score_difference": 26.666666666666668,
+      "win": 0.75,
+      "loss": 0.25,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200049,
+      "wall_id": "864c697718dd7947be7119312361f09832df7b71cdeeb84f2168c7906e1226b4",
+      "reward": 0.0234375,
+      "score_difference": 1.0000000000000009,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200049,
+      "wall_id": "864c697718dd7947be7119312361f09832df7b71cdeeb84f2168c7906e1226b4",
+      "reward": 0.125,
+      "score_difference": 5.333333333333334,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200050,
+      "wall_id": "4a722fc7ea2800b401164007e240b18e63122831534eb9b993720281c7a80484",
+      "reward": 0.25,
+      "score_difference": 10.666666666666666,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200050,
+      "wall_id": "4a722fc7ea2800b401164007e240b18e63122831534eb9b993720281c7a80484",
+      "reward": 0.015625,
+      "score_difference": 0.6666666666666661,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200050,
+      "wall_id": "4a722fc7ea2800b401164007e240b18e63122831534eb9b993720281c7a80484",
+      "reward": 0.4609375,
+      "score_difference": 19.666666666666668,
+      "win": 0.5,
+      "loss": 0.25,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200050,
+      "wall_id": "4a722fc7ea2800b401164007e240b18e63122831534eb9b993720281c7a80484",
+      "reward": -0.2578125,
+      "score_difference": -11.0,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200050,
+      "wall_id": "4a722fc7ea2800b401164007e240b18e63122831534eb9b993720281c7a80484",
+      "reward": -0.2109375,
+      "score_difference": -9.0,
+      "win": 0.0,
+      "loss": 0.5,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200051,
+      "wall_id": "60ba5e2b7e1c1da53bdbd56b2c54996d9e5b0e1f7a9e6f1dbf82dfbf186c72b9",
+      "reward": 0.96875,
+      "score_difference": 41.33333333333333,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200051,
+      "wall_id": "60ba5e2b7e1c1da53bdbd56b2c54996d9e5b0e1f7a9e6f1dbf82dfbf186c72b9",
+      "reward": -0.1484375,
+      "score_difference": -6.333333333333332,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200051,
+      "wall_id": "60ba5e2b7e1c1da53bdbd56b2c54996d9e5b0e1f7a9e6f1dbf82dfbf186c72b9",
+      "reward": 0.2578125,
+      "score_difference": 11.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200051,
+      "wall_id": "60ba5e2b7e1c1da53bdbd56b2c54996d9e5b0e1f7a9e6f1dbf82dfbf186c72b9",
+      "reward": 0.015625,
+      "score_difference": 0.6666666666666665,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200051,
+      "wall_id": "60ba5e2b7e1c1da53bdbd56b2c54996d9e5b0e1f7a9e6f1dbf82dfbf186c72b9",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200052,
+      "wall_id": "4bb123f0f36c4cdb106aa508579b329945288a0960b45997116f31952a462eaf",
+      "reward": 0.328125,
+      "score_difference": 14.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200052,
+      "wall_id": "4bb123f0f36c4cdb106aa508579b329945288a0960b45997116f31952a462eaf",
+      "reward": -0.390625,
+      "score_difference": -16.666666666666664,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200052,
+      "wall_id": "4bb123f0f36c4cdb106aa508579b329945288a0960b45997116f31952a462eaf",
+      "reward": 0.2890625,
+      "score_difference": 12.333333333333334,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200052,
+      "wall_id": "4bb123f0f36c4cdb106aa508579b329945288a0960b45997116f31952a462eaf",
+      "reward": -0.4921875,
+      "score_difference": -21.0,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200052,
+      "wall_id": "4bb123f0f36c4cdb106aa508579b329945288a0960b45997116f31952a462eaf",
+      "reward": -0.359375,
+      "score_difference": -15.333333333333334,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200053,
+      "wall_id": "2cec891d819310b0b46434b4d39b3de71f375ec9ef1d2722118325c0ade1f08e",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.0,
+      "loss": 0.0,
+      "draw": 1.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200053,
+      "wall_id": "2cec891d819310b0b46434b4d39b3de71f375ec9ef1d2722118325c0ade1f08e",
+      "reward": -0.296875,
+      "score_difference": -12.666666666666666,
+      "win": 0.0,
+      "loss": 0.75,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200053,
+      "wall_id": "2cec891d819310b0b46434b4d39b3de71f375ec9ef1d2722118325c0ade1f08e",
+      "reward": 0.109375,
+      "score_difference": 4.666666666666667,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200053,
+      "wall_id": "2cec891d819310b0b46434b4d39b3de71f375ec9ef1d2722118325c0ade1f08e",
+      "reward": -0.125,
+      "score_difference": -5.333333333333333,
+      "win": 0.0,
+      "loss": 0.5,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200053,
+      "wall_id": "2cec891d819310b0b46434b4d39b3de71f375ec9ef1d2722118325c0ade1f08e",
+      "reward": 0.1953125,
+      "score_difference": 8.333333333333334,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200054,
+      "wall_id": "ed3953bfdb6a9cf3c155b17290eb95a0377309b2095456c0fe91d9bfc654f148",
+      "reward": 0.75,
+      "score_difference": 32.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200054,
+      "wall_id": "ed3953bfdb6a9cf3c155b17290eb95a0377309b2095456c0fe91d9bfc654f148",
+      "reward": -0.1875,
+      "score_difference": -8.0,
+      "win": 0.0,
+      "loss": 0.5,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200054,
+      "wall_id": "ed3953bfdb6a9cf3c155b17290eb95a0377309b2095456c0fe91d9bfc654f148",
+      "reward": 0.375,
+      "score_difference": 16.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200054,
+      "wall_id": "ed3953bfdb6a9cf3c155b17290eb95a0377309b2095456c0fe91d9bfc654f148",
+      "reward": 0.0703125,
+      "score_difference": 3.0,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200054,
+      "wall_id": "ed3953bfdb6a9cf3c155b17290eb95a0377309b2095456c0fe91d9bfc654f148",
+      "reward": -0.5,
+      "score_difference": -21.333333333333332,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200055,
+      "wall_id": "a29ef2a6da92a2255c23a5c9156e25ac8f95b9dc0682d532a0a3321747c2f2bc",
+      "reward": 1.2890625,
+      "score_difference": 55.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200055,
+      "wall_id": "a29ef2a6da92a2255c23a5c9156e25ac8f95b9dc0682d532a0a3321747c2f2bc",
+      "reward": 0.296875,
+      "score_difference": 12.666666666666666,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200055,
+      "wall_id": "a29ef2a6da92a2255c23a5c9156e25ac8f95b9dc0682d532a0a3321747c2f2bc",
+      "reward": 0.5234375,
+      "score_difference": 22.333333333333336,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200055,
+      "wall_id": "a29ef2a6da92a2255c23a5c9156e25ac8f95b9dc0682d532a0a3321747c2f2bc",
+      "reward": -0.0703125,
+      "score_difference": -3.0,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200055,
+      "wall_id": "a29ef2a6da92a2255c23a5c9156e25ac8f95b9dc0682d532a0a3321747c2f2bc",
+      "reward": 0.0,
+      "score_difference": 8.881784197001252e-16,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200056,
+      "wall_id": "ee87d2712551feec70e41b22a2a7a5f1af3be3d900d0dc78372b3541ea4f616a",
+      "reward": 0.5625,
+      "score_difference": 24.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200056,
+      "wall_id": "ee87d2712551feec70e41b22a2a7a5f1af3be3d900d0dc78372b3541ea4f616a",
+      "reward": -0.3828125,
+      "score_difference": -16.333333333333336,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200056,
+      "wall_id": "ee87d2712551feec70e41b22a2a7a5f1af3be3d900d0dc78372b3541ea4f616a",
+      "reward": 0.2265625,
+      "score_difference": 9.666666666666668,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200056,
+      "wall_id": "ee87d2712551feec70e41b22a2a7a5f1af3be3d900d0dc78372b3541ea4f616a",
+      "reward": 0.1953125,
+      "score_difference": 8.333333333333334,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200056,
+      "wall_id": "ee87d2712551feec70e41b22a2a7a5f1af3be3d900d0dc78372b3541ea4f616a",
+      "reward": 0.2578125,
+      "score_difference": 11.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200057,
+      "wall_id": "6a8fa82ee40c7d27796f3db82e1b7fbd42043b4324a91c21abac11f1ad51ae90",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.0,
+      "loss": 0.0,
+      "draw": 1.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200057,
+      "wall_id": "6a8fa82ee40c7d27796f3db82e1b7fbd42043b4324a91c21abac11f1ad51ae90",
+      "reward": -0.0625,
+      "score_difference": -2.6666666666666665,
+      "win": 0.0,
+      "loss": 0.25,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200057,
+      "wall_id": "6a8fa82ee40c7d27796f3db82e1b7fbd42043b4324a91c21abac11f1ad51ae90",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.0,
+      "loss": 0.0,
+      "draw": 1.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200057,
+      "wall_id": "6a8fa82ee40c7d27796f3db82e1b7fbd42043b4324a91c21abac11f1ad51ae90",
+      "reward": 0.234375,
+      "score_difference": 10.000000000000002,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200057,
+      "wall_id": "6a8fa82ee40c7d27796f3db82e1b7fbd42043b4324a91c21abac11f1ad51ae90",
+      "reward": 0.1875,
+      "score_difference": 8.0,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200058,
+      "wall_id": "ebaea8df7a287802a655cdc00c7717db1af036780cf47a61926802ea0887a321",
+      "reward": 1.359375,
+      "score_difference": 57.99999999999999,
+      "win": 1.0,
+      "loss": 0.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200058,
+      "wall_id": "ebaea8df7a287802a655cdc00c7717db1af036780cf47a61926802ea0887a321",
+      "reward": 0.3125,
+      "score_difference": 13.333333333333334,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200058,
+      "wall_id": "ebaea8df7a287802a655cdc00c7717db1af036780cf47a61926802ea0887a321",
+      "reward": 1.09375,
+      "score_difference": 46.666666666666664,
+      "win": 0.75,
+      "loss": 0.0,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200058,
+      "wall_id": "ebaea8df7a287802a655cdc00c7717db1af036780cf47a61926802ea0887a321",
+      "reward": -0.03125,
+      "score_difference": -1.3333333333333357,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200058,
+      "wall_id": "ebaea8df7a287802a655cdc00c7717db1af036780cf47a61926802ea0887a321",
+      "reward": 0.6484375,
+      "score_difference": 27.666666666666668,
+      "win": 0.5,
+      "loss": 0.5,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200059,
+      "wall_id": "6226c39367a11888624c67b6a8e103650b00b2c5fc99abc41bc210e67c185b5c",
+      "reward": 0.5390625,
+      "score_difference": 23.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200059,
+      "wall_id": "6226c39367a11888624c67b6a8e103650b00b2c5fc99abc41bc210e67c185b5c",
+      "reward": -0.046875,
+      "score_difference": -2.0000000000000004,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200059,
+      "wall_id": "6226c39367a11888624c67b6a8e103650b00b2c5fc99abc41bc210e67c185b5c",
+      "reward": 0.125,
+      "score_difference": 5.333333333333333,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200059,
+      "wall_id": "6226c39367a11888624c67b6a8e103650b00b2c5fc99abc41bc210e67c185b5c",
+      "reward": 0.1328125,
+      "score_difference": 5.666666666666668,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200059,
+      "wall_id": "6226c39367a11888624c67b6a8e103650b00b2c5fc99abc41bc210e67c185b5c",
+      "reward": 0.890625,
+      "score_difference": 38.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200060,
+      "wall_id": "e40a8a2f147df397609a8886264fa882cc7669b58a604c7a9227300b8d7ef124",
+      "reward": 0.265625,
+      "score_difference": 11.333333333333334,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200060,
+      "wall_id": "e40a8a2f147df397609a8886264fa882cc7669b58a604c7a9227300b8d7ef124",
+      "reward": -0.609375,
+      "score_difference": -26.0,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200060,
+      "wall_id": "e40a8a2f147df397609a8886264fa882cc7669b58a604c7a9227300b8d7ef124",
+      "reward": 0.2109375,
+      "score_difference": 9.0,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200060,
+      "wall_id": "e40a8a2f147df397609a8886264fa882cc7669b58a604c7a9227300b8d7ef124",
+      "reward": 0.234375,
+      "score_difference": 10.000000000000002,
+      "win": 0.25,
+      "loss": 0.5,
+      "draw": 0.25
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200060,
+      "wall_id": "e40a8a2f147df397609a8886264fa882cc7669b58a604c7a9227300b8d7ef124",
+      "reward": -0.1328125,
+      "score_difference": -5.666666666666667,
+      "win": 0.0,
+      "loss": 0.25,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200061,
+      "wall_id": "d7b1ad29b649b754f64bda42c9654a44d68ad729fa551af82627f831a9bd8442",
+      "reward": 0.28125,
+      "score_difference": 12.0,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200061,
+      "wall_id": "d7b1ad29b649b754f64bda42c9654a44d68ad729fa551af82627f831a9bd8442",
+      "reward": 0.21875,
+      "score_difference": 9.333333333333334,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200061,
+      "wall_id": "d7b1ad29b649b754f64bda42c9654a44d68ad729fa551af82627f831a9bd8442",
+      "reward": 0.65625,
+      "score_difference": 28.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200061,
+      "wall_id": "d7b1ad29b649b754f64bda42c9654a44d68ad729fa551af82627f831a9bd8442",
+      "reward": -0.0859375,
+      "score_difference": -3.666666666666663,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200061,
+      "wall_id": "d7b1ad29b649b754f64bda42c9654a44d68ad729fa551af82627f831a9bd8442",
+      "reward": -0.0703125,
+      "score_difference": -3.0,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200062,
+      "wall_id": "3485e5ccbbe6505461a746a1026e51309ba159ea6fa3410fa8bef70989870cec",
+      "reward": 0.25,
+      "score_difference": 10.666666666666666,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200062,
+      "wall_id": "3485e5ccbbe6505461a746a1026e51309ba159ea6fa3410fa8bef70989870cec",
+      "reward": -0.4453125,
+      "score_difference": -19.0,
+      "win": 0.0,
+      "loss": 1.0,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200062,
+      "wall_id": "3485e5ccbbe6505461a746a1026e51309ba159ea6fa3410fa8bef70989870cec",
+      "reward": 0.203125,
+      "score_difference": 8.666666666666668,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200062,
+      "wall_id": "3485e5ccbbe6505461a746a1026e51309ba159ea6fa3410fa8bef70989870cec",
+      "reward": 0.140625,
+      "score_difference": 6.000000000000001,
+      "win": 0.25,
+      "loss": 0.25,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200062,
+      "wall_id": "3485e5ccbbe6505461a746a1026e51309ba159ea6fa3410fa8bef70989870cec",
+      "reward": 1.03125,
+      "score_difference": 44.0,
+      "win": 0.5,
+      "loss": 0.0,
+      "draw": 0.5
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "random",
+      "seed": 110200063,
+      "wall_id": "fb38a40056dd31e337c99945014a357819c74b3e94b84db45bb4edf1c99fadd7",
+      "reward": 0.2734375,
+      "score_difference": 11.666666666666666,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "teacher",
+      "seed": 110200063,
+      "wall_id": "fb38a40056dd31e337c99945014a357819c74b3e94b84db45bb4edf1c99fadd7",
+      "reward": 0.0,
+      "score_difference": 0.0,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "rl_v1",
+      "seed": 110200063,
+      "wall_id": "fb38a40056dd31e337c99945014a357819c74b3e94b84db45bb4edf1c99fadd7",
+      "reward": 0.4296875,
+      "score_difference": 18.333333333333332,
+      "win": 0.25,
+      "loss": 0.0,
+      "draw": 0.75
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "C",
+      "seed": 110200063,
+      "wall_id": "fb38a40056dd31e337c99945014a357819c74b3e94b84db45bb4edf1c99fadd7",
+      "reward": -0.4453125,
+      "score_difference": -19.0,
+      "win": 0.25,
+      "loss": 0.75,
+      "draw": 0.0
+    },
+    {
+      "candidate": "candidate",
+      "opponent": "D",
+      "seed": 110200063,
+      "wall_id": "fb38a40056dd31e337c99945014a357819c74b3e94b84db45bb4edf1c99fadd7",
+      "reward": -0.3984375,
+      "score_difference": -17.0,
+      "win": 0.0,
+      "loss": 0.5,
+      "draw": 0.5
+    }
+  ],
+  "aggregate": {
+    "rule": "equal mean over frozen opponents; resample shared walls",
+    "opponents": [
+      "C",
+      "D",
+      "random",
+      "rl_v1",
+      "teacher"
+    ],
+    "scores": {
+      "candidate": {
+        "mean": 0.2516845703125,
+        "walls": 64,
+        "se": 0.025734406300490953,
+        "ci95": [
+          0.2012921142578125,
+          0.30017211914062497
+        ]
+      }
+    },
+    "paired_differences": {}
+  },
+  "games": 1280,
+  "seconds": 28.35530687496066
+}

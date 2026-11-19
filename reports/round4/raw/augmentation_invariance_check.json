@@ -1,0 +1,117 @@
+{
+  "original_green": {
+    "hand": [
+      "T2",
+      "T2",
+      "T2",
+      "T3",
+      "T3",
+      "T3",
+      "T4",
+      "T4",
+      "T4",
+      "T6",
+      "T6",
+      "T6",
+      "J2"
+    ],
+    "winTile": "J2",
+    "fan_total": 178,
+    "fan_breakdown": [
+      [
+        88,
+        1,
+        "绿一色",
+        "All Green"
+      ],
+      [
+        64,
+        1,
+        "四暗刻",
+        "Four Concealed Pungs"
+      ],
+      [
+        24,
+        1,
+        "一色三节高",
+        "Pure Shifted Pungs"
+      ],
+      [
+        1,
+        1,
+        "独听・单钓",
+        "Single Wait"
+      ],
+      [
+        1,
+        1,
+        "自摸",
+        "Self-Drawn"
+      ]
+    ]
+  },
+  "swap_T_and_W": {
+    "hand": [
+      "W2",
+      "W2",
+      "W2",
+      "W3",
+      "W3",
+      "W3",
+      "W4",
+      "W4",
+      "W4",
+      "W6",
+      "W6",
+      "W6",
+      "J2"
+    ],
+    "winTile": "J2",
+    "fan_total": 96,
+    "fan_breakdown": [
+      [
+        64,
+        1,
+        "四暗刻",
+        "Four Concealed Pungs"
+      ],
+      [
+        24,
+        1,
+        "一色三节高",
+        "Pure Shifted Pungs"
+      ],
+      [
+        6,
+        1,
+        "混一色",
+        "Half Flush"
+      ],
+      [
+        1,
+        1,
+        "独听・单钓",
+        "Single Wait"
+      ],
+      [
+        1,
+        1,
+        "自摸",
+        "Self-Drawn"
+      ]
+    ]
+  },
+  "decision": "Do not use unrestricted suit permutation as a rule-invariant augmentation",
+  "common_parameters": {
+    "pack": [],
+    "flowerCount": 0,
+    "isSelfDrawn": true,
+    "is4thTile": false,
+    "isAboutKong": false,
+    "isWallLast": false,
+    "seatWind": 0,
+    "prevalentWind": 0,
+    "verbose": true
+  },
+  "PyMahjongGB": "1.4.0"
+}

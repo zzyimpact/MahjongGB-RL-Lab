@@ -1,0 +1,1 @@
+{"PPO_extended_best": {"mean_forward_kl": 0.0030982667745998596, "action_change_fraction": 0.022580432053907643, "actual_optimizer_lr": [2e-05]}, "PPO_extended_last": {"mean_forward_kl": 0.0031086735817702025, "action_change_fraction": 0.023016449758868997, "actual_optimizer_lr": [2e-05]}}

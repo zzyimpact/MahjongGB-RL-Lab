@@ -1,0 +1,9 @@
+{"jobs_done": 1, "jobs_total": 10, "seconds": 1.1345010839868337}
+{"rule": "equal mean over frozen opponents; resample shared walls", "opponents": ["C", "D", "random", "rl_v1", "teacher"], "scores": {"candidate": {"mean": 0.07578125000000001, "walls": 2, "se": 0.10078125000000002, "ci95": [-0.025, 0.1765625]}}, "paired_differences": {}}
+{"iteration": 1, "warmup": true, "actor_changed": false, "seconds": 1.672238582978025, "mean_terminal_reward": 0.0859375, "non_draw_rate": 1.0}
+{"jobs_done": 1, "jobs_total": 10, "seconds": 1.0715123750269413}
+{"rule": "equal mean over frozen opponents; resample shared walls", "opponents": ["C", "D", "random", "rl_v1", "teacher"], "scores": {"candidate": {"mean": 0.07578125000000001, "walls": 2, "se": 0.10078125000000002, "ci95": [-0.025, 0.1765625]}}, "paired_differences": {}}
+{"iteration": 2, "warmup": false, "actor_changed": true, "seconds": 4.9173208749853075, "mean_terminal_reward": -0.0859375, "non_draw_rate": 1.0}
+{"jobs_done": 1, "jobs_total": 10, "seconds": 1.0488369998056442}
+{"rule": "equal mean over frozen opponents; resample shared walls", "opponents": ["C", "D", "random", "rl_v1", "teacher"], "scores": {"candidate": {"mean": 0.07578125000000001, "walls": 2, "se": 0.10078125000000002, "ci95": [-0.025, 0.1765625]}}, "paired_differences": {}}
+{"env_steps": 374, "agent_steps": 748, "gradient_updates": 2, "completed_episodes": 4, "iteration": 2, "seconds": 7.86701333289966, "best_development_score": 0.07578125000000001, "best_post_ppo_score": 0.07578125000000001, "warmup_episodes": 2, "stopped_early": false}

@@ -1,0 +1,1 @@
+{"PPO_legacy_best": {"mean_forward_kl": 0.002232631001627145, "action_change_fraction": 0.022104776375767986, "actual_optimizer_lr": [2e-05]}, "PPO_legacy_last": {"mean_forward_kl": 0.00266738488887271, "action_change_fraction": 0.021206315650393076, "actual_optimizer_lr": [2e-05]}}

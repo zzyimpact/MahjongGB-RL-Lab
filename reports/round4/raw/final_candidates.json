@@ -1,0 +1,15 @@
+{
+  "C_original": "artifacts/round3/C/checkpoint.pt",
+  "D_original": "artifacts/round3/D/checkpoint.pt",
+  "D_AdamW": "runs/final_v3/D_retrained/checkpoint.pt",
+  "V3_AdamW": "runs/final_v3/V3/checkpoint.pt",
+  "D_legacy_e06": "runs/final_v3/D_legacy/epoch_006.pt",
+  "D_legacy_seed2_e06": "runs/final_v3/D_legacy_seed2/epoch_006.pt",
+  "D_legacy_seed3_e06": "runs/final_v3/D_legacy_seed3/epoch_006.pt",
+  "V3_legacy_e01": "runs/final_v3/V3_legacy/epoch_001.pt",
+  "V3_legacy_seed2_e01": "runs/final_v3/V3_legacy_seed2/epoch_001.pt",
+  "V3_legacy_seed3_e01": "runs/final_v3/V3_legacy_seed3/epoch_001.pt",
+  "PPO_legacy_best": "runs/final_v3/PPO_V3_legacy/ppo_best.pt",
+  "PPO_extended_best": "runs/final_v3/PPO_V3_legacy_extended/ppo_best.pt",
+  "PPO_extended_last": "runs/final_v3/PPO_V3_legacy_extended/last.pt"
+}

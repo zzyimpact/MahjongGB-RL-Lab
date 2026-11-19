@@ -1,0 +1,70 @@
+{
+  "D_retrained_seed2": {
+    "status": "completed",
+    "command": [
+      "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/.venv/bin/python",
+      "-m",
+      "mahjong.train_v3",
+      "--config",
+      "mahjong/configs/v3/D_retrained_seed2.json",
+      "--data",
+      "data/final_v3",
+      "--output",
+      "runs/final_v3/D_retrained_seed2"
+    ],
+    "start_time": 1795076489.3625169,
+    "returncode": 0,
+    "end_time": 1795076795.447986
+  },
+  "V3_seed2": {
+    "status": "completed",
+    "command": [
+      "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/.venv/bin/python",
+      "-m",
+      "mahjong.train_v3",
+      "--config",
+      "mahjong/configs/v3/V3_seed2.json",
+      "--data",
+      "data/final_v3",
+      "--output",
+      "runs/final_v3/V3_seed2"
+    ],
+    "start_time": 1795076795.448301,
+    "returncode": 0,
+    "end_time": 1795077178.849431
+  },
+  "D_retrained_seed3": {
+    "status": "completed",
+    "command": [
+      "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/.venv/bin/python",
+      "-m",
+      "mahjong.train_v3",
+      "--config",
+      "mahjong/configs/v3/D_retrained_seed3.json",
+      "--data",
+      "data/final_v3",
+      "--output",
+      "runs/final_v3/D_retrained_seed3"
+    ],
+    "start_time": 1795077178.849893,
+    "returncode": 0,
+    "end_time": 1795077493.7687051
+  },
+  "V3_seed3": {
+    "status": "completed",
+    "command": [
+      "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work/.venv/bin/python",
+      "-m",
+      "mahjong.train_v3",
+      "--config",
+      "mahjong/configs/v3/V3_seed3.json",
+      "--data",
+      "data/final_v3",
+      "--output",
+      "runs/final_v3/V3_seed3"
+    ],
+    "start_time": 1795077493.7698948,
+    "returncode": 0,
+    "end_time": 1795077889.768661
+  }
+}

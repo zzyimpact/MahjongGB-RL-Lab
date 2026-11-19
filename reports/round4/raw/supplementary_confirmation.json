@@ -1,0 +1,63 @@
+{
+  "plan_sha256": "b04dd1be6112411caa594b004702838abbbfa72a1df5905de7a29fb7641445d5",
+  "contrast": "PPO_extended_last - V3_legacy_e01",
+  "statistics": {
+    "mean": 0.009140625,
+    "walls": 500,
+    "se": 0.004925958857794197,
+    "ci95": [
+      -0.0005001562500000007,
+      0.018881328124999992
+    ]
+  },
+  "opponent_differences": {
+    "random": {
+      "mean": 0.021015625,
+      "walls": 500,
+      "se": 0.011067070765360395,
+      "ci95": [
+        0.00010781250000000054,
+        0.042707812499999935
+      ]
+    },
+    "teacher": {
+      "mean": -0.00184375,
+      "walls": 500,
+      "se": 0.011031327882118754,
+      "ci95": [
+        -0.02368828125,
+        0.020047265624999994
+      ]
+    },
+    "rl_v1": {
+      "mean": 0.008921875,
+      "walls": 500,
+      "se": 0.01094770447514656,
+      "ci95": [
+        -0.01236015625,
+        0.029969921874999982
+      ]
+    },
+    "C": {
+      "mean": 0.002109375,
+      "walls": 500,
+      "se": 0.009734774667551361,
+      "ci95": [
+        -0.016062890625,
+        0.02051757812499997
+      ]
+    },
+    "D": {
+      "mean": 0.0155,
+      "walls": 500,
+      "se": 0.01004404733498827,
+      "ci95": [
+        -0.003484765625,
+        0.03578164062499999
+      ]
+    }
+  },
+  "accepted": false,
+  "recommended_model": "V3_legacy_e01",
+  "method": "One separately registered follow-up contrast, new500-wall population;20k paired wall bootstrap; original final pool is exploratory for this late-snapshot selection."
+}

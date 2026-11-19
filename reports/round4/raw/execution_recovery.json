@@ -1,0 +1,8 @@
+{
+  "stage": "extended PPO development confirmation",
+  "error": "macOS multiprocessing spawn cannot import <stdin> when the arena helper was invoked through an inline heredoc",
+  "completed_games_before_recovery": 0,
+  "recovery": "Terminated only the owned failed helper PID31952; retained error log/config; resumed via python -m mahjong.arena_v3 --resume",
+  "error_log": "arena_PPO_extended_confirmation.log",
+  "recovery_log": "arena_PPO_extended_confirmation_resumed.log"
+}

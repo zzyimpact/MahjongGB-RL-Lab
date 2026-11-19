@@ -1,0 +1,10 @@
+{
+  "best_epoch": 3,
+  "best_val_nonforced_ce": 1.025583398031056,
+  "epochs": 12,
+  "updates": 13512,
+  "seconds": 304.79576695803553,
+  "parameters": 966444,
+  "checkpoint_bytes": 11654210,
+  "stopped_early": true
+}

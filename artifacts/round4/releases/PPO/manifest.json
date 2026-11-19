@@ -1,0 +1,79 @@
+{
+  "game": "mahjong",
+  "training_counters": {
+    "env_steps": 96567,
+    "agent_steps": 192861,
+    "gradient_updates": 422,
+    "completed_episodes": 768
+  },
+  "iteration": 48,
+  "config": {
+    "seed": 130010000,
+    "hidden": 64,
+    "capacity": 128,
+    "actors": 4,
+    "episodes_per_actor": 4,
+    "iterations": 64,
+    "device": "cpu",
+    "actor_timeout": 300,
+    "ppo": {
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "learning_rate": 2e-05,
+      "epochs": 2,
+      "minibatch_size": 512,
+      "clip_epsilon": 0.1,
+      "value_coefficient": 0.5,
+      "entropy_coefficient": 0.001,
+      "max_grad_norm": 0.5
+    },
+    "feature_set": "v3",
+    "feature_version": "v3",
+    "architecture": "v3_resnet",
+    "activation": "gelu",
+    "use_candidate": true,
+    "use_context": true,
+    "bc": {
+      "epochs": 20,
+      "min_epochs": 12,
+      "patience": 6,
+      "min_delta": 0.001,
+      "batch_size": 1024,
+      "lr": 0.001,
+      "min_lr": 0.001,
+      "warmup_epochs": 0,
+      "weight_decay": 0.0,
+      "label_smoothing": 0.0,
+      "grad_clip": 10.0,
+      "optimizer": "adam",
+      "sampling": "full_equivalent",
+      "schedule": "constant"
+    },
+    "rl": {
+      "mode": "mixed",
+      "bc_kl": 1.0,
+      "warmup_iterations": 8,
+      "eval_every": 16,
+      "eval_seed": 110300000,
+      "eval_walls": 64,
+      "stop_margin": 0.04,
+      "opponents": {
+        "C": "artifacts/round3/C/checkpoint.pt",
+        "D": "artifacts/round3/D/checkpoint.pt"
+      },
+      "eval_opponents": {
+        "rl_v1": "artifacts/round3/references/rl_v1.pt",
+        "C": "artifacts/round3/C/checkpoint.pt",
+        "D": "artifacts/round3/D/checkpoint.pt"
+      },
+      "episode_action_seeds": true
+    }
+  },
+  "source_checkpoint_sha256": "3da57c2e0bffca4090e44632e585f91ffd5a796071e6ad231f30b458e8e720d6",
+  "files": {
+    "mahjong_bot.py": "626ad763b2915bf23b035f2026adb75f1516b475998411c92d6e54421cb7a106",
+    "mahjong_bot.zip": "c60be5516cf57d35fe6fbd4c8ee57e53d9d5a8f248ed9e0a0cfd6af9b9fda5a3",
+    "mahjong_model.pt": "0e8212c1dbb9b893bdc38542e7cdef4c71272059a4fa897ee0fbeeb8432d5306"
+  },
+  "weight_embedding": false
+}

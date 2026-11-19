@@ -1,0 +1,9 @@
+{
+  "selected_bc": "V3_legacy_e01",
+  "selected_ppo": "PPO_legacy_best",
+  "same_recipe_d": "D_legacy_e06",
+  "recommended_model": "V3_legacy_e01",
+  "recommendation_kind": "BC",
+  "seed_rule": "Keep main seed unless paired development CI supports another",
+  "ppo_rule": "Select short-run periodic-best as PPO alternative: highest128-wall development point estimate among saved PPO candidates, also earlier; no statistically supported gain over BC, so recommend BC."
+}

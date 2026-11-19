@@ -1,0 +1,1477 @@
+{
+  "seal_sha256": "65f37a60cc727e2058fbcab7d1d8823b6e1fbb949b451423c10982f7125a892e",
+  "models": {
+    "C_original": {
+      "metrics": {
+        "loss": 0.3663611111462836,
+        "nonforced_loss": 1.1488185512725824,
+        "samples": 229832,
+        "metrics": {
+          "all": {
+            "correct": 201393,
+            "samples": 229832,
+            "accuracy": 0.8762617912214139
+          },
+          "nonpass": {
+            "correct": 37703,
+            "samples": 64302,
+            "accuracy": 0.5863425709931261
+          },
+          "nonforced": {
+            "correct": 44855,
+            "samples": 73294,
+            "accuracy": 0.611987338663465
+          },
+          "pass": {
+            "correct": 163690,
+            "samples": 165530,
+            "accuracy": 0.9888841901770072
+          },
+          "hu": {
+            "correct": 1216,
+            "samples": 1216,
+            "accuracy": 1.0
+          },
+          "play": {
+            "correct": 32890,
+            "samples": 57222,
+            "accuracy": 0.5747789311803153
+          },
+          "chi": {
+            "correct": 1840,
+            "samples": 3307,
+            "accuracy": 0.5563955246446931
+          },
+          "peng": {
+            "correct": 1476,
+            "samples": 2225,
+            "accuracy": 0.6633707865168539
+          },
+          "gang": {
+            "correct": 79,
+            "samples": 126,
+            "accuracy": 0.626984126984127
+          },
+          "angang": {
+            "correct": 23,
+            "samples": 23,
+            "accuracy": 1.0
+          },
+          "bugang": {
+            "correct": 179,
+            "samples": 183,
+            "accuracy": 0.9781420765027322
+          }
+        }
+      },
+      "seconds": 2.6295180420856923,
+      "identity": {
+        "path": "artifacts/round3/C/checkpoint.pt",
+        "sha256": "59f9d879bd2d90ee19f81f5b11716a527225db5b253f52d4566d8689328bb531",
+        "bytes": 11454401,
+        "config": {
+          "seed": 20261119,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 1,
+          "iterations": 2000,
+          "device": "cpu",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 0.0003,
+            "epochs": 3,
+            "minibatch_size": 256,
+            "clip_epsilon": 0.2,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.01
+          },
+          "feature_set": "basic",
+          "feature_version": "v1",
+          "architecture": "small_resnet"
+        }
+      }
+    },
+    "D_original": {
+      "metrics": {
+        "loss": 0.2926705986579837,
+        "nonforced_loss": 0.9177431854007384,
+        "samples": 229832,
+        "metrics": {
+          "all": {
+            "correct": 206580,
+            "samples": 229832,
+            "accuracy": 0.8988304500678757
+          },
+          "nonpass": {
+            "correct": 42215,
+            "samples": 64302,
+            "accuracy": 0.656511461540854
+          },
+          "nonforced": {
+            "correct": 50042,
+            "samples": 73294,
+            "accuracy": 0.6827571151799602
+          },
+          "pass": {
+            "correct": 164365,
+            "samples": 165530,
+            "accuracy": 0.9929620008457681
+          },
+          "hu": {
+            "correct": 1216,
+            "samples": 1216,
+            "accuracy": 1.0
+          },
+          "play": {
+            "correct": 37244,
+            "samples": 57222,
+            "accuracy": 0.6508685470623187
+          },
+          "chi": {
+            "correct": 1993,
+            "samples": 3307,
+            "accuracy": 0.6026610220743877
+          },
+          "peng": {
+            "correct": 1480,
+            "samples": 2225,
+            "accuracy": 0.6651685393258427
+          },
+          "gang": {
+            "correct": 81,
+            "samples": 126,
+            "accuracy": 0.6428571428571429
+          },
+          "angang": {
+            "correct": 21,
+            "samples": 23,
+            "accuracy": 0.9130434782608695
+          },
+          "bugang": {
+            "correct": 180,
+            "samples": 183,
+            "accuracy": 0.9836065573770492
+          }
+        }
+      },
+      "seconds": 1.4340857909992337,
+      "identity": {
+        "path": "artifacts/round3/D/checkpoint.pt",
+        "sha256": "4821f1830230864d7a5526b02af63fbce83431d812b7394a20247b91508ca64e",
+        "bytes": 11647937,
+        "config": {
+          "seed": 20261119,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 1,
+          "iterations": 2000,
+          "device": "cpu",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 0.0003,
+            "epochs": 3,
+            "minibatch_size": 256,
+            "clip_epsilon": 0.2,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.01
+          },
+          "feature_set": "enhanced",
+          "feature_version": "v2",
+          "architecture": "small_resnet"
+        }
+      }
+    },
+    "D_AdamW": {
+      "metrics": {
+        "loss": 0.3115926268056837,
+        "nonforced_loss": 0.977078022812289,
+        "samples": 229832,
+        "metrics": {
+          "all": {
+            "correct": 205463,
+            "samples": 229832,
+            "accuracy": 0.8939703783633263
+          },
+          "nonpass": {
+            "correct": 41410,
+            "samples": 64302,
+            "accuracy": 0.6439924108114833
+          },
+          "nonforced": {
+            "correct": 48925,
+            "samples": 73294,
+            "accuracy": 0.6675171228204219
+          },
+          "pass": {
+            "correct": 164053,
+            "samples": 165530,
+            "accuracy": 0.991077146136652
+          },
+          "hu": {
+            "correct": 1211,
+            "samples": 1216,
+            "accuracy": 0.9958881578947368
+          },
+          "play": {
+            "correct": 36170,
+            "samples": 57222,
+            "accuracy": 0.6320995421341442
+          },
+          "chi": {
+            "correct": 2059,
+            "samples": 3307,
+            "accuracy": 0.6226186876322951
+          },
+          "peng": {
+            "correct": 1690,
+            "samples": 2225,
+            "accuracy": 0.7595505617977528
+          },
+          "gang": {
+            "correct": 86,
+            "samples": 126,
+            "accuracy": 0.6825396825396826
+          },
+          "angang": {
+            "correct": 21,
+            "samples": 23,
+            "accuracy": 0.9130434782608695
+          },
+          "bugang": {
+            "correct": 173,
+            "samples": 183,
+            "accuracy": 0.9453551912568307
+          }
+        }
+      },
+      "seconds": 1.4546415840741247,
+      "identity": {
+        "path": "runs/final_v3/D_retrained/checkpoint.pt",
+        "sha256": "f315d70c2ad720ee50fd65c42f41a2e3e49e7b5284fd09254666c3005adadc09",
+        "bytes": 11649218,
+        "config": {
+          "seed": 20261119,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 1,
+          "iterations": 2000,
+          "device": "mps",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 0.0003,
+            "epochs": 3,
+            "minibatch_size": 256,
+            "clip_epsilon": 0.2,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.01
+          },
+          "feature_set": "enhanced",
+          "feature_version": "v2",
+          "architecture": "small_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 512,
+            "lr": 0.0005,
+            "min_lr": 2.5e-05,
+            "warmup_epochs": 1,
+            "weight_decay": 0.01,
+            "label_smoothing": 0.02,
+            "grad_clip": 5.0
+          }
+        }
+      }
+    },
+    "V3_AdamW": {
+      "metrics": {
+        "loss": 0.2912773920518829,
+        "nonforced_loss": 0.9133744313322831,
+        "samples": 229832,
+        "metrics": {
+          "all": {
+            "correct": 206334,
+            "samples": 229832,
+            "accuracy": 0.8977601030317798
+          },
+          "nonpass": {
+            "correct": 42281,
+            "samples": 64302,
+            "accuracy": 0.6575378681845043
+          },
+          "nonforced": {
+            "correct": 49796,
+            "samples": 73294,
+            "accuracy": 0.6794007695036428
+          },
+          "pass": {
+            "correct": 164053,
+            "samples": 165530,
+            "accuracy": 0.991077146136652
+          },
+          "hu": {
+            "correct": 1215,
+            "samples": 1216,
+            "accuracy": 0.9991776315789473
+          },
+          "play": {
+            "correct": 37087,
+            "samples": 57222,
+            "accuracy": 0.6481248470867847
+          },
+          "chi": {
+            "correct": 2077,
+            "samples": 3307,
+            "accuracy": 0.6280616873299063
+          },
+          "peng": {
+            "correct": 1663,
+            "samples": 2225,
+            "accuracy": 0.7474157303370786
+          },
+          "gang": {
+            "correct": 63,
+            "samples": 126,
+            "accuracy": 0.5
+          },
+          "angang": {
+            "correct": 22,
+            "samples": 23,
+            "accuracy": 0.9565217391304348
+          },
+          "bugang": {
+            "correct": 154,
+            "samples": 183,
+            "accuracy": 0.8415300546448088
+          }
+        }
+      },
+      "seconds": 2.5073355410713702,
+      "identity": {
+        "path": "runs/final_v3/V3/checkpoint.pt",
+        "sha256": "a153ad964c75abd032567192833a2f60dcd09bd27994664e60e2181bb9f8edac",
+        "bytes": 14203316,
+        "config": {
+          "seed": 20261119,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 1,
+          "iterations": 2000,
+          "device": "mps",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 0.0003,
+            "epochs": 3,
+            "minibatch_size": 256,
+            "clip_epsilon": 0.2,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.01
+          },
+          "feature_set": "v3",
+          "feature_version": "v3",
+          "architecture": "v3_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 512,
+            "lr": 0.0005,
+            "min_lr": 2.5e-05,
+            "warmup_epochs": 1,
+            "weight_decay": 0.01,
+            "label_smoothing": 0.02,
+            "grad_clip": 5.0
+          }
+        }
+      }
+    },
+    "D_legacy_e06": {
+      "metrics": {
+        "loss": 0.3292977496623213,
+        "nonforced_loss": 1.0325969438206486,
+        "samples": 229832,
+        "metrics": {
+          "all": {
+            "correct": 207534,
+            "samples": 229832,
+            "accuracy": 0.9029813080859063
+          },
+          "nonpass": {
+            "correct": 43607,
+            "samples": 64302,
+            "accuracy": 0.6781593107523872
+          },
+          "nonforced": {
+            "correct": 50996,
+            "samples": 73294,
+            "accuracy": 0.695773187436898
+          },
+          "pass": {
+            "correct": 163927,
+            "samples": 165530,
+            "accuracy": 0.9903159548118166
+          },
+          "hu": {
+            "correct": 1216,
+            "samples": 1216,
+            "accuracy": 1.0
+          },
+          "play": {
+            "correct": 38034,
+            "samples": 57222,
+            "accuracy": 0.6646744259201006
+          },
+          "chi": {
+            "correct": 2347,
+            "samples": 3307,
+            "accuracy": 0.7097066827940732
+          },
+          "peng": {
+            "correct": 1742,
+            "samples": 2225,
+            "accuracy": 0.7829213483146067
+          },
+          "gang": {
+            "correct": 80,
+            "samples": 126,
+            "accuracy": 0.6349206349206349
+          },
+          "angang": {
+            "correct": 23,
+            "samples": 23,
+            "accuracy": 1.0
+          },
+          "bugang": {
+            "correct": 165,
+            "samples": 183,
+            "accuracy": 0.9016393442622951
+          }
+        }
+      },
+      "seconds": 1.4537164999637753,
+      "identity": {
+        "path": "runs/final_v3/D_legacy/epoch_006.pt",
+        "sha256": "3ee490454fff61ac2f40c314ba996be77265db75874b2af6c18067d469f9eed3",
+        "bytes": 11657082,
+        "config": {
+          "seed": 20261119,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 1,
+          "iterations": 2000,
+          "device": "mps",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 0.0003,
+            "epochs": 3,
+            "minibatch_size": 256,
+            "clip_epsilon": 0.2,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.01
+          },
+          "feature_set": "enhanced",
+          "feature_version": "v2",
+          "architecture": "small_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 1024,
+            "lr": 0.001,
+            "min_lr": 0.001,
+            "warmup_epochs": 0,
+            "weight_decay": 0.0,
+            "label_smoothing": 0.0,
+            "grad_clip": 10.0,
+            "optimizer": "adam",
+            "sampling": "full_equivalent",
+            "schedule": "constant"
+          }
+        }
+      }
+    },
+    "D_legacy_seed2_e06": {
+      "metrics": {
+        "loss": 0.3337457385918454,
+        "nonforced_loss": 1.0465447457096217,
+        "samples": 229832,
+        "metrics": {
+          "all": {
+            "correct": 207264,
+            "samples": 229832,
+            "accuracy": 0.9018065369487278
+          },
+          "nonpass": {
+            "correct": 43429,
+            "samples": 64302,
+            "accuracy": 0.675391123137694
+          },
+          "nonforced": {
+            "correct": 50726,
+            "samples": 73294,
+            "accuracy": 0.6920893934019156
+          },
+          "pass": {
+            "correct": 163835,
+            "samples": 165530,
+            "accuracy": 0.9897601643206669
+          },
+          "hu": {
+            "correct": 1210,
+            "samples": 1216,
+            "accuracy": 0.9950657894736842
+          },
+          "play": {
+            "correct": 37971,
+            "samples": 57222,
+            "accuracy": 0.6635734507706826
+          },
+          "chi": {
+            "correct": 2311,
+            "samples": 3307,
+            "accuracy": 0.698820683398851
+          },
+          "peng": {
+            "correct": 1700,
+            "samples": 2225,
+            "accuracy": 0.7640449438202247
+          },
+          "gang": {
+            "correct": 46,
+            "samples": 126,
+            "accuracy": 0.36507936507936506
+          },
+          "angang": {
+            "correct": 22,
+            "samples": 23,
+            "accuracy": 0.9565217391304348
+          },
+          "bugang": {
+            "correct": 169,
+            "samples": 183,
+            "accuracy": 0.9234972677595629
+          }
+        }
+      },
+      "seconds": 1.4220086249988526,
+      "identity": {
+        "path": "runs/final_v3/D_legacy_seed2/epoch_006.pt",
+        "sha256": "74b8e41245cfc524e7196d352fe6bb1ed1076870a2535c7218463e3aed074ea4",
+        "bytes": 11657018,
+        "config": {
+          "seed": 20261120,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 1,
+          "iterations": 2000,
+          "device": "mps",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 0.0003,
+            "epochs": 3,
+            "minibatch_size": 256,
+            "clip_epsilon": 0.2,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.01
+          },
+          "feature_set": "enhanced",
+          "feature_version": "v2",
+          "architecture": "small_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 1024,
+            "lr": 0.001,
+            "min_lr": 0.001,
+            "warmup_epochs": 0,
+            "weight_decay": 0.0,
+            "label_smoothing": 0.0,
+            "grad_clip": 10.0,
+            "optimizer": "adam",
+            "sampling": "full_equivalent",
+            "schedule": "constant"
+          }
+        }
+      }
+    },
+    "D_legacy_seed3_e06": {
+      "metrics": {
+        "loss": 0.3300703593710229,
+        "nonforced_loss": 1.035019658293461,
+        "samples": 229832,
+        "metrics": {
+          "all": {
+            "correct": 206934,
+            "samples": 229832,
+            "accuracy": 0.900370705558843
+          },
+          "nonpass": {
+            "correct": 42766,
+            "samples": 64302,
+            "accuracy": 0.6650804018537526
+          },
+          "nonforced": {
+            "correct": 50396,
+            "samples": 73294,
+            "accuracy": 0.6875869784702704
+          },
+          "pass": {
+            "correct": 164168,
+            "samples": 165530,
+            "accuracy": 0.991771884250589
+          },
+          "hu": {
+            "correct": 1211,
+            "samples": 1216,
+            "accuracy": 0.9958881578947368
+          },
+          "play": {
+            "correct": 37449,
+            "samples": 57222,
+            "accuracy": 0.654451085246933
+          },
+          "chi": {
+            "correct": 2171,
+            "samples": 3307,
+            "accuracy": 0.6564862413063199
+          },
+          "peng": {
+            "correct": 1675,
+            "samples": 2225,
+            "accuracy": 0.7528089887640449
+          },
+          "gang": {
+            "correct": 71,
+            "samples": 126,
+            "accuracy": 0.5634920634920635
+          },
+          "angang": {
+            "correct": 23,
+            "samples": 23,
+            "accuracy": 1.0
+          },
+          "bugang": {
+            "correct": 166,
+            "samples": 183,
+            "accuracy": 0.907103825136612
+          }
+        }
+      },
+      "seconds": 1.3738192080054432,
+      "identity": {
+        "path": "runs/final_v3/D_legacy_seed3/epoch_006.pt",
+        "sha256": "ca1e4c8b5e01d1733ad2b3f1ef5dbcecd1b4bb68e1a4e64d1a8c711eb8985f04",
+        "bytes": 11657018,
+        "config": {
+          "seed": 20261121,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 1,
+          "iterations": 2000,
+          "device": "mps",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 0.0003,
+            "epochs": 3,
+            "minibatch_size": 256,
+            "clip_epsilon": 0.2,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.01
+          },
+          "feature_set": "enhanced",
+          "feature_version": "v2",
+          "architecture": "small_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 1024,
+            "lr": 0.001,
+            "min_lr": 0.001,
+            "warmup_epochs": 0,
+            "weight_decay": 0.0,
+            "label_smoothing": 0.0,
+            "grad_clip": 10.0,
+            "optimizer": "adam",
+            "sampling": "full_equivalent",
+            "schedule": "constant"
+          }
+        }
+      }
+    },
+    "V3_legacy_e01": {
+      "metrics": {
+        "loss": 0.26268953886825147,
+        "nonforced_loss": 0.8237299382919198,
+        "samples": 229832,
+        "metrics": {
+          "all": {
+            "correct": 208745,
+            "samples": 229832,
+            "accuracy": 0.9082503741863622
+          },
+          "nonpass": {
+            "correct": 44743,
+            "samples": 64302,
+            "accuracy": 0.6958259463158222
+          },
+          "nonforced": {
+            "correct": 52207,
+            "samples": 73294,
+            "accuracy": 0.7122956858678746
+          },
+          "pass": {
+            "correct": 164002,
+            "samples": 165530,
+            "accuracy": 0.9907690448861234
+          },
+          "hu": {
+            "correct": 1216,
+            "samples": 1216,
+            "accuracy": 1.0
+          },
+          "play": {
+            "correct": 39378,
+            "samples": 57222,
+            "accuracy": 0.6881618957743525
+          },
+          "chi": {
+            "correct": 2212,
+            "samples": 3307,
+            "accuracy": 0.6688841850619898
+          },
+          "peng": {
+            "correct": 1663,
+            "samples": 2225,
+            "accuracy": 0.7474157303370786
+          },
+          "gang": {
+            "correct": 87,
+            "samples": 126,
+            "accuracy": 0.6904761904761905
+          },
+          "angang": {
+            "correct": 18,
+            "samples": 23,
+            "accuracy": 0.782608695652174
+          },
+          "bugang": {
+            "correct": 169,
+            "samples": 183,
+            "accuracy": 0.9234972677595629
+          }
+        }
+      },
+      "seconds": 1.7406920830253512,
+      "identity": {
+        "path": "runs/final_v3/V3_legacy/epoch_001.pt",
+        "sha256": "361ce9f282f53d34248339c1bf977bc78147013fa9964c2288bf75b8b746cb0f",
+        "bytes": 14207098,
+        "config": {
+          "seed": 20261119,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 1,
+          "iterations": 2000,
+          "device": "mps",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 0.0003,
+            "epochs": 3,
+            "minibatch_size": 256,
+            "clip_epsilon": 0.2,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.01
+          },
+          "feature_set": "v3",
+          "feature_version": "v3",
+          "architecture": "v3_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 1024,
+            "lr": 0.001,
+            "min_lr": 0.001,
+            "warmup_epochs": 0,
+            "weight_decay": 0.0,
+            "label_smoothing": 0.0,
+            "grad_clip": 10.0,
+            "optimizer": "adam",
+            "sampling": "full_equivalent",
+            "schedule": "constant"
+          }
+        }
+      }
+    },
+    "V3_legacy_seed2_e01": {
+      "metrics": {
+        "loss": 0.27090905268619103,
+        "nonforced_loss": 0.8495043168195576,
+        "samples": 229832,
+        "metrics": {
+          "all": {
+            "correct": 208701,
+            "samples": 229832,
+            "accuracy": 0.9080589300010442
+          },
+          "nonpass": {
+            "correct": 44745,
+            "samples": 64302,
+            "accuracy": 0.695857049547448
+          },
+          "nonforced": {
+            "correct": 52163,
+            "samples": 73294,
+            "accuracy": 0.7116953638769886
+          },
+          "pass": {
+            "correct": 163956,
+            "samples": 165530,
+            "accuracy": 0.9904911496405485
+          },
+          "hu": {
+            "correct": 1216,
+            "samples": 1216,
+            "accuracy": 1.0
+          },
+          "play": {
+            "correct": 39276,
+            "samples": 57222,
+            "accuracy": 0.6863793645800567
+          },
+          "chi": {
+            "correct": 2249,
+            "samples": 3307,
+            "accuracy": 0.6800725733293015
+          },
+          "peng": {
+            "correct": 1746,
+            "samples": 2225,
+            "accuracy": 0.7847191011235956
+          },
+          "gang": {
+            "correct": 81,
+            "samples": 126,
+            "accuracy": 0.6428571428571429
+          },
+          "angang": {
+            "correct": 16,
+            "samples": 23,
+            "accuracy": 0.6956521739130435
+          },
+          "bugang": {
+            "correct": 161,
+            "samples": 183,
+            "accuracy": 0.8797814207650273
+          }
+        }
+      },
+      "seconds": 1.80255641695112,
+      "identity": {
+        "path": "runs/final_v3/V3_legacy_seed2/epoch_001.pt",
+        "sha256": "542f69b714f4c19bff08ccc693ce5c3c42ce1ac3145516123bd45193481b6185",
+        "bytes": 14207034,
+        "config": {
+          "seed": 20261120,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 1,
+          "iterations": 2000,
+          "device": "mps",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 0.0003,
+            "epochs": 3,
+            "minibatch_size": 256,
+            "clip_epsilon": 0.2,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.01
+          },
+          "feature_set": "v3",
+          "feature_version": "v3",
+          "architecture": "v3_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 1024,
+            "lr": 0.001,
+            "min_lr": 0.001,
+            "warmup_epochs": 0,
+            "weight_decay": 0.0,
+            "label_smoothing": 0.0,
+            "grad_clip": 10.0,
+            "optimizer": "adam",
+            "sampling": "full_equivalent",
+            "schedule": "constant"
+          }
+        }
+      }
+    },
+    "V3_legacy_seed3_e01": {
+      "metrics": {
+        "loss": 0.26774387584684817,
+        "nonforced_loss": 0.8395790988843945,
+        "samples": 229832,
+        "metrics": {
+          "all": {
+            "correct": 208617,
+            "samples": 229832,
+            "accuracy": 0.9076934456472554
+          },
+          "nonpass": {
+            "correct": 44639,
+            "samples": 64302,
+            "accuracy": 0.6942085782712824
+          },
+          "nonforced": {
+            "correct": 52079,
+            "samples": 73294,
+            "accuracy": 0.7105492946216607
+          },
+          "pass": {
+            "correct": 163978,
+            "samples": 165530,
+            "accuracy": 0.9906240560623452
+          },
+          "hu": {
+            "correct": 1216,
+            "samples": 1216,
+            "accuracy": 1.0
+          },
+          "play": {
+            "correct": 39322,
+            "samples": 57222,
+            "accuracy": 0.687183251197092
+          },
+          "chi": {
+            "correct": 2051,
+            "samples": 3307,
+            "accuracy": 0.6201995766555791
+          },
+          "peng": {
+            "correct": 1767,
+            "samples": 2225,
+            "accuracy": 0.7941573033707865
+          },
+          "gang": {
+            "correct": 84,
+            "samples": 126,
+            "accuracy": 0.6666666666666666
+          },
+          "angang": {
+            "correct": 23,
+            "samples": 23,
+            "accuracy": 1.0
+          },
+          "bugang": {
+            "correct": 176,
+            "samples": 183,
+            "accuracy": 0.9617486338797814
+          }
+        }
+      },
+      "seconds": 1.746633666800335,
+      "identity": {
+        "path": "runs/final_v3/V3_legacy_seed3/epoch_001.pt",
+        "sha256": "775e1478460d21ce83949dd36450bcc31730cdd68bb32cbb656b19935b1d932f",
+        "bytes": 14207034,
+        "config": {
+          "seed": 20261121,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 1,
+          "iterations": 2000,
+          "device": "mps",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 0.0003,
+            "epochs": 3,
+            "minibatch_size": 256,
+            "clip_epsilon": 0.2,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.01
+          },
+          "feature_set": "v3",
+          "feature_version": "v3",
+          "architecture": "v3_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 1024,
+            "lr": 0.001,
+            "min_lr": 0.001,
+            "warmup_epochs": 0,
+            "weight_decay": 0.0,
+            "label_smoothing": 0.0,
+            "grad_clip": 10.0,
+            "optimizer": "adam",
+            "sampling": "full_equivalent",
+            "schedule": "constant"
+          }
+        }
+      }
+    },
+    "PPO_legacy_best": {
+      "metrics": {
+        "loss": 0.26268092980730556,
+        "nonforced_loss": 0.8237029423891813,
+        "samples": 229832,
+        "metrics": {
+          "all": {
+            "correct": 208794,
+            "samples": 229832,
+            "accuracy": 0.9084635733927391
+          },
+          "nonpass": {
+            "correct": 44814,
+            "samples": 64302,
+            "accuracy": 0.6969301110385369
+          },
+          "nonforced": {
+            "correct": 52256,
+            "samples": 73294,
+            "accuracy": 0.7129642262668159
+          },
+          "pass": {
+            "correct": 163980,
+            "samples": 165530,
+            "accuracy": 0.9906361384643267
+          },
+          "hu": {
+            "correct": 1216,
+            "samples": 1216,
+            "accuracy": 1.0
+          },
+          "play": {
+            "correct": 39440,
+            "samples": 57222,
+            "accuracy": 0.6892453951277481
+          },
+          "chi": {
+            "correct": 2253,
+            "samples": 3307,
+            "accuracy": 0.6812821288176595
+          },
+          "peng": {
+            "correct": 1630,
+            "samples": 2225,
+            "accuracy": 0.7325842696629213
+          },
+          "gang": {
+            "correct": 87,
+            "samples": 126,
+            "accuracy": 0.6904761904761905
+          },
+          "angang": {
+            "correct": 18,
+            "samples": 23,
+            "accuracy": 0.782608695652174
+          },
+          "bugang": {
+            "correct": 170,
+            "samples": 183,
+            "accuracy": 0.9289617486338798
+          }
+        }
+      },
+      "seconds": 1.7890508330892771,
+      "identity": {
+        "path": "runs/final_v3/PPO_V3_legacy/ppo_best.pt",
+        "sha256": "3da57c2e0bffca4090e44632e585f91ffd5a796071e6ad231f30b458e8e720d6",
+        "bytes": 14531859,
+        "config": {
+          "seed": 130010000,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 4,
+          "iterations": 64,
+          "device": "cpu",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 2e-05,
+            "epochs": 2,
+            "minibatch_size": 512,
+            "clip_epsilon": 0.1,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.001,
+            "max_grad_norm": 0.5
+          },
+          "feature_set": "v3",
+          "feature_version": "v3",
+          "architecture": "v3_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 1024,
+            "lr": 0.001,
+            "min_lr": 0.001,
+            "warmup_epochs": 0,
+            "weight_decay": 0.0,
+            "label_smoothing": 0.0,
+            "grad_clip": 10.0,
+            "optimizer": "adam",
+            "sampling": "full_equivalent",
+            "schedule": "constant"
+          },
+          "rl": {
+            "mode": "mixed",
+            "bc_kl": 1.0,
+            "warmup_iterations": 8,
+            "eval_every": 16,
+            "eval_seed": 110300000,
+            "eval_walls": 64,
+            "stop_margin": 0.04,
+            "opponents": {
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            },
+            "eval_opponents": {
+              "rl_v1": "artifacts/round3/references/rl_v1.pt",
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            },
+            "episode_action_seeds": true
+          }
+        }
+      }
+    },
+    "PPO_extended_best": {
+      "metrics": {
+        "loss": 0.26390146151060034,
+        "nonforced_loss": 0.8275302303313272,
+        "samples": 229832,
+        "metrics": {
+          "all": {
+            "correct": 208683,
+            "samples": 229832,
+            "accuracy": 0.9079806119252324
+          },
+          "nonpass": {
+            "correct": 44670,
+            "samples": 64302,
+            "accuracy": 0.6946906783614818
+          },
+          "nonforced": {
+            "correct": 52145,
+            "samples": 73294,
+            "accuracy": 0.7114497776079898
+          },
+          "pass": {
+            "correct": 164013,
+            "samples": 165530,
+            "accuracy": 0.9908354980970216
+          },
+          "hu": {
+            "correct": 1216,
+            "samples": 1216,
+            "accuracy": 1.0
+          },
+          "play": {
+            "correct": 39317,
+            "samples": 57222,
+            "accuracy": 0.6870958722169794
+          },
+          "chi": {
+            "correct": 2204,
+            "samples": 3307,
+            "accuracy": 0.6664650740852737
+          },
+          "peng": {
+            "correct": 1659,
+            "samples": 2225,
+            "accuracy": 0.7456179775280899
+          },
+          "gang": {
+            "correct": 86,
+            "samples": 126,
+            "accuracy": 0.6825396825396826
+          },
+          "angang": {
+            "correct": 18,
+            "samples": 23,
+            "accuracy": 0.782608695652174
+          },
+          "bugang": {
+            "correct": 170,
+            "samples": 183,
+            "accuracy": 0.9289617486338798
+          }
+        }
+      },
+      "seconds": 1.8574686250649393,
+      "identity": {
+        "path": "runs/final_v3/PPO_V3_legacy_extended/ppo_best.pt",
+        "sha256": "e8ab4ebc6c72512032ddfe97b2c70e1b161e8130358a3ea1652c0c0381deed46",
+        "bytes": 14609235,
+        "config": {
+          "seed": 130010000,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 4,
+          "iterations": 192,
+          "device": "cpu",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 2e-05,
+            "epochs": 2,
+            "minibatch_size": 512,
+            "clip_epsilon": 0.1,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.001,
+            "max_grad_norm": 0.5
+          },
+          "feature_set": "v3",
+          "feature_version": "v3",
+          "architecture": "v3_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 1024,
+            "lr": 0.001,
+            "min_lr": 0.001,
+            "warmup_epochs": 0,
+            "weight_decay": 0.0,
+            "label_smoothing": 0.0,
+            "grad_clip": 10.0,
+            "optimizer": "adam",
+            "sampling": "full_equivalent",
+            "schedule": "constant"
+          },
+          "rl": {
+            "mode": "mixed",
+            "bc_kl": 1.0,
+            "warmup_iterations": 8,
+            "eval_every": 16,
+            "eval_seed": 110300000,
+            "eval_walls": 64,
+            "stop_margin": 0.04,
+            "opponents": {
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            },
+            "eval_opponents": {
+              "rl_v1": "artifacts/round3/references/rl_v1.pt",
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            },
+            "episode_action_seeds": true
+          }
+        }
+      }
+    },
+    "PPO_extended_last": {
+      "metrics": {
+        "loss": 0.26327393511317676,
+        "nonforced_loss": 0.8255624615238852,
+        "samples": 229832,
+        "metrics": {
+          "all": {
+            "correct": 208833,
+            "samples": 229832,
+            "accuracy": 0.9086332625569982
+          },
+          "nonpass": {
+            "correct": 44818,
+            "samples": 64302,
+            "accuracy": 0.6969923175017885
+          },
+          "nonforced": {
+            "correct": 52295,
+            "samples": 73294,
+            "accuracy": 0.7134963298496466
+          },
+          "pass": {
+            "correct": 164015,
+            "samples": 165530,
+            "accuracy": 0.9908475804990032
+          },
+          "hu": {
+            "correct": 1216,
+            "samples": 1216,
+            "accuracy": 1.0
+          },
+          "play": {
+            "correct": 39458,
+            "samples": 57222,
+            "accuracy": 0.6895599594561532
+          },
+          "chi": {
+            "correct": 2217,
+            "samples": 3307,
+            "accuracy": 0.6703961294224372
+          },
+          "peng": {
+            "correct": 1653,
+            "samples": 2225,
+            "accuracy": 0.7429213483146068
+          },
+          "gang": {
+            "correct": 85,
+            "samples": 126,
+            "accuracy": 0.6746031746031746
+          },
+          "angang": {
+            "correct": 18,
+            "samples": 23,
+            "accuracy": 0.782608695652174
+          },
+          "bugang": {
+            "correct": 171,
+            "samples": 183,
+            "accuracy": 0.9344262295081968
+          }
+        }
+      },
+      "seconds": 2.538752333028242,
+      "identity": {
+        "path": "runs/final_v3/PPO_V3_legacy_extended/last.pt",
+        "sha256": "c48108c2e764e4758735736b1968afb6e2d61f15d54a1ccf57762f1528709fba",
+        "bytes": 14695841,
+        "config": {
+          "seed": 130010000,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 4,
+          "iterations": 192,
+          "device": "cpu",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 2e-05,
+            "epochs": 2,
+            "minibatch_size": 512,
+            "clip_epsilon": 0.1,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.001,
+            "max_grad_norm": 0.5
+          },
+          "feature_set": "v3",
+          "feature_version": "v3",
+          "architecture": "v3_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 1024,
+            "lr": 0.001,
+            "min_lr": 0.001,
+            "warmup_epochs": 0,
+            "weight_decay": 0.0,
+            "label_smoothing": 0.0,
+            "grad_clip": 10.0,
+            "optimizer": "adam",
+            "sampling": "full_equivalent",
+            "schedule": "constant"
+          },
+          "rl": {
+            "mode": "mixed",
+            "bc_kl": 1.0,
+            "warmup_iterations": 8,
+            "eval_every": 16,
+            "eval_seed": 110300000,
+            "eval_walls": 64,
+            "stop_margin": 0.04,
+            "opponents": {
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            },
+            "eval_opponents": {
+              "rl_v1": "artifacts/round3/references/rl_v1.pt",
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            },
+            "episode_action_seeds": true
+          }
+        }
+      }
+    }
+  }
+}

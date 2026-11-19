@@ -1,0 +1,203 @@
+{
+  "purpose": "development",
+  "seed_start": 110100000,
+  "walls": 2,
+  "wall_ids": [
+    "55e77ce7ad42c991815b253f59409ed36b2d1b822e89e4414af529906a9bf6a5",
+    "f9661cdba4c0f7a04b1d961d0bea275c8e0fe38da6d13c25f18a671c7645ad4b"
+  ],
+  "seats": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "identities": {
+    "candidate": {
+      "path": "runs/final_v3/PPO_smoke/iteration_0002.pt",
+      "sha256": "085b00939086f06f34d92c1490823e7f1dff0c414da892f7fc5c004fe563fb01",
+      "bytes": 11653755,
+      "config": {
+        "seed": 135000000,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 2,
+        "episodes_per_actor": 1,
+        "iterations": 2,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 1e-05,
+          "epochs": 1,
+          "minibatch_size": 512,
+          "clip_epsilon": 0.1,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.001
+        },
+        "feature_set": "enhanced",
+        "feature_version": "v2",
+        "architecture": "small_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 512,
+          "lr": 0.0005,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.02,
+          "grad_clip": 5.0
+        },
+        "rl": {
+          "mode": "mixed",
+          "bc_kl": 0.2,
+          "warmup_iterations": 1,
+          "eval_every": 1,
+          "eval_seed": 110100000,
+          "eval_walls": 2,
+          "opponents": {
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          },
+          "eval_opponents": {
+            "rl_v1": "artifacts/round3/references/rl_v1.pt",
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          }
+        }
+      }
+    },
+    "rl_v1": {
+      "path": "artifacts/round3/references/rl_v1.pt",
+      "sha256": "efcb5d4c99ef4c1bb7a445384458a679e52708c1ecb2b73fb882c455d7b3e936",
+      "bytes": 691298,
+      "config": {
+        "seed": 2026,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 8,
+        "episodes_per_actor": 1,
+        "iterations": 300,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        }
+      }
+    },
+    "C": {
+      "path": "artifacts/round3/C/checkpoint.pt",
+      "sha256": "59f9d879bd2d90ee19f81f5b11716a527225db5b253f52d4566d8689328bb531",
+      "bytes": 11454401,
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "basic",
+        "feature_version": "v1",
+        "architecture": "small_resnet"
+      }
+    },
+    "D": {
+      "path": "artifacts/round3/D/checkpoint.pt",
+      "sha256": "4821f1830230864d7a5526b02af63fbce83431d812b7394a20247b91508ca64e",
+      "bytes": 11647937,
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "enhanced",
+        "feature_version": "v2",
+        "architecture": "small_resnet"
+      }
+    }
+  },
+  "candidates": [
+    "candidate"
+  ],
+  "opponents": [
+    "random",
+    "teacher",
+    "rl_v1",
+    "C",
+    "D"
+  ],
+  "bc_manifest_sha256": "2dd381d148712d5670ba1d0ccddd1fccf3848f5a252194037ef9ec2d85f78f11",
+  "selection_rule": "equal-weight mean reward over all named frozen opponents",
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 20261119,
+  "excluded_historical_ranges": [
+    [
+      7000000,
+      4
+    ],
+    [
+      8000000,
+      100
+    ],
+    [
+      9000000,
+      300
+    ],
+    [
+      8100000,
+      50
+    ],
+    [
+      9100000,
+      300
+    ],
+    [
+      9200000,
+      300
+    ],
+    [
+      42000000,
+      320
+    ]
+  ]
+}

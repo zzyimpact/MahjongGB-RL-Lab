@@ -1,0 +1,14 @@
+{
+  "python": "3.10.22",
+  "torch": "2.3.1",
+  "mps": true,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "hardware": [
+    "Apple M5 Pro",
+    "15",
+    "25769803776"
+  ],
+  "workspace": "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work",
+  "original_workspace_access": "Operation not permitted",
+  "base_commit": "d150d3d7e9345642e76f62571cad21dc48b87294"
+}

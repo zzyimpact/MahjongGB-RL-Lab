@@ -1,0 +1,287 @@
+{
+  "purpose": "development",
+  "seed_start": 110300000,
+  "walls": 64,
+  "wall_ids": [
+    "658bde9002353d58e5d21c759e862f8826fe64d65c3785270913665684c239b3",
+    "d8c7c8c771bba00937b8d3c2e6ea546b81cd5d2070bd310501e884bb6caa615b",
+    "fb66da1992bd4d0dd0a9eda5a3f74b3e6f127b71f20937bbaf38ee2561f5b47a",
+    "e4f458a406b199c2f008d0128dbe4fce2ffe6578e5b7113b2fcee0076cf138ff",
+    "824779eae67c57da53c9515b572b2aa30be277eaa1d23b1b9957e354ad3f6a4c",
+    "32ba23e5dac2a37c661f19c00b777d5e524bae1f36fa9ebf113981fdcf44a2ac",
+    "d61956af1aa1332d73384ccf8599e553cd7b2fc3cfede9cf52c95dc2948326c1",
+    "61855fd5fb6bd5d9509e438c314a62e2c08af030b85e3f16939d41a8c89e06df",
+    "bfe36d4e2e965a22ca99f0afa8abf4e6bd10eb7875ff5e113a272d424a0e4249",
+    "ca099684cf9292db6aaac0c4e6843d1068dd54f8d227c3161e580ce6bd06686c",
+    "3c8794929bffbd628035592440bb564dec6687700fcca6a7377bb938cb660376",
+    "eea5da3bf865ad699cf8cd72e5453609f9b5b90b33d71c6411ab1ba0e6abc249",
+    "e5c79a1aad10f6dc20406393f382ed7e30086e419b24b014fe95435ba513c3ea",
+    "d27140bf7b70c11cfbf95b003a95e2e646e269b0599e8f693b68dd0741b7f562",
+    "7828efbb46d4361c125e5294c97eca380a79f500e5178425f18e45b2baf209db",
+    "4bcbfef8b08aee2e0381ca322d40712c381443bf4d939b3ba39a1508d21f9eb3",
+    "a4548c881b896fe3625e1cd31bdda29259cf2eeca652b3be0c63ff4ec53d562b",
+    "e2173cda62b87f86544eb1fed3117f70a4dfe434e9e82c23ffeb8d20e2c2281d",
+    "4eec1297700415464bbf2c0df5f82783874eb1d94dd13fc955447976c7d241d8",
+    "692148b3d115171283ff16da30e6f1df04318fcb1a13b0183b0c33645315e3d4",
+    "1289044ed5728aabd64cba1a02e9141bfb9de05fd39cb7eb949031528d9a5d22",
+    "fbdb213c58061f700b21a23b82f3d0b8835cb6543a95604a0d2a56497b7fa9de",
+    "26939ce382669800034cceefc69a9a7f5ce5e78a34df263871ff34239201b520",
+    "88db7edbc52f8b273462f52ff9b4b459511b9ab28bc445ef9af2386d66fe980d",
+    "92c553b7126bc4996cf1f38711203b6f18dfef581ee26151f9140f4b3115d902",
+    "77c3284fc66e2aadcdaebc4e05ffe7b2a4de0094060080339bd3fc491085603f",
+    "0a2d15b348142f3754fc6f22e206c2900e395007d048aa9761bb5c1d622a6128",
+    "261183097fa359a5dd0fea15e41311f132b896534c530db3f36fff2cb295c830",
+    "175b55f54dc13525b9fd5aa0f84d451b52788dd9285afb72f04113b61ca70b1e",
+    "2dcb7f8ba4d089aaf4594d73646c3465a106c2dc003127b5f79ef185248df348",
+    "c9b16005b06cadb3cbec1504ecc3a31510a86882c0c9349fd732eeb28dbb1318",
+    "6dd9e8a97d921140c419464d07485cb8146806ed6a6e467757754243fdda4b7a",
+    "75aa6c1ca66505acc47eacb707cbefb659c40c168ff4d07d36db2092e97cceef",
+    "3e1ead27654e30016a66c94fa765987dc4b615dd06a9eeba7f29b5a75d33d93d",
+    "90a529c9227b5bb7dce251068ba29b241e7f90f812c626d74b30bea26201599b",
+    "0cb3c73956a506395d702f4c6dcdbb1f44f28b539ba7bcb9b22db3fb9b5e7c8a",
+    "9e1d270ede2840c3b9c2fc4641169a1e46ffc9f65b2f9df336ed21792d4b4173",
+    "4492a436c470af38534424a4a245fab533e11223581d89e0e186c372a0e7c520",
+    "0ed203d7c4bf80bbe4bed41c67d54c6386b9f8b0ba95f51574b0653abc533812",
+    "35416bb7e71caa1fc1fa1cb1214fd72067cae97b924537a71c65d35594ae79fe",
+    "c8a614ebafbf5f9fb7b20ddd8d0a3d8d50e551b04edc8f2cbe58d15a99369606",
+    "4b051c78b16038568f224aab8a7ac122399a893f59e40c4a7e2470ccc1080a41",
+    "6279611a7ca39253388508dff353a326948a979f343c2ef2dc2abd179dba567a",
+    "0b753d47514ea6d7012834791d810a4d5d4a043e65134a28646d8cd9898ce826",
+    "5d34bc8e166233354719e50a18a0a9da5c5d9c8334bb2b31a247bb1bfae82fe6",
+    "8b9aafafded367b422bc2bd1d000559443a1339e38f150f59cd95f79b287e583",
+    "fbe7778af429fd1b22c5a136c553b05717925d4ad11c4862bc4aac2b7ced5b66",
+    "14c6a2e394fda2cc3868ccdd11dfaba2ae467feb8c6f1c00b27d879618c6985e",
+    "de623b814c3b5f54e0882ef4378fff9e468ff6d778aa41dba687a202e6dc34dc",
+    "dd471a278ccd42152d24109a670a2892239276d5c4f5a31971f4be2759537f00",
+    "20048c904903847bffe7af31037056bfb7261d713d5b53e0b94bbbf975c44f52",
+    "442f0dfa2947f5c06db5ca90a866e64eb394a6280cd78d35aecc40ecb472ef61",
+    "d23101540775fc6b53c93073e828ca3c561f39c506b6cc1b69bb587223c122b2",
+    "237007dc6d0670cfa3ae93dd3d0ccaadbeb4bbda9a9e354fcf4bb0add163eecc",
+    "fb6cb1f4998fce04d9474a1cd5da0f9f05f0cb4b28e61bef5d956dccb5e31dd3",
+    "2c58f322d1674a9ea5f31cd9332de46b60328659868bf3d57513dea0943edea1",
+    "f6a1ea7af8a8df436fe18932a9c1ed5a0cd1396019013dd707f670a0ecba596b",
+    "cec5750729b20035e5ed6ed480598365a433fd991c122b0c1534b96250030c4d",
+    "4cb77485a08ec01513d5a0c213ec4bc1c1ab2d948fbd5c141f61ebbe6313cca7",
+    "00ae0e3dd52f1ef4286103b2b6c07a4219c1c39064b4b1173b693521f2b60cb8",
+    "ee97a9df6cc39329d7d41db577e999e9f2c8cd9f518e09f513404f3d926579ee",
+    "c6ea78b03f789081c367aa605adef96beaeab350bd362f18d7a3dea15818e397",
+    "32e9a4fae10338fed1413ea7acde474dbb73b68a6ea6777f224136d758d0455a",
+    "e41a602311ca62afe50d980c0b9331b616bd151f1a896f69ceb8af31b8fee386"
+  ],
+  "seats": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "identities": {
+    "candidate": {
+      "path": "runs/final_v3/PPO_V3_legacy/iteration_0064.pt",
+      "sha256": "bd1f924f644dc655875493443730141928095140deba561a9790a47a1b406502",
+      "bytes": 14551187,
+      "config": {
+        "seed": 130010000,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 4,
+        "iterations": 64,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 2e-05,
+          "epochs": 2,
+          "minibatch_size": 512,
+          "clip_epsilon": 0.1,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.001,
+          "max_grad_norm": 0.5
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 1024,
+          "lr": 0.001,
+          "min_lr": 0.001,
+          "warmup_epochs": 0,
+          "weight_decay": 0.0,
+          "label_smoothing": 0.0,
+          "grad_clip": 10.0,
+          "optimizer": "adam",
+          "sampling": "full_equivalent",
+          "schedule": "constant"
+        },
+        "rl": {
+          "mode": "mixed",
+          "bc_kl": 1.0,
+          "warmup_iterations": 8,
+          "eval_every": 16,
+          "eval_seed": 110300000,
+          "eval_walls": 64,
+          "stop_margin": 0.04,
+          "opponents": {
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          },
+          "eval_opponents": {
+            "rl_v1": "artifacts/round3/references/rl_v1.pt",
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          },
+          "episode_action_seeds": true
+        }
+      }
+    },
+    "rl_v1": {
+      "path": "artifacts/round3/references/rl_v1.pt",
+      "sha256": "efcb5d4c99ef4c1bb7a445384458a679e52708c1ecb2b73fb882c455d7b3e936",
+      "bytes": 691298,
+      "config": {
+        "seed": 2026,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 8,
+        "episodes_per_actor": 1,
+        "iterations": 300,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        }
+      }
+    },
+    "C": {
+      "path": "artifacts/round3/C/checkpoint.pt",
+      "sha256": "59f9d879bd2d90ee19f81f5b11716a527225db5b253f52d4566d8689328bb531",
+      "bytes": 11454401,
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "basic",
+        "feature_version": "v1",
+        "architecture": "small_resnet"
+      }
+    },
+    "D": {
+      "path": "artifacts/round3/D/checkpoint.pt",
+      "sha256": "4821f1830230864d7a5526b02af63fbce83431d812b7394a20247b91508ca64e",
+      "bytes": 11647937,
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "enhanced",
+        "feature_version": "v2",
+        "architecture": "small_resnet"
+      }
+    }
+  },
+  "candidates": [
+    "candidate"
+  ],
+  "opponents": [
+    "random",
+    "teacher",
+    "rl_v1",
+    "C",
+    "D"
+  ],
+  "bc_manifest_sha256": "2dd381d148712d5670ba1d0ccddd1fccf3848f5a252194037ef9ec2d85f78f11",
+  "selection_rule": "equal-weight mean reward over all named frozen opponents",
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 20261119,
+  "excluded_historical_ranges": [
+    [
+      0,
+      1000
+    ],
+    [
+      1000,
+      1000
+    ],
+    [
+      2026,
+      2400
+    ],
+    [
+      100000,
+      100
+    ],
+    [
+      7000000,
+      4
+    ],
+    [
+      8000000,
+      100
+    ],
+    [
+      9000000,
+      300
+    ],
+    [
+      8100000,
+      50
+    ],
+    [
+      9100000,
+      300
+    ],
+    [
+      9200000,
+      300
+    ],
+    [
+      42000000,
+      320
+    ]
+  ]
+}

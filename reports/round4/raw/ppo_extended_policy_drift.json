@@ -1,0 +1,258 @@
+{
+  "reference": {
+    "path": "runs/final_v3/V3_legacy/epoch_001.pt",
+    "sha256": "361ce9f282f53d34248339c1bf977bc78147013fa9964c2288bf75b8b746cb0f",
+    "bytes": 14207098,
+    "config": {
+      "seed": 20261119,
+      "hidden": 64,
+      "capacity": 128,
+      "actors": 4,
+      "episodes_per_actor": 1,
+      "iterations": 2000,
+      "device": "mps",
+      "actor_timeout": 300,
+      "ppo": {
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.0003,
+        "epochs": 3,
+        "minibatch_size": 256,
+        "clip_epsilon": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01
+      },
+      "feature_set": "v3",
+      "feature_version": "v3",
+      "architecture": "v3_resnet",
+      "activation": "gelu",
+      "use_candidate": true,
+      "use_context": true,
+      "bc": {
+        "epochs": 20,
+        "min_epochs": 12,
+        "patience": 6,
+        "min_delta": 0.001,
+        "batch_size": 1024,
+        "lr": 0.001,
+        "min_lr": 0.001,
+        "warmup_epochs": 0,
+        "weight_decay": 0.0,
+        "label_smoothing": 0.0,
+        "grad_clip": 10.0,
+        "optimizer": "adam",
+        "sampling": "full_equivalent",
+        "schedule": "constant"
+      }
+    }
+  },
+  "split": "validation nonforced observations",
+  "candidates": {
+    "PPO_extended_best": {
+      "samples": 75685,
+      "changed": 1709,
+      "kl_sum": 234.49232083559036,
+      "action_change_fraction": 0.022580432053907643,
+      "mean_forward_kl": 0.0030982667745998596,
+      "identity": {
+        "path": "runs/final_v3/PPO_V3_legacy_extended/ppo_best.pt",
+        "sha256": "e8ab4ebc6c72512032ddfe97b2c70e1b161e8130358a3ea1652c0c0381deed46",
+        "bytes": 14609235,
+        "config": {
+          "seed": 130010000,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 4,
+          "iterations": 192,
+          "device": "cpu",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 2e-05,
+            "epochs": 2,
+            "minibatch_size": 512,
+            "clip_epsilon": 0.1,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.001,
+            "max_grad_norm": 0.5
+          },
+          "feature_set": "v3",
+          "feature_version": "v3",
+          "architecture": "v3_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 1024,
+            "lr": 0.001,
+            "min_lr": 0.001,
+            "warmup_epochs": 0,
+            "weight_decay": 0.0,
+            "label_smoothing": 0.0,
+            "grad_clip": 10.0,
+            "optimizer": "adam",
+            "sampling": "full_equivalent",
+            "schedule": "constant"
+          },
+          "rl": {
+            "mode": "mixed",
+            "bc_kl": 1.0,
+            "warmup_iterations": 8,
+            "eval_every": 16,
+            "eval_seed": 110300000,
+            "eval_walls": 64,
+            "stop_margin": 0.04,
+            "opponents": {
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            },
+            "eval_opponents": {
+              "rl_v1": "artifacts/round3/references/rl_v1.pt",
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            },
+            "episode_action_seeds": true
+          }
+        }
+      },
+      "actual_optimizer_lr": [
+        2e-05
+      ],
+      "parameter_delta": {
+        "conv": {
+          "changed_values": 306687,
+          "l2": 0.3755524754524231
+        },
+        "actor": {
+          "changed_values": 55473,
+          "l2": 0.16645672917366028
+        },
+        "critic": {
+          "changed_values": 33025,
+          "l2": 0.432427316904068
+        },
+        "hidden": {
+          "changed_values": 626170,
+          "l2": 0.6155853867530823
+        },
+        "discard": {
+          "changed_values": 24065,
+          "l2": 0.11171259731054306
+        },
+        "context": {
+          "changed_values": 131200,
+          "l2": 0.28259772062301636
+        }
+      }
+    },
+    "PPO_extended_last": {
+      "samples": 75685,
+      "changed": 1742,
+      "kl_sum": 235.27996003627777,
+      "action_change_fraction": 0.023016449758868997,
+      "mean_forward_kl": 0.0031086735817702025,
+      "identity": {
+        "path": "runs/final_v3/PPO_V3_legacy_extended/last.pt",
+        "sha256": "c48108c2e764e4758735736b1968afb6e2d61f15d54a1ccf57762f1528709fba",
+        "bytes": 14695841,
+        "config": {
+          "seed": 130010000,
+          "hidden": 64,
+          "capacity": 128,
+          "actors": 4,
+          "episodes_per_actor": 4,
+          "iterations": 192,
+          "device": "cpu",
+          "actor_timeout": 300,
+          "ppo": {
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "learning_rate": 2e-05,
+            "epochs": 2,
+            "minibatch_size": 512,
+            "clip_epsilon": 0.1,
+            "value_coefficient": 0.5,
+            "entropy_coefficient": 0.001,
+            "max_grad_norm": 0.5
+          },
+          "feature_set": "v3",
+          "feature_version": "v3",
+          "architecture": "v3_resnet",
+          "activation": "gelu",
+          "use_candidate": true,
+          "use_context": true,
+          "bc": {
+            "epochs": 20,
+            "min_epochs": 12,
+            "patience": 6,
+            "min_delta": 0.001,
+            "batch_size": 1024,
+            "lr": 0.001,
+            "min_lr": 0.001,
+            "warmup_epochs": 0,
+            "weight_decay": 0.0,
+            "label_smoothing": 0.0,
+            "grad_clip": 10.0,
+            "optimizer": "adam",
+            "sampling": "full_equivalent",
+            "schedule": "constant"
+          },
+          "rl": {
+            "mode": "mixed",
+            "bc_kl": 1.0,
+            "warmup_iterations": 8,
+            "eval_every": 16,
+            "eval_seed": 110300000,
+            "eval_walls": 64,
+            "stop_margin": 0.04,
+            "opponents": {
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            },
+            "eval_opponents": {
+              "rl_v1": "artifacts/round3/references/rl_v1.pt",
+              "C": "artifacts/round3/C/checkpoint.pt",
+              "D": "artifacts/round3/D/checkpoint.pt"
+            },
+            "episode_action_seeds": true
+          }
+        }
+      },
+      "actual_optimizer_lr": [
+        2e-05
+      ],
+      "parameter_delta": {
+        "conv": {
+          "changed_values": 306687,
+          "l2": 0.4720399081707001
+        },
+        "actor": {
+          "changed_values": 57528,
+          "l2": 0.21966704726219177
+        },
+        "critic": {
+          "changed_values": 33025,
+          "l2": 0.5653666853904724
+        },
+        "hidden": {
+          "changed_values": 626172,
+          "l2": 0.7833315134048462
+        },
+        "discard": {
+          "changed_values": 24065,
+          "l2": 0.14292216300964355
+        },
+        "context": {
+          "changed_values": 131200,
+          "l2": 0.3658839464187622
+        }
+      }
+    }
+  }
+}

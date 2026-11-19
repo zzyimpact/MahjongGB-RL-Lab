@@ -1,36 +1,43 @@
 {
-  "status": "in_progress",
+  "status": "completed_local_delivery",
   "workspace": "/Users/zzy/Projects/MahjongGB-RL-Lab-v3-work",
-  "recovered_base_commit": "d150d3d7e9345642e76f62571cad21dc48b87294",
-  "original_path": "/Users/zzy/Desktop/Coding/rl-lab",
-  "original_access": "Operation not permitted; original directory preserved",
-  "data": {
-    "games": 12288,
-    "walls": 512,
-    "same_round3_split": true,
-    "train_nonforced": 576202
+  "branch": "codex/mahjong-v3-final",
+  "source_commit": "05e3d66d7464594b9dc9bee76e7945c2399d0a0e",
+  "base_commit": "d150d3d7e9345642e76f62571cad21dc48b87294",
+  "original_workspace_preserved": true,
+  "bc_runs": 18,
+  "bc_epochs": 216,
+  "bc_updates": 316800,
+  "ppo_research_games": 6144,
+  "ppo_research_unique_walls": 4096,
+  "final_arena": {
+    "candidates": 13,
+    "walls": 500,
+    "games": 130000
   },
-  "completed": [
-    "V3 and all primary feature/activation ablations, 12 epochs each",
-    "D constant and regularized controls",
-    "two controlled PPO experiments, 1024 games each",
-    "128-wall five-opponent paired development evaluations",
-    "full-batch sampling index verified against all training decisions",
-    "41 Mahjong regression tests passed",
-    "single-file and ZIP deployment smoke checks"
-  ],
-  "running": [
-    "three-seed D/V3 comparison",
-    "legacy Adam recipe D/V3 queued"
-  ],
-  "pending": [
-    "candidate seal",
-    "heldout test and 500-wall final arena",
-    "final release verification and reports"
-  ],
-  "baseline_tests": {
-    "mahjong": "28 passed; 3 export tests skipped without env checkpoint",
-    "framework_combined": "60 passed, 6 skipped, 4 failed due missing optional fdl sources not present in repository"
+  "supplementary_confirmation": {
+    "candidates": 2,
+    "walls": 500,
+    "games": 20000,
+    "adoption_passed": false
   },
-  "latest_code_commit": "729795e"
+  "recommended_model": "V3_legacy_e01",
+  "main_tests_passed": 43,
+  "rule_cases_passed": 12,
+  "release_directories": [
+    "BC",
+    "PPO",
+    "PPO_long",
+    "D_fallback",
+    "BC_seed3"
+  ],
+  "online_botzone_verified": false,
+  "official_baseline_verified": false,
+  "remaining_acceptance": [
+    "User uploads matched single code/weight pair and verifies platform dependencies/time/memory",
+    "Obtain official course baseline and scoring protocol",
+    "Confirm whether course requires final submitted weights to include RL updates"
+  ],
+  "publication_ref": "origin/codex/mahjong-v3-final; remote SHA verified at delivery",
+  "release_verification": "RELEASE_VERIFICATION.json: passed"
 }

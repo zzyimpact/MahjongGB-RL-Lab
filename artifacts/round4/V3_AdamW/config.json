@@ -1,0 +1,39 @@
+{
+  "seed": 20261119,
+  "hidden": 64,
+  "capacity": 128,
+  "actors": 4,
+  "episodes_per_actor": 1,
+  "iterations": 2000,
+  "device": "mps",
+  "actor_timeout": 300,
+  "ppo": {
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "learning_rate": 0.0003,
+    "epochs": 3,
+    "minibatch_size": 256,
+    "clip_epsilon": 0.2,
+    "value_coefficient": 0.5,
+    "entropy_coefficient": 0.01
+  },
+  "feature_set": "v3",
+  "feature_version": "v3",
+  "architecture": "v3_resnet",
+  "activation": "gelu",
+  "use_candidate": true,
+  "use_context": true,
+  "bc": {
+    "epochs": 20,
+    "min_epochs": 12,
+    "patience": 6,
+    "min_delta": 0.001,
+    "batch_size": 512,
+    "lr": 0.0005,
+    "min_lr": 2.5e-05,
+    "warmup_epochs": 1,
+    "weight_decay": 0.01,
+    "label_smoothing": 0.02,
+    "grad_clip": 5.0
+  }
+}

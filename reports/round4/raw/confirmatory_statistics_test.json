@@ -1,0 +1,50 @@
+{
+  "constant_effect_and_paired_wall_checks": "passed",
+  "results": {
+    "contrasts": {
+      "B - D_original": {
+        "mean": 2.0,
+        "walls": 500,
+        "se": 0.0,
+        "ci95": [
+          2.0,
+          2.0
+        ],
+        "bonferroni_family_ci95": [
+          2.0,
+          2.0
+        ]
+      },
+      "B - D": {
+        "mean": 1.0,
+        "walls": 500,
+        "se": 0.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "bonferroni_family_ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "P - B": {
+        "mean": 1.0,
+        "walls": 500,
+        "se": 0.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "bonferroni_family_ci95": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "bootstrap_replicates": 20000,
+    "seed": 20261119,
+    "method": "paired wall bootstrap; three prespecified contrasts; Bonferroni percentile intervals are approximate",
+    "selection_sha256": "ff4bcbe2d688df1686b74c514546e6aa89ee2f7becc7ca31e371a09ff184c132"
+  }
+}

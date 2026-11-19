@@ -1,0 +1,4567 @@
+{
+  "training": [
+    {
+      "name": "D_constant",
+      "summary": {
+        "best_epoch": 3,
+        "best_val_nonforced_ce": 1.0262521791530583,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 365.87222404195927,
+        "parameters": 966444,
+        "checkpoint_bytes": 11653954,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "enhanced",
+        "feature_version": "v2",
+        "architecture": "small_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 512,
+          "lr": 0.0005,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.02,
+          "grad_clip": 5.0,
+          "schedule": "constant"
+        }
+      },
+      "best": {
+        "epoch": 3,
+        "train_ce": 0.4449280409832275,
+        "train_full_ce": 0.14122056646701162,
+        "objective": 0.5311636771526524,
+        "val": {
+          "loss": 0.32454975380115164,
+          "nonforced_loss": 1.0262521791530583,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 212839,
+              "samples": 239322,
+              "accuracy": 0.8893415565639599
+            },
+            "nonpass": {
+              "correct": 41560,
+              "samples": 66709,
+              "accuracy": 0.6230043922109461
+            },
+            "nonforced": {
+              "correct": 49202,
+              "samples": 75685,
+              "accuracy": 0.6500891854396512
+            },
+            "pass": {
+              "correct": 171279,
+              "samples": 172613,
+              "accuracy": 0.9922717292440314
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 36639,
+              "samples": 59733,
+              "accuracy": 0.61337953894832
+            },
+            "chi": {
+              "correct": 1886,
+              "samples": 3182,
+              "accuracy": 0.5927089880578252
+            },
+            "peng": {
+              "correct": 1701,
+              "samples": 2387,
+              "accuracy": 0.7126099706744868
+            },
+            "gang": {
+              "correct": 2,
+              "samples": 43,
+              "accuracy": 0.046511627906976744
+            },
+            "angang": {
+              "correct": 22,
+              "samples": 25,
+              "accuracy": 0.88
+            },
+            "bugang": {
+              "correct": 88,
+              "samples": 117,
+              "accuracy": 0.7521367521367521
+            }
+          }
+        },
+        "lr": 0.0005,
+        "gradient_updates": 3378,
+        "mean_grad_norm": 2.813493382020276,
+        "train_seconds": 27.669089999981225,
+        "elapsed_seconds": 99.61701862490736,
+        "best_epoch": 3
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.23482879854550417,
+        "train_full_ce": 0.07453487507795444,
+        "objective": 0.33498650832697,
+        "val": {
+          "loss": 0.34763892454598955,
+          "nonforced_loss": 1.0992619766161764,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 213209,
+              "samples": 239322,
+              "accuracy": 0.8908875907772792
+            },
+            "nonpass": {
+              "correct": 42163,
+              "samples": 66709,
+              "accuracy": 0.6320436522808017
+            },
+            "nonforced": {
+              "correct": 49572,
+              "samples": 75685,
+              "accuracy": 0.6549778687983088
+            },
+            "pass": {
+              "correct": 171046,
+              "samples": 172613,
+              "accuracy": 0.9909218888496232
+            },
+            "hu": {
+              "correct": 1212,
+              "samples": 1222,
+              "accuracy": 0.9918166939443536
+            },
+            "play": {
+              "correct": 37076,
+              "samples": 59733,
+              "accuracy": 0.6206954279878794
+            },
+            "chi": {
+              "correct": 2018,
+              "samples": 3182,
+              "accuracy": 0.6341923318667505
+            },
+            "peng": {
+              "correct": 1729,
+              "samples": 2387,
+              "accuracy": 0.7243401759530792
+            },
+            "gang": {
+              "correct": 16,
+              "samples": 43,
+              "accuracy": 0.37209302325581395
+            },
+            "angang": {
+              "correct": 17,
+              "samples": 25,
+              "accuracy": 0.68
+            },
+            "bugang": {
+              "correct": 95,
+              "samples": 117,
+              "accuracy": 0.811965811965812
+            }
+          }
+        },
+        "lr": 0.0005,
+        "gradient_updates": 13512,
+        "mean_grad_norm": 1.4213854022601993,
+        "train_seconds": 27.604862875072286,
+        "elapsed_seconds": 365.87222404195927,
+        "best_epoch": 3
+      },
+      "development": {
+        "mean": 0.16165771484374997,
+        "walls": 128,
+        "se": 0.017262247760828662,
+        "ci95": [
+          0.1289666748046875,
+          0.19565490722656248
+        ]
+      }
+    },
+    {
+      "name": "D_legacy",
+      "summary": {
+        "best_epoch": 1,
+        "best_val_nonforced_ce": 0.9817893803005466,
+        "epochs": 12,
+        "updates": 21276,
+        "seconds": 467.1634587079752,
+        "parameters": 966444,
+        "checkpoint_bytes": 11653826,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "enhanced",
+        "feature_version": "v2",
+        "architecture": "small_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 1024,
+          "lr": 0.001,
+          "min_lr": 0.001,
+          "warmup_epochs": 0,
+          "weight_decay": 0.0,
+          "label_smoothing": 0.0,
+          "grad_clip": 10.0,
+          "optimizer": "adam",
+          "sampling": "full_equivalent",
+          "schedule": "constant"
+        }
+      },
+      "best": {
+        "epoch": 1,
+        "train_ce": 0.9346031569426942,
+        "train_full_ce": 0.29664389538954705,
+        "objective": 0.9346031574316741,
+        "val": {
+          "loss": 0.31048850188468624,
+          "nonforced_loss": 0.9817893803005466,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 213438,
+              "samples": 239322,
+              "accuracy": 0.8918444606011984
+            },
+            "nonpass": {
+              "correct": 42065,
+              "samples": 66709,
+              "accuracy": 0.6305745851384371
+            },
+            "nonforced": {
+              "correct": 49801,
+              "samples": 75685,
+              "accuracy": 0.658003567417586
+            },
+            "pass": {
+              "correct": 171373,
+              "samples": 172613,
+              "accuracy": 0.9928163000469258
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 37348,
+              "samples": 59733,
+              "accuracy": 0.6252490248271475
+            },
+            "chi": {
+              "correct": 1801,
+              "samples": 3182,
+              "accuracy": 0.5659962287869265
+            },
+            "peng": {
+              "correct": 1572,
+              "samples": 2387,
+              "accuracy": 0.6585672392124005
+            },
+            "gang": {
+              "correct": 12,
+              "samples": 43,
+              "accuracy": 0.27906976744186046
+            },
+            "angang": {
+              "correct": 12,
+              "samples": 25,
+              "accuracy": 0.48
+            },
+            "bugang": {
+              "correct": 98,
+              "samples": 117,
+              "accuracy": 0.8376068376068376
+            }
+          }
+        },
+        "lr": 0.001,
+        "gradient_updates": 1773,
+        "mean_grad_norm": 0.6625100239665913,
+        "train_seconds": 63.32562908297405,
+        "elapsed_seconds": 64.49193300004117,
+        "best_epoch": 1
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.21581102840517288,
+        "train_full_ce": 0.06849861747049506,
+        "objective": 0.21581102840765554,
+        "val": {
+          "loss": 0.3796209980450632,
+          "nonforced_loss": 1.2003918411064363,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 215513,
+              "samples": 239322,
+              "accuracy": 0.9005147876083268
+            },
+            "nonpass": {
+              "correct": 44375,
+              "samples": 66709,
+              "accuracy": 0.665202596351317
+            },
+            "nonforced": {
+              "correct": 51876,
+              "samples": 75685,
+              "accuracy": 0.6854198321992468
+            },
+            "pass": {
+              "correct": 171138,
+              "samples": 172613,
+              "accuracy": 0.9914548730396899
+            },
+            "hu": {
+              "correct": 1215,
+              "samples": 1222,
+              "accuracy": 0.9942716857610474
+            },
+            "play": {
+              "correct": 39161,
+              "samples": 59733,
+              "accuracy": 0.6556007567006512
+            },
+            "chi": {
+              "correct": 2156,
+              "samples": 3182,
+              "accuracy": 0.677561282212445
+            },
+            "peng": {
+              "correct": 1722,
+              "samples": 2387,
+              "accuracy": 0.7214076246334311
+            },
+            "gang": {
+              "correct": 8,
+              "samples": 43,
+              "accuracy": 0.18604651162790697
+            },
+            "angang": {
+              "correct": 11,
+              "samples": 25,
+              "accuracy": 0.44
+            },
+            "bugang": {
+              "correct": 102,
+              "samples": 117,
+              "accuracy": 0.8717948717948718
+            }
+          }
+        },
+        "lr": 0.001,
+        "gradient_updates": 21276,
+        "mean_grad_norm": 0.29894809011376244,
+        "train_seconds": 35.08730445802212,
+        "elapsed_seconds": 467.1634587079752,
+        "best_epoch": 1
+      },
+      "development": {
+        "mean": 0.17470703125,
+        "walls": 128,
+        "se": 0.015929588343636773,
+        "ci95": [
+          0.14328552246093748,
+          0.20599395751953126
+        ]
+      }
+    },
+    {
+      "name": "D_legacy_seed2",
+      "summary": {
+        "best_epoch": 2,
+        "best_val_nonforced_ce": 0.9630251789515136,
+        "epochs": 12,
+        "updates": 21276,
+        "seconds": 565.8725853750948,
+        "parameters": 966444,
+        "checkpoint_bytes": 11654466,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261120,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "enhanced",
+        "feature_version": "v2",
+        "architecture": "small_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 1024,
+          "lr": 0.001,
+          "min_lr": 0.001,
+          "warmup_epochs": 0,
+          "weight_decay": 0.0,
+          "label_smoothing": 0.0,
+          "grad_clip": 10.0,
+          "optimizer": "adam",
+          "sampling": "full_equivalent",
+          "schedule": "constant"
+        }
+      },
+      "best": {
+        "epoch": 2,
+        "train_ce": 0.5426628758574882,
+        "train_full_ce": 0.17224169229671232,
+        "objective": 0.542662875737338,
+        "val": {
+          "loss": 0.30455436887935633,
+          "nonforced_loss": 0.9630251789515136,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 215272,
+              "samples": 239322,
+              "accuracy": 0.8995077761342459
+            },
+            "nonpass": {
+              "correct": 44032,
+              "samples": 66709,
+              "accuracy": 0.6600608613530409
+            },
+            "nonforced": {
+              "correct": 51635,
+              "samples": 75685,
+              "accuracy": 0.6822355816872564
+            },
+            "pass": {
+              "correct": 171240,
+              "samples": 172613,
+              "accuracy": 0.9920457902938944
+            },
+            "hu": {
+              "correct": 1221,
+              "samples": 1222,
+              "accuracy": 0.9991816693944353
+            },
+            "play": {
+              "correct": 38853,
+              "samples": 59733,
+              "accuracy": 0.6504444779267742
+            },
+            "chi": {
+              "correct": 2016,
+              "samples": 3182,
+              "accuracy": 0.633563796354494
+            },
+            "peng": {
+              "correct": 1812,
+              "samples": 2387,
+              "accuracy": 0.7591118558860495
+            },
+            "gang": {
+              "correct": 15,
+              "samples": 43,
+              "accuracy": 0.3488372093023256
+            },
+            "angang": {
+              "correct": 19,
+              "samples": 25,
+              "accuracy": 0.76
+            },
+            "bugang": {
+              "correct": 96,
+              "samples": 117,
+              "accuracy": 0.8205128205128205
+            }
+          }
+        },
+        "lr": 0.001,
+        "gradient_updates": 3546,
+        "mean_grad_norm": 0.5950608113460196,
+        "train_seconds": 51.87639379198663,
+        "elapsed_seconds": 132.18672812497243,
+        "best_epoch": 2
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.21658596752221207,
+        "train_full_ce": 0.06874458385383174,
+        "objective": 0.21658596734830976,
+        "val": {
+          "loss": 0.3738742214088785,
+          "nonforced_loss": 1.182220075523758,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 214891,
+              "samples": 239322,
+              "accuracy": 0.8979157787416118
+            },
+            "nonpass": {
+              "correct": 43984,
+              "samples": 66709,
+              "accuracy": 0.6593413182629031
+            },
+            "nonforced": {
+              "correct": 51254,
+              "samples": 75685,
+              "accuracy": 0.6772015590936117
+            },
+            "pass": {
+              "correct": 170907,
+              "samples": 172613,
+              "accuracy": 0.9901166192581092
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 38633,
+              "samples": 59733,
+              "accuracy": 0.6467614216597191
+            },
+            "chi": {
+              "correct": 2128,
+              "samples": 3182,
+              "accuracy": 0.6687617850408548
+            },
+            "peng": {
+              "correct": 1878,
+              "samples": 2387,
+              "accuracy": 0.7867616254713029
+            },
+            "gang": {
+              "correct": 16,
+              "samples": 43,
+              "accuracy": 0.37209302325581395
+            },
+            "angang": {
+              "correct": 11,
+              "samples": 25,
+              "accuracy": 0.44
+            },
+            "bugang": {
+              "correct": 96,
+              "samples": 117,
+              "accuracy": 0.8205128205128205
+            }
+          }
+        },
+        "lr": 0.001,
+        "gradient_updates": 21276,
+        "mean_grad_norm": 0.30072162273874137,
+        "train_seconds": 44.38018908305094,
+        "elapsed_seconds": 565.8725853750948,
+        "best_epoch": 2
+      },
+      "development": {
+        "mean": 0.1891357421875,
+        "walls": 128,
+        "se": 0.015541247332413105,
+        "ci95": [
+          0.15934936523437498,
+          0.21974029541015622
+        ]
+      }
+    },
+    {
+      "name": "D_legacy_seed3",
+      "summary": {
+        "best_epoch": 2,
+        "best_val_nonforced_ce": 0.9766872783266994,
+        "epochs": 12,
+        "updates": 21276,
+        "seconds": 556.7241698328871,
+        "parameters": 966444,
+        "checkpoint_bytes": 11654466,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261121,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "enhanced",
+        "feature_version": "v2",
+        "architecture": "small_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 1024,
+          "lr": 0.001,
+          "min_lr": 0.001,
+          "warmup_epochs": 0,
+          "weight_decay": 0.0,
+          "label_smoothing": 0.0,
+          "grad_clip": 10.0,
+          "optimizer": "adam",
+          "sampling": "full_equivalent",
+          "schedule": "constant"
+        }
+      },
+      "best": {
+        "epoch": 2,
+        "train_ce": 0.5526549025794538,
+        "train_full_ce": 0.17541317070187468,
+        "objective": 0.5526549021183004,
+        "val": {
+          "loss": 0.30887497455376545,
+          "nonforced_loss": 0.9766872783266994,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 214159,
+              "samples": 239322,
+              "accuracy": 0.8948571380817476
+            },
+            "nonpass": {
+              "correct": 43051,
+              "samples": 66709,
+              "accuracy": 0.6453551994483503
+            },
+            "nonforced": {
+              "correct": 50522,
+              "samples": 75685,
+              "accuracy": 0.6675298936381053
+            },
+            "pass": {
+              "correct": 171108,
+              "samples": 172613,
+              "accuracy": 0.9912810738472768
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 37987,
+              "samples": 59733,
+              "accuracy": 0.6359466291664574
+            },
+            "chi": {
+              "correct": 2113,
+              "samples": 3182,
+              "accuracy": 0.6640477686989315
+            },
+            "peng": {
+              "correct": 1605,
+              "samples": 2387,
+              "accuracy": 0.6723921240050272
+            },
+            "gang": {
+              "correct": 23,
+              "samples": 43,
+              "accuracy": 0.5348837209302325
+            },
+            "angang": {
+              "correct": 12,
+              "samples": 25,
+              "accuracy": 0.48
+            },
+            "bugang": {
+              "correct": 89,
+              "samples": 117,
+              "accuracy": 0.7606837606837606
+            }
+          }
+        },
+        "lr": 0.001,
+        "gradient_updates": 3546,
+        "mean_grad_norm": 0.5835801289031819,
+        "train_seconds": 47.027010374935344,
+        "elapsed_seconds": 124.81364058284089,
+        "best_epoch": 2
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.21823638787764915,
+        "train_full_ce": 0.06926842878162827,
+        "objective": 0.2182363877883511,
+        "val": {
+          "loss": 0.38946172968135306,
+          "nonforced_loss": 1.2315090185743645,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 214403,
+              "samples": 239322,
+              "accuracy": 0.895876684968369
+            },
+            "nonpass": {
+              "correct": 43321,
+              "samples": 66709,
+              "accuracy": 0.6494026293303752
+            },
+            "nonforced": {
+              "correct": 50766,
+              "samples": 75685,
+              "accuracy": 0.6707537821232741
+            },
+            "pass": {
+              "correct": 171082,
+              "samples": 172613,
+              "accuracy": 0.9911304478805189
+            },
+            "hu": {
+              "correct": 1215,
+              "samples": 1222,
+              "accuracy": 0.9942716857610474
+            },
+            "play": {
+              "correct": 38276,
+              "samples": 59733,
+              "accuracy": 0.6407848258081797
+            },
+            "chi": {
+              "correct": 2134,
+              "samples": 3182,
+              "accuracy": 0.6706473915776241
+            },
+            "peng": {
+              "correct": 1596,
+              "samples": 2387,
+              "accuracy": 0.6686217008797654
+            },
+            "gang": {
+              "correct": 2,
+              "samples": 43,
+              "accuracy": 0.046511627906976744
+            },
+            "angang": {
+              "correct": 1,
+              "samples": 25,
+              "accuracy": 0.04
+            },
+            "bugang": {
+              "correct": 97,
+              "samples": 117,
+              "accuracy": 0.8290598290598291
+            }
+          }
+        },
+        "lr": 0.001,
+        "gradient_updates": 21276,
+        "mean_grad_norm": 0.3029611825573196,
+        "train_seconds": 40.6126147499308,
+        "elapsed_seconds": 556.7241698328871,
+        "best_epoch": 2
+      },
+      "development": {
+        "mean": 0.20374755859375002,
+        "walls": 128,
+        "se": 0.016841854851724857,
+        "ci95": [
+          0.16923797607421875,
+          0.2364279174804687
+        ]
+      }
+    },
+    {
+      "name": "D_regularized",
+      "summary": {
+        "best_epoch": 4,
+        "best_val_nonforced_ce": 1.04700757173028,
+        "epochs": 12,
+        "updates": 27012,
+        "seconds": 556.1309543340467,
+        "parameters": 966444,
+        "checkpoint_bytes": 11654594,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "enhanced",
+        "feature_version": "v2",
+        "architecture": "small_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 256,
+          "lr": 0.0002,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.1,
+          "grad_clip": 5.0,
+          "schedule_epochs": 12
+        }
+      },
+      "best": {
+        "epoch": 4,
+        "train_ce": 0.43547051404283105,
+        "train_full_ce": 0.1382187387805652,
+        "objective": 0.7445518633723394,
+        "val": {
+          "loss": 0.3311135961859179,
+          "nonforced_loss": 1.04700757173028,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 211358,
+              "samples": 239322,
+              "accuracy": 0.8831532412398359
+            },
+            "nonpass": {
+              "correct": 40242,
+              "samples": 66709,
+              "accuracy": 0.6032469381942467
+            },
+            "nonforced": {
+              "correct": 47721,
+              "samples": 75685,
+              "accuracy": 0.6305212393472948
+            },
+            "pass": {
+              "correct": 171116,
+              "samples": 172613,
+              "accuracy": 0.991327420298587
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 35334,
+              "samples": 59733,
+              "accuracy": 0.5915323188187435
+            },
+            "chi": {
+              "correct": 1757,
+              "samples": 3182,
+              "accuracy": 0.5521684475172848
+            },
+            "peng": {
+              "correct": 1822,
+              "samples": 2387,
+              "accuracy": 0.7633012149141182
+            },
+            "gang": {
+              "correct": 22,
+              "samples": 43,
+              "accuracy": 0.5116279069767442
+            },
+            "angang": {
+              "correct": 1,
+              "samples": 25,
+              "accuracy": 0.04
+            },
+            "bugang": {
+              "correct": 84,
+              "samples": 117,
+              "accuracy": 0.717948717948718
+            }
+          }
+        },
+        "lr": 0.00016980870386902838,
+        "gradient_updates": 9004,
+        "mean_grad_norm": 3.9616955941859904,
+        "train_seconds": 63.6344868328888,
+        "elapsed_seconds": 209.07067641709,
+        "best_epoch": 4
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.24000339992075295,
+        "train_full_ce": 0.0761772982793304,
+        "objective": 0.5791422944474062,
+        "val": {
+          "loss": 0.3479409139371785,
+          "nonforced_loss": 1.1002168911313133,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 210616,
+              "samples": 239322,
+              "accuracy": 0.8800528158715036
+            },
+            "nonpass": {
+              "correct": 39719,
+              "samples": 66709,
+              "accuracy": 0.595406916607954
+            },
+            "nonforced": {
+              "correct": 46979,
+              "samples": 75685,
+              "accuracy": 0.6207174473145273
+            },
+            "pass": {
+              "correct": 170897,
+              "samples": 172613,
+              "accuracy": 0.9900586861939715
+            },
+            "hu": {
+              "correct": 1205,
+              "samples": 1222,
+              "accuracy": 0.986088379705401
+            },
+            "play": {
+              "correct": 34692,
+              "samples": 59733,
+              "accuracy": 0.5807844909848827
+            },
+            "chi": {
+              "correct": 1958,
+              "samples": 3182,
+              "accuracy": 0.6153362664990571
+            },
+            "peng": {
+              "correct": 1774,
+              "samples": 2387,
+              "accuracy": 0.7431922915793884
+            },
+            "gang": {
+              "correct": 12,
+              "samples": 43,
+              "accuracy": 0.27906976744186046
+            },
+            "angang": {
+              "correct": 1,
+              "samples": 25,
+              "accuracy": 0.04
+            },
+            "bugang": {
+              "correct": 77,
+              "samples": 117,
+              "accuracy": 0.6581196581196581
+            }
+          }
+        },
+        "lr": 2.500000070427365e-05,
+        "gradient_updates": 27012,
+        "mean_grad_norm": 3.1198267209058548,
+        "train_seconds": 40.26694087521173,
+        "elapsed_seconds": 556.1309543340467,
+        "best_epoch": 4
+      },
+      "development": {
+        "mean": 0.11038818359375001,
+        "walls": 128,
+        "se": 0.014787871793353809,
+        "ci95": [
+          0.08159088134765624,
+          0.1396368408203125
+        ]
+      }
+    },
+    {
+      "name": "D_retrained",
+      "summary": {
+        "best_epoch": 2,
+        "best_val_nonforced_ce": 1.0408729647474937,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 357.8251019997988,
+        "parameters": 966444,
+        "checkpoint_bytes": 11649218,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "enhanced",
+        "feature_version": "v2",
+        "architecture": "small_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 512,
+          "lr": 0.0005,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.02,
+          "grad_clip": 5.0
+        }
+      },
+      "best": {
+        "epoch": 2,
+        "train_ce": 0.5825526225812688,
+        "train_full_ce": 0.1849027343297324,
+        "objective": 0.6577505899312054,
+        "val": {
+          "loss": 0.32917354165899526,
+          "nonforced_loss": 1.0408729647474937,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 212245,
+              "samples": 239322,
+              "accuracy": 0.8868595448809554
+            },
+            "nonpass": {
+              "correct": 41061,
+              "samples": 66709,
+              "accuracy": 0.6155241421697222
+            },
+            "nonforced": {
+              "correct": 48608,
+              "samples": 75685,
+              "accuracy": 0.6422408667503469
+            },
+            "pass": {
+              "correct": 171184,
+              "samples": 172613,
+              "accuracy": 0.9917213651347233
+            },
+            "hu": {
+              "correct": 1212,
+              "samples": 1222,
+              "accuracy": 0.9918166939443536
+            },
+            "play": {
+              "correct": 36233,
+              "samples": 59733,
+              "accuracy": 0.6065826260191184
+            },
+            "chi": {
+              "correct": 1823,
+              "samples": 3182,
+              "accuracy": 0.5729101194217473
+            },
+            "peng": {
+              "correct": 1688,
+              "samples": 2387,
+              "accuracy": 0.7071638039379975
+            },
+            "gang": {
+              "correct": 12,
+              "samples": 43,
+              "accuracy": 0.27906976744186046
+            },
+            "angang": {
+              "correct": 12,
+              "samples": 25,
+              "accuracy": 0.48
+            },
+            "bugang": {
+              "correct": 81,
+              "samples": 117,
+              "accuracy": 0.6923076923076923
+            }
+          }
+        },
+        "lr": 0.0004967665473649496,
+        "gradient_updates": 2252,
+        "mean_grad_norm": 3.3553860761344327,
+        "train_seconds": 25.28071429207921,
+        "elapsed_seconds": 55.80085154087283,
+        "best_epoch": 2
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.18994986570573977,
+        "train_full_ce": 0.06029026081614974,
+        "objective": 0.2929465608700188,
+        "val": {
+          "loss": 0.3517488482212413,
+          "nonforced_loss": 1.1122578827245015,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 212973,
+              "samples": 239322,
+              "accuracy": 0.8899014716574323
+            },
+            "nonpass": {
+              "correct": 42071,
+              "samples": 66709,
+              "accuracy": 0.6306645280247043
+            },
+            "nonforced": {
+              "correct": 49336,
+              "samples": 75685,
+              "accuracy": 0.6518596815749488
+            },
+            "pass": {
+              "correct": 170902,
+              "samples": 172613,
+              "accuracy": 0.9900876527260404
+            },
+            "hu": {
+              "correct": 1209,
+              "samples": 1222,
+              "accuracy": 0.9893617021276596
+            },
+            "play": {
+              "correct": 36917,
+              "samples": 59733,
+              "accuracy": 0.6180335827766896
+            },
+            "chi": {
+              "correct": 2108,
+              "samples": 3182,
+              "accuracy": 0.6624764299182904
+            },
+            "peng": {
+              "correct": 1719,
+              "samples": 2387,
+              "accuracy": 0.7201508169250105
+            },
+            "gang": {
+              "correct": 21,
+              "samples": 43,
+              "accuracy": 0.4883720930232558
+            },
+            "angang": {
+              "correct": 17,
+              "samples": 25,
+              "accuracy": 0.68
+            },
+            "bugang": {
+              "correct": 80,
+              "samples": 117,
+              "accuracy": 0.6837606837606838
+            }
+          }
+        },
+        "lr": 0.00020423100583344866,
+        "gradient_updates": 13512,
+        "mean_grad_norm": 1.5698860797958307,
+        "train_seconds": 34.053895000135526,
+        "elapsed_seconds": 357.8251019997988,
+        "best_epoch": 2
+      },
+      "development": {
+        "mean": 0.14722900390625,
+        "walls": 128,
+        "se": 0.014996442546601974,
+        "ci95": [
+          0.11934661865234374,
+          0.17725952148437496
+        ]
+      }
+    },
+    {
+      "name": "D_retrained_seed2",
+      "summary": {
+        "best_epoch": 3,
+        "best_val_nonforced_ce": 1.025583398031056,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 304.79576695803553,
+        "parameters": 966444,
+        "checkpoint_bytes": 11654210,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261120,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "enhanced",
+        "feature_version": "v2",
+        "architecture": "small_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 512,
+          "lr": 0.0005,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.02,
+          "grad_clip": 5.0
+        }
+      },
+      "best": {
+        "epoch": 3,
+        "train_ce": 0.43994963725502534,
+        "train_full_ce": 0.13964041657795417,
+        "objective": 0.5269865814312292,
+        "val": {
+          "loss": 0.32433825339910444,
+          "nonforced_loss": 1.025583398031056,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 213219,
+              "samples": 239322,
+              "accuracy": 0.8909293754857472
+            },
+            "nonpass": {
+              "correct": 41976,
+              "samples": 66709,
+              "accuracy": 0.6292404323254733
+            },
+            "nonforced": {
+              "correct": 49582,
+              "samples": 75685,
+              "accuracy": 0.6551099953755698
+            },
+            "pass": {
+              "correct": 171243,
+              "samples": 172613,
+              "accuracy": 0.9920631702131357
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 36919,
+              "samples": 59733,
+              "accuracy": 0.6180670651063901
+            },
+            "chi": {
+              "correct": 1966,
+              "samples": 3182,
+              "accuracy": 0.6178504085480829
+            },
+            "peng": {
+              "correct": 1750,
+              "samples": 2387,
+              "accuracy": 0.7331378299120235
+            },
+            "gang": {
+              "correct": 16,
+              "samples": 43,
+              "accuracy": 0.37209302325581395
+            },
+            "angang": {
+              "correct": 19,
+              "samples": 25,
+              "accuracy": 0.76
+            },
+            "bugang": {
+              "correct": 84,
+              "samples": 117,
+              "accuracy": 0.717948717948718
+            }
+          }
+        },
+        "lr": 0.00048714291656573973,
+        "gradient_updates": 3378,
+        "mean_grad_norm": 2.764043782468799,
+        "train_seconds": 24.502063707914203,
+        "elapsed_seconds": 87.52887795795687,
+        "best_epoch": 3
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.18956510649279856,
+        "train_full_ce": 0.06016813789064278,
+        "objective": 0.2931143042888968,
+        "val": {
+          "loss": 0.3478457971079498,
+          "nonforced_loss": 1.0999161241391127,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 212715,
+              "samples": 239322,
+              "accuracy": 0.8888234261789556
+            },
+            "nonpass": {
+              "correct": 41644,
+              "samples": 66709,
+              "accuracy": 0.6242635926186871
+            },
+            "nonforced": {
+              "correct": 49078,
+              "samples": 75685,
+              "accuracy": 0.6484508158816146
+            },
+            "pass": {
+              "correct": 171071,
+              "samples": 172613,
+              "accuracy": 0.9910667215099673
+            },
+            "hu": {
+              "correct": 1199,
+              "samples": 1222,
+              "accuracy": 0.9811783960720131
+            },
+            "play": {
+              "correct": 36451,
+              "samples": 59733,
+              "accuracy": 0.6102321999564729
+            },
+            "chi": {
+              "correct": 2090,
+              "samples": 3182,
+              "accuracy": 0.6568196103079824
+            },
+            "peng": {
+              "correct": 1780,
+              "samples": 2387,
+              "accuracy": 0.7457059069962296
+            },
+            "gang": {
+              "correct": 16,
+              "samples": 43,
+              "accuracy": 0.37209302325581395
+            },
+            "angang": {
+              "correct": 18,
+              "samples": 25,
+              "accuracy": 0.72
+            },
+            "bugang": {
+              "correct": 90,
+              "samples": 117,
+              "accuracy": 0.7692307692307693
+            }
+          }
+        },
+        "lr": 0.00020423100583344866,
+        "gradient_updates": 13512,
+        "mean_grad_norm": 1.5629769845288346,
+        "train_seconds": 23.4848407919053,
+        "elapsed_seconds": 304.79576695803553,
+        "best_epoch": 3
+      },
+      "development": {
+        "mean": 0.14603271484375,
+        "walls": 128,
+        "se": 0.014642304145184172,
+        "ci95": [
+          0.11658691406250002,
+          0.17398742675781248
+        ]
+      }
+    },
+    {
+      "name": "D_retrained_seed3",
+      "summary": {
+        "best_epoch": 2,
+        "best_val_nonforced_ce": 1.0258290386281854,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 313.9237984579522,
+        "parameters": 966444,
+        "checkpoint_bytes": 11653762,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261121,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "enhanced",
+        "feature_version": "v2",
+        "architecture": "small_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 512,
+          "lr": 0.0005,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.02,
+          "grad_clip": 5.0
+        }
+      },
+      "best": {
+        "epoch": 2,
+        "train_ce": 0.5723473932353618,
+        "train_full_ce": 0.18166358521705803,
+        "objective": 0.6480260514548819,
+        "val": {
+          "loss": 0.32441593664006746,
+          "nonforced_loss": 1.0258290386281854,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 212904,
+              "samples": 239322,
+              "accuracy": 0.8896131571690025
+            },
+            "nonpass": {
+              "correct": 41853,
+              "samples": 66709,
+              "accuracy": 0.6273966031569953
+            },
+            "nonforced": {
+              "correct": 49267,
+              "samples": 75685,
+              "accuracy": 0.6509480081918478
+            },
+            "pass": {
+              "correct": 171051,
+              "samples": 172613,
+              "accuracy": 0.990950855381692
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 36988,
+              "samples": 59733,
+              "accuracy": 0.6192222054810573
+            },
+            "chi": {
+              "correct": 1741,
+              "samples": 3182,
+              "accuracy": 0.5471401634192332
+            },
+            "peng": {
+              "correct": 1795,
+              "samples": 2387,
+              "accuracy": 0.7519899455383326
+            },
+            "gang": {
+              "correct": 2,
+              "samples": 43,
+              "accuracy": 0.046511627906976744
+            },
+            "angang": {
+              "correct": 18,
+              "samples": 25,
+              "accuracy": 0.72
+            },
+            "bugang": {
+              "correct": 87,
+              "samples": 117,
+              "accuracy": 0.7435897435897436
+            }
+          }
+        },
+        "lr": 0.0004967665473649496,
+        "gradient_updates": 2252,
+        "mean_grad_norm": 3.2303566697647472,
+        "train_seconds": 30.729749790858477,
+        "elapsed_seconds": 65.6294921671506,
+        "best_epoch": 2
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.18813828643667796,
+        "train_full_ce": 0.059715263902016286,
+        "objective": 0.290766005601377,
+        "val": {
+          "loss": 0.3474745250282406,
+          "nonforced_loss": 1.0987421322429622,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 213127,
+              "samples": 239322,
+              "accuracy": 0.8905449561678408
+            },
+            "nonpass": {
+              "correct": 41843,
+              "samples": 66709,
+              "accuracy": 0.6272466983465499
+            },
+            "nonforced": {
+              "correct": 49490,
+              "samples": 75685,
+              "accuracy": 0.6538944308647684
+            },
+            "pass": {
+              "correct": 171284,
+              "samples": 172613,
+              "accuracy": 0.9923006957761003
+            },
+            "hu": {
+              "correct": 1214,
+              "samples": 1222,
+              "accuracy": 0.9934533551554828
+            },
+            "play": {
+              "correct": 36897,
+              "samples": 59733,
+              "accuracy": 0.6176987594796846
+            },
+            "chi": {
+              "correct": 1990,
+              "samples": 3182,
+              "accuracy": 0.6253928346951603
+            },
+            "peng": {
+              "correct": 1643,
+              "samples": 2387,
+              "accuracy": 0.6883116883116883
+            },
+            "gang": {
+              "correct": 4,
+              "samples": 43,
+              "accuracy": 0.09302325581395349
+            },
+            "angang": {
+              "correct": 14,
+              "samples": 25,
+              "accuracy": 0.56
+            },
+            "bugang": {
+              "correct": 81,
+              "samples": 117,
+              "accuracy": 0.6923076923076923
+            }
+          }
+        },
+        "lr": 0.00020423100583344866,
+        "gradient_updates": 13512,
+        "mean_grad_norm": 1.492495815347397,
+        "train_seconds": 24.724952917080373,
+        "elapsed_seconds": 313.9237984579522,
+        "best_epoch": 2
+      },
+      "development": {
+        "mean": 0.15689697265625002,
+        "walls": 128,
+        "se": 0.01746125408427819,
+        "ci95": [
+          0.12349822998046875,
+          0.1921420288085937
+        ]
+      }
+    },
+    {
+      "name": "V3",
+      "summary": {
+        "best_epoch": 3,
+        "best_val_nonforced_ce": 0.9105882718114657,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 494.90674266708083,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14203316,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 512,
+          "lr": 0.0005,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.02,
+          "grad_clip": 5.0
+        }
+      },
+      "best": {
+        "epoch": 3,
+        "train_ce": 0.342407737168748,
+        "train_full_ce": 0.10868052842612601,
+        "objective": 0.4347887082562781,
+        "val": {
+          "loss": 0.28797132462561226,
+          "nonforced_loss": 0.9105882718114657,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 215234,
+              "samples": 239322,
+              "accuracy": 0.8993489942420672
+            },
+            "nonpass": {
+              "correct": 43778,
+              "samples": 66709,
+              "accuracy": 0.6562532791677285
+            },
+            "nonforced": {
+              "correct": 51597,
+              "samples": 75685,
+              "accuracy": 0.6817335006936646
+            },
+            "pass": {
+              "correct": 171456,
+              "samples": 172613,
+              "accuracy": 0.9932971444792686
+            },
+            "hu": {
+              "correct": 1221,
+              "samples": 1222,
+              "accuracy": 0.9991816693944353
+            },
+            "play": {
+              "correct": 38708,
+              "samples": 59733,
+              "accuracy": 0.6480170090234878
+            },
+            "chi": {
+              "correct": 1927,
+              "samples": 3182,
+              "accuracy": 0.6055939660590823
+            },
+            "peng": {
+              "correct": 1823,
+              "samples": 2387,
+              "accuracy": 0.763720150816925
+            },
+            "gang": {
+              "correct": 12,
+              "samples": 43,
+              "accuracy": 0.27906976744186046
+            },
+            "angang": {
+              "correct": 11,
+              "samples": 25,
+              "accuracy": 0.44
+            },
+            "bugang": {
+              "correct": 76,
+              "samples": 117,
+              "accuracy": 0.6495726495726496
+            }
+          }
+        },
+        "lr": 0.00048714291656573973,
+        "gradient_updates": 3378,
+        "mean_grad_norm": 1.9291736200901797,
+        "train_seconds": 36.869381290860474,
+        "elapsed_seconds": 126.51791024999693,
+        "best_epoch": 3
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.14910311397370152,
+        "train_full_ce": 0.04732546451967788,
+        "objective": 0.25120344915920345,
+        "val": {
+          "loss": 0.3091572699937055,
+          "nonforced_loss": 0.9775799189989244,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 214781,
+              "samples": 239322,
+              "accuracy": 0.8974561469484628
+            },
+            "nonpass": {
+              "correct": 43803,
+              "samples": 66709,
+              "accuracy": 0.6566280411938419
+            },
+            "nonforced": {
+              "correct": 51144,
+              "samples": 75685,
+              "accuracy": 0.6757481667437405
+            },
+            "pass": {
+              "correct": 170978,
+              "samples": 172613,
+              "accuracy": 0.9905279440134869
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 38563,
+              "samples": 59733,
+              "accuracy": 0.6455895401202015
+            },
+            "chi": {
+              "correct": 2138,
+              "samples": 3182,
+              "accuracy": 0.671904462602137
+            },
+            "peng": {
+              "correct": 1787,
+              "samples": 2387,
+              "accuracy": 0.7486384583158777
+            },
+            "gang": {
+              "correct": 7,
+              "samples": 43,
+              "accuracy": 0.16279069767441862
+            },
+            "angang": {
+              "correct": 9,
+              "samples": 25,
+              "accuracy": 0.36
+            },
+            "bugang": {
+              "correct": 77,
+              "samples": 117,
+              "accuracy": 0.6581196581196581
+            }
+          }
+        },
+        "lr": 0.00020423100583344866,
+        "gradient_updates": 13512,
+        "mean_grad_norm": 0.9101895451228106,
+        "train_seconds": 32.97818308416754,
+        "elapsed_seconds": 494.90674266708083,
+        "best_epoch": 3
+      },
+      "development": {
+        "mean": 0.23424072265625,
+        "walls": 128,
+        "se": 0.01962453904388513,
+        "ci95": [
+          0.1959912109375,
+          0.27284271240234376
+        ]
+      }
+    },
+    {
+      "name": "V3_legacy",
+      "summary": {
+        "best_epoch": 1,
+        "best_val_nonforced_ce": 0.8232440390784997,
+        "epochs": 12,
+        "updates": 21276,
+        "seconds": 748.5847731248941,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14207284,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 1024,
+          "lr": 0.001,
+          "min_lr": 0.001,
+          "warmup_epochs": 0,
+          "weight_decay": 0.0,
+          "label_smoothing": 0.0,
+          "grad_clip": 10.0,
+          "optimizer": "adam",
+          "sampling": "full_equivalent",
+          "schedule": "constant"
+        }
+      },
+      "best": {
+        "epoch": 1,
+        "train_ce": 0.624418994916898,
+        "train_full_ce": 0.19819115913678845,
+        "objective": 0.6244189951789734,
+        "val": {
+          "loss": 0.26034892361611656,
+          "nonforced_loss": 0.8232440390784997,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 217072,
+              "samples": 239322,
+              "accuracy": 0.9070290236585019
+            },
+            "nonpass": {
+              "correct": 45939,
+              "samples": 66709,
+              "accuracy": 0.6886477087049724
+            },
+            "nonforced": {
+              "correct": 53435,
+              "samples": 75685,
+              "accuracy": 0.7060183655942392
+            },
+            "pass": {
+              "correct": 171133,
+              "samples": 172613,
+              "accuracy": 0.9914259065076211
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 40736,
+              "samples": 59733,
+              "accuracy": 0.6819680913397954
+            },
+            "chi": {
+              "correct": 2076,
+              "samples": 3182,
+              "accuracy": 0.6524198617221874
+            },
+            "peng": {
+              "correct": 1788,
+              "samples": 2387,
+              "accuracy": 0.7490573942186846
+            },
+            "gang": {
+              "correct": 4,
+              "samples": 43,
+              "accuracy": 0.09302325581395349
+            },
+            "angang": {
+              "correct": 14,
+              "samples": 25,
+              "accuracy": 0.56
+            },
+            "bugang": {
+              "correct": 99,
+              "samples": 117,
+              "accuracy": 0.8461538461538461
+            }
+          }
+        },
+        "lr": 0.001,
+        "gradient_updates": 1773,
+        "mean_grad_norm": 0.4724294937100709,
+        "train_seconds": 108.3535305839032,
+        "elapsed_seconds": 111.06521995807998,
+        "best_epoch": 1
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.15064101606289554,
+        "train_full_ce": 0.04781359604702967,
+        "objective": 0.15064101608380415,
+        "val": {
+          "loss": 0.3600206737190114,
+          "nonforced_loss": 1.1384140539840293,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 217011,
+              "samples": 239322,
+              "accuracy": 0.9067741369368466
+            },
+            "nonpass": {
+              "correct": 45853,
+              "samples": 66709,
+              "accuracy": 0.6873585273351421
+            },
+            "nonforced": {
+              "correct": 53374,
+              "samples": 75685,
+              "accuracy": 0.7052123934729471
+            },
+            "pass": {
+              "correct": 171158,
+              "samples": 172613,
+              "accuracy": 0.9915707391679653
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 40755,
+              "samples": 59733,
+              "accuracy": 0.6822861734719502
+            },
+            "chi": {
+              "correct": 1995,
+              "samples": 3182,
+              "accuracy": 0.6269641734758014
+            },
+            "peng": {
+              "correct": 1771,
+              "samples": 2387,
+              "accuracy": 0.7419354838709677
+            },
+            "gang": {
+              "correct": 11,
+              "samples": 43,
+              "accuracy": 0.2558139534883721
+            },
+            "angang": {
+              "correct": 6,
+              "samples": 25,
+              "accuracy": 0.24
+            },
+            "bugang": {
+              "correct": 93,
+              "samples": 117,
+              "accuracy": 0.7948717948717948
+            }
+          }
+        },
+        "lr": 0.001,
+        "gradient_updates": 21276,
+        "mean_grad_norm": 0.16527123324829376,
+        "train_seconds": 56.64577816706151,
+        "elapsed_seconds": 748.5847731248941,
+        "best_epoch": 1
+      },
+      "development": {
+        "mean": 0.30150146484375,
+        "walls": 128,
+        "se": 0.01848122828308765,
+        "ci95": [
+          0.2647445678710938,
+          0.3388922119140625
+        ]
+      }
+    },
+    {
+      "name": "V3_legacy_seed2",
+      "summary": {
+        "best_epoch": 1,
+        "best_val_nonforced_ce": 0.8414546926482914,
+        "epochs": 12,
+        "updates": 21276,
+        "seconds": 963.5907272920012,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14207220,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261120,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 1024,
+          "lr": 0.001,
+          "min_lr": 0.001,
+          "warmup_epochs": 0,
+          "weight_decay": 0.0,
+          "label_smoothing": 0.0,
+          "grad_clip": 10.0,
+          "optimizer": "adam",
+          "sampling": "full_equivalent",
+          "schedule": "constant"
+        }
+      },
+      "best": {
+        "epoch": 1,
+        "train_ce": 0.6287821439623695,
+        "train_full_ce": 0.19957602662776486,
+        "objective": 0.62878214400954,
+        "val": {
+          "loss": 0.2661079984835742,
+          "nonforced_loss": 0.8414546926482914,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 217302,
+              "samples": 239322,
+              "accuracy": 0.907990071953268
+            },
+            "nonpass": {
+              "correct": 46390,
+              "samples": 66709,
+              "accuracy": 0.6954084156560584
+            },
+            "nonforced": {
+              "correct": 53665,
+              "samples": 75685,
+              "accuracy": 0.7090572768712426
+            },
+            "pass": {
+              "correct": 170912,
+              "samples": 172613,
+              "accuracy": 0.990145585790178
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 41034,
+              "samples": 59733,
+              "accuracy": 0.68695695846517
+            },
+            "chi": {
+              "correct": 2095,
+              "samples": 3182,
+              "accuracy": 0.6583909490886235
+            },
+            "peng": {
+              "correct": 1912,
+              "samples": 2387,
+              "accuracy": 0.8010054461667365
+            },
+            "gang": {
+              "correct": 19,
+              "samples": 43,
+              "accuracy": 0.4418604651162791
+            },
+            "angang": {
+              "correct": 14,
+              "samples": 25,
+              "accuracy": 0.56
+            },
+            "bugang": {
+              "correct": 94,
+              "samples": 117,
+              "accuracy": 0.8034188034188035
+            }
+          }
+        },
+        "lr": 0.001,
+        "gradient_updates": 1773,
+        "mean_grad_norm": 0.4691483193343464,
+        "train_seconds": 112.07768345810473,
+        "elapsed_seconds": 114.9559134580195,
+        "best_epoch": 1
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.15176134332836824,
+        "train_full_ce": 0.04816918894404929,
+        "objective": 0.1517613433389454,
+        "val": {
+          "loss": 0.3458687443435583,
+          "nonforced_loss": 1.0936645257817146,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 217166,
+              "samples": 239322,
+              "accuracy": 0.907421799918102
+            },
+            "nonpass": {
+              "correct": 45989,
+              "samples": 66709,
+              "accuracy": 0.6893972327571992
+            },
+            "nonforced": {
+              "correct": 53529,
+              "samples": 75685,
+              "accuracy": 0.7072603554204928
+            },
+            "pass": {
+              "correct": 171177,
+              "samples": 172613,
+              "accuracy": 0.9916808119898269
+            },
+            "hu": {
+              "correct": 1220,
+              "samples": 1222,
+              "accuracy": 0.9983633387888707
+            },
+            "play": {
+              "correct": 41065,
+              "samples": 59733,
+              "accuracy": 0.6874759345755278
+            },
+            "chi": {
+              "correct": 1812,
+              "samples": 3182,
+              "accuracy": 0.5694531741043369
+            },
+            "peng": {
+              "correct": 1765,
+              "samples": 2387,
+              "accuracy": 0.7394218684541265
+            },
+            "gang": {
+              "correct": 19,
+              "samples": 43,
+              "accuracy": 0.4418604651162791
+            },
+            "angang": {
+              "correct": 8,
+              "samples": 25,
+              "accuracy": 0.32
+            },
+            "bugang": {
+              "correct": 100,
+              "samples": 117,
+              "accuracy": 0.8547008547008547
+            }
+          }
+        },
+        "lr": 0.001,
+        "gradient_updates": 21276,
+        "mean_grad_norm": 0.165655626632269,
+        "train_seconds": 97.40902158315293,
+        "elapsed_seconds": 963.5907272920012,
+        "best_epoch": 1
+      },
+      "development": {
+        "mean": 0.2734375,
+        "walls": 128,
+        "se": 0.018227097716064386,
+        "ci95": [
+          0.23938934326171873,
+          0.3096209716796875
+        ]
+      }
+    },
+    {
+      "name": "V3_legacy_seed3",
+      "summary": {
+        "best_epoch": 1,
+        "best_val_nonforced_ce": 0.8252163225934899,
+        "epochs": 12,
+        "updates": 21276,
+        "seconds": 1084.102133042179,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14207220,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261121,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 1024,
+          "lr": 0.001,
+          "min_lr": 0.001,
+          "warmup_epochs": 0,
+          "weight_decay": 0.0,
+          "label_smoothing": 0.0,
+          "grad_clip": 10.0,
+          "optimizer": "adam",
+          "sampling": "full_equivalent",
+          "schedule": "constant"
+        }
+      },
+      "best": {
+        "epoch": 1,
+        "train_ce": 0.6265468250303668,
+        "train_full_ce": 0.1988665343577019,
+        "objective": 0.6265468254744003,
+        "val": {
+          "loss": 0.2609726534772745,
+          "nonforced_loss": 0.8252163225934899,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 217628,
+              "samples": 239322,
+              "accuracy": 0.9093522534493277
+            },
+            "nonpass": {
+              "correct": 46204,
+              "samples": 66709,
+              "accuracy": 0.6926201861817746
+            },
+            "nonforced": {
+              "correct": 53991,
+              "samples": 75685,
+              "accuracy": 0.7133646032899518
+            },
+            "pass": {
+              "correct": 171424,
+              "samples": 172613,
+              "accuracy": 0.993111758674028
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 41088,
+              "samples": 59733,
+              "accuracy": 0.6878609813670835
+            },
+            "chi": {
+              "correct": 1921,
+              "samples": 3182,
+              "accuracy": 0.603708359522313
+            },
+            "peng": {
+              "correct": 1841,
+              "samples": 2387,
+              "accuracy": 0.7712609970674487
+            },
+            "gang": {
+              "correct": 12,
+              "samples": 43,
+              "accuracy": 0.27906976744186046
+            },
+            "angang": {
+              "correct": 19,
+              "samples": 25,
+              "accuracy": 0.76
+            },
+            "bugang": {
+              "correct": 101,
+              "samples": 117,
+              "accuracy": 0.8632478632478633
+            }
+          }
+        },
+        "lr": 0.001,
+        "gradient_updates": 1773,
+        "mean_grad_norm": 0.48918547511974836,
+        "train_seconds": 110.82138200011104,
+        "elapsed_seconds": 113.60193808400072,
+        "best_epoch": 1
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.1515668784330186,
+        "train_full_ce": 0.04810746560870155,
+        "objective": 0.15156687846632758,
+        "val": {
+          "loss": 0.34137963336513544,
+          "nonforced_loss": 1.0794695992100276,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 217104,
+              "samples": 239322,
+              "accuracy": 0.9071627347255998
+            },
+            "nonpass": {
+              "correct": 45831,
+              "samples": 66709,
+              "accuracy": 0.6870287367521624
+            },
+            "nonforced": {
+              "correct": 53467,
+              "samples": 75685,
+              "accuracy": 0.7064411706414745
+            },
+            "pass": {
+              "correct": 171273,
+              "samples": 172613,
+              "accuracy": 0.9922369694055488
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 40964,
+              "samples": 59733,
+              "accuracy": 0.6857850769256525
+            },
+            "chi": {
+              "correct": 1849,
+              "samples": 3182,
+              "accuracy": 0.581081081081081
+            },
+            "peng": {
+              "correct": 1681,
+              "samples": 2387,
+              "accuracy": 0.7042312526183494
+            },
+            "gang": {
+              "correct": 12,
+              "samples": 43,
+              "accuracy": 0.27906976744186046
+            },
+            "angang": {
+              "correct": 9,
+              "samples": 25,
+              "accuracy": 0.36
+            },
+            "bugang": {
+              "correct": 94,
+              "samples": 117,
+              "accuracy": 0.8034188034188035
+            }
+          }
+        },
+        "lr": 0.001,
+        "gradient_updates": 21276,
+        "mean_grad_norm": 0.16656691683125374,
+        "train_seconds": 107.49603766598739,
+        "elapsed_seconds": 1084.102133042179,
+        "best_epoch": 1
+      },
+      "development": {
+        "mean": 0.34046630859375004,
+        "walls": 128,
+        "se": 0.019932508053098107,
+        "ci95": [
+          0.3010223388671875,
+          0.37968902587890624
+        ]
+      }
+    },
+    {
+      "name": "V3_no_context",
+      "summary": {
+        "best_epoch": 2,
+        "best_val_nonforced_ce": 0.9280453942210622,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 465.4547724169679,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14206324,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": false,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 512,
+          "lr": 0.0005,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.02,
+          "grad_clip": 5.0
+        }
+      },
+      "best": {
+        "epoch": 2,
+        "train_ce": 0.45292885469396676,
+        "train_full_ce": 0.14376003204425586,
+        "objective": 0.5375444823865776,
+        "val": {
+          "loss": 0.2934920970977223,
+          "nonforced_loss": 0.9280453942210622,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 214559,
+              "samples": 239322,
+              "accuracy": 0.8965285264204712
+            },
+            "nonpass": {
+              "correct": 43600,
+              "samples": 66709,
+              "accuracy": 0.653584973541801
+            },
+            "nonforced": {
+              "correct": 50922,
+              "samples": 75685,
+              "accuracy": 0.672814956728546
+            },
+            "pass": {
+              "correct": 170959,
+              "samples": 172613,
+              "accuracy": 0.9904178711916252
+            },
+            "hu": {
+              "correct": 1214,
+              "samples": 1222,
+              "accuracy": 0.9934533551554828
+            },
+            "play": {
+              "correct": 38246,
+              "samples": 59733,
+              "accuracy": 0.6402825908626723
+            },
+            "chi": {
+              "correct": 2171,
+              "samples": 3182,
+              "accuracy": 0.6822752985543683
+            },
+            "peng": {
+              "correct": 1866,
+              "samples": 2387,
+              "accuracy": 0.7817343946376204
+            },
+            "gang": {
+              "correct": 20,
+              "samples": 43,
+              "accuracy": 0.46511627906976744
+            },
+            "angang": {
+              "correct": 5,
+              "samples": 25,
+              "accuracy": 0.2
+            },
+            "bugang": {
+              "correct": 78,
+              "samples": 117,
+              "accuracy": 0.6666666666666666
+            }
+          }
+        },
+        "lr": 0.0004967665473649496,
+        "gradient_updates": 2252,
+        "mean_grad_norm": 2.505292894891058,
+        "train_seconds": 48.88747016713023,
+        "elapsed_seconds": 88.90451033296995,
+        "best_epoch": 2
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.1633928349338186,
+        "train_full_ce": 0.051861035000207195,
+        "objective": 0.2639942763877681,
+        "val": {
+          "loss": 0.30866049357378933,
+          "nonforced_loss": 0.9760090723798164,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 214903,
+              "samples": 239322,
+              "accuracy": 0.8979659203917735
+            },
+            "nonpass": {
+              "correct": 43832,
+              "samples": 66709,
+              "accuracy": 0.6570627651441334
+            },
+            "nonforced": {
+              "correct": 51266,
+              "samples": 75685,
+              "accuracy": 0.6773601109863249
+            },
+            "pass": {
+              "correct": 171071,
+              "samples": 172613,
+              "accuracy": 0.9910667215099673
+            },
+            "hu": {
+              "correct": 1210,
+              "samples": 1222,
+              "accuracy": 0.9901800327332242
+            },
+            "play": {
+              "correct": 38708,
+              "samples": 59733,
+              "accuracy": 0.6480170090234878
+            },
+            "chi": {
+              "correct": 2073,
+              "samples": 3182,
+              "accuracy": 0.6514770584538027
+            },
+            "peng": {
+              "correct": 1746,
+              "samples": 2387,
+              "accuracy": 0.731462086300796
+            },
+            "gang": {
+              "correct": 13,
+              "samples": 43,
+              "accuracy": 0.3023255813953488
+            },
+            "angang": {
+              "correct": 7,
+              "samples": 25,
+              "accuracy": 0.28
+            },
+            "bugang": {
+              "correct": 75,
+              "samples": 117,
+              "accuracy": 0.6410256410256411
+            }
+          }
+        },
+        "lr": 0.00020423100583344866,
+        "gradient_updates": 13512,
+        "mean_grad_norm": 1.0732264149252517,
+        "train_seconds": 35.49845158401877,
+        "elapsed_seconds": 465.4547724169679,
+        "best_epoch": 2
+      },
+      "development": {
+        "mean": 0.21838378906250003,
+        "walls": 128,
+        "se": 0.018635650813035257,
+        "ci95": [
+          0.18279693603515626,
+          0.25563323974609364
+        ]
+      }
+    },
+    {
+      "name": "V3_no_quality",
+      "summary": {
+        "best_epoch": 2,
+        "best_val_nonforced_ce": 0.9436892446772602,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 521.5970865827985,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14206132,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": false,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 512,
+          "lr": 0.0005,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.02,
+          "grad_clip": 5.0
+        }
+      },
+      "best": {
+        "epoch": 2,
+        "train_ce": 0.4582094687731903,
+        "train_full_ce": 0.14543610377467248,
+        "objective": 0.5425529409723366,
+        "val": {
+          "loss": 0.2984394267280001,
+          "nonforced_loss": 0.9436892446772602,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 214115,
+              "samples": 239322,
+              "accuracy": 0.894673285364488
+            },
+            "nonpass": {
+              "correct": 43259,
+              "samples": 66709,
+              "accuracy": 0.648473219505614
+            },
+            "nonforced": {
+              "correct": 50478,
+              "samples": 75685,
+              "accuracy": 0.6669485366981568
+            },
+            "pass": {
+              "correct": 170856,
+              "samples": 172613,
+              "accuracy": 0.9898211606310069
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 37895,
+              "samples": 59733,
+              "accuracy": 0.6344064420002343
+            },
+            "chi": {
+              "correct": 2116,
+              "samples": 3182,
+              "accuracy": 0.6649905719673161
+            },
+            "peng": {
+              "correct": 1909,
+              "samples": 2387,
+              "accuracy": 0.7997486384583159
+            },
+            "gang": {
+              "correct": 22,
+              "samples": 43,
+              "accuracy": 0.5116279069767442
+            },
+            "angang": {
+              "correct": 10,
+              "samples": 25,
+              "accuracy": 0.4
+            },
+            "bugang": {
+              "correct": 85,
+              "samples": 117,
+              "accuracy": 0.7264957264957265
+            }
+          }
+        },
+        "lr": 0.0004967665473649496,
+        "gradient_updates": 2252,
+        "mean_grad_norm": 2.496739467655575,
+        "train_seconds": 30.570245875045657,
+        "elapsed_seconds": 64.51193774980493,
+        "best_epoch": 2
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.15076770917394794,
+        "train_full_ce": 0.047853808556159796,
+        "objective": 0.2525936979716867,
+        "val": {
+          "loss": 0.32012830808802445,
+          "nonforced_loss": 1.0122712155412854,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 214635,
+              "samples": 239322,
+              "accuracy": 0.8968460902048286
+            },
+            "nonpass": {
+              "correct": 43662,
+              "samples": 66709,
+              "accuracy": 0.6545143833665622
+            },
+            "nonforced": {
+              "correct": 50998,
+              "samples": 75685,
+              "accuracy": 0.6738191187157296
+            },
+            "pass": {
+              "correct": 170973,
+              "samples": 172613,
+              "accuracy": 0.990498977481418
+            },
+            "hu": {
+              "correct": 1220,
+              "samples": 1222,
+              "accuracy": 0.9983633387888707
+            },
+            "play": {
+              "correct": 38365,
+              "samples": 59733,
+              "accuracy": 0.6422747894798521
+            },
+            "chi": {
+              "correct": 2104,
+              "samples": 3182,
+              "accuracy": 0.6612193588937775
+            },
+            "peng": {
+              "correct": 1864,
+              "samples": 2387,
+              "accuracy": 0.7808965228320067
+            },
+            "gang": {
+              "correct": 17,
+              "samples": 43,
+              "accuracy": 0.3953488372093023
+            },
+            "angang": {
+              "correct": 7,
+              "samples": 25,
+              "accuracy": 0.28
+            },
+            "bugang": {
+              "correct": 85,
+              "samples": 117,
+              "accuracy": 0.7264957264957265
+            }
+          }
+        },
+        "lr": 0.00020423100583344866,
+        "gradient_updates": 13512,
+        "mean_grad_norm": 0.955086910703466,
+        "train_seconds": 35.85568445781246,
+        "elapsed_seconds": 521.5970865827985,
+        "best_epoch": 2
+      },
+      "development": {
+        "mean": 0.1592529296875,
+        "walls": 128,
+        "se": 0.01818883884123365,
+        "ci95": [
+          0.12395721435546875,
+          0.19546142578124998
+        ]
+      }
+    },
+    {
+      "name": "V3_regularized",
+      "summary": {
+        "best_epoch": 5,
+        "best_val_nonforced_ce": 0.960410490437339,
+        "epochs": 12,
+        "updates": 27012,
+        "seconds": 646.6761914161034,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14208884,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 256,
+          "lr": 0.0002,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.1,
+          "grad_clip": 5.0,
+          "schedule_epochs": 12
+        }
+      },
+      "best": {
+        "epoch": 5,
+        "train_ce": 0.3255921614476227,
+        "train_full_ce": 0.1033432493381223,
+        "objective": 0.6478238593984132,
+        "val": {
+          "loss": 0.3037274800007939,
+          "nonforced_loss": 0.960410490437339,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 213894,
+              "samples": 239322,
+              "accuracy": 0.8937498433073432
+            },
+            "nonpass": {
+              "correct": 42826,
+              "samples": 66709,
+              "accuracy": 0.6419823412133295
+            },
+            "nonforced": {
+              "correct": 50257,
+              "samples": 75685,
+              "accuracy": 0.6640285393406884
+            },
+            "pass": {
+              "correct": 171068,
+              "samples": 172613,
+              "accuracy": 0.9910493415907261
+            },
+            "hu": {
+              "correct": 1217,
+              "samples": 1222,
+              "accuracy": 0.9959083469721768
+            },
+            "play": {
+              "correct": 37738,
+              "samples": 59733,
+              "accuracy": 0.6317780791187451
+            },
+            "chi": {
+              "correct": 1978,
+              "samples": 3182,
+              "accuracy": 0.6216216216216216
+            },
+            "peng": {
+              "correct": 1782,
+              "samples": 2387,
+              "accuracy": 0.7465437788018433
+            },
+            "gang": {
+              "correct": 21,
+              "samples": 43,
+              "accuracy": 0.4883720930232558
+            },
+            "angang": {
+              "correct": 7,
+              "samples": 25,
+              "accuracy": 0.28
+            },
+            "bugang": {
+              "correct": 83,
+              "samples": 117,
+              "accuracy": 0.7094017094017094
+            }
+          }
+        },
+        "lr": 0.00014885891181260096,
+        "gradient_updates": 11255,
+        "mean_grad_norm": 2.52010543555061,
+        "train_seconds": 51.51891995896585,
+        "elapsed_seconds": 275.11025645793416,
+        "best_epoch": 5
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.21020777183347159,
+        "train_full_ce": 0.06672013871836467,
+        "objective": 0.54950890800357,
+        "val": {
+          "loss": 0.3261328961714304,
+          "nonforced_loss": 1.0312582014605147,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 213093,
+              "samples": 239322,
+              "accuracy": 0.8904028881590493
+            },
+            "nonpass": {
+              "correct": 42167,
+              "samples": 66709,
+              "accuracy": 0.6321036142049798
+            },
+            "nonforced": {
+              "correct": 49456,
+              "samples": 75685,
+              "accuracy": 0.653445200502081
+            },
+            "pass": {
+              "correct": 170926,
+              "samples": 172613,
+              "accuracy": 0.9902266920799708
+            },
+            "hu": {
+              "correct": 1199,
+              "samples": 1222,
+              "accuracy": 0.9811783960720131
+            },
+            "play": {
+              "correct": 36983,
+              "samples": 59733,
+              "accuracy": 0.6191384996568061
+            },
+            "chi": {
+              "correct": 2027,
+              "samples": 3182,
+              "accuracy": 0.6370207416719045
+            },
+            "peng": {
+              "correct": 1842,
+              "samples": 2387,
+              "accuracy": 0.7716799329702555
+            },
+            "gang": {
+              "correct": 18,
+              "samples": 43,
+              "accuracy": 0.4186046511627907
+            },
+            "angang": {
+              "correct": 10,
+              "samples": 25,
+              "accuracy": 0.4
+            },
+            "bugang": {
+              "correct": 88,
+              "samples": 117,
+              "accuracy": 0.7521367521367521
+            }
+          }
+        },
+        "lr": 2.500000070427365e-05,
+        "gradient_updates": 27012,
+        "mean_grad_norm": 2.1561706486621044,
+        "train_seconds": 52.598767625167966,
+        "elapsed_seconds": 646.6761914161034,
+        "best_epoch": 5
+      },
+      "development": {
+        "mean": 0.1851806640625,
+        "walls": 128,
+        "se": 0.016558753720420302,
+        "ci95": [
+          0.1533428955078125,
+          0.21799407958984376
+        ]
+      }
+    },
+    {
+      "name": "V3_relu",
+      "summary": {
+        "best_epoch": 2,
+        "best_val_nonforced_ce": 0.908428309928822,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 500.62328962492757,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14206516,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "relu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 512,
+          "lr": 0.0005,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.02,
+          "grad_clip": 5.0
+        }
+      },
+      "best": {
+        "epoch": 2,
+        "train_ce": 0.4936958781925627,
+        "train_full_ce": 0.15669952252663416,
+        "objective": 0.5752413506852152,
+        "val": {
+          "loss": 0.2872882419374854,
+          "nonforced_loss": 0.908428309928822,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 214877,
+              "samples": 239322,
+              "accuracy": 0.8978572801497564
+            },
+            "nonpass": {
+              "correct": 43838,
+              "samples": 66709,
+              "accuracy": 0.6571527080304007
+            },
+            "nonforced": {
+              "correct": 51240,
+              "samples": 75685,
+              "accuracy": 0.6770165818854462
+            },
+            "pass": {
+              "correct": 171039,
+              "samples": 172613,
+              "accuracy": 0.9908813357047268
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 38611,
+              "samples": 59733,
+              "accuracy": 0.6463931160330135
+            },
+            "chi": {
+              "correct": 2046,
+              "samples": 3182,
+              "accuracy": 0.6429918290383406
+            },
+            "peng": {
+              "correct": 1842,
+              "samples": 2387,
+              "accuracy": 0.7716799329702555
+            },
+            "gang": {
+              "correct": 20,
+              "samples": 43,
+              "accuracy": 0.46511627906976744
+            },
+            "angang": {
+              "correct": 10,
+              "samples": 25,
+              "accuracy": 0.4
+            },
+            "bugang": {
+              "correct": 87,
+              "samples": 117,
+              "accuracy": 0.7435897435897436
+            }
+          }
+        },
+        "lr": 0.0004967665473649496,
+        "gradient_updates": 2252,
+        "mean_grad_norm": 2.716726507640859,
+        "train_seconds": 48.56789158307947,
+        "elapsed_seconds": 101.3931791249197,
+        "best_epoch": 2
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.16384921927500434,
+        "train_full_ce": 0.05200589180681911,
+        "objective": 0.2678365135455536,
+        "val": {
+          "loss": 0.3081053121593567,
+          "nonforced_loss": 0.9742535445147857,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 215417,
+              "samples": 239322,
+              "accuracy": 0.9001136544070332
+            },
+            "nonpass": {
+              "correct": 44321,
+              "samples": 66709,
+              "accuracy": 0.6643931103749119
+            },
+            "nonforced": {
+              "correct": 51780,
+              "samples": 75685,
+              "accuracy": 0.6841514170575411
+            },
+            "pass": {
+              "correct": 171096,
+              "samples": 172613,
+              "accuracy": 0.9912115541703116
+            },
+            "hu": {
+              "correct": 1221,
+              "samples": 1222,
+              "accuracy": 0.9991816693944353
+            },
+            "play": {
+              "correct": 39186,
+              "samples": 59733,
+              "accuracy": 0.6560192858219075
+            },
+            "chi": {
+              "correct": 2059,
+              "samples": 3182,
+              "accuracy": 0.6470773098680075
+            },
+            "peng": {
+              "correct": 1757,
+              "samples": 2387,
+              "accuracy": 0.7360703812316716
+            },
+            "gang": {
+              "correct": 4,
+              "samples": 43,
+              "accuracy": 0.09302325581395349
+            },
+            "angang": {
+              "correct": 7,
+              "samples": 25,
+              "accuracy": 0.28
+            },
+            "bugang": {
+              "correct": 87,
+              "samples": 117,
+              "accuracy": 0.7435897435897436
+            }
+          }
+        },
+        "lr": 0.00020423100583344866,
+        "gradient_updates": 13512,
+        "mean_grad_norm": 1.1263097549522325,
+        "train_seconds": 41.00090612494387,
+        "elapsed_seconds": 500.62328962492757,
+        "best_epoch": 2
+      },
+      "development": {
+        "mean": 0.20584716796875,
+        "walls": 128,
+        "se": 0.017506614834556056,
+        "ci95": [
+          0.17239624023437503,
+          0.24095550537109373
+        ]
+      }
+    },
+    {
+      "name": "V3_seed2",
+      "summary": {
+        "best_epoch": 4,
+        "best_val_nonforced_ce": 0.9191769525508171,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 382.35264962515794,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14208372,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261120,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 512,
+          "lr": 0.0005,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.02,
+          "grad_clip": 5.0
+        }
+      },
+      "best": {
+        "epoch": 4,
+        "train_ce": 0.2942174590627294,
+        "train_full_ce": 0.09338489015325904,
+        "objective": 0.38973774490964913,
+        "val": {
+          "loss": 0.29068747400493306,
+          "nonforced_loss": 0.9191769525508171,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 215123,
+              "samples": 239322,
+              "accuracy": 0.8988851839780714
+            },
+            "nonpass": {
+              "correct": 43941,
+              "samples": 66709,
+              "accuracy": 0.658696727577988
+            },
+            "nonforced": {
+              "correct": 51486,
+              "samples": 75685,
+              "accuracy": 0.6802668956860672
+            },
+            "pass": {
+              "correct": 171182,
+              "samples": 172613,
+              "accuracy": 0.9917097785218958
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 38906,
+              "samples": 59733,
+              "accuracy": 0.6513317596638374
+            },
+            "chi": {
+              "correct": 2005,
+              "samples": 3182,
+              "accuracy": 0.6301068510370836
+            },
+            "peng": {
+              "correct": 1711,
+              "samples": 2387,
+              "accuracy": 0.7167993297025556
+            },
+            "gang": {
+              "correct": 9,
+              "samples": 43,
+              "accuracy": 0.20930232558139536
+            },
+            "angang": {
+              "correct": 3,
+              "samples": 25,
+              "accuracy": 0.12
+            },
+            "bugang": {
+              "correct": 85,
+              "samples": 117,
+              "accuracy": 0.7264957264957265
+            }
+          }
+        },
+        "lr": 0.0004713916126029945,
+        "gradient_updates": 4504,
+        "mean_grad_norm": 1.6131869028347212,
+        "train_seconds": 32.364837624831125,
+        "elapsed_seconds": 137.55729283299297,
+        "best_epoch": 4
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.1493949053349167,
+        "train_full_ce": 0.047418079364159094,
+        "objective": 0.25157525213701626,
+        "val": {
+          "loss": 0.3128017968408051,
+          "nonforced_loss": 0.9891042032573847,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 214846,
+              "samples": 239322,
+              "accuracy": 0.8977277475535054
+            },
+            "nonpass": {
+              "correct": 43844,
+              "samples": 66709,
+              "accuracy": 0.6572426509166679
+            },
+            "nonforced": {
+              "correct": 51209,
+              "samples": 75685,
+              "accuracy": 0.6766069894959371
+            },
+            "pass": {
+              "correct": 171002,
+              "samples": 172613,
+              "accuracy": 0.9906669833674173
+            },
+            "hu": {
+              "correct": 1219,
+              "samples": 1222,
+              "accuracy": 0.997545008183306
+            },
+            "play": {
+              "correct": 38665,
+              "samples": 59733,
+              "accuracy": 0.6472971389349271
+            },
+            "chi": {
+              "correct": 2076,
+              "samples": 3182,
+              "accuracy": 0.6524198617221874
+            },
+            "peng": {
+              "correct": 1774,
+              "samples": 2387,
+              "accuracy": 0.7431922915793884
+            },
+            "gang": {
+              "correct": 15,
+              "samples": 43,
+              "accuracy": 0.3488372093023256
+            },
+            "angang": {
+              "correct": 13,
+              "samples": 25,
+              "accuracy": 0.52
+            },
+            "bugang": {
+              "correct": 82,
+              "samples": 117,
+              "accuracy": 0.7008547008547008
+            }
+          }
+        },
+        "lr": 0.00020423100583344866,
+        "gradient_updates": 13512,
+        "mean_grad_norm": 0.8969066393947093,
+        "train_seconds": 29.84372420795262,
+        "elapsed_seconds": 382.35264962515794,
+        "best_epoch": 4
+      },
+      "development": {
+        "mean": 0.218310546875,
+        "walls": 128,
+        "se": 0.01818083051413492,
+        "ci95": [
+          0.18305450439453128,
+          0.25483459472656245
+        ]
+      }
+    },
+    {
+      "name": "V3_seed3",
+      "summary": {
+        "best_epoch": 3,
+        "best_val_nonforced_ce": 0.9327479834568235,
+        "epochs": 12,
+        "updates": 13512,
+        "seconds": 394.9081072921399,
+        "parameters": 1199917,
+        "checkpoint_bytes": 14207796,
+        "stopped_early": true
+      },
+      "config": {
+        "seed": 20261121,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 512,
+          "lr": 0.0005,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.02,
+          "grad_clip": 5.0
+        }
+      },
+      "best": {
+        "epoch": 3,
+        "train_ce": 0.34327646923671945,
+        "train_full_ce": 0.10895626477772992,
+        "objective": 0.43540568195675494,
+        "val": {
+          "loss": 0.29497927949762115,
+          "nonforced_loss": 0.9327479834568235,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 214860,
+              "samples": 239322,
+              "accuracy": 0.8977862461453606
+            },
+            "nonpass": {
+              "correct": 43843,
+              "samples": 66709,
+              "accuracy": 0.6572276604356234
+            },
+            "nonforced": {
+              "correct": 51223,
+              "samples": 75685,
+              "accuracy": 0.6767919667041026
+            },
+            "pass": {
+              "correct": 171017,
+              "samples": 172613,
+              "accuracy": 0.9907538829636239
+            },
+            "hu": {
+              "correct": 1222,
+              "samples": 1222,
+              "accuracy": 1.0
+            },
+            "play": {
+              "correct": 38665,
+              "samples": 59733,
+              "accuracy": 0.6472971389349271
+            },
+            "chi": {
+              "correct": 2013,
+              "samples": 3182,
+              "accuracy": 0.6326209930861094
+            },
+            "peng": {
+              "correct": 1841,
+              "samples": 2387,
+              "accuracy": 0.7712609970674487
+            },
+            "gang": {
+              "correct": 29,
+              "samples": 43,
+              "accuracy": 0.6744186046511628
+            },
+            "angang": {
+              "correct": 4,
+              "samples": 25,
+              "accuracy": 0.16
+            },
+            "bugang": {
+              "correct": 69,
+              "samples": 117,
+              "accuracy": 0.5897435897435898
+            }
+          }
+        },
+        "lr": 0.00048714291656573973,
+        "gradient_updates": 3378,
+        "mean_grad_norm": 1.9766927204801177,
+        "train_seconds": 30.526137333828956,
+        "elapsed_seconds": 110.674339374993,
+        "best_epoch": 3
+      },
+      "last": {
+        "epoch": 12,
+        "train_ce": 0.14971608162690928,
+        "train_full_ce": 0.0475200210125001,
+        "objective": 0.2518819631621966,
+        "val": {
+          "loss": 0.3200089681654711,
+          "nonforced_loss": 1.0118938531980826,
+          "samples": 239322,
+          "metrics": {
+            "all": {
+              "correct": 214477,
+              "samples": 239322,
+              "accuracy": 0.8961858918110328
+            },
+            "nonpass": {
+              "correct": 43263,
+              "samples": 66709,
+              "accuracy": 0.6485331814297921
+            },
+            "nonforced": {
+              "correct": 50840,
+              "samples": 75685,
+              "accuracy": 0.6717315187950056
+            },
+            "pass": {
+              "correct": 171214,
+              "samples": 172613,
+              "accuracy": 0.9918951643271364
+            },
+            "hu": {
+              "correct": 1217,
+              "samples": 1222,
+              "accuracy": 0.9959083469721768
+            },
+            "play": {
+              "correct": 38205,
+              "samples": 59733,
+              "accuracy": 0.6395962031038119
+            },
+            "chi": {
+              "correct": 1962,
+              "samples": 3182,
+              "accuracy": 0.61659333752357
+            },
+            "peng": {
+              "correct": 1772,
+              "samples": 2387,
+              "accuracy": 0.7423544197737746
+            },
+            "gang": {
+              "correct": 20,
+              "samples": 43,
+              "accuracy": 0.46511627906976744
+            },
+            "angang": {
+              "correct": 7,
+              "samples": 25,
+              "accuracy": 0.28
+            },
+            "bugang": {
+              "correct": 80,
+              "samples": 117,
+              "accuracy": 0.6837606837606838
+            }
+          }
+        },
+        "lr": 0.00020423100583344866,
+        "gradient_updates": 13512,
+        "mean_grad_norm": 0.9259421981566752,
+        "train_seconds": 30.181427208008245,
+        "elapsed_seconds": 394.9081072921399,
+        "best_epoch": 3
+      },
+      "development": {
+        "mean": 0.221044921875,
+        "walls": 128,
+        "se": 0.014843283945127017,
+        "ci95": [
+          0.19290771484375,
+          0.25128173828125
+        ]
+      }
+    }
+  ],
+  "ppo": [
+    {
+      "name": "PPO_V3_anchor",
+      "summary": {
+        "env_steps": 133279,
+        "agent_steps": 266229,
+        "gradient_updates": 576,
+        "completed_episodes": 1024,
+        "iteration": 64,
+        "seconds": 846.9390245829709,
+        "best_development_score": 0.2608154296875,
+        "best_post_ppo_score": 0.2608154296875,
+        "warmup_episodes": 128,
+        "stopped_early": false
+      },
+      "config": {
+        "seed": 130000000,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 4,
+        "iterations": 64,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 2e-05,
+          "epochs": 2,
+          "minibatch_size": 512,
+          "clip_epsilon": 0.1,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.001,
+          "max_grad_norm": 0.5
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 512,
+          "lr": 0.0005,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.02,
+          "grad_clip": 5.0
+        },
+        "rl": {
+          "mode": "mixed",
+          "bc_kl": 1.0,
+          "warmup_iterations": 8,
+          "eval_every": 16,
+          "eval_seed": 110200000,
+          "eval_walls": 64,
+          "stop_margin": 0.04,
+          "opponents": {
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          },
+          "eval_opponents": {
+            "rl_v1": "artifacts/round3/references/rl_v1.pt",
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          }
+        }
+      },
+      "learning_decisions": 133118,
+      "non_draw_rate": 0.7255859375,
+      "mean_learner_terminal_reward": 0.00347900390625,
+      "postwarmup_mean": {
+        "shared/ppo/policy_loss": -0.0017996186227837868,
+        "shared/ppo/value_loss": 0.0962148537592976,
+        "shared/ppo/entropy": 0.21132049989063512,
+        "shared/ppo/bc_reference_kl_nonforced": 0.004264130628900036
+      },
+      "last": {
+        "env_steps": 2233.0,
+        "agent_steps": 4461.0,
+        "completed_episodes": 16.0,
+        "gradient_updates": 10.0,
+        "shared/trajectories": 32.0,
+        "shared/valid_samples": 2229.0,
+        "shared/ppo/loss": 0.01935448346366231,
+        "shared/ppo/policy_loss": -0.0021995563212967657,
+        "shared/ppo/value_loss": 0.0398174505129276,
+        "shared/ppo/entropy": 0.19954630382235353,
+        "shared/ppo/approx_kl": 0.0001717204210590561,
+        "shared/ppo/clip_fraction": 0.007851054271062216,
+        "shared/ppo/ratio": 0.9995185085720629,
+        "shared/ppo/bc_reference_kl": 0.0018448605709895157,
+        "shared/ppo/bc_reference_kl_nonforced": 0.005953370064004801,
+        "shared/ppo/grad_norm": 0.985370735541327,
+        "shared/ppo/updates": 10.0,
+        "shared/gradient_updates": 10.0,
+        "shared/weight_version": 65.0
+      }
+    },
+    {
+      "name": "PPO_V3_legacy",
+      "summary": {
+        "env_steps": 129419,
+        "agent_steps": 258479,
+        "gradient_updates": 568,
+        "completed_episodes": 1024,
+        "iteration": 64,
+        "seconds": 710.1823980000336,
+        "best_development_score": 0.3287841796875,
+        "best_post_ppo_score": 0.3287841796875,
+        "warmup_episodes": 128,
+        "stopped_early": false
+      },
+      "config": {
+        "seed": 130010000,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 4,
+        "iterations": 64,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 2e-05,
+          "epochs": 2,
+          "minibatch_size": 512,
+          "clip_epsilon": 0.1,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.001,
+          "max_grad_norm": 0.5
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 1024,
+          "lr": 0.001,
+          "min_lr": 0.001,
+          "warmup_epochs": 0,
+          "weight_decay": 0.0,
+          "label_smoothing": 0.0,
+          "grad_clip": 10.0,
+          "optimizer": "adam",
+          "sampling": "full_equivalent",
+          "schedule": "constant"
+        },
+        "rl": {
+          "mode": "mixed",
+          "bc_kl": 1.0,
+          "warmup_iterations": 8,
+          "eval_every": 16,
+          "eval_seed": 110300000,
+          "eval_walls": 64,
+          "stop_margin": 0.04,
+          "opponents": {
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          },
+          "eval_opponents": {
+            "rl_v1": "artifacts/round3/references/rl_v1.pt",
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          },
+          "episode_action_seeds": true
+        }
+      },
+      "learning_decisions": 129239,
+      "non_draw_rate": 0.765625,
+      "mean_learner_terminal_reward": -0.0043487548828125,
+      "postwarmup_mean": {
+        "shared/ppo/policy_loss": -0.0008029762864413062,
+        "shared/ppo/value_loss": 0.0840611607791535,
+        "shared/ppo/entropy": 0.17967229950791497,
+        "shared/ppo/bc_reference_kl_nonforced": 0.0015687238034342156
+      },
+      "last": {
+        "env_steps": 2177.0,
+        "agent_steps": 4345.0,
+        "completed_episodes": 16.0,
+        "gradient_updates": 10.0,
+        "shared/trajectories": 32.0,
+        "shared/valid_samples": 2171.0,
+        "shared/ppo/loss": 0.04198219213945313,
+        "shared/ppo/policy_loss": -0.0005833015638609078,
+        "shared/ppo/value_loss": 0.08410083753057253,
+        "shared/ppo/entropy": 0.18061258224834775,
+        "shared/ppo/approx_kl": 1.6467525224464307e-05,
+        "shared/ppo/clip_fraction": 0.00046061721850462853,
+        "shared/ppo/ratio": 1.0001038341053288,
+        "shared/ppo/bc_reference_kl": 0.0006956877412110608,
+        "shared/ppo/bc_reference_kl_nonforced": 0.0022439410842338236,
+        "shared/ppo/grad_norm": 0.3896231609025566,
+        "shared/ppo/updates": 10.0,
+        "shared/gradient_updates": 10.0,
+        "shared/weight_version": 65.0
+      }
+    },
+    {
+      "name": "PPO_V3_legacy_extended",
+      "summary": {
+        "env_steps": 392355,
+        "agent_steps": 783667,
+        "gradient_updates": 1732,
+        "completed_episodes": 3072,
+        "iteration": 192,
+        "seconds": 2150.738597250078,
+        "best_development_score": 0.3373046875,
+        "best_post_ppo_score": 0.3373046875,
+        "warmup_episodes": 128,
+        "stopped_early": false
+      },
+      "config": {
+        "seed": 130010000,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 4,
+        "iterations": 192,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 2e-05,
+          "epochs": 2,
+          "minibatch_size": 512,
+          "clip_epsilon": 0.1,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.001,
+          "max_grad_norm": 0.5
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 1024,
+          "lr": 0.001,
+          "min_lr": 0.001,
+          "warmup_epochs": 0,
+          "weight_decay": 0.0,
+          "label_smoothing": 0.0,
+          "grad_clip": 10.0,
+          "optimizer": "adam",
+          "sampling": "full_equivalent",
+          "schedule": "constant"
+        },
+        "rl": {
+          "mode": "mixed",
+          "bc_kl": 1.0,
+          "warmup_iterations": 8,
+          "eval_every": 16,
+          "eval_seed": 110300000,
+          "eval_walls": 64,
+          "stop_margin": 0.04,
+          "opponents": {
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          },
+          "eval_opponents": {
+            "rl_v1": "artifacts/round3/references/rl_v1.pt",
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          },
+          "episode_action_seeds": true
+        }
+      },
+      "learning_decisions": 391811,
+      "non_draw_rate": 0.7561848958333334,
+      "mean_learner_terminal_reward": -0.0048065185546875,
+      "postwarmup_mean": {
+        "shared/ppo/policy_loss": -0.0007713480760741956,
+        "shared/ppo/value_loss": 0.08094856318945719,
+        "shared/ppo/entropy": 0.17773746719794942,
+        "shared/ppo/bc_reference_kl_nonforced": 0.0025007059161913526
+      },
+      "last": {
+        "env_steps": 2174.0,
+        "agent_steps": 4344.0,
+        "completed_episodes": 16.0,
+        "gradient_updates": 10.0,
+        "shared/trajectories": 32.0,
+        "shared/valid_samples": 2171.0,
+        "shared/ppo/loss": 0.020039692809372,
+        "shared/ppo/policy_loss": -0.0008045820195874768,
+        "shared/ppo/value_loss": 0.03989887180065076,
+        "shared/ppo/entropy": 0.1754288676009097,
+        "shared/ppo/approx_kl": 2.458028612216944e-05,
+        "shared/ppo/clip_fraction": 0.0013818516726732144,
+        "shared/ppo/ratio": 1.0000102672638402,
+        "shared/ppo/bc_reference_kl": 0.001070268751450337,
+        "shared/ppo/bc_reference_kl_nonforced": 0.003410452510357222,
+        "shared/ppo/grad_norm": 0.5058698310850953,
+        "shared/ppo/updates": 10.0,
+        "shared/gradient_updates": 10.0,
+        "shared/weight_version": 193.0
+      }
+    },
+    {
+      "name": "PPO_V3_mixed",
+      "summary": {
+        "env_steps": 133508,
+        "agent_steps": 266700,
+        "gradient_updates": 590,
+        "completed_episodes": 1024,
+        "iteration": 64,
+        "seconds": 895.7710574588273,
+        "best_development_score": 0.263525390625,
+        "best_post_ppo_score": 0.263525390625,
+        "warmup_episodes": 128,
+        "stopped_early": false
+      },
+      "config": {
+        "seed": 130000000,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 4,
+        "iterations": 64,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 2e-05,
+          "epochs": 2,
+          "minibatch_size": 512,
+          "clip_epsilon": 0.1,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.001,
+          "max_grad_norm": 0.5
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 512,
+          "lr": 0.0005,
+          "min_lr": 2.5e-05,
+          "warmup_epochs": 1,
+          "weight_decay": 0.01,
+          "label_smoothing": 0.02,
+          "grad_clip": 5.0
+        },
+        "rl": {
+          "mode": "mixed",
+          "bc_kl": 0.2,
+          "warmup_iterations": 8,
+          "eval_every": 16,
+          "eval_seed": 110200000,
+          "eval_walls": 64,
+          "stop_margin": 0.04,
+          "opponents": {
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          },
+          "eval_opponents": {
+            "rl_v1": "artifacts/round3/references/rl_v1.pt",
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          }
+        }
+      },
+      "learning_decisions": 133362,
+      "non_draw_rate": 0.724609375,
+      "mean_learner_terminal_reward": 0.00042724609375,
+      "postwarmup_mean": {
+        "shared/ppo/policy_loss": -0.0018848059932325561,
+        "shared/ppo/value_loss": 0.09191670105906721,
+        "shared/ppo/entropy": 0.21103967063022852,
+        "shared/ppo/bc_reference_kl_nonforced": 0.01210815220952419
+      },
+      "last": {
+        "env_steps": 2036.0,
+        "agent_steps": 4070.0,
+        "completed_episodes": 16.0,
+        "gradient_updates": 8.0,
+        "shared/trajectories": 32.0,
+        "shared/valid_samples": 2036.0,
+        "shared/ppo/loss": 0.02237495285969352,
+        "shared/ppo/policy_loss": -0.001962998148222218,
+        "shared/ppo/value_loss": 0.04725085315980705,
+        "shared/ppo/entropy": 0.20419060866291724,
+        "shared/ppo/approx_kl": 0.00015522213748861256,
+        "shared/ppo/clip_fraction": 0.005402750488185856,
+        "shared/ppo/ratio": 1.0000626707123867,
+        "shared/ppo/bc_reference_kl": 0.004583576613623641,
+        "shared/ppo/bc_reference_kl_nonforced": 0.014184831482429636,
+        "shared/ppo/grad_norm": 1.189588268109998,
+        "shared/ppo/updates": 8.0,
+        "shared/gradient_updates": 8.0,
+        "shared/weight_version": 65.0
+      }
+    }
+  ],
+  "selected": {
+    "selected_bc": "V3_legacy_e01",
+    "selected_ppo": "PPO_legacy_best",
+    "same_recipe_d": "D_legacy_e06",
+    "recommended_model": "V3_legacy_e01",
+    "recommendation_kind": "BC",
+    "seed_rule": "Keep main seed unless paired development CI supports another",
+    "ppo_rule": "Select short-run periodic-best as PPO alternative: highest128-wall development point estimate among saved PPO candidates, also earlier; no statistically supported gain over BC, so recommend BC."
+  },
+  "final_scores": {
+    "C_original": {
+      "mean": 0.128221875,
+      "walls": 500,
+      "se": 0.00724380898177697,
+      "ci95": [
+        0.114224921875,
+        0.14275976562499998
+      ]
+    },
+    "D_AdamW": {
+      "mean": 0.13991875,
+      "walls": 500,
+      "se": 0.007760773050237946,
+      "ci95": [
+        0.12472179687500001,
+        0.15580953125000002
+      ]
+    },
+    "D_legacy_e06": {
+      "mean": 0.21723125,
+      "walls": 500,
+      "se": 0.008754762477014032,
+      "ci95": [
+        0.20045906250000003,
+        0.234359375
+      ]
+    },
+    "D_legacy_seed2_e06": {
+      "mean": 0.2161125,
+      "walls": 500,
+      "se": 0.008361062538025866,
+      "ci95": [
+        0.199790078125,
+        0.23269726562499998
+      ]
+    },
+    "D_legacy_seed3_e06": {
+      "mean": 0.208953125,
+      "walls": 500,
+      "se": 0.008222271231432971,
+      "ci95": [
+        0.19247398437500002,
+        0.22544390625000002
+      ]
+    },
+    "D_original": {
+      "mean": 0.13789375,
+      "walls": 500,
+      "se": 0.007118769804726823,
+      "ci95": [
+        0.124427890625,
+        0.15213179687499997
+      ]
+    },
+    "PPO_extended_best": {
+      "mean": 0.286775,
+      "walls": 500,
+      "se": 0.008927319543104717,
+      "ci95": [
+        0.26918117187499996,
+        0.30481296874999997
+      ]
+    },
+    "PPO_extended_last": {
+      "mean": 0.296840625,
+      "walls": 500,
+      "se": 0.0090842635448973,
+      "ci95": [
+        0.279086875,
+        0.315284765625
+      ]
+    },
+    "PPO_legacy_best": {
+      "mean": 0.28725,
+      "walls": 500,
+      "se": 0.008966741730320247,
+      "ci95": [
+        0.2698996875,
+        0.30567203125
+      ]
+    },
+    "V3_AdamW": {
+      "mean": 0.228171875,
+      "walls": 500,
+      "se": 0.008287098993876708,
+      "ci95": [
+        0.21190921875000002,
+        0.244362734375
+      ]
+    },
+    "V3_legacy_e01": {
+      "mean": 0.27936875,
+      "walls": 500,
+      "se": 0.008648765076751169,
+      "ci95": [
+        0.26294265625,
+        0.296562890625
+      ]
+    },
+    "V3_legacy_seed2_e01": {
+      "mean": 0.29248124999999997,
+      "walls": 500,
+      "se": 0.008671598867897801,
+      "ci95": [
+        0.275768125,
+        0.30965328124999997
+      ]
+    },
+    "V3_legacy_seed3_e01": {
+      "mean": 0.301759375,
+      "walls": 500,
+      "se": 0.009178790249236153,
+      "ci95": [
+        0.28355250000000004,
+        0.31998546874999995
+      ]
+    }
+  },
+  "confirmatory": {
+    "contrasts": {
+      "V3_legacy_e01 - D_original": {
+        "mean": 0.141475,
+        "walls": 500,
+        "se": 0.00978397863574115,
+        "ci95": [
+          0.122053125,
+          0.160793828125
+        ],
+        "bonferroni_family_ci95": [
+          0.11767057291666665,
+          0.16497187500000002
+        ]
+      },
+      "V3_legacy_e01 - D_legacy_e06": {
+        "mean": 0.062137500000000005,
+        "walls": 500,
+        "se": 0.010201882267680176,
+        "ci95": [
+          0.042203125,
+          0.08214070312499999
+        ],
+        "bonferroni_family_ci95": [
+          0.037651901041666665,
+          0.08632317708333334
+        ]
+      },
+      "PPO_legacy_best - V3_legacy_e01": {
+        "mean": 0.007881250000000001,
+        "walls": 500,
+        "se": 0.004692879586752308,
+        "ci95": [
+          -0.0014968749999999984,
+          0.017109374999999996
+        ],
+        "bonferroni_family_ci95": [
+          -0.0035772135416666678,
+          0.019002135416666666
+        ]
+      }
+    },
+    "bootstrap_replicates": 20000,
+    "seed": 20261119,
+    "method": "paired wall bootstrap; three prespecified contrasts; Bonferroni percentile intervals are approximate",
+    "selection_sha256": "65f37a60cc727e2058fbcab7d1d8823b6e1fbb949b451423c10982f7125a892e"
+  },
+  "seed_stability": {
+    "training_seeds": 3,
+    "walls": 128,
+    "method": "two-level paired bootstrap: resample training-seed pairs and common walls; only 3 seeds limits population inference",
+    "families": {
+      "D": {
+        "mean": 0.15005289713541667,
+        "seed_means": [
+          0.14722900390625,
+          0.14603271484375,
+          0.15689697265625002
+        ],
+        "seed_std": 0.005957248037593956,
+        "hierarchical_ci95": [
+          0.125272216796875,
+          0.17741882324218752
+        ],
+        "wall_only": {
+          "mean": 0.15005289713541667,
+          "walls": 128,
+          "se": 0.011357004478166,
+          "ci95": [
+            0.12867746988932294,
+            0.17338684082031247
+          ]
+        }
+      },
+      "V3": {
+        "mean": 0.22453206380208332,
+        "seed_means": [
+          0.23424072265625,
+          0.218310546875,
+          0.221044921875
+        ],
+        "seed_std": 0.008518376853608787,
+        "hierarchical_ci95": [
+          0.19585683186848957,
+          0.25590108235677084
+        ],
+        "wall_only": {
+          "mean": 0.22453206380208335,
+          "walls": 128,
+          "se": 0.013409765846494288,
+          "ci95": [
+            0.19821716308593748,
+            0.2516034952799479
+          ]
+        }
+      }
+    },
+    "paired": {
+      "V3 - D": {
+        "mean": 0.07447916666666667,
+        "hierarchical_ci95": [
+          0.04262624104817706,
+          0.1075643920898437
+        ]
+      }
+    }
+  },
+  "seed_stability_legacy": {
+    "training_seeds": 3,
+    "walls": 128,
+    "method": "two-level paired bootstrap: resample training-seed pairs and common walls; only 3 seeds limits population inference",
+    "families": {
+      "D": {
+        "mean": 0.21976318359375,
+        "seed_means": [
+          0.22542724609374998,
+          0.22561035156250003,
+          0.208251953125
+        ],
+        "seed_std": 0.009969438403525063,
+        "hierarchical_ci95": [
+          0.1907364908854167,
+          0.24949249267578122
+        ],
+        "wall_only": {
+          "mean": 0.21976318359375,
+          "walls": 128,
+          "se": 0.01247328299643535,
+          "ci95": [
+            0.19561289469401041,
+            0.24588236490885412
+          ]
+        }
+      },
+      "V3": {
+        "mean": 0.3051350911458333,
+        "seed_means": [
+          0.30150146484375,
+          0.2734375,
+          0.34046630859375004
+        ],
+        "seed_std": 0.033661814054679065,
+        "hierarchical_ci95": [
+          0.2632033284505208,
+          0.35087697347005203
+        ],
+        "wall_only": {
+          "mean": 0.30513509114583337,
+          "walls": 128,
+          "se": 0.01413717405898974,
+          "ci95": [
+            0.27771331787109377,
+            0.33373280843098957
+          ]
+        }
+      }
+    },
+    "paired": {
+      "V3 - D": {
+        "mean": 0.08537190755208333,
+        "hierarchical_ci95": [
+          0.03500986735026041,
+          0.13619822184244798
+        ]
+      }
+    }
+  },
+  "supplementary_confirmation": {
+    "plan_sha256": "b04dd1be6112411caa594b004702838abbbfa72a1df5905de7a29fb7641445d5",
+    "contrast": "PPO_extended_last - V3_legacy_e01",
+    "statistics": {
+      "mean": 0.009140625,
+      "walls": 500,
+      "se": 0.004925958857794197,
+      "ci95": [
+        -0.0005001562500000007,
+        0.018881328124999992
+      ]
+    },
+    "opponent_differences": {
+      "random": {
+        "mean": 0.021015625,
+        "walls": 500,
+        "se": 0.011067070765360395,
+        "ci95": [
+          0.00010781250000000054,
+          0.042707812499999935
+        ]
+      },
+      "teacher": {
+        "mean": -0.00184375,
+        "walls": 500,
+        "se": 0.011031327882118754,
+        "ci95": [
+          -0.02368828125,
+          0.020047265624999994
+        ]
+      },
+      "rl_v1": {
+        "mean": 0.008921875,
+        "walls": 500,
+        "se": 0.01094770447514656,
+        "ci95": [
+          -0.01236015625,
+          0.029969921874999982
+        ]
+      },
+      "C": {
+        "mean": 0.002109375,
+        "walls": 500,
+        "se": 0.009734774667551361,
+        "ci95": [
+          -0.016062890625,
+          0.02051757812499997
+        ]
+      },
+      "D": {
+        "mean": 0.0155,
+        "walls": 500,
+        "se": 0.01004404733498827,
+        "ci95": [
+          -0.003484765625,
+          0.03578164062499999
+        ]
+      }
+    },
+    "accepted": false,
+    "recommended_model": "V3_legacy_e01",
+    "method": "One separately registered follow-up contrast, new500-wall population;20k paired wall bootstrap; original final pool is exploratory for this late-snapshot selection."
+  }
+}

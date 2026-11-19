@@ -1,0 +1,128 @@
+{
+  "registered_unix": 1795083868.196036,
+  "purpose": "confirmation",
+  "seed": 113000000,
+  "walls": 500,
+  "candidates": {
+    "V3_legacy_e01": {
+      "path": "runs/final_v3/V3_legacy/epoch_001.pt",
+      "sha256": "361ce9f282f53d34248339c1bf977bc78147013fa9964c2288bf75b8b746cb0f",
+      "bytes": 14207098,
+      "config": {
+        "seed": 20261119,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 1,
+        "iterations": 2000,
+        "device": "mps",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "epochs": 3,
+          "minibatch_size": 256,
+          "clip_epsilon": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 1024,
+          "lr": 0.001,
+          "min_lr": 0.001,
+          "warmup_epochs": 0,
+          "weight_decay": 0.0,
+          "label_smoothing": 0.0,
+          "grad_clip": 10.0,
+          "optimizer": "adam",
+          "sampling": "full_equivalent",
+          "schedule": "constant"
+        }
+      }
+    },
+    "PPO_extended_last": {
+      "path": "runs/final_v3/PPO_V3_legacy_extended/last.pt",
+      "sha256": "c48108c2e764e4758735736b1968afb6e2d61f15d54a1ccf57762f1528709fba",
+      "bytes": 14695841,
+      "config": {
+        "seed": 130010000,
+        "hidden": 64,
+        "capacity": 128,
+        "actors": 4,
+        "episodes_per_actor": 4,
+        "iterations": 192,
+        "device": "cpu",
+        "actor_timeout": 300,
+        "ppo": {
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "learning_rate": 2e-05,
+          "epochs": 2,
+          "minibatch_size": 512,
+          "clip_epsilon": 0.1,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.001,
+          "max_grad_norm": 0.5
+        },
+        "feature_set": "v3",
+        "feature_version": "v3",
+        "architecture": "v3_resnet",
+        "activation": "gelu",
+        "use_candidate": true,
+        "use_context": true,
+        "bc": {
+          "epochs": 20,
+          "min_epochs": 12,
+          "patience": 6,
+          "min_delta": 0.001,
+          "batch_size": 1024,
+          "lr": 0.001,
+          "min_lr": 0.001,
+          "warmup_epochs": 0,
+          "weight_decay": 0.0,
+          "label_smoothing": 0.0,
+          "grad_clip": 10.0,
+          "optimizer": "adam",
+          "sampling": "full_equivalent",
+          "schedule": "constant"
+        },
+        "rl": {
+          "mode": "mixed",
+          "bc_kl": 1.0,
+          "warmup_iterations": 8,
+          "eval_every": 16,
+          "eval_seed": 110300000,
+          "eval_walls": 64,
+          "stop_margin": 0.04,
+          "opponents": {
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          },
+          "eval_opponents": {
+            "rl_v1": "artifacts/round3/references/rl_v1.pt",
+            "C": "artifacts/round3/C/checkpoint.pt",
+            "D": "artifacts/round3/D/checkpoint.pt"
+          },
+          "episode_action_seeds": true
+        }
+      }
+    }
+  },
+  "original_selection_sha256": "65f37a60cc727e2058fbcab7d1d8823b6e1fbb949b451423c10982f7125a892e",
+  "primary_contrast": "PPO_extended_last - V3_legacy_e01",
+  "bootstrap_seed": 20261119,
+  "bootstrap_replicates": 20000,
+  "acceptance_rule": "Adopt PPO_extended_last only if the independent paired wall-bootstrap two-sided95%CI lower bound exceeds0 and no opponent-specific paired95%CI is wholly below-.02; otherwise retain the prespecified BC. Stop after this confirmation, no further tuning.",
+  "reason": "Original final500-wall pool revealed exploratory gain for the unselected3072-game last snapshot. Original primary short-PPO contrast is nonsignificant. New population provides a separate confirmation, not a reinterpretation of the original primary test."
+}
